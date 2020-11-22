@@ -31,11 +31,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<body <?php body_class(); ?>>
 
+		<?php custom_logo(); ?>
+
 		<header id="site-header" role="banner">
 
 			<div class="header-inner section-inner">
 
-			<?php wpblank_site_logo(); ?>
 
 			<?php if ( has_nav_menu( 'primary' ) ) { ?>
 				<div id="nav-toggle" class="" aria-expanded="false">

@@ -7,15 +7,15 @@
  * Based on a solution in WP Rig.
  *
  * @package WordPress
- * @subpackage WPBlank
+ * @subpackage blanky
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'wpblank_Script_Loader' ) ) {
+if ( ! class_exists( 'blanky_Script_Loader' ) ) {
 	/**
 	 * A class that provides a way to add `async` or `defer` attributes to scripts.
 	 */
-	class wpblank_Script_Loader {
+	class blanky_Script_Loader {
 
 		/**
 		 * Adds async/defer attributes to enqueued / registered scripts.

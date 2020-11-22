@@ -12,7 +12,7 @@ body {
 	font-size: 5vh;
 	padding: 3vh;
 	background: $color--primary;
-	color: $w;
+	color: $white;
 }
 
 .content{
@@ -44,4 +44,8 @@ body {
     	@include r(1280) { text-transform: uppercase; }
 
 	}
+}
+
+footer {
+	display: none;
 }

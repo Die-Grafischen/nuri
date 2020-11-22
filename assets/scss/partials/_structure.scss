@@ -21,15 +21,24 @@ html {
 }
 
 body {
-    font: 400 11px/1.4 sans-serif;
-    color: $c2;
+    font-weight: 300;
+	font-family: $font-family;
+	font-size: $font-size-s;
+	line-height: $line-height;
+    color: $black;
     margin: 0;
-    background: $w !important;
+    background: $rosagelb!important;
     height:100%;
     min-height:100%;
+	position: relative;
 
+	&.home {
+		background: $black!important;
+		color: $white;
+	}
 
 }
+
 /* clear */
 .clear:before,
 .clear:after {
@@ -71,7 +80,7 @@ a:active {
 
 input:focus {
     outline: 0;
-    border: 1px solid $c2;
+    border: 1px solid $black;
 }
 
 ol, ul {

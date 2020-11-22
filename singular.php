@@ -12,7 +12,6 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
 
 	<?php
 
@@ -27,6 +26,5 @@ get_header();
 
 	?>
 
-</main><!-- #site-content -->
 
 <?php get_footer(); ?>
