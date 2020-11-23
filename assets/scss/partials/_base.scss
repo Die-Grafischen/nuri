@@ -5,6 +5,50 @@
 body {
 	opacity: 1;
 }
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('../fonts/maison-neue/maison.woff2') format('woff2'),
+        url('../fonts/maison-neue/maison.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brick Display Pro';
+    src: url('../fonts/brick-display-pro/BrickDisplayPro-Light.woff2') format('woff2'),
+        url('../fonts/brick-display-pro/BrickDisplayPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.has-huge-font-size {
+	font-size: $font-size-xxl;
+}
+
+.wrapper article  {
+
+	height: 100vh;
+	background: green;
+	margin-bottom: 200vh;
+
+	:first-child {
+		margin-top: 0;
+	}
+
+	> * {
+		width: 100%;
+		max-width: 1400px;
+		padding: 30px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+
+}
+
+
 .wrap{
 	display: table;
 	width: 100%;

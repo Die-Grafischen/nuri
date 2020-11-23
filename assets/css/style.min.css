@@ -85,7 +85,7 @@ textarea{resize:vertical}
 ::selection{background-color:#b3d4fc;text-shadow:none}
 *,*:after,*:before{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility}
 html{font-size:62.5%;height:100%;min-height:100%}
-body{font-weight:300;font-family:Helvetica,Arial,sans-serif;font-size:22px;line-height:1.3;color:#000;margin:0;background:#fdf0e6 !important;height:100%;min-height:100%;position:relative}
+body{font-weight:300;font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:22px;line-height:1.3;color:#000;margin:0;background:#fdf0e6 !important;height:100%;min-height:100%}
 body.home{background:#000 !important;color:#fff}
 .clear:before,.clear:after{content:' ';display:table}
 .clear:after{clear:both}
@@ -126,6 +126,12 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 #wp-calendar tfoot #prev{font-size:10px;text-transform:uppercase;padding-top:10px}
 .size-auto,.size-full,.size-large,.size-medium,.size-thumbnail{max-width:100%;height:auto}
 body{opacity:1}
+@font-face{font-family:'Maison Neue';src:url("../fonts/maison-neue/maison.woff2") format("woff2"),url("../fonts/maison-neue/maison.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Brick Display Pro';src:url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff2") format("woff2"),url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
+.has-huge-font-size{font-size:120px}
+.wrapper article{height:100vh;background:green;margin-bottom:200vh}
+.wrapper article :first-child{margin-top:0}
+.wrapper article>*{width:100%;max-width:1400px;padding:30px;margin:0 auto;margin-bottom:30px}
 .wrap{display:table;width:100%;height:100%;font-size:5vh;padding:3vh;background:#ed4846;color:#fff}
 .content{display:table-cell;width:100%;vertical-align:middle;margin:0 auto;text-align:center}
 .content h1,.content p{font-family:Lato;font-weight:100}
@@ -134,13 +140,20 @@ footer{display:none}
 .logo{width:100px;display:inline-block;position:fixed;top:22px;left:30px;z-index:1000}
 .logo img,.logo svg{width:100px;height:auto}
 .admin-bar .logo{top:54px}
-header{width:100%}
+.admin-bar header.fixed-header{top:32px}
+.admin-bar header.dynamic-header{top:calc(100vh + 32px)}
+header{width:100%;position:absolute;top:0;left:0;background:#000}
+header.dynamic-header{top:100vh}
+header.dynamic-header.fixed-header{top:32px}
 header .menu{text-align:center}
 header .menu li{display:inline-block;padding:0 10px}
 header .menu li a{color:#fff;line-height:1}
+header .menu li a:hover{color:#fdf0e6}
+header.fixed-header{position:fixed;top:0;left:0;z-index:900}
 header .header-inner{padding:32px 30px 28px 30px}
-.home header{position:absolute;top:100vh;left:0;background:#000}
-.wp-block-cover{min-height:100vh !important;float:left;padding:30px;margin-bottom:200vh}
+.wp-block-cover{min-height:100vh !important;width:100%;max-width:100% !important;float:left;padding:60px 30px !important}
+.wp-block-cover p{font-family:"Brick Display Pro",serif;line-height:.9}
+.wp-block-cover.cover-on-top{margin-bottom:88px;margin-top:0}
 @media screen{[hidden~="screen"]{display:inherit}
 [hidden~="screen"]:not(:active):not(:focus):not(:target){clip:rect(0 0 0 0) !important;position:absolute !important}
 }@media(min-width:240px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.4rem/1.8rem sans-serif}

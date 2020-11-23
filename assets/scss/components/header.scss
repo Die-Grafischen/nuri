@@ -22,8 +22,29 @@
 	top: 54px;
  }
 
+ .admin-bar header.fixed-header {
+	 top: 32px;
+ }
+
+ .admin-bar header.dynamic-header {
+	 top: calc(100vh + 32px);
+ }
+
  header {
 	 width: 100%;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 background: $black;
+
+	 &.dynamic-header {
+		 top: 100vh;
+	 }
+
+	 &.dynamic-header.fixed-header{
+		 top: 32px;
+	 }
+
 	 .menu {
 		 text-align: center;
 
@@ -34,8 +55,22 @@
 			 a {
 				 color: $white;
 				 line-height: 1;
+
+				 &:hover {
+					 color: $rosagelb;
+				 }
+
 			 }
+
 		 }
+
+	 }
+
+	 &.fixed-header {
+		 position: fixed;
+		 top: 0;
+		 left: 0;
+		 z-index: 900;
 	 }
 
 	 .header-inner {
@@ -43,10 +78,3 @@
 	 }
 
  }
-
-.home header {
-	position: absolute;
-	top: 100vh;
-	left: 0;
-	background: $black;
-}

@@ -42,6 +42,7 @@ function nuri_theme_support() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support(
+		'woocommerce',
 		'html5',
 		array(
 			'search-form',

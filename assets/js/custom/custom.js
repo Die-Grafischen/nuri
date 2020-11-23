@@ -12,20 +12,20 @@ var nuriTheme;
 
 	// Window Scroll
 	var header = $('header');
+	var theWindow = $(window);
 
-	var headerOffset = $('header').offset();
+	if( $('.wrapper > article > div').first().hasClass('wp-block-cover') ){
+ 		$('.wrapper > article > div').first().addClass('cover-on-top');
+		header.addClass('dynamic-header');
+		theWindow.scroll(function(){
+		    if (theWindow.scrollTop() >= theWindow.height()) {
+		        header.addClass('fixed-header');
+		    }
+		    else {
+		        header.removeClass('fixed-header');
+		    }
+		});
+	}
 
-	$(window).scroll(function() {
-
-	    if ( $('body').scrollTop() > headerOffset.top){
-	        header.removeClass('fixed');
-			console.log('>');
-	    } else {
-	        header.addClass('fixed');
-			console.log('<');
-	    }
-
-
-	});
 
 })(jQuery);

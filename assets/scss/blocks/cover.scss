@@ -2,7 +2,18 @@
 
 .wp-block-cover {
 	min-height: 100vh!important;
+	width: 100%;
+	max-width: 100%!important;
 	float: left;
-	padding: 30px;
-	margin-bottom: 200vh;
+	padding: 60px 30px!important;
+
+	p {
+		font-family: $font-family-2;
+		line-height: 0.9;
+	}
+
+	&.cover-on-top {
+		margin-bottom: 88px;
+		margin-top: 0;
+	}
 }
