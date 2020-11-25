@@ -1,0 +1,31 @@
+/* WOO Commerce default grid produkt block */
+
+.wc-block-grid__product{
+    text-align: left;
+}
+
+.woocommerce-Price-currencySymbol {
+	padding-right: 5px;
+}
+
+.woocommerce-Price-amount {
+	font-size: $font-size-s;
+}
+
+.wc-block-grid__product .wc-block-grid__product-title {
+	color: $white;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.farbschema-hell {
+	color: $black;
+}
+
+.wrapper article :first-child {
+    margin-top: 0;
+}
+
+.wc-block-grid__product .wc-block-grid__product-image {
+	margin-bottom: $gutter;
+}

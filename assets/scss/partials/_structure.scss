@@ -27,15 +27,21 @@ body {
 	line-height: $line-height;
     color: $black;
     margin: 0;
-    background: $rosagelb!important;
+    background: $rosagelb;
     height:100%;
     min-height:100%;
+	position: relative;
 
-	&.home {
-		background: $black!important;
+	&.farbschema-dunkel {
+		background: $black;
 		color: $white;
 	}
 
+}
+
+body.farbschema-dunkel .wrapper article > * {
+	background: $black;
+	color: $white;
 }
 
 /* clear */
@@ -87,4 +93,25 @@ ol, ul {
 }
 select{
     width: 100%;
+}
+
+article {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-family: $font-family-2;
+		font-weight: 300;
+	}
+
+	h1 {
+		font-size: $font-size-xxl;
+	}
+
+	h2 {
+		font-size: $font-size-l;
+	}
+
 }

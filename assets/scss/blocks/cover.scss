@@ -1,11 +1,11 @@
 /* Cover block */
 
 .wp-block-cover {
-	min-height: 100vh!important;
+	min-height: 100vh;
 	width: 100%;
-	max-width: 100%!important;
+	max-width: 100%;
 	float: left;
-	padding: 60px 30px!important;
+	padding: 60px $gutter!important;
 
 	p {
 		font-family: $font-family-2;
@@ -16,4 +16,8 @@
 		margin-bottom: 88px;
 		margin-top: 0;
 	}
+}
+
+.admin-bar .wp-block-cover.cover-on-top {
+	min-height: calc(100vh - 32px);
 }

@@ -259,9 +259,11 @@ textarea { resize: vertical; }
 /* html element 62.5% font-size for REM use i.e. 1rem = 10px*/
 html { font-size: 62.5%; height: 100%; min-height: 100%; }
 
-body { font-weight: 300; font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; line-height: 1.3; color: #000000; margin: 0; background: #fdf0e6 !important; height: 100%; min-height: 100%; }
+body { font-weight: 300; font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; line-height: 1.3; color: #000000; margin: 0; background: #fdf0e6; height: 100%; min-height: 100%; position: relative; }
 
-body.home { background: #000000 !important; color: #ffffff; }
+body.farbschema-dunkel { background: #000000; color: #ffffff; }
+
+body.farbschema-dunkel .wrapper article > * { background: #000000; color: #ffffff; }
 
 /* clear */
 .clear:before, .clear:after { content: ' '; display: table; }
@@ -283,6 +285,12 @@ a:hover, a:active { outline: 0; }
 input:focus { outline: 0; border: 1px solid #000000; }
 
 select { width: 100%; }
+
+article h1, article h2, article h3, article h4, article h5 { font-family: "Brick Display Pro", serif; font-weight: 300; }
+
+article h1 { font-size: 120px; }
+
+article h2 { font-size: 50px; }
 
 /* ---------------------------------------------------------------------------- WordPress Core Styles ------------------------------------------------------------------------- */
 .alignnone { margin: 5px 20px 20px 0; }
@@ -365,11 +373,11 @@ body { opacity: 1; }
 
 .has-huge-font-size { font-size: 120px; }
 
-.wrapper article { height: 100vh; background: green; margin-bottom: 200vh; }
+.wrapper article { height: 100vh; }
 
 .wrapper article :first-child { margin-top: 0; }
 
-.wrapper article > * { width: 100%; max-width: 1400px; padding: 30px; margin: 0 auto; margin-bottom: 30px; }
+.wrapper article > * { width: 100%; max-width: 1400px; padding: 30px; margin: 0 auto; padding-bottom: 30px; }
 
 .wrap { display: table; width: 100%; height: 100%; font-size: 5vh; padding: 3vh; background: #ED4846; color: #ffffff; }
 
@@ -414,13 +422,11 @@ footer { display: none; }
 
 .admin-bar header.fixed-header { top: 32px; }
 
-.admin-bar header.dynamic-header { top: calc(100vh + 32px); }
-
-header { width: 100%; position: absolute; top: 0; left: 0; background: #000000; }
+header { width: 100%; position: absolute; top: 0; left: 0; background: #fdf0e6; color: #000000; }
 
 header.dynamic-header { top: 100vh; }
 
-header.dynamic-header.fixed-header { top: 32px; }
+header.dynamic-header.fixed-header { top: 0; }
 
 header .menu { text-align: center; }
 
@@ -434,11 +440,30 @@ header.fixed-header { position: fixed; top: 0; left: 0; z-index: 900; }
 
 header .header-inner { padding: 32px 30px 28px 30px; }
 
+.farbschema-dunkel header { background: #000000; color: #ffffff; }
+
 /* Cover block */
-.wp-block-cover { min-height: 100vh !important; width: 100%; max-width: 100% !important; float: left; padding: 60px 30px !important; }
+.wp-block-cover { min-height: 100vh; width: 100%; max-width: 100%; float: left; padding: 60px 30px !important; }
 
 .wp-block-cover p { font-family: "Brick Display Pro", serif; line-height: 0.9; }
 
 .wp-block-cover.cover-on-top { margin-bottom: 88px; margin-top: 0; }
+
+.admin-bar .wp-block-cover.cover-on-top { min-height: calc(100vh - 32px); }
+
+/* WOO Commerce default grid produkt block */
+.wc-block-grid__product { text-align: left; }
+
+.woocommerce-Price-currencySymbol { padding-right: 5px; }
+
+.woocommerce-Price-amount { font-size: 22px; }
+
+.wc-block-grid__product .wc-block-grid__product-title { color: #ffffff; font-weight: 700; margin-bottom: 0; }
+
+.farbschema-hell { color: #000000; }
+
+.wrapper article :first-child { margin-top: 0; }
+
+.wc-block-grid__product .wc-block-grid__product-image { margin-bottom: 30px; }
 
 /*# sourceMappingURL=style.css.map */

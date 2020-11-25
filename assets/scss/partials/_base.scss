@@ -29,10 +29,7 @@ body {
 }
 
 .wrapper article  {
-
 	height: 100vh;
-	background: green;
-	margin-bottom: 200vh;
 
 	:first-child {
 		margin-top: 0;
@@ -41,9 +38,9 @@ body {
 	> * {
 		width: 100%;
 		max-width: 1400px;
-		padding: 30px;
+		padding: $gutter;
 		margin: 0 auto;
-		margin-bottom: 30px;
+		padding-bottom: $gutter;
 	}
 
 }

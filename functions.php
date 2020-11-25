@@ -102,7 +102,6 @@ function nuri_register_styles() {
 	wp_enqueue_style( 'nuri-style', get_template_directory_uri() . '/assets/css/style.css', array(), $theme_version );
 	wp_style_add_data( 'nuri-style', 'rtl', 'replace' );
 
-
 }
 
 add_action( 'wp_enqueue_scripts', 'nuri_register_styles' );
@@ -139,6 +138,13 @@ function nuri_menus() {
 }
 
 add_action( 'init', 'nuri_menus' );
+
+function add_acf_body_class($class) {
+	$value = 'farbschema-'. get_field('farbschema', get_the_ID()) .'';
+	$class[] = $value;
+	return $class;
+}
+add_filter('body_class', 'add_acf_body_class');
 
 
 /**
