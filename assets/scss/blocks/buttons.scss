@@ -1,0 +1,17 @@
+/* Default Gutenberg buttons block */
+
+.has-white-color {
+	&:hover {
+		background: $white;
+		color: $black;
+		border-color: $white;
+	}
+}
+
+.has-white-black {
+	&:hover {
+		background: $black;
+		color: $white;
+		border-color: $black;
+	}
+}

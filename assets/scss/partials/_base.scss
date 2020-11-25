@@ -24,12 +24,15 @@ body {
     font-display: swap;
 }
 
+.has-medium-font-size {
+	font-size: $font-size-m;
+}
+
 .has-huge-font-size {
 	font-size: $font-size-xxl;
 }
 
 .wrapper article  {
-	height: 100vh;
 
 	:first-child {
 		margin-top: 0;
@@ -43,17 +46,18 @@ body {
 		padding-bottom: $gutter;
 	}
 
+	> p {
+		padding: $gutter $gutter*4;
+	}
+
 }
 
+a {
+	transition: all .3s;
+}
 
-.wrap{
-	display: table;
-	width: 100%;
-	height: 100%;
-	font-size: 5vh;
-	padding: 3vh;
-	background: $color--primary;
-	color: $white;
+p + p {
+	padding-top: $gutter/2;
 }
 
 .content{
@@ -85,8 +89,4 @@ body {
     	@include r(1280) { text-transform: uppercase; }
 
 	}
-}
-
-footer {
-	display: none;
 }

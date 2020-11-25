@@ -1,0 +1,14 @@
+/* Default Gutenberg block gallery grid */
+
+.blocks-gallery-grid {
+
+	.blocks-gallery-item {
+		&:nth-child(1) {
+			margin-bottom: 15%;
+		}
+
+		&:nth-child(2) {
+		margin-top: 15%;
+		}
+	}
+}

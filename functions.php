@@ -139,14 +139,6 @@ function nuri_menus() {
 
 add_action( 'init', 'nuri_menus' );
 
-function add_acf_body_class($class) {
-	$value = 'farbschema-'. get_field('farbschema', get_the_ID()) .'';
-	$class[] = $value;
-	return $class;
-}
-add_filter('body_class', 'add_acf_body_class');
-
-
 /**
  * Enqueue supplemental block editor styles.
  */
@@ -166,3 +158,8 @@ add_action( 'enqueue_block_editor_assets', 'nuri_block_editor_styles', 1, 1 );
 // Allow the Editor Role to change Theme Settings and use Customizer
 $role_object = get_role( 'editor' );
 $role_object->add_cap( 'edit_theme_options' );
+
+// Advanced Custom Fields
+if (class_exists('ACF')) {
+	require get_template_directory() . '/inc/acf.php';
+}
