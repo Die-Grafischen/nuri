@@ -19,10 +19,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <html <?php language_attributes(); ?>>
 
 	<head>
-
+		<?php
+			$header = get_field('header', 'options');
+			$icon = $header['icon'];
+			$logo = $header['logo'];
+		?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/assets/images/favicon.ico" />
+		<link rel="shortcut icon" href="<?php echo esc_url($icon); ?>" />
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
@@ -31,7 +35,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<body <?php body_class(); ?>>
 
-		<?php custom_logo(); ?>
+		<?php if($logo){
+			echo '<a href="'. home_url() .'" class="custom-logo logo">
+				<img src="'. esc_url($logo) .'" class="style-svg" />
+			</a>';
+		} else {
+			echo '<a href="'. home_url() .'" class="custom-logo logo">'. get_bloginfo('name') .'</a>';
+		} ?>
+
 
 		<header id="site-header" role="banner">
 

@@ -27,21 +27,21 @@ body {
 	line-height: $line-height;
     color: $black;
     margin: 0;
-    background: $rosagelb;
+    background-color: $rosagelb;
     height:100%;
     min-height:100%;
 	position: relative;
 
 	&.farbschema-dunkel {
-		background: $black;
+		background-color: $black;
 		color: $white;
+
+		.wrapper {
+			background-color: $black;
+			color: $white;
+		}
 	}
 
-}
-
-body.farbschema-dunkel .wrapper article > * {
-	background: $black;
-	color: $white;
 }
 
 /* clear */

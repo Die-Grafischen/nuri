@@ -1,0 +1,47 @@
+/* Newsletter acf block */
+
+.block-newsletter {
+	padding: $gutter*4!important;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	.newsletter-wrapper {
+		background-color: $black;
+		color: $white;
+		padding: $gutter/2;
+		width: 40%;
+		max-width: 420px;
+
+		h2 {
+			line-height: 1;
+		}
+
+		p {
+			padding-top: $gutter/3;
+		}
+
+		input {
+			padding: 12px 24px;
+			margin-top: $gutter/2;
+			border-radius: 0;
+			border: 1px solid $white;
+			background-color: $white;
+			color: $black;
+
+			&[type="submit"] {
+				background-color: $black;
+				color: $white;
+
+				&:hover {
+					background-color: $white;
+					color: $black;
+				}
+
+			}
+
+		}
+
+	}
+
+}

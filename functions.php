@@ -163,3 +163,8 @@ $role_object->add_cap( 'edit_theme_options' );
 if (class_exists('ACF')) {
 	require get_template_directory() . '/inc/acf.php';
 }
+
+// Woocommerce related functions
+if (class_exists('woocommerce')) {
+	require get_template_directory() . '/inc/woo.php';
+}

@@ -2,6 +2,8 @@
 
 .wc-block-grid__product{
     text-align: left;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
 }
 
 .woocommerce-Price-currencySymbol {
@@ -18,14 +20,10 @@
 	margin-bottom: 0;
 }
 
-.farbschema-hell {
-	color: $black;
-}
-
-.wrapper article :first-child {
-    margin-top: 0;
-}
-
 .wc-block-grid__product .wc-block-grid__product-image {
 	margin-bottom: $gutter;
+}
+
+.wc-block-grid__products {
+	margin: 0 -10px 20px;
 }

@@ -7,6 +7,8 @@
 	max-width: 100%;
 	float: left;
 	padding: 60px $gutter!important;
+	background-repeat: no-repeat!important;
+	background-size: cover!important;
 
 	p {
 		font-family: $font-family-2;
@@ -15,7 +17,11 @@
 
 	&.cover-on-top {
 		margin-bottom: 88px;
-		margin-top: 0;
+		margin-top: 0!important;
+	}
+
+	&.alignfull {
+		max-width: 100%!important;
 	}
 }
 

@@ -2,6 +2,7 @@
 
 footer {
 	display: block;
+	background-color: $rosagelb;
 
 	.section-inner {
 		padding: $gutter*3 $gutter*4;
@@ -37,6 +38,11 @@ footer {
 
 				svg {
 					width: 180px;
+
+					path {
+						fill:#000!important;
+					}
+
 				}
 
 			}
@@ -45,6 +51,10 @@ footer {
 
 		.text-social {
 			width: 20%;
+
+			.footer-text a {
+				text-decoration: underline;
+			}
 		}
 
 		.footer-credits {
@@ -66,6 +76,14 @@ body.farbschema-dunkel footer {
 
 	a {
 		color: $white;
+	}
+
+	.section-inner .logo-wrapper .logo-footer {
+
+		svg path {
+			fill: #fff!important;
+		}
+
 	}
 
 }

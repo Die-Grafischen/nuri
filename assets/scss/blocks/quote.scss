@@ -1,0 +1,21 @@
+/* Default Gutenberg block quote */
+
+.wp-block-quote {
+
+	font-family: $font-family-2;
+	padding-left: $gutter*4;
+	padding-right: $gutter*4;
+
+	&.is-large,
+	&.is-style-large {
+		padding: $gutter $gutter*4;
+
+		p {
+			font-size: $font-size-l;
+			line-height: 1.2;
+			font-style: normal;
+		}
+
+	}
+
+}

@@ -30,70 +30,16 @@ function my_acf_init() {
 	if( function_exists('acf_register_block') ) {
 
 		acf_register_block(array(
-			'name'				=> 'Slider',
-			'title'				=> __('Slider'),
-			'description'		=> __('Slider'),
+			'name'				=> 'newsletter',
+			'title'				=> __('Newsletter'),
+			'description'		=> __('Newsletter'),
 			'render_callback'	=> 'my_acf_block_render_callback',
 			'category'			=> 'custom',
-			'icon'				=> 'images-alt2',
-			'keywords'			=> array( 'slider'),
+			'icon'				=> 'email',
+			'keywords'			=> array( 'newsletter', 'Mailchimp'),
 			'mode' => 'edit'
 		));
 
-		acf_register_block(array(
-			'name'				=> 'Hero',
-			'title'				=> __('Hero'),
-			'description'		=> __('Hero block with heading, buttons and slider.'),
-			'render_callback'	=> 'my_acf_block_render_callback',
-			'category'			=> 'custom',
-			'icon'				=> 'align-right',
-			'keywords'			=> array( 'hero', 'buttons', 'slider'),
-			'mode' => 'edit'
-		));
-
-		acf_register_block(array(
-			'name'				=> 'About',
-			'title'				=> __('About'),
-			'description'		=> __('About block.'),
-			'render_callback'	=> 'my_acf_block_render_callback',
-			'category'			=> 'custom',
-			'icon'				=> 'editor-table',
-			'keywords'			=> array( 'About' ),
-			'mode' => 'edit'
-		));
-
-		acf_register_block(array(
-			'name'				=> 'Video',
-			'title'				=> __('Video'),
-			'description'		=> __('Video block.'),
-			'render_callback'	=> 'my_acf_block_render_callback',
-			'category'			=> 'custom',
-			'icon'				=> 'video-alt',
-			'keywords'			=> array( 'Video' ),
-			'mode' => 'edit'
-		));
-
-		acf_register_block(array(
-			'name'				=> 'Presentation',
-			'title'				=> __('Presentation'),
-			'description'		=> __('Presentation block.'),
-			'render_callback'	=> 'my_acf_block_render_callback',
-			'category'			=> 'custom',
-			'icon'				=> 'format-gallery',
-			'keywords'			=> array( 'Presentation' ),
-			'mode' => 'edit'
-		));
-
-		acf_register_block(array(
-			'name'				=> 'slider',
-			'title'				=> __('Slider'),
-			'description'		=> __('Image slider with text block'),
-			'render_callback'	=> 'my_acf_block_render_callback',
-			'category'			=> 'custom',
-			'icon'				=> 'align-pull-left',
-			'keywords'			=> array( 'slider', 'content slider', 'info slider' ),
-			'mode' => 'edit'
-		));
 
 	}
 }

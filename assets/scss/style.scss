@@ -29,9 +29,12 @@ Text Domain: WPGT
 // Components.
 @import 'components/header';
 @import 'components/footer';
+@import 'components/woocommerce';
 
 // Gutenberg Blocks.
 @import 'blocks/cover';
 @import 'blocks/grid-produkt';
 @import 'blocks/gallery-grid';
 @import 'blocks/buttons';
+@import 'blocks/newsletter';
+@import 'blocks/quote';

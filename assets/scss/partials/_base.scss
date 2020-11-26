@@ -10,7 +10,16 @@ body {
     font-family: 'Maison Neue';
     src: url('../fonts/maison-neue/maison.woff2') format('woff2'),
         url('../fonts/maison-neue/maison.woff') format('woff');
-    font-weight: 300;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('../fonts/maison-neue/maison-bold.woff2') format('woff2'),
+        url('../fonts/maison-neue/maison-bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
@@ -32,22 +41,37 @@ body {
 	font-size: $font-size-xxl;
 }
 
-.wrapper article  {
+.wrapper   {
 
-	:first-child {
-		margin-top: 0;
-	}
+	margin: 0 auto;
+	background-color: $rosagelb;
 
-	> * {
-		width: 100%;
-		max-width: 1400px;
-		padding: $gutter;
+	article {
+		display: inline-block;
 		margin: 0 auto;
-		padding-bottom: $gutter;
-	}
+		width: 100%;
 
-	> p {
-		padding: $gutter $gutter*4;
+		:first-child {
+			margin-top: 0;
+		}
+
+		> * {
+			width: 100%;
+			max-width: 1400px;
+			padding: 0 $gutter;
+			margin: $gutter auto;
+			padding-bottom: $gutter;
+
+			&:first-child {
+				margin-top: 88px + $gutter;
+			}
+
+		}
+
+		> p {
+			padding: $gutter $gutter*4;
+		}
+
 	}
 
 }

@@ -27,5 +27,17 @@ var nuriTheme;
 		});
 	}
 
+	// Woo Filter
+	$('.filter-parent-cat').on('click', 'span', function(e){
+		var th = this;
+		if($('.filter-current-parent').length) {
+			$('.filter-child-cat').slideToggle().removeClass('filter-current-parent');
+		} else {
+			$(th).parent().addClass('filter-current-parent');
+			$(th).parent().find('.filter-child-cat').slideToggle();
+		}
+
+	});
+
 
 })(jQuery);
