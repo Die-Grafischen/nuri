@@ -76,7 +76,14 @@ echo '<ul>';
 
 				foreach ($child_product_cats as $child_product_cat) {
 
-					echo '<li>'.$child_product_cat->name.'</li>';
+					echo '<li>
+						<div class="pretty p-default p-fill p-tada">
+							<input type="checkbox" />
+						    <div class="state">
+						      <label>'.$child_product_cat->name.'</label>
+						    </div>
+						</div>
+					</li>';
 				}
 
 				echo '</ul>

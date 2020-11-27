@@ -24,7 +24,7 @@
 				$footer = get_field('footer', 'options');
 				$logo = $footer['logo'];
 				$text = $footer['textblock'];
-				$social = $footer['social'];
+				$social = $footer['social_media'];
 				$copyright = $footer['copyright'];
 			?>
 

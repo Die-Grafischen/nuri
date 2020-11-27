@@ -12,6 +12,8 @@
 .woo-custom-filter {
 	width: calc(100% - 80px);
 	position: fixed;
+	top: 120px;
+	left: $gutter;
 	display: flex;
 	z-index: 900;
 	align-items: center;
@@ -48,11 +50,13 @@
 			width: 100%;
 			background: $white;
 			top: 60px;
-			padding: $gutter/2;
+			padding: 0 $gutter/2 $gutter/2;
 
 			li {
 				font-family: $font-family;
 				font-size: $font-size-s;
+				margin-top: $gutter/2;
+				width: 20%;
 			}
 		}
 
