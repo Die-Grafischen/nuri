@@ -502,7 +502,11 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .woo-custom-filter ul ul.filter-child-cat { display: none; position: absolute; left: 0; width: 100%; background: #ffffff; top: 60px; padding: 0 20px 20px; }
 
-.woo-custom-filter ul ul.filter-child-cat li { font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; margin-top: 20px; width: 20%; }
+.woo-custom-filter ul ul.filter-child-cat li { font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; margin-top: 20px; width: 20%; padding: 2px; }
+
+.woo-custom-filter ul ul.filter-child-cat li .pretty.p-default input:checked ~ .state label:after { background-color: #000 !important; }
+
+.woo-custom-filter ul ul.filter-child-cat li .pretty .state label:before { border-color: #000; }
 
 .woo-custom-filter .clear-filter { margin-left: auto; cursor: pointer; }
 
