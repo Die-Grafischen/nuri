@@ -34,11 +34,22 @@
 
 			span {
 				cursor: pointer;
+			}
+
+			i.filter-icon {
+				display: inline-block;
 				background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");
 				background-repeat: no-repeat;
 				background-position: center right;
-				padding-right: 40px;
-				background-size: 20px auto;
+				background-size: 100% auto;
+				width: 20px;
+				height: 20px;
+				margin-left: 20px;
+				transition: all .4s;
+			}
+
+			&.filter-current-parent i.filter-icon {
+				transform: rotate(-180deg);
 			}
 
 		}
@@ -95,9 +106,9 @@
 		li.product {
 			flex: 1 0 25%;
 		    max-width: 25%;
+			width: 25%;
 			margin: 0;
-			border-left: 10px solid transparent;
-			border-right: 10px solid transparent;
+			border: 10px solid transparent;
 
 			.price {
 				color: $black;
@@ -137,6 +148,12 @@
 		.product-wrap {
 			padding: 0 $gutter*6;
 			float: left;
+			display: inline-block;
+
+			.single-product-content {
+				display: inline-block;
+			}
+
 		}
 
 		.product_title {

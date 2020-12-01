@@ -19,3 +19,8 @@
 .wc-block-grid + .wp-block-buttons {
 	margin-top: -$gutter;
 }
+
+.wp-block-button__link {
+	padding: 10px 42px;
+	font-size: $font-size-s;
+}

@@ -14,7 +14,6 @@ function isotope(){
 
 }
 
-
 // Remove Breadcrumbs from Shop
 add_action('template_redirect', 'remove_shop_breadcrumbs' );
 function remove_shop_breadcrumbs(){
@@ -72,14 +71,16 @@ function woo_categories_filter() {
 	);
 
 	$product_cat = get_terms( $args );
-echo '<ul>';
+
+	echo '<ul>';
 	foreach ($product_cat as $parent_product_cat) {
 
-			echo'<li class="filter-parent-cat">
+		echo'<li class="filter-parent-cat">
 
-				<span>'.$parent_product_cat->name.'</span>
-
-				<ul class="filter-child-cat">';
+			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->slug) .'" class="product-parent-selector">
+				'. esc_attr($parent_product_cat->name) .'<i class="filter-icon"></i>
+			</span>
+			<ul class="filter-child-cat">';
 
 				$child_args = array(
 					'taxonomy' => 'product_cat',
@@ -90,10 +91,9 @@ echo '<ul>';
 				$child_product_cats = get_terms( $child_args );
 
 				foreach ($child_product_cats as $child_product_cat) {
-
 					echo '<li>
 						<div class="pretty p-default p-fill p-svg p-tada">
-							<input type="checkbox" />
+							<input type="checkbox" data-filter=".product_cat-'. esc_attr($child_product_cat->slug) .'" />
 							<div class="state">
 								<!-- svg path -->
 								<svg class="svg svg-icon" viewBox="0 0 20 20">
@@ -105,10 +105,11 @@ echo '<ul>';
 					</li>';
 				}
 
-				echo '</ul>
+			echo '</ul>
 
-			</li>';
+		</li>';
 	}
+
 	echo '</ul>';
 }
 
@@ -126,10 +127,19 @@ function wrap_product_start() {
 
 add_filter( 'woocommerce_after_single_product_summary', 'wrap_product_end');
 function wrap_product_end() {
+	// display default single product content
+	echo '<div class="single-product-content">'. get_the_content() .'</div>';
+
 	echo '</div>';
 }
 
-// Change related products title
+// Remove Woo Tabs in single
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+// Remove description heading in single
+add_filter('woocommerce_product_description_heading', '__return_null');
+
+// Change related products title in single
 add_filter( 'woocommerce_product_related_products_heading', 'change_related_title' );
 function change_related_title() {
    return __( 'Ebenfalls sehr lecker:', 'woocommerce' );

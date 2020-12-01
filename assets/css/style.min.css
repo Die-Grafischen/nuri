@@ -182,7 +182,9 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .woo-custom-filter{width:calc(100% - 80px);position:fixed;top:120px;left:40px;display:-webkit-box;display:-ms-flexbox;display:flex;z-index:900;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:20px;background:#fff;margin-bottom:40px}
 .woo-custom-filter ul{list-style:none;float:left}
 .woo-custom-filter ul>li{float:left;margin-right:40px;font-family:"Brick Display Pro",serif;font-size:32px;line-height:1}
-.woo-custom-filter ul>li span{cursor:pointer;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");background-repeat:no-repeat;background-position:center right;padding-right:40px;background-size:20px auto}
+.woo-custom-filter ul>li span{cursor:pointer}
+.woo-custom-filter ul>li i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");background-repeat:no-repeat;background-position:center right;background-size:100% auto;width:20px;height:20px;margin-left:20px;-webkit-transition:all .4s;transition:all .4s}
+.woo-custom-filter ul>li.filter-current-parent i.filter-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
 .woo-custom-filter ul ul.filter-child-cat{display:none;position:absolute;left:0;width:100%;background:#fff;top:60px;padding:0 20px 20px}
 .woo-custom-filter ul ul.filter-child-cat li{font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:22px;margin-top:20px;width:20%;padding:2px}
 .woo-custom-filter ul ul.filter-child-cat li .pretty.p-default input:checked ~ .state label:after{background-color:#000 !important}
@@ -190,13 +192,14 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .woo-custom-filter .clear-filter{margin-left:auto;cursor:pointer}
 .woocommerce .quantity .qty{background:#fff;font-size:18px;padding:9px 9px 9px}
 .woocommerce ul.products{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:120px -10px 20px}
-.woocommerce ul.products li.product{-webkit-box-flex:1;-ms-flex:1 0 25%;flex:1 0 25%;max-width:25%;margin:0;border-left:10px solid transparent;border-right:10px solid transparent}
+.woocommerce ul.products li.product{-webkit-box-flex:1;-ms-flex:1 0 25%;flex:1 0 25%;max-width:25%;width:25%;margin:0;border:10px solid transparent}
 .woocommerce ul.products li.product .price{color:#000}
 .woocommerce ul.products li.product .woocommerce-loop-product__title{padding-bottom:0}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{border-radius:0;background-color:#000;font-weight:normal;font-size:18px;padding:12px 24px}
 .woocommerce #respond input#submit:hover,.woocommerce input#submit.alt:hover,.woocommerce a.button:hover,.woocommerce a.button.alt:hover,.woocommerce button.button:hover,.woocommerce button.button.alt:hover,.woocommerce input.button:hover,.woocommerce input.button.alt:hover{background-color:#fff;color:#000}
 .woocommerce div.product{padding:40px 0}
-.woocommerce div.product .product-wrap{padding:0 240px;float:left}
+.woocommerce div.product .product-wrap{padding:0 240px;float:left;display:inline-block}
+.woocommerce div.product .product-wrap .single-product-content{display:inline-block}
 .woocommerce div.product .product_title{font-family:"Brick Display Pro",serif;font-size:50px;font-weight:normal}
 .woocommerce div.product .price{color:#000 !important;font-weight:bold}
 .woocommerce div.product form.cart{margin:20px 0}
@@ -337,12 +340,13 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .has-white-color:hover{background:#fff;color:#000;border-color:#fff}
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
 .wc-block-grid+.wp-block-buttons{margin-top:-40px}
+.wp-block-button__link{padding:10px 42px;font-size:22px}
 .block-newsletter{padding:160px !important;background-repeat:no-repeat;background-size:cover;background-position:center center}
 .block-newsletter .newsletter-wrapper{background-color:#000;color:#fff;padding:20px;width:40%;max-width:420px}
 .block-newsletter .newsletter-wrapper h2{line-height:1}
 .block-newsletter .newsletter-wrapper p{padding-top:13.3333333333px}
-.block-newsletter .newsletter-wrapper input{padding:12px 24px;margin-top:20px;border-radius:0;border:1px solid #fff;background-color:#fff;color:#000}
-.block-newsletter .newsletter-wrapper input[type="submit"]{background-color:#000;color:#fff}
+.block-newsletter .newsletter-wrapper input{padding:10px 24px;margin-top:20px;border-radius:0;border:1px solid #fff;background-color:#fff;color:#000}
+.block-newsletter .newsletter-wrapper input[type="submit"]{background-color:#000;color:#fff;padding:10px 42px}
 .block-newsletter .newsletter-wrapper input[type="submit"]:hover{background-color:#fff;color:#000}
 .wp-block-quote{font-family:"Brick Display Pro",serif;padding-left:160px;padding-right:160px}
 .wp-block-quote.is-large,.wp-block-quote.is-style-large{padding:40px 160px}
