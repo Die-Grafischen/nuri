@@ -119,14 +119,23 @@ function wrap_product_end() {
 	echo '</div>';
 
 	// display product tags
-	global $products;
-    $product_id = $product->id;
+	global $product;
+	$product_id = $product->get_id();
+	$additional_info = get_field('zusatzliche_info', $product_id);
     $product_tags = get_the_term_list($product_id, 'product_tag', '', '' );
 
-    echo '<div class="single-product-tags">
-		<strong>'. __( 'Passend als: ', 'nuri' ) .'</strong>
-		'. $product_tags .'
-	</div>';
+	if($product_tags) {
+		echo '<div class="single-product-tags">
+			<strong>'. __( 'Passend als: ', 'nuri' ) .'</strong>
+			'. $product_tags .'
+		</div>';
+	}
+
+	if($additional_info) {
+		echo '<div class="single-product-info">'. wp_kses_post($additional_info) .'</div>';
+	}
+
+
 
 	echo '</div>';
 }
