@@ -128,7 +128,19 @@ function wrap_product_start() {
 add_filter( 'woocommerce_after_single_product_summary', 'wrap_product_end');
 function wrap_product_end() {
 	// display default single product content
-	echo '<div class="single-product-content">'. get_the_content() .'</div>';
+	echo '<div class="single-product-content">';
+		the_content();
+	echo '</div>';
+
+	// display product tags
+	global $products;
+    $product_id = $product->id;
+    $product_tags = get_the_term_list($product_id, 'product_tag', '', '' );
+
+    echo '<div class="single-product-tags">
+		<strong>'. __( 'Passend als: ', 'nuri' ) .'</strong>
+		'. $product_tags .'
+	</div>';
 
 	echo '</div>';
 }

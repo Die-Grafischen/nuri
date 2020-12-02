@@ -532,13 +532,23 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .woocommerce div.product .product-wrap { padding: 0 240px; float: left; display: inline-block; }
 
-.woocommerce div.product .product-wrap .single-product-content { display: inline-block; }
+.woocommerce div.product .product-wrap .woocommerce-product-gallery { padding: 0 13.3333333333px 13.3333333333px 0; width: 50%; margin: 0 13.3333333333px 13.3333333333px 0; }
+
+.woocommerce div.product .product-wrap div.summary { width: calc(50% - ($gutter/3)); padding-bottom: 13.3333333333px; margin-bottom: 0; display: inline-block; float: none; }
+
+.woocommerce div.product .product-wrap .single-product-content { display: block; padding: 13.3333333333px 0; }
+
+.woocommerce div.product .product-wrap .single-product-tags { padding: 40px 0; margin: 40px 0; margin-top: 26.6666666667px; border-top: 1px solid #000000; border-bottom: 1px solid #000000; }
+
+.woocommerce div.product .product-wrap .single-product-tags a { background: #ffffff; padding: 10px 24px; border-radius: 24px; margin: 0 5px; }
+
+.woocommerce div.product .product-wrap .single-product-tags a:hover { background: #000000; color: #ffffff; }
 
 .woocommerce div.product .product_title { font-family: "Brick Display Pro", serif; font-size: 50px; font-weight: normal; }
 
 .woocommerce div.product .price { color: #000000 !important; font-weight: bold; }
 
-.woocommerce div.product form.cart { margin: 20px 0; }
+.woocommerce div.product form.cart { margin: 20px 0 0; }
 
 .woocommerce div.product form.cart div.quantity { margin: 0; }
 
