@@ -142,13 +142,17 @@ body{opacity:1}
 .wrapper article>*:first-child{margin-top:128px}
 .wrapper article>p{padding:40px 160px}
 .wrapper article>p+p{margin-top:-40px;padding-top:0}
+.wrapper article h1,.wrapper article h2,.wrapper article h3,.wrapper article h4,.wrapper article h5{padding-bottom:0}
 .wrapper article>.wp-block-spacer{padding:0;margin:0}
 .wrapper article>.wp-block-gallery{padding-bottom:24px}
+.wrapper article h1+p,.wrapper article h2+p,.wrapper article h3+p,.wrapper article h4+p,.wrapper article h5+p{margin-top:0;padding-top:0}
 a{-webkit-transition:all .3s;transition:all .3s}
 p+p{padding-top:20px}
 .content{display:table-cell;width:100%;vertical-align:middle;margin:0 auto;text-align:center}
 .content h1,.content p{font-family:Lato;font-weight:100}
 .content h1{text-transform:uppercase}
+.home header,.home footer nav ul{display:none}
+.logged-in .home header,.logged-in .home footer nav ul{display:block}
 .logo{width:100px;display:inline-block;position:fixed;top:22px;left:40px;z-index:1000}
 .logo img,.logo svg{width:100px;height:auto}
 .logo img g path,.logo svg g path{fill:#000 !important}
