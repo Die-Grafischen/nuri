@@ -116,6 +116,9 @@ function nuri_register_scripts() {
 	//Include WP jQuery
     wp_enqueue_script('jquery');
 
+	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.min.js', array('jquery'), $theme_version, false );
+	wp_script_add_data( 'isotope', 'async', true );
+
 	wp_enqueue_script( 'nuri-js', get_template_directory_uri() . '/assets/js/custom.js', array(), $theme_version, false );
 	wp_script_add_data( 'nuri-js', 'async', true );
 

@@ -1,19 +1,5 @@
 <?php
 
-// Enqueue Masonry js for shop/archive
-add_action('pre_get_posts','isotope');
-function isotope(){
-
-	if( is_product_category() || is_shop()) {
-
-    	$theme_version = wp_get_theme()->get( 'Version' );
-
-    	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.min.js', array('jquery'), $theme_version, false );
-
-    }
-
-}
-
 // Remove Breadcrumbs from Shop
 add_action('template_redirect', 'remove_shop_breadcrumbs' );
 function remove_shop_breadcrumbs(){
