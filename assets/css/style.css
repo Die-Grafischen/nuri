@@ -436,7 +436,7 @@ p + p { padding-top: 20px; }
 /* temp */
 .home header, .home footer nav ul { display: none; }
 
-.logged-in .home header, .logged-in .home footer nav ul { display: block; }
+.logged-in.home header, .logged-in.home footer nav ul { display: block; }
 
 /** Header SCSS */
 .logo { width: 100px; display: inline-block; position: fixed; top: 22px; left: 40px; z-index: 1000; }
