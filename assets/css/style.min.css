@@ -141,6 +141,9 @@ body{opacity:1}
 .wrapper article>*{width:100%;max-width:1400px;padding:0 40px;margin:40px auto;padding-bottom:40px}
 .wrapper article>*:first-child{margin-top:128px}
 .wrapper article>p{padding:40px 160px}
+.wrapper article>p+p{margin-top:-40px;padding-top:0}
+.wrapper article>.wp-block-spacer{padding:0;margin:0}
+.wrapper article>.wp-block-gallery{padding-bottom:24px}
 a{-webkit-transition:all .3s;transition:all .3s}
 p+p{padding-top:20px}
 .content{display:table-cell;width:100%;vertical-align:middle;margin:0 auto;text-align:center}

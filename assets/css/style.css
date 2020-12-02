@@ -389,6 +389,12 @@ body { opacity: 1; }
 
 .wrapper article > p { padding: 40px 160px; }
 
+.wrapper article > p + p { margin-top: -40px; padding-top: 0; }
+
+.wrapper article > .wp-block-spacer { padding: 0; margin: 0; }
+
+.wrapper article > .wp-block-gallery { padding-bottom: 24px; }
+
 a { -webkit-transition: all .3s; transition: all .3s; }
 
 p + p { padding-top: 20px; }
