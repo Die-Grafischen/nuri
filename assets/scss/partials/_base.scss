@@ -33,6 +33,23 @@ body {
     font-display: swap;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $black;
+}
+
+input {
+	font-family: $font-family;
+}
+
 .has-medium-font-size {
 	font-size: $font-size-m;
 	@include r(480) { font-size: $font-size-s; }
@@ -59,12 +76,19 @@ body {
 			margin-top: 0;
 		}
 
+		:last-child {
+			&.block-newsletter {
+				margin-bottom: 0;
+			}
+		}
+
 		> * {
 			width: 100%;
 			max-width: 1400px;
 			padding: 0 $gutter;
 			margin: $gutter auto;
 			padding-bottom: $gutter;
+			@include r(480) { margin: 0; }
 
 			&:first-child {
 				margin-top: 88px + $gutter;
@@ -78,6 +102,7 @@ body {
 
 			+ p {
 				margin-top: -$gutter;
+				@include r(480) { margin-top: 0;}
 				padding-top: 0;
 			}
 
@@ -90,6 +115,8 @@ body {
 		h5 {
 			padding: 0 $gutter*6 0;
 			@include r(1024) { 	padding: 0 $gutter 0; }
+			@include r(480) { margin-bottom: $gutter; }
+
 
 		}
 
@@ -100,6 +127,8 @@ body {
 
 		> .wp-block-gallery {
 			padding-bottom: $gutter - 16;
+			@include r(480) { padding-bottom: 0;}
+
 		}
 
 		h1 + p,

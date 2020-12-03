@@ -19,7 +19,7 @@ echo '<div class="block-newsletter acf-block" style="background-image: url('. es
 		    <div id="mc_embed_signup_scroll">
 
 		<div class="mc-field-group">
-			<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+		<input type="email" value="" name="EMAIL" placeholder="Ihre Mailadresse" class="required email" id="mce-EMAIL">
 		</div>
 
 		<div id="mce-responses" class="clear">

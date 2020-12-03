@@ -6,7 +6,8 @@ footer {
 
 	.section-inner {
 		padding: $gutter*3 $gutter*4;
-		@include r(1024) { 	padding: $gutter*2 $gutter; }
+		@include r(1024) { padding: $gutter*2 $gutter; }
+		@include r(480) { padding: $gutter; }
 
 		display: flex;
 		flex-wrap: wrap;
@@ -16,6 +17,7 @@ footer {
 			font-size: $font-size-m;
 			width: 20%;
 			@include r(992) { width: 35%; }
+			@include r(480) { width: 100%; }
 
 			li {
 				margin-top: $gutter/2;
@@ -32,6 +34,7 @@ footer {
 		.logo-wrapper {
 			width: 60%;
 			@include r(992) { width: 30%; }
+			@include r(480) { display: none; }
 			display: flex;
 			align-items: center;
 			text-align: center;
@@ -59,6 +62,11 @@ footer {
 				width: 35%;
 				text-align: right;
 			}
+			@include r(480) {
+				width: 100%;
+				text-align: left;
+				padding-top: 0;
+			}
 
 			.footer-text a {
 				text-decoration: underline;
@@ -80,6 +88,11 @@ footer {
 					margin-right: 0;
 					margin-left: 8px;
 				}
+				@include r(480) {
+					float: left;
+					margin-right: 8px;
+					margin-left: 0px;
+				}
 			}
 
 		}
@@ -89,6 +102,8 @@ footer {
 			display: block;
 			margin-top: $gutter*2;
 			line-height: 1;
+			@include r(480) { margin-top: $gutter; }
+
 		}
 
 	}

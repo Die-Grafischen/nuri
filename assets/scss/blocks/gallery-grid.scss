@@ -3,12 +3,18 @@
 .blocks-gallery-grid {
 
 	.blocks-gallery-item {
+
 		&:nth-child(1) {
 			margin-bottom: 15%;
+			@include r(480) { margin-bottom: $gutter/2; }
 		}
 
 		&:nth-child(2) {
-		margin-top: 15%;
+			margin-top: 15%;
+			@include r(480) { margin-top: $gutter/2; }
 		}
+
+		@include r(480) { width: 100%; margin: 0;}
+
 	}
 }
