@@ -378,16 +378,26 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 }@media(min-width:320px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.55rem/1.8 sans-serif}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
-}@media(min-width:480px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.8rem/1.8 sans-serif}
-.content h1,.content p{font-weight:100}
-.content h1{text-transform:uppercase}
-}@media(min-width:768px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.9rem/1.7 sans-serif}
-.content h1,.content p{font-weight:100}
-.content h1{text-transform:uppercase}
-}@media(min-width:1024px){.wp-caption .wp-caption-text,.gallery-caption{font:300 2rem/3.1rem sans-serif}
-.content h1,.content p{font-weight:100}
-.content h1{text-transform:uppercase}
 }@media(min-width:1280px){.wp-caption .wp-caption-text,.gallery-caption{font:300 2rem/3.1rem sans-serif}
+.content h1,.content p{font-weight:100}
+.content h1{text-transform:uppercase}
+}@media(max-width:1024px){.wp-caption .wp-caption-text,.gallery-caption{font:300 2rem/3.1rem sans-serif}
+.has-huge-font-size{font-size:50px}
+.wrapper article>p{padding:40px}
+.wrapper article h1,.wrapper article h2,.wrapper article h3,.wrapper article h4,.wrapper article h5{padding:0 40px 0}
+.content h1,.content p{font-weight:100}
+.content h1{text-transform:uppercase}
+footer .section-inner{padding:80px 40px}
+.block-newsletter{padding:160px 40px !important}
+}@media(max-width:992px){footer .section-inner nav{width:35%}
+footer .section-inner .logo-wrapper{width:30%}
+footer .section-inner .text-social{width:35%;text-align:right}
+footer .section-inner .footer-social a{float:right;margin-right:0;margin-left:8px}
+.block-newsletter .newsletter-wrapper{width:60%;max-width:60%}
+}@media(max-width:768px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.9rem/1.7 sans-serif}
+.content h1,.content p{font-weight:100}
+.content h1{text-transform:uppercase}
+}@media(max-width:480px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.8rem/1.8 sans-serif}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
 }@media print{.pretty .state .icon,.pretty .state label:after,.pretty .state label:before,.pretty .state:before{color-adjust:exact;-webkit-print-color-adjust:exact;print-color-adjust:exact}

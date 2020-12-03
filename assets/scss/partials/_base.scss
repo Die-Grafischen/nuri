@@ -39,9 +39,8 @@ body {
 
 .has-huge-font-size {
 	font-size: $font-size-xxl;
+		@include r(1024) { font-size: $font-size-l; }
 }
-
-
 
 .wrapper   {
 
@@ -72,6 +71,7 @@ body {
 
 		> p {
 			padding: $gutter $gutter*6;
+			@include r(1024) { 	padding: $gutter; }
 
 			+ p {
 				margin-top: -$gutter;
@@ -86,6 +86,8 @@ body {
 		h4,
 		h5 {
 			padding: 0 $gutter*6 0;
+			@include r(1024) { 	padding: 0 $gutter 0; }
+
 		}
 
 		> .wp-block-spacer {

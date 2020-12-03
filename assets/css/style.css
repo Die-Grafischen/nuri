@@ -9,10 +9,7 @@ License: MIT
 Text Domain: WPGT
 */
 /* ---------------------------------------------------------------------------- Mixins ------------------------------------------------------------------------- */
-/*
- * Mixin for clearfix
- * @include clearfix;
-*/
+/* Mixin for clearfix @include clearfix; */
 /* @font-face mixin Bulletproof font-face via Font Squirrel @include fontface('family', 'assets/fonts/', 'myfontname'); */
 /** IMAGE RETINA @include image-2x(/img/image.png, 100%, auto); */
 /* ---------------------------------------------------------------------------- Responsive Usage @include r(240)  { } @include r(320)  { } @include r(480)  { } @include r(768)  { } @include r(1024) { } @include r(1280) { } ------------------------------------------------------------------------- */
@@ -356,11 +353,11 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 @media (min-width: 320px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 1.55rem/1.8 sans-serif; } }
 
-@media (min-width: 480px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 1.8rem/1.8 sans-serif; } }
+@media (max-width: 480px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 1.8rem/1.8 sans-serif; } }
 
-@media (min-width: 768px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 1.9rem/1.7 sans-serif; } }
+@media (max-width: 768px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 1.9rem/1.7 sans-serif; } }
 
-@media (min-width: 1024px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
+@media (max-width: 1024px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
 
 @media (min-width: 1280px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
 
@@ -377,6 +374,8 @@ body { opacity: 1; }
 
 .has-huge-font-size { font-size: 100px; }
 
+@media (max-width: 1024px) { .has-huge-font-size { font-size: 50px; } }
+
 .wrapper { margin: 0 auto; background-color: #fdf0e6; }
 
 .wrapper article { display: inline-block; margin: 0 auto; width: 100%; }
@@ -389,9 +388,13 @@ body { opacity: 1; }
 
 .wrapper article > p { padding: 40px 240px; }
 
+@media (max-width: 1024px) { .wrapper article > p { padding: 40px; } }
+
 .wrapper article > p + p { margin-top: -40px; padding-top: 0; }
 
 .wrapper article h1, .wrapper article h2, .wrapper article h3, .wrapper article h4, .wrapper article h5 { padding: 0 240px 0; }
+
+@media (max-width: 1024px) { .wrapper article h1, .wrapper article h2, .wrapper article h3, .wrapper article h4, .wrapper article h5 { padding: 0 40px 0; } }
 
 .wrapper article > .wp-block-spacer { padding: 0; margin: 0; }
 
@@ -411,11 +414,11 @@ p + p { padding-top: 20px; }
 
 @media (min-width: 320px) { .content h1, .content p { font-weight: 100; } }
 
-@media (min-width: 480px) { .content h1, .content p { font-weight: 100; } }
+@media (max-width: 480px) { .content h1, .content p { font-weight: 100; } }
 
-@media (min-width: 768px) { .content h1, .content p { font-weight: 100; } }
+@media (max-width: 768px) { .content h1, .content p { font-weight: 100; } }
 
-@media (min-width: 1024px) { .content h1, .content p { font-weight: 100; } }
+@media (max-width: 1024px) { .content h1, .content p { font-weight: 100; } }
 
 @media (min-width: 1280px) { .content h1, .content p { font-weight: 100; } }
 
@@ -425,11 +428,11 @@ p + p { padding-top: 20px; }
 
 @media (min-width: 320px) { .content h1 { text-transform: uppercase; } }
 
-@media (min-width: 480px) { .content h1 { text-transform: uppercase; } }
+@media (max-width: 480px) { .content h1 { text-transform: uppercase; } }
 
-@media (min-width: 768px) { .content h1 { text-transform: uppercase; } }
+@media (max-width: 768px) { .content h1 { text-transform: uppercase; } }
 
-@media (min-width: 1024px) { .content h1 { text-transform: uppercase; } }
+@media (max-width: 1024px) { .content h1 { text-transform: uppercase; } }
 
 @media (min-width: 1280px) { .content h1 { text-transform: uppercase; } }
 
@@ -479,13 +482,19 @@ footer { display: block; background-color: #fdf0e6; }
 
 footer .section-inner { padding: 120px 160px; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
+@media (max-width: 1024px) { footer .section-inner { padding: 80px 40px; } }
+
 footer .section-inner nav { font-size: 32px; width: 20%; }
+
+@media (max-width: 992px) { footer .section-inner nav { width: 35%; } }
 
 footer .section-inner nav li { margin-top: 20px; line-height: 1; }
 
 footer .section-inner nav li:first-child { margin-top: 0; }
 
 footer .section-inner .logo-wrapper { width: 60%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
+
+@media (max-width: 992px) { footer .section-inner .logo-wrapper { width: 30%; } }
 
 footer .section-inner .logo-wrapper .logo-footer { margin: 0 auto; display: inline-block; }
 
@@ -495,11 +504,15 @@ footer .section-inner .logo-wrapper .logo-footer svg path { fill: #000 !importan
 
 footer .section-inner .text-social { width: 20%; }
 
+@media (max-width: 992px) { footer .section-inner .text-social { width: 35%; text-align: right; } }
+
 footer .section-inner .text-social .footer-text a { text-decoration: underline; }
 
 footer .section-inner .footer-social { padding-top: 40px; }
 
 footer .section-inner .footer-social a { width: 20px; height: 20px; float: left; margin-right: 8px; background-repeat: no-repeat; background-size: contain; }
+
+@media (max-width: 992px) { footer .section-inner .footer-social a { float: right; margin-right: 0; margin-left: 8px; } }
 
 footer .section-inner .footer-credits { width: 100%; display: block; margin-top: 80px; line-height: 1; }
 
@@ -1013,7 +1026,11 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 /* Newsletter acf block */
 .block-newsletter { padding: 160px !important; background-repeat: no-repeat; background-size: cover; background-position: center center; }
 
+@media (max-width: 1024px) { .block-newsletter { padding: 160px 40px !important; } }
+
 .block-newsletter .newsletter-wrapper { background-color: #000000; color: #ffffff; padding: 20px; width: 40%; max-width: 420px; }
+
+@media (max-width: 992px) { .block-newsletter .newsletter-wrapper { width: 60%; max-width: 60%; } }
 
 .block-newsletter .newsletter-wrapper h2 { line-height: 1; padding: 0; }
 

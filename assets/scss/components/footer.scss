@@ -6,6 +6,8 @@ footer {
 
 	.section-inner {
 		padding: $gutter*3 $gutter*4;
+		@include r(1024) { 	padding: $gutter*2 $gutter; }
+
 		display: flex;
 		flex-wrap: wrap;
 
@@ -13,6 +15,7 @@ footer {
 
 			font-size: $font-size-m;
 			width: 20%;
+			@include r(992) { width: 35%; }
 
 			li {
 				margin-top: $gutter/2;
@@ -28,6 +31,7 @@ footer {
 
 		.logo-wrapper {
 			width: 60%;
+			@include r(992) { width: 30%; }
 			display: flex;
 			align-items: center;
 			text-align: center;
@@ -51,6 +55,10 @@ footer {
 
 		.text-social {
 			width: 20%;
+			@include r(992) {
+				width: 35%;
+				text-align: right;
+			}
 
 			.footer-text a {
 				text-decoration: underline;
@@ -67,6 +75,11 @@ footer {
 				margin-right: 8px;
 				background-repeat: no-repeat;
 				background-size: contain;
+				@include r(992) {
+					float: right;
+					margin-right: 0;
+					margin-left: 8px;
+				}
 			}
 
 		}

@@ -2,6 +2,8 @@
 
 .block-newsletter {
 	padding: $gutter*4!important;
+	@include r(1024) { 	padding: $gutter*4 $gutter!important; }
+
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -12,6 +14,10 @@
 		padding: $gutter/2;
 		width: 40%;
 		max-width: 420px;
+		@include r(992) {
+			width: 60%;
+			max-width: 60%;
+		}
 
 		h2 {
 			line-height: 1;
