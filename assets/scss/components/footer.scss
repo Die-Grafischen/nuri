@@ -57,6 +57,20 @@ footer {
 			}
 		}
 
+		.footer-social {
+			padding-top: $gutter;
+
+			a {
+				width: 20px;
+				height: 20px;
+				float: left;
+				margin-right: 8px;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+
+		}
+
 		.footer-credits {
 			width: 100%;
 			display: block;

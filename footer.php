@@ -52,9 +52,11 @@
 					}
 
 					if($social) {
-						echo '<div class="footer-social">
-
-						</div>';
+						echo '<div class="footer-social">';
+						foreach ($social as $media) {
+							echo '<a href="'. esc_url($media['url']) .'" style="background-image:url('. esc_url($media['icon']) .')" target="_blank"></a>';
+						}
+						echo '</div>';
 					}
 
 					echo '</div>';
