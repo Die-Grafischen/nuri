@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 
 		var cover = $('.wrapper > article > div').first();
 
- 		cover.addClass('cover-on-top');
+ 		cover.addClass('cover-on-top').css({ height: window.innerHeight });
 
 		cover.find('.wp-block-cover__inner-container').append('<div class="scrollToBottom bounce"><a href="#"><i class="scroll-icon"></i></a></div>');
 
