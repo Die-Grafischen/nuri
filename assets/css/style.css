@@ -370,7 +370,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 @media (min-width: 1280px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
 
 /** Base SCSS */
-body { opacity: 1; overflow-x: hidden; }
+body { opacity: 1; }
 
 @font-face { font-family: 'Maison Neue'; src: url("../fonts/maison-neue/maison.woff2") format("woff2"), url("../fonts/maison-neue/maison.woff") format("woff"); font-weight: normal; font-style: normal; font-display: swap; }
 
@@ -432,6 +432,8 @@ input { font-family: "Maison Neue", Helvetica, Arial, sans-serif; }
 
 @media (max-width: 1024px) { .wrapper article > h1, .wrapper article > h2, .wrapper article > h3, .wrapper article > h4, .wrapper article > h5 { padding: 0 40px 0; } }
 
+@media (max-width: 992px) { .wrapper article > h1, .wrapper article > h2, .wrapper article > h3, .wrapper article > h4, .wrapper article > h5 { text-align: left; } }
+
 @media (max-width: 480px) { .wrapper article > h1, .wrapper article > h2, .wrapper article > h3, .wrapper article > h4, .wrapper article > h5 { margin-bottom: 40px; } }
 
 .wrapper article > h1 + p, .wrapper article > h2 + p, .wrapper article > h3 + p, .wrapper article > h4 + p, .wrapper article > h5 + p { margin-top: 0; padding-top: 0; }
@@ -489,7 +491,11 @@ p + p { padding-top: 20px; }
 /** Header SCSS */
 .logo { width: 100px; display: inline-block; position: fixed; top: 22px; left: 40px; z-index: 1000; }
 
+@media (max-width: 480px) { .logo { width: 120px; } }
+
 .logo img, .logo svg { width: 100px; height: auto; }
+
+@media (max-width: 480px) { .logo img, .logo svg { width: 120px; } }
 
 .logo img g path, .logo svg g path { fill: #000 !important; }
 
@@ -1021,7 +1027,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .wp-block-cover.cover-on-top { margin-bottom: 88px; margin-top: 0 !important; }
 
-@media (max-width: 480px) { .wp-block-cover.cover-on-top { margin-bottom: 0; } }
+@media (max-width: 480px) { .wp-block-cover.cover-on-top { margin-bottom: 0; padding: 80px 40px !important; } }
 
 .wp-block-cover.alignfull { max-width: 100% !important; }
 

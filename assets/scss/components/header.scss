@@ -4,6 +4,7 @@
 
  .logo {
 	 width: 100px;
+	 @include r(480) { width: 120px; }
 	 display: inline-block;
 	 position: fixed;
 	 top: 22px;
@@ -13,6 +14,7 @@
 	 img,
 	 svg {
 		 width: 100px;
+		 @include r(480) { width: 120px; }
 		 height: auto;
 
 		 g path {

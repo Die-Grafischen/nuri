@@ -129,7 +129,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 #wp-calendar tfoot #next{font-size:10px;text-transform:uppercase;text-align:right}
 #wp-calendar tfoot #prev{font-size:10px;text-transform:uppercase;padding-top:10px}
 .size-auto,.size-full,.size-large,.size-medium,.size-thumbnail{max-width:100%;height:auto}
-body{opacity:1;overflow-x:hidden}
+body{opacity:1}
 @font-face{font-family:'Maison Neue';src:url("../fonts/maison-neue/maison.woff2") format("woff2"),url("../fonts/maison-neue/maison.woff") format("woff");font-weight:normal;font-style:normal;font-display:swap}
 @font-face{font-family:'Maison Neue';src:url("../fonts/maison-neue/maison-bold.woff2") format("woff2"),url("../fonts/maison-neue/maison-bold.woff") format("woff");font-weight:bold;font-style:normal;font-display:swap}
 @font-face{font-family:'Brick Display Pro';src:url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff2") format("woff2"),url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
@@ -401,7 +401,8 @@ article h2{font-size:32px}
 .content h1{text-transform:uppercase}
 footer .section-inner{padding:80px 40px}
 .block-newsletter{padding:160px 40px !important}
-}@media(max-width:992px){footer .section-inner nav{width:35%}
+}@media(max-width:992px){.wrapper article>h1,.wrapper article>h2,.wrapper article>h3,.wrapper article>h4,.wrapper article>h5{text-align:left}
+footer .section-inner nav{width:35%}
 footer .section-inner .logo-wrapper{width:30%}
 footer .section-inner .text-social{width:35%;text-align:right}
 footer .section-inner .footer-social a{float:right;margin-right:0;margin-left:8px}
@@ -422,13 +423,15 @@ article h1{font-size:32px}
 .wrapper article>.wp-block-gallery{padding-bottom:0}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
+.logo{width:120px}
+.logo img,.logo svg{width:120px}
 footer .section-inner{padding:40px}
 footer .section-inner nav{width:100%}
 footer .section-inner .logo-wrapper{display:none}
 footer .section-inner .text-social{width:100%;text-align:left;padding-top:0}
 footer .section-inner .footer-social a{float:left;margin-right:8px;margin-left:0}
 footer .section-inner .footer-credits{margin-top:40px}
-.wp-block-cover.cover-on-top{margin-bottom:0}
+.wp-block-cover.cover-on-top{margin-bottom:0;padding:80px 40px !important}
 .wp-block-cover .wp-block-cover__inner-container p{line-height:1.1}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(1){margin-bottom:20px}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(2){margin-top:20px}

@@ -4,7 +4,6 @@
 
 body {
 	opacity: 1;
-	overflow-x: hidden;
 }
 
 @font-face {
@@ -119,6 +118,7 @@ input {
 		> h5 {
 			padding: 0 $gutter*6 0;
 			@include r(1024) { 	padding: 0 $gutter 0; }
+			@include r(992) { text-align: left; }
 			@include r(480) { margin-bottom: $gutter; }
 		}
 
