@@ -10,11 +10,6 @@
 	background-repeat: no-repeat!important;
 	background-size: cover!important;
 
-	p {
-		font-family: $font-family-2;
-		line-height: 0.9;
-	}
-
 	&.cover-on-top {
 		margin-bottom: 88px;
 		margin-top: 0!important;
@@ -23,8 +18,92 @@
 	&.alignfull {
 		max-width: 100%!important;
 	}
+
+	.wp-block-cover__inner-container {
+		position: relative;
+		width: 100%!important;
+		display: block;
+
+		p {
+			font-family: $font-family-2;
+			line-height: 0.9;
+		}
+
+		.scrollToBottom {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+
+			i.scroll-icon {
+				display: inline-block;
+				background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");
+				background-repeat: no-repeat;
+				background-position: center right;
+				background-size: 100% auto;
+				width: 35px;
+				height: 35px;
+				transition: all .4s;
+			}
+		}
+	}
 }
 
 .admin-bar .wp-block-cover.cover-on-top {
 	min-height: calc(100vh - 32px);
+}
+
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }

@@ -23,7 +23,16 @@ jQuery(document).ready(function ($) {
   var theWindow = $(window);
 
   if ($('.wrapper > article > div').first().hasClass('wp-block-cover')) {
-    $('.wrapper > article > div').first().addClass('cover-on-top');
+    var cover = $('.wrapper > article > div').first();
+    cover.addClass('cover-on-top');
+    cover.find('.wp-block-cover__inner-container').append('<div class="scrollToBottom bounce"><a href="#"><i class="scroll-icon"></i></a></div>');
+    $('.wp-block-cover').on('click', '.scrollToBottom', function () {
+      console.log('scr');
+      var dest = cover.next().offset().top;
+      $('html,body').animate({
+        scrollTop: dest
+      }, 1000, 'swing');
+    });
     header.addClass('dynamic-header');
     theWindow.scroll(function () {
       if (theWindow.scrollTop() >= theWindow.height()) {
@@ -105,4 +114,6 @@ jQuery(document).ready(function ($) {
       });
     });
   }
+  /******** END ISOTOPE AJAX ********/
+
 }); // END jQuery

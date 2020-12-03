@@ -44,8 +44,8 @@
 				background-size: 100% auto;
 				width: 20px;
 				height: 20px;
-				margin-left: 20px;
 				transition: all .4s;
+				margin-left: 20px;
 			}
 
 			&.filter-current-parent i.filter-icon {
@@ -188,6 +188,10 @@
 					}
 
 				}
+			}
+
+			.single-product-info {
+				border-bottom: 1px solid $black;
 			}
 
 		}
