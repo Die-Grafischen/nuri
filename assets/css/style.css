@@ -1029,7 +1029,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 @media (max-width: 480px) { .wp-block-cover.cover-on-top { margin-bottom: 0; } }
 
-.wp-block-cover.cover-on-top p { padding-right: 42px; }
+.wp-block-cover.cover-on-top .wp-block-cover__inner-container { padding-right: 30px; }
 
 .wp-block-cover.alignfull { max-width: 100% !important; }
 
