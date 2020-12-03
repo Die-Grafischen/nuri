@@ -387,7 +387,7 @@ body { opacity: 1; }
 
 .wrapper article > *:first-child { margin-top: 128px; }
 
-.wrapper article > p { padding: 40px 160px; }
+.wrapper article > p { padding: 40px 240px; }
 
 .wrapper article > p + p { margin-top: -40px; padding-top: 0; }
 

@@ -140,7 +140,7 @@ body{opacity:1}
 .wrapper article :first-child{margin-top:0}
 .wrapper article>*{width:100%;max-width:1400px;padding:0 40px;margin:40px auto;padding-bottom:40px}
 .wrapper article>*:first-child{margin-top:128px}
-.wrapper article>p{padding:40px 160px}
+.wrapper article>p{padding:40px 240px}
 .wrapper article>p+p{margin-top:-40px;padding-top:0}
 .wrapper article h1,.wrapper article h2,.wrapper article h3,.wrapper article h4,.wrapper article h5{padding-bottom:0}
 .wrapper article>.wp-block-spacer{padding:0;margin:0}
