@@ -444,6 +444,8 @@ input { font-family: "Maison Neue", Helvetica, Arial, sans-serif; }
 
 @media (max-width: 480px) { .wrapper article > .wp-block-gallery { padding-bottom: 0; } }
 
+.wrapper article > .wp-block-gallery + h2 { margin-top: 40px; }
+
 a { -webkit-transition: all .3s; transition: all .3s; }
 
 p + p { padding-top: 20px; }

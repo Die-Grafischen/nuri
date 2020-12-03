@@ -140,7 +140,10 @@ input {
 		> .wp-block-gallery {
 			padding-bottom: $gutter - 16;
 			@include r(480) { padding-bottom: 0;}
+		}
 
+		> .wp-block-gallery + h2 {
+			margin-top: $gutter;
 		}
 
 	}

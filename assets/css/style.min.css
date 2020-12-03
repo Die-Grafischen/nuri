@@ -155,6 +155,7 @@ input{font-family:"Maison Neue",Helvetica,Arial,sans-serif}
 .wrapper article>h1+p,.wrapper article>h2+p,.wrapper article>h3+p,.wrapper article>h4+p,.wrapper article>h5+p{margin-top:0;padding-top:0}
 .wrapper article>.wp-block-spacer{padding:0;margin:0}
 .wrapper article>.wp-block-gallery{padding-bottom:24px}
+.wrapper article>.wp-block-gallery+h2{margin-top:40px}
 a{-webkit-transition:all .3s;transition:all .3s}
 p+p{padding-top:20px}
 .content{display:table-cell;width:100%;vertical-align:middle;margin:0 auto;text-align:center}
