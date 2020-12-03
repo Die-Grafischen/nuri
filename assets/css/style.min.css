@@ -349,7 +349,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .pretty.p-switch.p-slim input:checked ~ .state.p-danger:before{border-color:#a02622;background-color:#a02622 !important}
 .pretty.p-bigger .icon,.pretty.p-bigger .img,.pretty.p-bigger .svg,.pretty.p-bigger label:after,.pretty.p-bigger label:before{font-size:1.2em !important;top:calc((0% - (100% - 1em)) - 35%) !important}
 .pretty.p-bigger label{text-indent:1.7em}
-.wp-block-cover{min-height:100vh;height:100vh;width:100%;max-width:100%;float:left;padding:60px 40px !important;background-repeat:no-repeat !important;background-size:cover !important}
+.wp-block-cover{min-height:100vh;min-height:-webkit-fill-available;height:100vh;width:100%;max-width:100%;float:left;padding:60px 40px !important;background-repeat:no-repeat !important;background-size:cover !important}
 .wp-block-cover.cover-on-top{margin-bottom:88px;margin-top:0 !important}
 .wp-block-cover.alignfull{max-width:100% !important}
 .wp-block-cover .wp-block-cover__inner-container{position:relative;width:100% !important;display:block}

@@ -1023,7 +1023,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 /* scroll to bottom indicator */
 /* Cover block */
-.wp-block-cover { min-height: 100vh; height: 100vh; width: 100%; max-width: 100%; float: left; padding: 60px 40px !important; background-repeat: no-repeat !important; background-size: cover !important; }
+.wp-block-cover { min-height: 100vh; min-height: -webkit-fill-available; height: 100vh; width: 100%; max-width: 100%; float: left; padding: 60px 40px !important; background-repeat: no-repeat !important; background-size: cover !important; }
 
 .wp-block-cover.cover-on-top { margin-bottom: 88px; margin-top: 0 !important; }
 
