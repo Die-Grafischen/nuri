@@ -432,7 +432,7 @@ footer .section-inner .logo-wrapper{display:none}
 footer .section-inner .text-social{width:100%;text-align:left;padding-top:0}
 footer .section-inner .footer-social a{float:left;margin-right:8px;margin-left:0}
 footer .section-inner .footer-credits{margin-top:40px}
-.wp-block-cover.cover-on-top{margin-bottom:0;padding:80px 40px !important}
+.wp-block-cover.cover-on-top{margin-bottom:0}
 .wp-block-cover .wp-block-cover__inner-container p{line-height:1.1}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(1){margin-bottom:20px}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(2){margin-top:20px}

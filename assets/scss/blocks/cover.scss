@@ -15,8 +15,6 @@
 		margin-bottom: 88px;
 		@include r(480) {
 			margin-bottom: 0;
-			padding: 80px $gutter!important;
-
 		}
 		margin-top: 0!important;
 		p {

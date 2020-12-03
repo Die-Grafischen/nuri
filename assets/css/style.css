@@ -1027,7 +1027,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .wp-block-cover.cover-on-top { margin-bottom: 88px; margin-top: 0 !important; }
 
-@media (max-width: 480px) { .wp-block-cover.cover-on-top { margin-bottom: 0; padding: 80px 40px !important; } }
+@media (max-width: 480px) { .wp-block-cover.cover-on-top { margin-bottom: 0; } }
 
 .wp-block-cover.cover-on-top p { padding-right: 42px; }
 
