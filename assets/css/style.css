@@ -288,7 +288,7 @@ select { width: 100%; }
 
 article h1, article h2, article h3, article h4, article h5 { font-family: "Brick Display Pro", serif; font-weight: 300; }
 
-article h1 { font-size: 120px; }
+article h1 { font-size: 100px; }
 
 article h2 { font-size: 50px; }
 
@@ -375,7 +375,7 @@ body { opacity: 1; }
 
 .has-medium-font-size { font-size: 32px; }
 
-.has-huge-font-size { font-size: 120px; }
+.has-huge-font-size { font-size: 100px; }
 
 .wrapper { margin: 0 auto; background-color: #fdf0e6; }
 
@@ -982,7 +982,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .block-newsletter .newsletter-wrapper { background-color: #000000; color: #ffffff; padding: 20px; width: 40%; max-width: 420px; }
 
-.block-newsletter .newsletter-wrapper h2 { line-height: 1; }
+.block-newsletter .newsletter-wrapper h2 { line-height: 1; padding: 0; }
 
 .block-newsletter .newsletter-wrapper p { padding-top: 13.3333333333px; }
 

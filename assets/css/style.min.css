@@ -99,7 +99,7 @@ a:hover,a:active{outline:0}
 input:focus{outline:0;border:1px solid #000}
 select{width:100%}
 article h1,article h2,article h3,article h4,article h5{font-family:"Brick Display Pro",serif;font-weight:300}
-article h1{font-size:120px}
+article h1{font-size:100px}
 article h2{font-size:50px}
 .alignnone{margin:5px 20px 20px 0}
 .aligncenter,div.aligncenter{display:block;margin:5px auto 5px auto}
@@ -134,7 +134,7 @@ body{opacity:1}
 @font-face{font-family:'Maison Neue';src:url("../fonts/maison-neue/maison-bold.woff2") format("woff2"),url("../fonts/maison-neue/maison-bold.woff") format("woff");font-weight:bold;font-style:normal;font-display:swap}
 @font-face{font-family:'Brick Display Pro';src:url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff2") format("woff2"),url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
 .has-medium-font-size{font-size:32px}
-.has-huge-font-size{font-size:120px}
+.has-huge-font-size{font-size:100px}
 .wrapper{margin:0 auto;background-color:#fdf0e6}
 .wrapper article{display:inline-block;margin:0 auto;width:100%}
 .wrapper article :first-child{margin-top:0}
@@ -355,7 +355,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .wp-block-button__link{padding:10px 42px;font-size:22px}
 .block-newsletter{padding:160px !important;background-repeat:no-repeat;background-size:cover;background-position:center center}
 .block-newsletter .newsletter-wrapper{background-color:#000;color:#fff;padding:20px;width:40%;max-width:420px}
-.block-newsletter .newsletter-wrapper h2{line-height:1}
+.block-newsletter .newsletter-wrapper h2{line-height:1;padding:0}
 .block-newsletter .newsletter-wrapper p{padding-top:13.3333333333px}
 .block-newsletter .newsletter-wrapper input{padding:10px 24px;margin-top:20px;border-radius:0;border:1px solid #fff;background-color:#fff;color:#000}
 .block-newsletter .newsletter-wrapper input[type="submit"]{background-color:#000;color:#fff;padding:10px 42px}
