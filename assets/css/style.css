@@ -258,6 +258,8 @@ html { font-size: 62.5%; height: 100%; min-height: 100%; }
 
 body { font-weight: 300; font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; line-height: 1.3; color: #000000; margin: 0; background-color: #fdf0e6; height: 100%; min-height: 100%; position: relative; }
 
+@media (max-width: 480px) { body { font-size: 19px; } }
+
 body.farbschema-dunkel { background-color: #000000; color: #ffffff; }
 
 body.farbschema-dunkel .wrapper { background-color: #000000; color: #ffffff; }
@@ -368,7 +370,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 @media (min-width: 1280px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
 
 /** Base SCSS */
-body { opacity: 1; }
+body { opacity: 1; overflow-x: hidden; }
 
 @font-face { font-family: 'Maison Neue'; src: url("../fonts/maison-neue/maison.woff2") format("woff2"), url("../fonts/maison-neue/maison.woff") format("woff"); font-weight: normal; font-style: normal; font-display: swap; }
 
@@ -394,13 +396,13 @@ input { font-family: "Maison Neue", Helvetica, Arial, sans-serif; }
 
 .has-medium-font-size { font-size: 32px; }
 
-@media (max-width: 480px) { .has-medium-font-size { font-size: 22px; } }
+@media (max-width: 480px) { .has-medium-font-size { font-size: 19px; } }
 
 .has-huge-font-size { font-size: 100px; }
 
 @media (max-width: 1024px) { .has-huge-font-size { font-size: 50px; } }
 
-@media (max-width: 480px) { .has-huge-font-size { font-size: 32px; } }
+@media (max-width: 480px) { .has-huge-font-size { font-size: 32px; line-height: 1.4; } }
 
 .wrapper { margin: 0 auto; background-color: #fdf0e6; }
 
@@ -420,23 +422,27 @@ input { font-family: "Maison Neue", Helvetica, Arial, sans-serif; }
 
 @media (max-width: 1024px) { .wrapper article > p { padding: 40px; } }
 
+@media (max-width: 480px) { .wrapper article > p { text-align: left; } }
+
 .wrapper article > p + p { margin-top: -40px; padding-top: 0; }
 
-@media (max-width: 480px) { .wrapper article > p + p { margin-top: 0; } }
+@media (max-width: 480px) { .wrapper article > p + p { margin-top: -20px; } }
 
-.wrapper article h1, .wrapper article h2, .wrapper article h3, .wrapper article h4, .wrapper article h5 { padding: 0 240px 0; }
+.wrapper article > h1, .wrapper article > h2, .wrapper article > h3, .wrapper article > h4, .wrapper article > h5 { padding: 0 240px 0; }
 
-@media (max-width: 1024px) { .wrapper article h1, .wrapper article h2, .wrapper article h3, .wrapper article h4, .wrapper article h5 { padding: 0 40px 0; } }
+@media (max-width: 1024px) { .wrapper article > h1, .wrapper article > h2, .wrapper article > h3, .wrapper article > h4, .wrapper article > h5 { padding: 0 40px 0; } }
 
-@media (max-width: 480px) { .wrapper article h1, .wrapper article h2, .wrapper article h3, .wrapper article h4, .wrapper article h5 { margin-bottom: 40px; } }
+@media (max-width: 480px) { .wrapper article > h1, .wrapper article > h2, .wrapper article > h3, .wrapper article > h4, .wrapper article > h5 { margin-bottom: 40px; } }
+
+.wrapper article > h1 + p, .wrapper article > h2 + p, .wrapper article > h3 + p, .wrapper article > h4 + p, .wrapper article > h5 + p { margin-top: 0; padding-top: 0; }
+
+@media (max-width: 480px) { .wrapper article > h1 + p, .wrapper article > h2 + p, .wrapper article > h3 + p, .wrapper article > h4 + p, .wrapper article > h5 + p { margin-top: -20px; } }
 
 .wrapper article > .wp-block-spacer { padding: 0; margin: 0; }
 
 .wrapper article > .wp-block-gallery { padding-bottom: 24px; }
 
 @media (max-width: 480px) { .wrapper article > .wp-block-gallery { padding-bottom: 0; } }
-
-.wrapper article h1 + p, .wrapper article h2 + p, .wrapper article h3 + p, .wrapper article h4 + p, .wrapper article h5 + p { margin-top: 0; padding-top: 0; }
 
 a { -webkit-transition: all .3s; transition: all .3s; }
 
@@ -1013,11 +1019,15 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .wp-block-cover.cover-on-top { margin-bottom: 88px; margin-top: 0 !important; }
 
+@media (max-width: 480px) { .wp-block-cover.cover-on-top { margin-bottom: 0; } }
+
 .wp-block-cover.alignfull { max-width: 100% !important; }
 
 .wp-block-cover .wp-block-cover__inner-container { position: relative; width: 100% !important; display: block; }
 
 .wp-block-cover .wp-block-cover__inner-container p { font-family: "Brick Display Pro", serif; line-height: 0.9; }
+
+@media (max-width: 480px) { .wp-block-cover .wp-block-cover__inner-container p { line-height: 1.1; } }
 
 .wp-block-cover .wp-block-cover__inner-container .scrollToBottom { position: absolute; right: 0; bottom: 0; }
 

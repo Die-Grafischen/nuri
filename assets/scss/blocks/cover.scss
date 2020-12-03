@@ -12,6 +12,8 @@
 
 	&.cover-on-top {
 		margin-bottom: 88px;
+		@include r(480) { margin-bottom: 0; }
+
 		margin-top: 0!important;
 	}
 
@@ -27,6 +29,7 @@
 		p {
 			font-family: $font-family-2;
 			line-height: 0.9;
+			@include r(480) { line-height: 1.1; }
 		}
 
 		.scrollToBottom {
