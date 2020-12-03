@@ -287,7 +287,13 @@ article h1, article h2, article h3, article h4, article h5 { font-family: "Brick
 
 article h1 { font-size: 100px; }
 
+@media (max-width: 1024px) { article h1 { font-size: 50px; } }
+
+@media (max-width: 480px) { article h1 { font-size: 32px; } }
+
 article h2 { font-size: 50px; }
+
+@media (max-width: 1024px) { article h2 { font-size: 32px; } }
 
 /* ---------------------------------------------------------------------------- WordPress Core Styles ------------------------------------------------------------------------- */
 .alignnone { margin: 5px 20px 20px 0; }
@@ -372,9 +378,13 @@ body { opacity: 1; }
 
 .has-medium-font-size { font-size: 32px; }
 
+@media (max-width: 480px) { .has-medium-font-size { font-size: 22px; } }
+
 .has-huge-font-size { font-size: 100px; }
 
 @media (max-width: 1024px) { .has-huge-font-size { font-size: 50px; } }
+
+@media (max-width: 480px) { .has-huge-font-size { font-size: 32px; } }
 
 .wrapper { margin: 0 auto; background-color: #fdf0e6; }
 
@@ -1028,15 +1038,21 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 @media (max-width: 1024px) { .block-newsletter { padding: 160px 40px !important; } }
 
+@media (max-width: 480px) { .block-newsletter { padding: 80px 40px !important; } }
+
 .block-newsletter .newsletter-wrapper { background-color: #000000; color: #ffffff; padding: 20px; width: 40%; max-width: 420px; }
 
 @media (max-width: 992px) { .block-newsletter .newsletter-wrapper { width: 60%; max-width: 60%; } }
+
+@media (max-width: 480px) { .block-newsletter .newsletter-wrapper { width: 100%; max-width: 100%; } }
 
 .block-newsletter .newsletter-wrapper h2 { line-height: 1; padding: 0; }
 
 .block-newsletter .newsletter-wrapper p { padding-top: 13.3333333333px; }
 
 .block-newsletter .newsletter-wrapper input { padding: 10px 24px; margin-top: 20px; border-radius: 0; border: 1px solid #ffffff; background-color: #ffffff; color: #000000; }
+
+@media (max-width: 480px) { .block-newsletter .newsletter-wrapper input { width: 100%; } }
 
 .block-newsletter .newsletter-wrapper input[type="submit"] { background-color: #000000; color: #ffffff; padding: 10px 42px; }
 

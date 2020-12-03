@@ -2,7 +2,8 @@
 
 .block-newsletter {
 	padding: $gutter*4!important;
-	@include r(1024) { 	padding: $gutter*4 $gutter!important; }
+	@include r(1024) { padding: $gutter*4 $gutter!important; }
+	@include r(480) { padding: $gutter*2 $gutter!important; }
 
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -18,6 +19,11 @@
 			width: 60%;
 			max-width: 60%;
 		}
+		@include r(480) {
+			width: 100%;
+			max-width: 100%;
+		}
+
 
 		h2 {
 			line-height: 1;
@@ -35,6 +41,9 @@
 			border: 1px solid $white;
 			background-color: $white;
 			color: $black;
+			@include r(480) {
+				width: 100%;
+			}
 
 			&[type="submit"] {
 				background-color: $black;

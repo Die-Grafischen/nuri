@@ -35,11 +35,14 @@ body {
 
 .has-medium-font-size {
 	font-size: $font-size-m;
+	@include r(480) { font-size: $font-size-s; }
 }
 
 .has-huge-font-size {
 	font-size: $font-size-xxl;
-		@include r(1024) { font-size: $font-size-l; }
+	@include r(1024) { font-size: $font-size-l; }
+	@include r(480) { font-size: $font-size-m; }
+
 }
 
 .wrapper   {
