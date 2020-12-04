@@ -161,8 +161,9 @@ p+p{padding-top:20px}
 .content{display:table-cell;width:100%;vertical-align:middle;margin:0 auto;text-align:center}
 .content h1,.content p{font-family:Lato;font-weight:100}
 .content h1{text-transform:uppercase}
-.home header,.home footer nav ul{display:none}
-.logged-in.home header,.logged-in.home footer nav ul{display:block}
+.home header,.home footer nav{display:none !important}
+.home footer .section-inner .logo-wrapper{width:80%;text-align:left}
+.home footer .section-inner .logo-wrapper .logo-footer{margin:0}
 .logo{width:100px;display:inline-block;position:fixed;top:22px;left:40px;z-index:1000}
 .logo img,.logo svg{width:100px;height:auto}
 .logo img g path,.logo svg g path{fill:#000 !important}

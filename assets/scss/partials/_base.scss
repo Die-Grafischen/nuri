@@ -192,12 +192,18 @@ p + p {
 /* temp */
 
 .home header,
-.home footer nav ul {
-	display: none;
+.home footer nav {
+	display: none!important;
 }
 
-.logged-in.home header,
-.logged-in.home footer nav ul {
-	display: block;
+.home footer .section-inner .logo-wrapper {
+	width: 80%;
+	text-align: left;
+
+	.logo-footer {
+		margin: 0;
+	}
+
 }
+
 /* end temp */
