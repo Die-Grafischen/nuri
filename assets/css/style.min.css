@@ -193,7 +193,7 @@ footer .section-inner .logo-wrapper .logo-footer svg path{fill:#000 !important}
 footer .section-inner .text-social{width:20%}
 footer .section-inner .text-social .footer-text a{text-decoration:underline}
 footer .section-inner .footer-social{padding-top:40px}
-footer .section-inner .footer-social a{width:20px;height:20px;float:left;margin-right:8px;background-repeat:no-repeat;background-size:contain}
+footer .section-inner .footer-social a{width:25px;height:25px;float:left;margin-right:8px;background-repeat:no-repeat;background-size:contain}
 footer .section-inner .footer-credits{width:100%;display:block;margin-top:80px;line-height:1}
 body.farbschema-dunkel footer{background:#000;color:#fff}
 body.farbschema-dunkel footer a{color:#fff}
@@ -404,6 +404,7 @@ article h2{font-size:32px}
 footer .section-inner{padding:80px 40px}
 .block-newsletter{padding:160px 40px !important}
 }@media(max-width:992px){.wrapper article>h1,.wrapper article>h2,.wrapper article>h3,.wrapper article>h4,.wrapper article>h5{text-align:left}
+.home footer .section-inner .logo-wrapper{width:65%}
 footer .section-inner nav{width:35%}
 footer .section-inner .logo-wrapper{width:30%}
 footer .section-inner .text-social{width:35%;text-align:right}

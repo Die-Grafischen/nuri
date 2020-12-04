@@ -199,6 +199,8 @@ p + p {
 .home footer .section-inner .logo-wrapper {
 	width: 80%;
 	text-align: left;
+	@include r(992) { width:65%; }
+
 
 	.logo-footer {
 		margin: 0;

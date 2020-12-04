@@ -487,6 +487,8 @@ p + p { padding-top: 20px; }
 
 .home footer .section-inner .logo-wrapper { width: 80%; text-align: left; }
 
+@media (max-width: 992px) { .home footer .section-inner .logo-wrapper { width: 65%; } }
+
 .home footer .section-inner .logo-wrapper .logo-footer { margin: 0; }
 
 /* end temp */
@@ -570,7 +572,7 @@ footer .section-inner .text-social .footer-text a { text-decoration: underline; 
 
 footer .section-inner .footer-social { padding-top: 40px; }
 
-footer .section-inner .footer-social a { width: 20px; height: 20px; float: left; margin-right: 8px; background-repeat: no-repeat; background-size: contain; }
+footer .section-inner .footer-social a { width: 25px; height: 25px; float: left; margin-right: 8px; background-repeat: no-repeat; background-size: contain; }
 
 @media (max-width: 992px) { footer .section-inner .footer-social a { float: right; margin-right: 0; margin-left: 8px; } }
 
