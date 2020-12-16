@@ -143,6 +143,11 @@ body{opacity:1}
 input{font-family:"Maison Neue",Helvetica,Arial,sans-serif}
 .has-medium-font-size{font-size:32px}
 .has-huge-font-size{font-size:100px}
+.wp-block-separator{padding:0 !important;width:50% !important;margin:40px 25%;height:1px;background:#fff}
+p+.wp-block-separator,.wp-block-separator+p{margin-top:-40px !important}
+.wp-block-image+p{margin-top:-80px !important}
+figure img{vertical-align:top}
+body .aligncenter,body div.aligncenter{margin:0}
 .wrapper{margin:0 auto;background-color:#fdf0e6}
 .wrapper article{display:inline-block;margin:0 auto;width:100%}
 .wrapper article :first-child{margin-top:0}

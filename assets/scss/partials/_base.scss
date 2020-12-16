@@ -64,6 +64,32 @@ input {
 	}
 }
 
+.wp-block-separator {
+	padding: 0!important;
+	width: 50%!important;
+	margin: $gutter 25%;
+	height: 1px;
+	background: $white;
+}
+
+p + .wp-block-separator,
+.wp-block-separator + p {
+	margin-top: -$gutter!important;
+}
+
+.wp-block-image + p {
+	margin-top: -($gutter*2)!important;
+}
+
+figure img {
+  vertical-align: top
+}
+
+body .aligncenter,
+body div.aligncenter {
+	margin: 0;
+}
+
 .wrapper   {
 
 	margin: 0 auto;
