@@ -67,18 +67,30 @@ input {
 .wp-block-separator {
 	padding: 0!important;
 	width: 50%!important;
-	margin: $gutter 25%;
+	margin: $gutter 25%!important;
 	height: 1px;
 	background: $white;
+	@include r(480) {
+		width: calc(100% - ($gutter*2))!important;
+		margin: $gutter!important;
+	}
 }
 
 p + .wp-block-separator,
 .wp-block-separator + p {
 	margin-top: -$gutter!important;
+	@include r(480) { margin-top: -$gutter/2!important; }
 }
+
+.wp-block-separator + p {
+	@include r(480) { margin-top: -60px!important; }
+
+}
+
 
 .wp-block-image + p {
 	margin-top: -($gutter*2)!important;
+	@include r(480) { margin-top: -($gutter)!important; }
 }
 
 figure img {

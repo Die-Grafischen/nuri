@@ -404,11 +404,19 @@ input { font-family: "Maison Neue", Helvetica, Arial, sans-serif; }
 
 @media (max-width: 480px) { .has-huge-font-size { font-size: 32px; line-height: 1.4; } }
 
-.wp-block-separator { padding: 0 !important; width: 50% !important; margin: 40px 25%; height: 1px; background: #ffffff; }
+.wp-block-separator { padding: 0 !important; width: 50% !important; margin: 40px 25% !important; height: 1px; background: #ffffff; }
+
+@media (max-width: 480px) { .wp-block-separator { width: calc(100% - ($gutter*2)) !important; margin: 40px !important; } }
 
 p + .wp-block-separator, .wp-block-separator + p { margin-top: -40px !important; }
 
+@media (max-width: 480px) { p + .wp-block-separator, .wp-block-separator + p { margin-top: -20px !important; } }
+
+@media (max-width: 480px) { .wp-block-separator + p { margin-top: -60px !important; } }
+
 .wp-block-image + p { margin-top: -80px !important; }
+
+@media (max-width: 480px) { .wp-block-image + p { margin-top: -40px !important; } }
 
 figure img { vertical-align: top; }
 
