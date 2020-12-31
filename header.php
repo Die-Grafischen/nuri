@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage WPBlank
- * @since WPBlank 1.0
+ * @subpackage Nuri
+ * @since Nuri 1.0
  */
 
 // Exit if accessed directly.
@@ -54,8 +54,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		             <span></span>
 		        </div>
 
-				<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'wpblank' ); ?>" role="navigation">
+				<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'nuri' ); ?>" role="navigation">
 					<?php wp_nav_menu( array( 'container' => false, 'theme_location' => 'primary',  ) ); ?>
+
+					<?php if (class_exists('woocommerce')) { header_cart(); } ?>
 				</nav>
 			<?php } ?>
 
@@ -64,3 +66,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</header><!-- #site-header -->
 
 <div class="wrapper">
+	<?php /*
+	$posts_data = array();
+	// $paged = $request->get_param('page');
+	// $paged = (isset($paged) || !(empty($paged))) ? $paged : 1;
+	$args = array(
+	  'status'          => 'publish',
+	  'page'           => 1
+	);
+
+	$products = wc_get_products( $args );
+	foreach ($products as $product) {
+
+		$product_id = $product->get_id();
+		$product_title = $product->get_title();
+		$product_price = $product->get_price();
+		$product_category_ids = $product->get_category_ids();
+		$terms = get_the_terms( $product_id, 'product_cat' );
+
+
+
+
+		// var_dump($product_category_ids);
+
+		//print $product->get_title() . ' ' . $product->get_price();
+		// $posts_data[] = (object)array(
+		// 	'product_class' => $product->get_title()
+		// );
+	}
+
+
+
+	wp_reset_postdata(); */ ?>

@@ -3,8 +3,8 @@
  * Custom template tags for this theme.
  *
  * @package WordPress
- * @subpackage WPBlank
- * @since WPBlank 1.0
+ * @subpackage Nuri
+ * @since Nuri 1.0
  */
 
  // Exit if accessed directly.
@@ -24,7 +24,7 @@
  *
  * @return string $html Compiled HTML based on our arguments.
  */
-function wpblank_site_logo( $args = array(), $echo = true ) {
+function nuri_site_logo( $args = array(), $echo = true ) {
 	$logo       = get_custom_logo();
 	$site_title = get_bloginfo( 'name' );
 	$contents   = '';
@@ -53,12 +53,12 @@ function wpblank_site_logo( $args = array(), $echo = true ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	/**
-	 * Filters the arguments for `wpblank_site_logo()`.
+	 * Filters the arguments for `nuri_site_logo()`.
 	 *
 	 * @param array  $args     Parsed arguments.
 	 * @param array  $defaults Function's default arguments.
 	 */
-	$args = apply_filters( 'wpblank_site_logo_args', $args, $defaults );
+	$args = apply_filters( 'nuri_site_logo_args', $args, $defaults );
 
 	if ( has_custom_logo() ) {
 		$contents  = sprintf( $args['logo'], $logo, esc_html( $site_title ) );
@@ -73,14 +73,14 @@ function wpblank_site_logo( $args = array(), $echo = true ) {
 	$html = sprintf( $args[ $wrap ], $classname, $contents );
 
 	/**
-	 * Filters the arguments for `wpblank_site_logo()`.
+	 * Filters the arguments for `nuri_site_logo()`.
 	 *
 	 * @param string $html      Compiled html based on our arguments.
 	 * @param array  $args      Parsed arguments.
 	 * @param string $classname Class name based on current view, home or single.
 	 * @param string $contents  HTML for site title or logo.
 	 */
-	$html = apply_filters( 'wpblank_site_logo', $html, $args, $classname, $contents );
+	$html = apply_filters( 'nuri_site_logo', $html, $args, $classname, $contents );
 
 	if ( ! $echo ) {
 		return $html;

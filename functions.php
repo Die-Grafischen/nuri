@@ -210,6 +210,4 @@ function hide_woocommerce() {
 		wp_redirect( home_url() );
 		exit();
 	}
-
-
 }

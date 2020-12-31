@@ -230,7 +230,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .woocommerce div.product .product-wrap .single-product-tags{padding:40px 0;margin:40px 0;margin-top:26.6666666667px;border-top:1px solid #000;border-bottom:1px solid #000}
 .woocommerce div.product .product-wrap .single-product-tags a{background:#fff;padding:10px 24px;border-radius:24px;margin:0 5px}
 .woocommerce div.product .product-wrap .single-product-tags a:hover{background:#000;color:#fff}
-.woocommerce div.product .product-wrap .single-product-info{border-bottom:1px solid #000}
+.woocommerce div.product .product-wrap .single-product-info{border-bottom:1px solid #000;padding-bottom:40px}
 .woocommerce div.product .product_title{font-family:"Brick Display Pro",serif;font-size:50px;font-weight:normal}
 .woocommerce div.product .price{color:#000 !important;font-weight:bold}
 .woocommerce div.product form.cart{margin:20px 0 0}
@@ -239,6 +239,10 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .related.products>h2{text-align:center;font-size:50px;font-family:"Brick Display Pro",serif;font-weight:normal}
 .related.products a.button{display:none}
 .related.products ul.products{margin-top:40px}
+.cart-contents{display:inline-block;position:absolute;right:40px;top:32px}
+.cart-contents svg{width:35px}
+.cart-contents svg path,.cart-contents svg circle{stroke-width:1.5}
+.cart-contents .amount,.cart-contents .count{display:none}
 .product_meta{display:none}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}

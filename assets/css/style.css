@@ -661,7 +661,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .woocommerce div.product .product-wrap .single-product-tags a:hover { background: #000000; color: #ffffff; }
 
-.woocommerce div.product .product-wrap .single-product-info { border-bottom: 1px solid #000000; }
+.woocommerce div.product .product-wrap .single-product-info { border-bottom: 1px solid #000000; padding-bottom: 40px; }
 
 .woocommerce div.product .product_title { font-family: "Brick Display Pro", serif; font-size: 50px; font-weight: normal; }
 
@@ -678,6 +678,14 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .related.products a.button { display: none; }
 
 .related.products ul.products { margin-top: 40px; }
+
+.cart-contents { display: inline-block; position: absolute; right: 40px; top: 32px; }
+
+.cart-contents svg { width: 35px; }
+
+.cart-contents svg path, .cart-contents svg circle { stroke-width: 1.5; }
+
+.cart-contents .amount, .cart-contents .count { display: none; /* temp */ }
 
 /*temp*/
 .product_meta { display: none; }

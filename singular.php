@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage WPBlank
- * @since WPBlank 1.0
+ * @subpackage Nuri
+ * @since Nuri 1.0
  */
 
 get_header();

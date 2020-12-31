@@ -7,8 +7,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage WPBlank
- * @since WPBlank 1.0
+ * @subpackage Nuri
+ * @since Nuri 1.0
  */
 
  // Exit if accessed directly.
@@ -30,7 +30,7 @@
 
 			<div class="section-inner">
 
-				<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'wpblank' ); ?>" role="navigation">
+				<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'nuri' ); ?>" role="navigation">
 					<?php wp_nav_menu( array( 'container' => false, 'theme_location' => 'primary',  ) ); ?>
 				</nav>
 
@@ -68,7 +68,7 @@
 						<?php
 						echo date_i18n(
 							/* translators: Copyright date format, see https://www.php.net/date */
-							_x( 'Y', 'copyright date format', 'wpblank' )
+							_x( 'Y', 'copyright date format', 'nuri' )
 						);
 						?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if($copyright) {

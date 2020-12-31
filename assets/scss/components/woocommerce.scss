@@ -192,6 +192,7 @@
 
 			.single-product-info {
 				border-bottom: 1px solid $black;
+				padding-bottom: $gutter;
 			}
 
 		}
@@ -239,6 +240,27 @@
 
 	ul.products {
 		margin-top: $gutter;
+	}
+}
+
+.cart-contents {
+	display: inline-block;
+	position: absolute;
+	right: $gutter;
+	top: 32px;
+
+	svg {
+		width: 35px;
+
+		path,
+		circle {
+			stroke-width: 1.5;
+		}
+	}
+
+	.amount,
+	.count {
+		display: none; /* temp */
 	}
 }
 
