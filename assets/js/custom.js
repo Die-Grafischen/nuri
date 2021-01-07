@@ -128,7 +128,6 @@ jQuery(document).ready(function ($) {
       pull_page++;
       $.getJSON("https://localhost:3000/wp-json/products/all?page=" + pull_page, function (data) {
         if (data.length) {
-          var items = [];
           $.each(data, function (key, val) {
             var arr = $.map(val, function (el) {
               return el;
@@ -138,16 +137,11 @@ jQuery(document).ready(function ($) {
             var price = arr[2];
             var terms = arr[3];
             var image = arr[4];
-            var item_string = '<li class="product type-product post-' + id + ' status-publish ' + terms + 'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="#" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' + image + '<h2 class="woocommerce-loop-product__title">' + title + '</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">CHF</span>' + price + '</bdi></span></span></a></li>';
-            items.push(item_string);
+            var item = $('<li class="product type-product post-' + id + ' status-publish ' + terms + 'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="#" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' + image + '<h2 class="woocommerce-loop-product__title">' + title + '</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">CHF</span>' + price + '</bdi></span></span></a></li>');
+            container.isotope('insert', item);
           });
 
-          if (data.length >= 4) {
-            $('.products').append(items);
-            container.isotope('reLayout');
-          } else {
-            $('.products').append(items);
-            container.isotope('reLayout');
+          if (data.length < 4) {
             $('.load-more-wrapper').hide();
           }
         } else {

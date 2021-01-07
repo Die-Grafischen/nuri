@@ -222,8 +222,8 @@ function more_button() {
 	$total_posts = $wp_query->found_posts;
 
 	if( $post_count < $total_posts ) {
-		echo '<div class="load-more-wrapper">
-	        <div id="ajax-load-more-products" class="more-btn button" >Mehr anzeigen</div>
+		echo '<div class="load-more-wrapper is-style-outline">
+	        <div id="ajax-load-more-products" class="more-btn wp-block-button__link button no-border-radius" >Mehr anzeigen</div>
 	    </div>';
 	}
 }
@@ -279,6 +279,10 @@ function custom_api_get_products_callback($request){
 	return $posts_data;
 
 }
+
+//
+wp_enqueue_script( 'wp-api' );
+
 
 
 ?>

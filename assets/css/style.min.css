@@ -381,6 +381,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
 .wc-block-grid+.wp-block-buttons{margin-top:-40px}
 .wp-block-button__link{padding:10px 42px;font-size:22px}
+.load-more-wrapper{text-align:center}
 .block-newsletter{padding:160px !important;background-repeat:no-repeat;background-size:cover;background-position:center center}
 .block-newsletter .newsletter-wrapper{background-color:#000;color:#fff;padding:20px;width:40%;max-width:420px}
 .block-newsletter .newsletter-wrapper h2{line-height:1;padding:0}

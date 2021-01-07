@@ -90,7 +90,6 @@ jQuery(document).ready(function($) {
             $('#filters .button.bt-' + window.location.hash.substr(1)).addClass('is-checked');
         }
 
-
 		// init Isotope
 		container.isotope({
 			itemSelector: '.product',
@@ -137,7 +136,6 @@ jQuery(document).ready(function($) {
 
 		    if(data.length){
 
-		        var items = [];
 		        $.each(data, function(key, val){
 		           	var arr = $.map(val, function(el) { return el; });
 
@@ -147,36 +145,24 @@ jQuery(document).ready(function($) {
 					var terms = arr[3];
 					var image = arr[4];
 
-		            var item_string = '<li class="product type-product post-'+ id +' status-publish '+ terms +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="#" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">'+ image +'<h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">CHF</span>'+ price +'</bdi></span></span></a></li>';
+		            var item = $('<li class="product type-product post-'+ id +' status-publish '+ terms +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="#" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">'+ image +'<h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">CHF</span>'+ price +'</bdi></span></span></a></li>');
 
-		            items.push(item_string);
+					container.isotope( 'insert', item );
+
 		        });
-		        if(data.length >= 4){
 
-		            $('.products').append(items);
-					container.isotope('reLayout');
-
-
-		        } else {
-
-		            $('.products').append(items);
-					container.isotope('reLayout');
-		            $('.load-more-wrapper').hide();
-
+		        if( data.length < 4 ){
+					$('.load-more-wrapper').hide();
 		        }
 
 		    } else {
-
 		        $('.load-more-wrapper').hide();
-
 		    }
 
 		    }).done(function(data){
 		        if(data.length){ jsonFlag = true; }
 		    });}
 		});
-
-
 
 
 }); // END jQuery

@@ -1127,6 +1127,8 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .wp-block-button__link { padding: 10px 42px; font-size: 22px; }
 
+.load-more-wrapper { text-align: center; }
+
 /* Newsletter acf block */
 .block-newsletter { padding: 160px !important; background-repeat: no-repeat; background-size: cover; background-position: center center; }
 
