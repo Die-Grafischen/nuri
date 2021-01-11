@@ -23,7 +23,6 @@ jQuery(document).ready(function($) {
 		cover.find('.wp-block-cover__inner-container').append('<div class="scrollToBottom bounce"><a href="#"><i class="scroll-icon"></i></a></div>');
 
 		$('.wp-block-cover').on('click','.scrollToBottom', function(){
-			console.log('scr');
 			var dest = cover.next().offset().top;
 			$('html,body').animate({
                 scrollTop: dest
@@ -41,47 +40,57 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	// Woo Filter
-	$('.filter-parent-cat').on('click', 'span', function(e){
-		formReset();
-
-		var th = this;
-		var parent = $(th).parent();
-		if( parent.hasClass('filter-current-parent') ){
-			$('.filter-current-parent .filter-child-cat').slideToggle().parent().removeClass('filter-current-parent');
-		}
-		else if($('.filter-current-parent').length) {
-			$('.filter-current-parent .filter-child-cat').slideToggle();
-			$('.filter-current-parent').removeClass('filter-current-parent');
-			parent.addClass('filter-current-parent');
-			parent.find('.filter-child-cat').slideToggle();
-
-		} else {
-			parent.addClass('filter-current-parent');
-			parent.find('.filter-child-cat').slideToggle();
-		}
-
-
-	});
-
-	function formReset() {
-		$('input[type=checkbox]').prop('checked',false);
-		container.isotope({
-			filter: filter
-		});
-		$('.filter-current-parent .filter-child-cat').slideToggle();
-		$('.filter-current-parent').removeClass('filter-current-parent');
-	}
-
-	$('.woo-custom-filter').on('click', '.clear-filter', function(e){
-		formReset();
-	});
-
 	/******** ISOTOPE AJAX ********/
-	var container = $('.products');
+
+	const loadedProductsIds = new Array(); //save all loaded in dom products id in array
 
 	// PROJECTS/HOME ISOTOPE
 	if ($('.woo-custom-filter').length) {
+
+		var container = $('.products');
+
+		//get classes of all loaded products
+		container.children().each(function(){
+	        let clas = ($(this).attr('class')).split("post-")[1].match(/\d+/)[0];  // stripe only number(product id)
+			loadedProductsIds.push(clas);
+	    });
+
+		// Woo Filter
+		$('.filter-parent-cat').on('click', 'span', function(e){
+
+			formReset();
+
+			var parent = $(this).parent();
+
+			if( parent.find('.filter-child-cat').css('display') == 'block' ) {
+				$('.filter-current-parent .filter-child-cat').slideToggle().parent().removeClass('filter-current-parent');
+			}
+			else if( $('.filter-child-cat').css('display') == 'block' ) {
+				$('.filter-current-parent .filter-child-cat').slideToggle();
+				$('.filter-current-parent').removeClass('filter-current-parent');
+				parent.addClass('filter-current-parent').find('.filter-child-cat').slideToggle();
+			} else {
+				parent.addClass('filter-current-parent').find('.filter-child-cat').slideToggle();
+			}
+
+		});
+
+		function formReset() {
+
+			queryCategories = [];
+			parentCategory = '';
+
+			$('input[type=checkbox]').prop('checked',false);
+			container.isotope({
+				filter: filter
+			});
+			$('.filter-current-parent .filter-child-cat').slideToggle();
+			$('.filter-current-parent').removeClass('filter-current-parent');
+		}
+
+		$('.woo-custom-filter').on('click', '.clear-filter', function(e){
+			formReset();
+		});
 
 		var filter = '*';
         if(window.location.hash) {
@@ -98,22 +107,39 @@ jQuery(document).ready(function($) {
 		});
 
 		// bind filter button click
+		let parentCategory;
         $('.woo-custom-filter').on('click', '.product-parent-selector', function() {
             var filterValue = $(this).attr('data-filter');
+			parentCategory = filterValue.substring(13);
+			queryCategories.push(parentCategory); // add parent category to current query categories
             container.isotope({
                 filter: filterValue
             });
+
+			var elements = container.isotope('getFilteredItemElements');
+			if(elements < postsPerPage) {
+				$('#ajax-load-more-products').click();
+			}
+
         });
 
 		var checkboxes = $('.filter-child-cat input');
 		checkboxes.change(function(){
 			var filters = [];
+			queryCategories = [];
 			// get checked checkboxes values
 			checkboxes.filter(':checked').each(function(){
-			 filters.push( $(this).attr('data-filter') );
+				let filterValue = $(this).attr('data-filter');
+			 	filters.push(filterValue);
+			 	queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
 			});
-			// join array into one string
-			filters = filters.join(', ');
+
+			if (queryCategories.length == 0) {
+				queryCategories.push(parentCategory);
+			}
+
+			filters = filters.join(', '); // join array into one string
+
 			container.isotope({ filter: filters });
 		 });
 
@@ -121,48 +147,127 @@ jQuery(document).ready(function($) {
 
 	/******** END ISOTOPE AJAX ********/
 
+		const wooClientKey = 'ck_d3075b8231bedc08b740a91d77a6fe28b34e6df2';
+		const wooClientSecret = 'cs_b2f087b724e028bbd46fb68879555009941e247e';
+		const wooUrl = 'https://nuri.local/wp-json/wc/v3/products';
 
+		function basicAuth(key, secret) {
+		    let hash = btoa(key + ':' + secret);
+		    return "Basic " + hash;
+		}
+
+		let auth = basicAuth(wooClientKey, wooClientSecret);
 
 		var pull_page = 1;
+		var jsonFlag = true;
+
+		let postsPerPage = $('.woo-custom-filter').data('postcount') ? $('.woo-custom-filter').data('postcount') : 12;
+
+		let queryCategories = new Array(); //current query categories
+
+		function getData(url) {
+		    jQuery.ajax({
+		        url: url,
+		        method: 'GET',
+		        beforeSend: function (req) {
+		            req.setRequestHeader('Authorization', auth);
+					jsonFlag = false;
+		        },
+				success: function(data) {
+					let queryLength = 3;
+					let currentQuery = 0;
+					console.log('data length: ' + data.length);
+					if ( data.length <= queryLength ) {
+						$('.lds-ellipsis').fadeOut();
+					} else {
+						$('.lds-ellipsis').fadeIn();
+					}
+			        jQuery.each(data, function(index, item) {
+						if ( currentQuery <= queryLength ) {
+
+							var id = data[index].id;
+							var title = data[index].name;
+							var permalink = data[index].permalink;
+							var price = data[index].price_html;
+							var terms = data[index].categories;
+							let categories = '';
+
+							terms.forEach(function(item, index, array) {
+							  categories = categories + 'product_cat-' + item.id + ' ';
+
+						  	});
+
+							var imageSrc = data[index].images[0].woocommerce_single;
+
+
+							var productHtml = $('<li class="product type-product post-'+ id +' status-publish '+ categories +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="'+ permalink +'" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="'+ imageSrc +'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price">'+ price +'</span></a></li>');
+
+							container.isotope( 'insert', productHtml ); //insert new product to isotope
+
+							loadedProductsIds.push(id);
+
+							currentQuery++;
+
+						}
+
+			        });
+			    },
+			    error: function(XMLHttpRequest, textStatus, errorThrown) {
+					console.log("ERROR : ", errorThrown);
+					console.log("ERROR : ", $xhr);
+					console.log("ERROR : ", textStatus);
+			    }
+		    })
+		        .done(function (data) {
+					if(data.length){ jsonFlag = true; }
+		        });
+		}
 
 		$('#ajax-load-more-products').on('click', function(){
-
-		    var jsonFlag = true;
-		    if(jsonFlag){
-
-		    jsonFlag = false;
-		    pull_page++;
-		    $.getJSON("https://localhost:3000/wp-json/products/all?page=" + pull_page, function(data){
-
-		    if(data.length){
-
-		        $.each(data, function(key, val){
-		           	var arr = $.map(val, function(el) { return el; });
-
-				  	var id = arr[0];
-					var title = arr[1];
-					var price = arr[2];
-					var terms = arr[3];
-					var image = arr[4];
-
-		            var item = $('<li class="product type-product post-'+ id +' status-publish '+ terms +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="#" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">'+ image +'<h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">CHF</span>'+ price +'</bdi></span></span></a></li>');
-
-					container.isotope( 'insert', item );
-
-		        });
-
-		        if( data.length < 4 ){
-					$('.load-more-wrapper').hide();
-		        }
-
-		    } else {
-		        $('.load-more-wrapper').hide();
-		    }
-
-		    }).done(function(data){
-		        if(data.length){ jsonFlag = true; }
-		    });}
+			loadMoreProducts();
 		});
+
+		//load more products and make ajax call
+		function loadMoreProducts() {
+			let catString = queryCategories.join(',');
+			let excString = loadedProductsIds.join(',');
+			console.log(wooUrl+'?per_page='+postsPerPage+'&category='+catString+'&exclude='+excString);
+
+			getData(wooUrl+'?per_page='+postsPerPage+'&category='+catString+'&exclude='+excString);
+		}
+
+		// this function runs every time you are scrolling
+		$.fn.isInViewport = function() {
+		    var elementTop = $(this).offset().top;
+		    var elementBottom = elementTop + $(this).outerHeight();
+
+		    var viewportTop = $(window).scrollTop();
+		    var viewportBottom = viewportTop + $(window).height();
+
+		    return elementBottom > viewportTop && elementTop < viewportBottom;
+		};
+
+		$(window).on('resize scroll', function() {
+		    if ($('.load-more-wrapper').isInViewport() && jsonFlag) {
+				jsonFlag = false;
+			   //Add something at the end of the page
+			   console.log('make rest request');
+			   loadMoreProducts();
+		    } else {
+		        // do something else
+		    }
+		});
+
+		// $(window).scroll(function () {
+		//   if (jsonFlag && $(window).scrollTop() >= $(document).height() - $(window).height() - 300) {
+		//     jsonFlag = false;
+		//     //Add something at the end of the page
+		// 	console.log('make rest request');
+		// 	loadMoreProducts();
+		//   }
+		// });
+
+
 
 
 }); // END jQuery

@@ -39,13 +39,46 @@ function my_remove_product_result_count() {
     remove_action( 'woocommerce_after_shop_loop' , 'woocommerce_result_count', 20 );
 }
 
+// Add product id to product class in SHOP
+add_filter( 'woocommerce_post_class', 'remove_post_class', 21, 3 ); //woocommerce use priority 20, so if you want to do something after they finish be more lazy
+function remove_post_class( $classes ) {
+    if ( 'product' == get_post_type() ) {
+		global $product;
+		$productClasses = '';
+		$terms = get_the_terms( $product->get_id(), 'product_cat' );
+		foreach ($terms as $term) {
+		    $product_cat_id = $term->term_id;
+		    $productClasses .=  ' product_cat-'.$product_cat_id;
+		}
+		$classes[] .= $productClasses;
+    }
+    return $classes;
+}
+
+// Customize product thumbnail in loop
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'custom_loop_product_thumbnail', 10 );
+function custom_loop_product_thumbnail() {
+    global $product;
+    $size = 'woocommerce_single';
+
+    $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
+
+    echo $product ? $product->get_image( $image_size ) : '';
+}
+
 // Add filter to shop pages
 add_action('woocommerce_before_shop_loop', 'woo_custom_filter');
 function woo_custom_filter() {
-	echo '<div class="woo-custom-filter">';
+
+	global $wp_query;
+	$postCount = $wp_query->post_count;
+
+	echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'">';
 	woo_categories_filter();
 		echo '<span class="clear-filter">Filter zurücksetzen</span>
 	</div>';
+
 }
 
 function woo_categories_filter() {
@@ -60,10 +93,9 @@ function woo_categories_filter() {
 
 	echo '<ul>';
 	foreach ($product_cat as $parent_product_cat) {
-
 		echo'<li class="filter-parent-cat">
 
-			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->slug) .'" class="product-parent-selector">
+			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->term_id) .'" class="product-parent-selector">
 				'. esc_attr($parent_product_cat->name) .'<i class="filter-icon"></i>
 			</span>
 			<ul class="filter-child-cat">';
@@ -79,7 +111,7 @@ function woo_categories_filter() {
 				foreach ($child_product_cats as $child_product_cat) {
 					echo '<li>
 						<div class="pretty p-default p-fill p-svg p-tada">
-							<input type="checkbox" data-filter=".product_cat-'. esc_attr($child_product_cat->slug) .'" />
+							<input type="checkbox" data-filter=".product_cat-'. esc_attr($child_product_cat->term_id) .'" />
 							<div class="state">
 								<!-- svg path -->
 								<svg class="svg svg-icon" viewBox="0 0 20 20">
@@ -165,7 +197,6 @@ function cart_svg() { ?>
 function add_cart_link() { ?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 
-
 		<?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );  ?></span>
 		</a>
 
@@ -208,7 +239,26 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 // Remove WOO pagination
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 
+// Add all image sizes to rest endpoint
+function prepare_product_images($response, $post, $request) {
+    global $_wp_additional_image_sizes;
 
+    if (empty($response->data)) {
+        return $response;
+    }
+
+    foreach ($response->data['images'] as $key => $image) {
+        $image_urls = [];
+        foreach ($_wp_additional_image_sizes as $size => $value) {
+            $image_info = wp_get_attachment_image_src($image['id'], $size);
+            $response->data['images'][$key][$size] = $image_info[0];
+        }
+    }
+    return $response;
+
+}
+
+add_filter("woocommerce_rest_prepare_product_object", "prepare_product_images", 10, 3);
 
 /********************* AJAX SHOP ****************/
 
@@ -223,10 +273,16 @@ function more_button() {
 
 	if( $post_count < $total_posts ) {
 		echo '<div class="load-more-wrapper is-style-outline">
-	        <div id="ajax-load-more-products" class="more-btn wp-block-button__link button no-border-radius" >Mehr anzeigen</div>
+			<div class="lds-ellipsis">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 	    </div>';
 	}
 }
+//<div id="ajax-load-more-products" class="more-btn wp-block-button__link button no-border-radius" >Mehr anzeigen</div>
 
 // create custom rest api route
 add_action('rest_api_init', 'custom_api_get_products');
@@ -279,9 +335,6 @@ function custom_api_get_products_callback($request){
 	return $posts_data;
 
 }
-
-//
-wp_enqueue_script( 'wp-api' );
 
 
 

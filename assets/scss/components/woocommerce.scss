@@ -68,6 +68,7 @@
 				font-size: $font-size-s;
 				margin-top: $gutter/2;
 				width: 20%;
+				max-width: 250px;
 				padding: 2px;
 
 				.pretty.p-default input:checked ~ .state label:after {
