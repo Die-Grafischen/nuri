@@ -81,8 +81,14 @@ footer {
 				height: 25px;
 				float: left;
 				margin-right: 8px;
-				background-repeat: no-repeat;
-				background-size: contain;
+
+				img,
+				svg {
+					width: 25px;
+					height: 25px;
+					object-fit: contain;
+				}
+
 				@include r(992) {
 					float: right;
 					margin-right: 0;

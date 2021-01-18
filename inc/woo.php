@@ -13,7 +13,7 @@ function child_manage_woocommerce_styles() {
 	//first check that woo exists to prevent fatal errors
 	if ( function_exists( 'is_woocommerce' ) ) {
 		//dequeue scripts and styles
-		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
+		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout()  ) {
 			wp_dequeue_style( 'woocommerce_frontend_styles' );
 			wp_dequeue_style( 'woocommerce_fancybox_styles' );
 			wp_dequeue_style( 'woocommerce_chosen_styles' );
@@ -182,12 +182,37 @@ function wrap_product_start() {
 	echo '<div class="product-wrap">';
 }
 
+// insert product attributes after price
+add_filter( 'woocommerce_get_price_html', 'show_attributes' );
+function show_attributes($price){
+	if ( 'product' == get_post_type() ) {
+
+	global $product;
+
+	$attributes = $product->get_attributes();
+	$attributes_string = '<span class="attributes-string">';
+
+	foreach ( $attributes as $attribute ):
+	    $attribute_data = $attribute->get_data(); // Get the data in an array
+	    $attribute_value = $attribute_data['value'];
+		$attributes_string .=  $attribute_value . ' ';
+	endforeach;
+
+	$attributes_string .='</span>';
+
+	return $price .   $attributes_string;
+} else {
+	return $price;
+}
+
+}
+
 add_filter( 'woocommerce_after_single_product_summary', 'wrap_product_end');
 function wrap_product_end() {
 	// display default single product content
 	echo '<div class="single-product-content">';
 		the_content();
-	echo '</div>';
+	echo '<hr></div>';
 
 	// display product tags
 	global $product;
@@ -236,18 +261,39 @@ function cart_svg() { ?>
 function add_cart_link() { ?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 
-		<?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );  ?></span>
-		</a>
+		<?php cart_svg(); ?>
+
+		<span class="count">
+			<?php $count = $woocommerce->cart->cart_contents_count;
+			if($count) {
+				echo intval($count);
+			} else {
+				 echo ' ';
+			}?>
+		</span>
 
 <?php }
+
+// Add slider navigation
+add_filter( 'woocommerce_single_product_carousel_options', 'cuswoo_update_woo_flexslider_options' );
+
+function cuswoo_update_woo_flexslider_options( $options ) {
+	$options['controlNav'] = true;
+    return $options;
+}
 
 // Add cart to header
 function header_cart() { ?>
 	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 		<?php cart_svg(); ?>
-		<?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?>
+
 		<span class="count">
-			<?php echo wp_kses_data( sprintf( _n( '%d Artikel', '%d Artikeln', WC()->cart->get_cart_contents_count(), 'nuri' ), WC()->cart->get_cart_contents_count() ) );  ?>
+			<?php $count = $woocommerce->cart->cart_contents_count;
+			if($count) {
+				echo intval($count);
+			} else {
+				 echo ' ';
+			}?>
 		</span>
 	</a>
 <?php }
@@ -264,9 +310,13 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 		<?php cart_svg(); ?>
 
-		<?php echo $woocommerce->cart->get_cart_total(); ?>
 		<span class="count">
-			<?php echo wp_kses_data( sprintf( _n( '%d Artikel', '%d Artikeln', $woocommerce->cart->cart_contents_count, 'nuri' ), $woocommerce->cart->cart_contents_count ) );  ?>
+			<?php $count = $woocommerce->cart->cart_contents_count;
+			if($count) {
+				echo intval($count);
+			} else {
+				 echo ' ';
+			}?>
 		</span>
 
 	</a>

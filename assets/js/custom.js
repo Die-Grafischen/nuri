@@ -5,16 +5,6 @@
  *
  * @since 1.0.0
  */
-var sub = function sub(a, b) {
-  return a - b;
-};
-"use strict";
-
-/**
- * Custom JavaScript
- *
- * @since 1.0.0
- */
 var nuriTheme;
 jQuery(document).ready(function ($) {
   'use strict'; // Window Scroll
@@ -61,6 +51,20 @@ jQuery(document).ready(function ($) {
       $('.filter-current-parent').removeClass('filter-current-parent');
     };
 
+    // this function runs every time you are scrolling
+    var isInViewport = function isInViewport(el) {
+      var elementTop = $(el).offset().top;
+      var elementBottom = elementTop + $(el).outerHeight();
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      if (elementBottom > viewportTop && elementTop < viewportBottom && jsonFlag) {
+        jsonFlag = false; //make rest requerst
+
+        loadMoreProducts();
+      }
+    };
+
     var container = $('.products'); //get classes of all loaded products
 
     container.children().each(function () {
@@ -70,6 +74,9 @@ jQuery(document).ready(function ($) {
     }); // Woo Filter
 
     $('.filter-parent-cat').on('click', 'span', function (e) {
+      $("html, body").animate({
+        scrollTop: 0
+      }, "slow");
       formReset();
       var parent = $(this).parent();
 
@@ -113,7 +120,7 @@ jQuery(document).ready(function ($) {
       var elements = container.isotope('getFilteredItemElements');
 
       if (elements < postsPerPage) {
-        $('#ajax-load-more-products').click();
+        loadMoreProducts();
       }
     });
     var checkboxes = $('.filter-child-cat input');
@@ -122,6 +129,9 @@ jQuery(document).ready(function ($) {
       queryCategories = []; // get checked checkboxes values
 
       checkboxes.filter(':checked').each(function () {
+        $("html, body").animate({
+          scrollTop: 0
+        }, "slow");
         var filterValue = $(this).attr('data-filter');
         filters.push(filterValue);
         queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
@@ -137,13 +147,22 @@ jQuery(document).ready(function ($) {
         filter: filters
       });
     });
+    ; // check if the end of the product list is visible
+
+    $(window).on('resize scroll load', function () {
+      isInViewport('.load-more-wrapper');
+    });
   }
   /******** END ISOTOPE AJAX ********/
+  // production enviroment
 
 
-  var wooClientKey = 'ck_d3075b8231bedc08b740a91d77a6fe28b34e6df2';
-  var wooClientSecret = 'cs_b2f087b724e028bbd46fb68879555009941e247e';
-  var wooUrl = 'https://nuri.local/wp-json/wc/v3/products';
+  var wooClientKey = 'ck_4dbc36409a2f3772d2bb18e8b066f31c20f1cdde';
+  var wooClientSecret = 'cs_b9046328ab21f1aa53715a6c37cf455f35ffdaab';
+  var wooUrl = 'https://nurifood.ch/wp-json/wc/v3/products'; // dev enviroment
+  // const wooClientKey = 'ck_d3075b8231bedc08b740a91d77a6fe28b34e6df2';
+  // const wooClientSecret = 'cs_b2f087b724e028bbd46fb68879555009941e247e';
+  // const wooUrl = 'https://nuri.local/wp-json/wc/v3/products';
 
   function basicAuth(key, secret) {
     var hash = btoa(key + ':' + secret);
@@ -205,42 +224,13 @@ jQuery(document).ready(function ($) {
         jsonFlag = true;
       }
     });
-  }
+  } //load more products and make ajax call
 
-  $('#ajax-load-more-products').on('click', function () {
-    loadMoreProducts();
-  }); //load more products and make ajax call
 
   function loadMoreProducts() {
     var catString = queryCategories.join(',');
     var excString = loadedProductsIds.join(',');
     console.log(wooUrl + '?per_page=' + postsPerPage + '&category=' + catString + '&exclude=' + excString);
     getData(wooUrl + '?per_page=' + postsPerPage + '&category=' + catString + '&exclude=' + excString);
-  } // this function runs every time you are scrolling
-
-
-  $.fn.isInViewport = function () {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-  };
-
-  $(window).on('resize scroll', function () {
-    if ($('.load-more-wrapper').isInViewport() && jsonFlag) {
-      jsonFlag = false; //Add something at the end of the page
-
-      console.log('make rest request');
-      loadMoreProducts();
-    } else {// do something else
-    }
-  }); // $(window).scroll(function () {
-  //   if (jsonFlag && $(window).scrollTop() >= $(document).height() - $(window).height() - 300) {
-  //     jsonFlag = false;
-  //     //Add something at the end of the page
-  // 	console.log('make rest request');
-  // 	loadMoreProducts();
-  //   }
-  // });
+  }
 }); // END jQuery

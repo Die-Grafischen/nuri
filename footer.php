@@ -54,7 +54,9 @@
 					if($social) {
 						echo '<div class="footer-social">';
 						foreach ($social as $media) {
-							echo '<a href="'. esc_url($media['url']) .'" style="background-image:url('. esc_url($media['icon']) .')" target="_blank"></a>';
+							echo '<a href="'. esc_url($media['url']) .'" target="_blank">
+								<img src="'. esc_url($media['icon']) .'" alt="" class="style-svg"/>
+							</a>';
 						}
 						echo '</div>';
 					}

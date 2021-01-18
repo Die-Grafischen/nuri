@@ -37,6 +37,10 @@ function nuri_theme_support() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -109,6 +113,8 @@ add_action( 'wp_enqueue_scripts', 'nuri_register_styles' );
 /**
  * Register and Enqueue Scripts.
  */
+
+
 function nuri_register_scripts() {
 
 	$theme_version = wp_get_theme()->get( 'Version' );
@@ -121,9 +127,9 @@ function nuri_register_scripts() {
 	}
 
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), $theme_version, false );
-	wp_script_add_data( 'custom', 'async', true );
+	wp_script_add_data( 'custom', 'async', true ); }
 
-}
+
 
 add_action( 'wp_enqueue_scripts', 'nuri_register_scripts' );
 
