@@ -210,11 +210,20 @@ function is_realy_woocommerce_page () {
     return false;
 }
 
+function is_shop_manager() {
+    $user = wp_get_current_user();
+    if ( isset( $user['roles'][0] ) && $user['roles'][0] == 'shop_manager' ) {
+        return true;    // when user is shop manager
+    } else {
+        return false;   // when user is not shop manager
+    }
+}
+
 add_action( 'template_redirect', 'hide_woocommerce' );
 
 function hide_woocommerce() {
 	$is_admin = current_user_can('manage_options');
-	if ( is_realy_woocommerce_page() && !$is_admin && !is_admin() ) {
+	if ( is_realy_woocommerce_page() && !$is_admin && !is_shop_manager() && !is_admin() ) {
 		wp_redirect( home_url() );
 		exit();
 	}

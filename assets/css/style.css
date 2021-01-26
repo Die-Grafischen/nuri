@@ -549,7 +549,7 @@ header .header-inner { padding: 32px 40px 28px 40px; }
 
 .farbschema-dunkel header .menu li a:hover { color: #fdf0e6; }
 
-#nav-toggle { position: fixed; right: 40px; top: 22px; width: 28px; height: 17px; display: block; z-index: 99999999; cursor: pointer; }
+#nav-toggle { position: fixed; right: 40px; top: 22px; width: 28px; height: 17px; display: block; z-index: 99999999; cursor: pointer; display: none; }
 
 #nav-toggle span { margin-top: 7px; }
 
