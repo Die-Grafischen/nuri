@@ -214,7 +214,8 @@ add_action( 'template_redirect', 'hide_woocommerce' );
 
 function hide_woocommerce() {
 	$is_admin = current_user_can('manage_options');
-	if ( is_realy_woocommerce_page() && !$is_admin && !is_admin() ) {
+	$is_shop_manager = current_user_can('manage_woocommerce');
+	if ( is_realy_woocommerce_page() && !$is_admin && !$is_shop_manager !is_admin() ) {
 		wp_redirect( home_url() );
 		exit();
 	}

@@ -24,7 +24,6 @@ function child_manage_woocommerce_styles() {
 			wp_dequeue_script( 'wc-cart-fragments' );
 			wp_dequeue_script( 'wc-checkout' );
 			wp_dequeue_script( 'wc-add-to-cart-variation' );
-			wp_dequeue_script( 'wc-single-product' );
 			wp_dequeue_script( 'wc-cart' );
 			wp_dequeue_script( 'wc-chosen' );
 			wp_dequeue_script( 'woocommerce' );
@@ -182,28 +181,35 @@ function wrap_product_start() {
 	echo '<div class="product-wrap">';
 }
 
-// insert product attributes after price
+// insert product attributes after price for simple products
 add_filter( 'woocommerce_get_price_html', 'show_attributes' );
 function show_attributes($price){
 	if ( 'product' == get_post_type() ) {
 
-	global $product;
+		global $product;
 
-	$attributes = $product->get_attributes();
-	$attributes_string = '<span class="attributes-string">';
+		if( $product->is_type( 'simple' ) ){
+			$attributes = $product->get_attributes();
+			$attributes_string = '<span class="attributes-string">';
 
-	foreach ( $attributes as $attribute ):
-	    $attribute_data = $attribute->get_data(); // Get the data in an array
-	    $attribute_value = $attribute_data['value'];
-		$attributes_string .=  $attribute_value . ' ';
-	endforeach;
+			foreach ( $attributes as $attribute ):
 
-	$attributes_string .='</span>';
 
-	return $price .   $attributes_string;
-} else {
-	return $price;
-}
+				$attribute_terms = $attribute->get_terms(); // The terms
+				$attributes_string .=  $attribute_terms[0]->name . ' ';
+
+			endforeach;
+
+			$attributes_string .='</span>';
+
+			return $price .   $attributes_string;
+		} else {
+			return $price;
+		}
+
+	} else {
+		return $price;
+	}
 
 }
 
@@ -425,6 +431,26 @@ function custom_api_get_products_callback($request){
 
 }
 
+// Remove reset variations button on single product
+add_filter('woocommerce_reset_variations_link', '__return_empty_string');
 
+
+// Change Sale/Angebot text to Aktion
+add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
+function ds_change_sale_text() {
+	return '<span class="onsale">Aktion!</span>';
+}
+
+// Style variation with default woo library / select2
+add_action( 'wp_enqueue_scripts', 'style_select' );
+function style_select() {
+	if ( 'product' == get_post_type() ) {
+
+		$product = new WC_Product( get_the_ID() );
+		wp_enqueue_script('selectWoo');
+		wp_enqueue_style('select2');
+
+	}
+}
 
 ?>

@@ -1,0 +1,75 @@
+#nav-toggle {
+    position: fixed;
+    right: 40px;
+    top: 22px;
+    width: 28px;
+    height: 17px;
+    display: block;
+    z-index: 99999999;
+    cursor: pointer;
+}
+
+#nav-toggle span {
+    margin-top: 7px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    cursor: pointer;
+    height: 3px;
+    width: 28px;
+    background: $black;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+#nav-toggle.white-nav span, #nav-toggle.white-nav span:before, #nav-toggle.white-nav span:after {
+    background: #fff!important;
+}
+
+#nav-toggle span:before {
+    top: -7px;
+}
+
+#nav-toggle span:after {
+    bottom: -7px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    transition: all 500ms ease-in-out;
+}
+
+#nav-toggle.active {
+    position: fixed;
+}
+
+#nav-toggle.active span {
+    background-color: transparent!important;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+}
+
+#nav-toggle.active span:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+//
+// header nav {
+//     width: 100%;
+//     height: 100%;
+//     background: $black;
+//     position: fixed;
+//     z-index: 100000;
+//     top: 0px;
+//     left: 0px;
+//     display: none;
+//     overflow: hidden;
+//     -webkit-overflow-scrolling: touch;
+// }

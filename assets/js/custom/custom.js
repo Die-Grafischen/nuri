@@ -40,6 +40,11 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	// style select fields
+	if ( $('select').length ){
+		$('select').selectWoo();
+	}
+
 	/******** ISOTOPE AJAX ********/
 
 	const loadedProductsIds = new Array(); //save all loaded in dom products id in array
@@ -216,11 +221,11 @@ jQuery(document).ready(function($) {
 			        jQuery.each(data, function(index, item) {
 						if ( currentQuery <= queryLength ) {
 
-							var id = data[index].id;
-							var title = data[index].name;
-							var permalink = data[index].permalink;
-							var price = data[index].price_html;
-							var terms = data[index].categories;
+							let id = data[index].id;
+							let title = data[index].name;
+							let permalink = data[index].permalink;
+							let price = data[index].price_html;
+							let terms = data[index].categories;
 							let categories = '';
 
 							terms.forEach(function(item, index, array) {
@@ -228,10 +233,10 @@ jQuery(document).ready(function($) {
 
 						  	});
 
-							var imageSrc = data[index].images[0].woocommerce_single;
+							let imageSrc = data[index].images[0] ? data[index].images[0].woocommerce_single : 'https://nurifood.ch/wprs/wp-content/uploads/woocommerce-placeholder-600x600.png' ;
 
 
-							var productHtml = $('<li class="product type-product post-'+ id +' status-publish '+ categories +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="'+ permalink +'" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="'+ imageSrc +'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price">'+ price +'</span></a></li>');
+							let productHtml = $('<li class="product type-product post-'+ id +' status-publish '+ categories +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="'+ permalink +'" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="'+ imageSrc +'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price">'+ price +'</span></a></li>');
 
 							container.isotope( 'insert', productHtml ); //insert new product to isotope
 

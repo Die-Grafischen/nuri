@@ -42,6 +42,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			echo '<a href="'. home_url() .'" class="custom-logo logo">'. get_bloginfo('name') .'</a>';
 		} ?>
 
+		<div id="nav-toggle" aria-expanded="false">
+			 <span></span>
+		</div>
 
 		<header id="site-header" role="banner">
 
@@ -49,10 +52,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 			<?php if ( has_nav_menu( 'primary' ) ) { ?>
-				<div id="nav-toggle" class="" aria-expanded="false">
-		             <span></span>
-		        </div>
-
 				<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'nuri' ); ?>" role="navigation">
 					<?php wp_nav_menu( array( 'container' => false, 'theme_location' => 'primary',  ) ); ?>
 
