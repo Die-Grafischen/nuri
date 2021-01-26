@@ -844,6 +844,8 @@ span.attributes-string { display: none; }
 
 .woocommerce table.shop_table td.actions #coupon_code { background: #ffffff; border: 1px solid transparent; height: 49px; padding: 0 22px; line-height: 49px; }
 
+.woocommerce .disabled, .woocommerce .disabled:hover, .woocommerce *:disabled[disabled], .woocommerce *:disabled[disabled]:hover { background-color: #ebe9eb !important; }
+
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 

@@ -638,3 +638,10 @@ span.attributes-string {
 	padding: 0 22px;
 	line-height: 49px;
 }
+
+.woocommerce .disabled,
+.woocommerce .disabled:hover,
+.woocommerce *:disabled[disabled],
+.woocommerce *:disabled[disabled]:hover {
+	background-color: #ebe9eb!important;
+}
