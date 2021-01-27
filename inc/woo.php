@@ -194,9 +194,10 @@ function show_attributes($price){
 
 			foreach ( $attributes as $attribute ):
 
-
-				$attribute_terms = $attribute->get_terms(); // The terms
-				$attributes_string .=  $attribute_terms[0]->name . ' ';
+				if($attribute->get_visible()) {
+					$attribute_terms = $attribute->get_terms(); // The terms
+					$attributes_string .=  $attribute_terms[0]->name . ' ';
+				}
 
 			endforeach;
 
@@ -218,7 +219,7 @@ function wrap_product_end() {
 	// display default single product content
 	echo '<div class="single-product-content">';
 		the_content();
-	echo '<hr></div>';
+	echo '</div>';
 
 	// display product tags
 	global $product;
@@ -238,7 +239,32 @@ function wrap_product_end() {
 	}
 
 	echo '</div>';
+
+	//combine cross sell products & related products
+	$cross_sell_ids = $product->get_cross_sell_ids() ? $product->get_cross_sell_ids() : [];
+	$related =  wc_get_related_products($product_id, 4);
+	$combined_ids = array_merge($cross_sell_ids,$related);
+	$combined_ids = array_slice($combined_ids,0,4);
+
+	echo '<section class="related related-custom products">
+		<h2>Passend dazu:</h2>';
+		woocommerce_product_loop_start();
+		foreach ( $combined_ids as $combined_id ) :
+
+			$post_object = get_post( $combined_id );
+			setup_postdata( $GLOBALS['post'] =& $post_object );
+			wc_get_template_part( 'content', 'product' );
+
+		endforeach;
+		woocommerce_product_loop_end();
+	echo '</section>';
+
 }
+
+// Remove default upsells and cross sells from single product
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
 
 // Remove Woo Tabs in single
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
@@ -249,7 +275,7 @@ add_filter('woocommerce_product_description_heading', '__return_null');
 // Change related products title in single
 add_filter( 'woocommerce_product_related_products_heading', 'change_related_title' );
 function change_related_title() {
-   return __( 'Ebenfalls sehr lecker:', 'woocommerce' );
+   return __( 'Passend dazu:', 'woocommerce' );
 }
 
 // cart icon
@@ -289,7 +315,7 @@ function cuswoo_update_woo_flexslider_options( $options ) {
 }
 
 // Add cart to header
-function header_cart() { ?>
+function header_cart() {  global $woocommerce;?>
 	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 		<?php cart_svg(); ?>
 
@@ -452,5 +478,15 @@ function style_select() {
 
 	}
 }
+
+// Remove state/kanton from checkout, edit placeholders
+function remove_state_field( $fields ) {
+	unset( $fields['state'] );
+    $fields['address_2']['placeholder'] = 'Zusätzliche Adressangaben (optional)';
+
+	return $fields;
+}
+add_filter( 'woocommerce_default_address_fields', 'remove_state_field' );
+
 
 ?>

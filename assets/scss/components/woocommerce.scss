@@ -360,13 +360,13 @@
 			display: inline-block;
 
 			.woocommerce-product-gallery {
-				padding: 0 $gutter/3 $gutter/3 0;
+				padding: 0 $gutter/3 0 0;
 				width: 50%;
-				margin: 0 $gutter/3 $gutter/3 0;
+				margin: 0 $gutter/3 0 0;
 			}
 
 			div.summary {
-				width: calc(50% - ($gutter/3));
+				width: calc(50% - (#{$gutter}/3));
 				padding-bottom: $gutter/3;
 				margin-bottom: 0;
 				display: inline-block;
@@ -377,19 +377,15 @@
 				display: block;
 				padding-top: $gutter/3;
 				margin-bottom: $gutter;
-
-				hr {
-					margin-top: $gutter;
-					height: 1px;
-					background: $black;
-				}
 			}
 
 			.single-product-tags {
-				padding-bottom: $gutter;
-				margin-bottom: $gutter;
+				padding: calc(#{$gutter} - 10px) 0;
+				margin: $gutter 0;
+				border-top: 1px solid $black;
 				border-bottom: 1px solid $black;
 				float: left;
+				width: 100%;
 
 				strong {
 					display: inline-block;
@@ -644,4 +640,17 @@ span.attributes-string {
 .woocommerce *:disabled[disabled],
 .woocommerce *:disabled[disabled]:hover {
 	background-color: #ebe9eb!important;
+}
+
+#billing_postcode_field,
+#billing_phone_field {
+	width: calc(50% - 10px);
+	display: inline-block;
+}
+
+#billing_city_field,
+#billing_email_field {
+	width: calc(50% - 10px);
+	margin-left: 20px;
+	display: inline-block;
 }

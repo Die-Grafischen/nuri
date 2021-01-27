@@ -751,15 +751,13 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .woocommerce div.product .product-wrap { padding: 0 240px; float: left; display: inline-block; }
 
-.woocommerce div.product .product-wrap .woocommerce-product-gallery { padding: 0 13.3333333333px 13.3333333333px 0; width: 50%; margin: 0 13.3333333333px 13.3333333333px 0; }
+.woocommerce div.product .product-wrap .woocommerce-product-gallery { padding: 0 13.3333333333px 0 0; width: 50%; margin: 0 13.3333333333px 0 0; }
 
-.woocommerce div.product .product-wrap div.summary { width: calc(50% - ($gutter/3)); padding-bottom: 13.3333333333px; margin-bottom: 0; display: inline-block; float: none; }
+.woocommerce div.product .product-wrap div.summary { width: calc(50% - (40px/3)); padding-bottom: 13.3333333333px; margin-bottom: 0; display: inline-block; float: none; }
 
 .woocommerce div.product .product-wrap .single-product-content { display: block; padding-top: 13.3333333333px; margin-bottom: 40px; }
 
-.woocommerce div.product .product-wrap .single-product-content hr { margin-top: 40px; height: 1px; background: #000000; }
-
-.woocommerce div.product .product-wrap .single-product-tags { padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid #000000; float: left; }
+.woocommerce div.product .product-wrap .single-product-tags { padding: calc(40px - 10px) 0; margin: 40px 0; border-top: 1px solid #000000; border-bottom: 1px solid #000000; float: left; width: 100%; }
 
 .woocommerce div.product .product-wrap .single-product-tags strong { display: inline-block; margin-right: 10px; }
 
@@ -845,6 +843,10 @@ span.attributes-string { display: none; }
 .woocommerce table.shop_table td.actions #coupon_code { background: #ffffff; border: 1px solid transparent; height: 49px; padding: 0 22px; line-height: 49px; }
 
 .woocommerce .disabled, .woocommerce .disabled:hover, .woocommerce *:disabled[disabled], .woocommerce *:disabled[disabled]:hover { background-color: #ebe9eb !important; }
+
+#billing_postcode_field, #billing_phone_field { width: calc(50% - 10px); display: inline-block; }
+
+#billing_city_field, #billing_email_field { width: calc(50% - 10px); margin-left: 20px; display: inline-block; }
 
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
