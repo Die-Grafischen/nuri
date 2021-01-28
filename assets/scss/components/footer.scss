@@ -135,3 +135,17 @@ body.farbschema-dunkel footer {
 	}
 
 }
+
+
+body.farbschema-hell footer,
+body.farbschema- footer {
+
+	.section-inner .logo-wrapper .logo-footer {
+
+		svg path {
+			fill: #000!important;
+		}
+
+	}
+
+}

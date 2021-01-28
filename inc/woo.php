@@ -213,8 +213,14 @@ function show_attributes($price){
 
 			foreach ( $attributes as $attribute ):
 				if($attribute->get_visible()) {
+
 					$attribute_terms = $attribute->get_options(); // The terms
-					$attributes_string .=  $attribute_terms[0] . ' ';
+
+					foreach ($attribute_terms as $attribute_term) :
+						$term_name = get_term($attribute_term)->name;
+						$attributes_string .=  $term_name . ' ';
+					endforeach;
+
 				}
 			endforeach;
 

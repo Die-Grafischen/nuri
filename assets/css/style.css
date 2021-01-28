@@ -422,7 +422,7 @@ figure img { vertical-align: top; }
 
 body .aligncenter, body div.aligncenter { margin: 0; }
 
-.wrapper { margin: 0 auto; background-color: #fdf0e6; }
+.wrapper { margin: 0 auto; background-color: #fdf0e6; width: 100%; float: left; }
 
 .wrapper article { display: inline-block; margin: 0 auto; width: 100%; }
 
@@ -632,6 +632,8 @@ body.farbschema-dunkel footer a { color: #ffffff; }
 
 body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path { fill: #fff !important; }
 
+body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, body.farbschema- footer .section-inner .logo-wrapper .logo-footer svg path { fill: #000 !important; }
+
 /* Woocommerce */
 .wrapper main { padding: 40px; margin-top: 88px; display: block; margin-left: auto; margin-right: auto; max-width: 1400px; }
 
@@ -797,7 +799,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 
 .related.products ul.products { margin-top: 40px; }
 
-.related.products .attributes-string { display: none; }
+.related.products .attributes-string { display: none !important; }
 
 .cart-contents { display: inline-block; position: absolute; right: 40px; top: 32px; }
 

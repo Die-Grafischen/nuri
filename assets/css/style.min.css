@@ -148,7 +148,7 @@ p+.wp-block-separator,.wp-block-separator+p{margin-top:-40px !important}
 .wp-block-image+p{margin-top:-80px !important}
 figure img{vertical-align:top}
 body .aligncenter,body div.aligncenter{margin:0}
-.wrapper{margin:0 auto;background-color:#fdf0e6}
+.wrapper{margin:0 auto;background-color:#fdf0e6;width:100%;float:left}
 .wrapper article{display:inline-block;margin:0 auto;width:100%}
 .wrapper article :first-child{margin-top:0}
 .wrapper article :last-child.block-newsletter{margin-bottom:0}
@@ -216,6 +216,7 @@ footer .section-inner .footer-credits{width:100%;display:block;margin-top:80px;l
 body.farbschema-dunkel footer{background:#000;color:#fff}
 body.farbschema-dunkel footer a{color:#fff}
 body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path{fill:#fff !important}
+body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path,body.farbschema- footer .section-inner .logo-wrapper .logo-footer svg path{fill:#000 !important}
 .wrapper main{padding:40px;margin-top:88px;display:block;margin-left:auto;margin-right:auto;max-width:1400px}
 .woo-custom-filter{width:calc(100% - 80px);position:fixed;top:120px;left:40px;display:-webkit-box;display:-ms-flexbox;display:flex;z-index:900;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:20px;background:#fff;margin-bottom:40px}
 .woo-custom-filter ul{list-style:none;float:left}
@@ -298,7 +299,7 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .related.products>h2{text-align:center;font-size:50px;font-family:"Brick Display Pro",serif;font-weight:normal}
 .related.products a.button{display:none}
 .related.products ul.products{margin-top:40px}
-.related.products .attributes-string{display:none}
+.related.products .attributes-string{display:none !important}
 .cart-contents{display:inline-block;position:absolute;right:40px;top:32px}
 .cart-contents svg{width:35px}
 .cart-contents svg path,.cart-contents svg circle{stroke-width:1.5}
