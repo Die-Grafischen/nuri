@@ -221,13 +221,13 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .woo-custom-filter ul{list-style:none;float:left}
 .woo-custom-filter ul>li{float:left;margin-right:40px;font-family:"Brick Display Pro",serif;font-size:32px;line-height:1}
 .woo-custom-filter ul>li span{cursor:pointer}
-.woo-custom-filter ul>li i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");background-repeat:no-repeat;background-position:center right;background-size:100% auto;width:20px;height:20px;-webkit-transition:all .4s;transition:all .4s;margin-left:20px}
-.woo-custom-filter ul>li.filter-current-parent i.filter-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
 .woo-custom-filter ul ul.filter-child-cat{display:none;position:absolute;left:0;width:100%;background:#fff;top:60px;padding:0 20px 20px}
 .woo-custom-filter ul ul.filter-child-cat li{font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:22px;margin-top:20px;width:20%;max-width:250px;padding:2px}
 .woo-custom-filter ul ul.filter-child-cat li .pretty.p-default input:checked ~ .state label:after{background-color:#000 !important}
 .woo-custom-filter ul ul.filter-child-cat li .pretty .state label:before{border-color:#000}
 .woo-custom-filter .clear-filter{margin-left:auto;cursor:pointer}
+.woocommerce .woocommerce-shipping-totals th,.woocommerce .woocommerce-shipping-totals td{font-weight:normal !important}
+.woocommerce ul#shipping_method li{margin:0}
 .woocommerce ul#shipping_method li input{margin:8px .4375em 0 0}
 .woocommerce .woocommerce-customer-details address{border:0;padding:0}
 .woocommerce .woocommerce-additional-fields{margin-top:40px}
@@ -276,7 +276,8 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .woocommerce div.product form.cart .group_table td:first-child{width:auto}
 .woocommerce div.product form.cart .group_table td.woocommerce-grouped-product-list-item__label{padding-left:10px;padding-right:10px;width:50%;line-height:1.1}
 .woocommerce div.product form.cart .group_table td.woocommerce-grouped-product-list-item__price bdi{font-size:19px !important}
-.woocommerce div.product .product-wrap{padding:0 240px;float:left;display:inline-block}
+.woocommerce div.product .product-wrap{padding:0 240px;float:left;display:inline-block;position:relative}
+.woocommerce div.product .product-wrap .onsale{left:200px;top:-40px}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{padding:0 13.3333333333px 0 0;width:50%;margin:0 13.3333333333px 0 0}
 .woocommerce div.product .product-wrap div.summary{width:calc(50% - (40px/3));padding-bottom:13.3333333333px;margin-bottom:0;display:inline-block;float:none}
 .woocommerce div.product .product-wrap .single-product-content{display:block;padding-top:13.3333333333px;margin-bottom:40px}
@@ -286,6 +287,9 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 .woocommerce div.product .product-wrap .single-product-tags a{background:#fff;padding:10px 24px;border-radius:24px;margin:5px 10px 5px 0;display:inline-block}
 .woocommerce div.product .product-wrap .single-product-tags a:hover{background:#000;color:#fff}
 .woocommerce div.product .product-wrap .single-product-info{border-bottom:1px solid #000;padding-bottom:40px;width:100%;border-bottom:1px solid #000;float:left}
+.woocommerce div.product .product-wrap .single-product-info .single-product-info-title{cursor:pointer;font-weight:bold;display:inline-block}
+.woocommerce div.product .product-wrap .single-product-info .single-product-info-title .filter-icon{margin:0 0 0 10px;-webkit-transform:translateY(3px);transform:translateY(3px)}
+.woocommerce div.product .product-wrap .single-product-info .single-product-info-wrapper{display:none;margin-top:20px;width:100%}
 .woocommerce div.product .product_title{font-family:"Brick Display Pro",serif;font-size:50px;font-weight:normal;line-height:1.05}
 .woocommerce div.product .price{color:#000 !important;font-weight:bold}
 .woocommerce div.product form.cart{margin:20px 0 0}
@@ -326,6 +330,15 @@ span.attributes-string{display:none}
 .woocommerce .disabled,.woocommerce .disabled:hover,.woocommerce *:disabled[disabled],.woocommerce *:disabled[disabled]:hover{background-color:#ebe9eb !important}
 #billing_postcode_field,#billing_phone_field{width:calc(50% - 10px);display:inline-block}
 #billing_city_field,#billing_email_field{width:calc(50% - 10px);margin-left:20px;display:inline-block}
+i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");background-repeat:no-repeat;background-position:center right;background-size:100% auto;width:20px;height:20px;-webkit-transition:all .4s;transition:all .4s;margin-left:20px}
+.filter-current-parent i.filter-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
+.woo-back{position:absolute;top:calc(50% - 65px);left:-180px;opacity:0}
+.woo-back .woo-back-link{width:80px;height:80px;text-align:center;border-radius:50%;background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.woo-back .woo-back-link:hover{background:#000}
+.woo-back .woo-back-link:hover svg path{stroke:#fff}
+.woo-back .woo-back-link svg{margin-right:3px}
+.woo-back .woo-back-name{display:none;background:#fff;color:#000;padding:10px 15px;font-size:30px;position:absolute;left:40px;top:-100px;width:auto;white-space:nowrap;z-index:2}
+.woo-back .woo-back-name:after{content:"";width:0;height:0;border-style:solid;border-width:22px 18px 0 0;border-color:#fff transparent transparent #fff;position:absolute;bottom:-18px;left:0;display:block}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}

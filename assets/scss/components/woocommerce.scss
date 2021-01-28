@@ -36,22 +36,6 @@
 				cursor: pointer;
 			}
 
-			i.filter-icon {
-				display: inline-block;
-				background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");
-				background-repeat: no-repeat;
-				background-position: center right;
-				background-size: 100% auto;
-				width: 20px;
-				height: 20px;
-				transition: all .4s;
-				margin-left: 20px;
-			}
-
-			&.filter-current-parent i.filter-icon {
-				transform: rotate(-180deg);
-			}
-
 		}
 
 		ul.filter-child-cat {
@@ -93,8 +77,19 @@
 
 .woocommerce {
 
-	ul#shipping_method li input {
-	    margin: 8px .4375em 0 0;
+	.woocommerce-shipping-totals {
+		th,td {
+			font-weight: normal!important;
+		}
+	}
+
+	ul#shipping_method {
+		li {
+			margin: 0;
+			input {
+	    		margin: 8px .4375em 0 0;
+			}
+		}
 	}
 
 	.woocommerce-customer-details address {
@@ -367,6 +362,12 @@
 			padding: 0 $gutter*6;
 			float: left;
 			display: inline-block;
+			position: relative;
+
+			.onsale {
+				left: $gutter*5;
+				top: -#{$gutter};
+			}
 
 			.woocommerce-product-gallery {
 				padding: 0 $gutter/3 0 0;
@@ -426,6 +427,24 @@
 				width: 100%;
 				border-bottom: 1px solid $black;
 				float: left;
+
+				.single-product-info-title {
+					cursor: pointer;
+					font-weight: bold;
+					display: inline-block;
+
+					.filter-icon {
+						margin: 0 0 0 10px;
+						transform: translateY(3px);
+					}
+				}
+
+				.single-product-info-wrapper {
+					display: none;
+					margin-top: 20px;
+					width: 100%;
+				}
+
 			}
 
 		}
@@ -666,4 +685,78 @@ span.attributes-string {
 	width: calc(50% - 10px);
 	margin-left: 20px;
 	display: inline-block;
+}
+
+i.filter-icon {
+	display: inline-block;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: 100% auto;
+	width: 20px;
+	height: 20px;
+	transition: all .4s;
+	margin-left: 20px;
+}
+
+.filter-current-parent i.filter-icon {
+	transform: rotate(-180deg);
+}
+
+.woo-back {
+	position: absolute;
+	top: calc(50% - 65px);
+	left: -180px;
+	opacity: 0;
+
+	.woo-back-link {
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		border-radius: 50%;
+		background: $white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		&:hover {
+			background: $black;
+			svg path {
+				stroke: $white;
+			}
+		}
+
+		svg {
+			margin-right: 3px;
+		}
+	}
+
+	.woo-back-name {
+		display: none;
+		background: $white;
+		color: $black;
+		padding: 10px 15px;
+		font-size: 30px;
+		position: absolute;
+		left: 40px;
+		top: -100px;
+		width: auto;
+		white-space: nowrap;
+		z-index: 2;
+
+		&:after {
+			content:"";
+			width:0px;
+			height:0px;
+			border-style:solid;
+			border-width: 22px 18px 0 0;
+			border-color:$white transparent transparent $white;
+			position:absolute;
+			bottom: -18px;
+			left: 0;
+			display:block;
+		}
+	}
+
 }

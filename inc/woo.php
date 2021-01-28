@@ -175,10 +175,29 @@ function woocommerce_custom_single_add_to_cart_text() {
     return __( 'In den Einkaufswagen', 'woocommerce' );
 }
 
+// Remove sale flash from single product
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+// Change position of sale flash in single product
+add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 15 );
+
 // Wrap single product thumbnail + description in div
 add_filter( 'woocommerce_before_single_product_summary', 'wrap_product_start');
 function wrap_product_start() {
 	echo '<div class="product-wrap">';
+
+	global $product;
+
+	$categories_ids = $product->get_category_ids();
+	$term = get_term($categories_ids[0]);
+	$svg = '<svg xmlns="http://www.w3.org/2000/svg" width="22.121" height="41.414" viewBox="0 0 22.121 41.414">
+	  <path id="Path_39" data-name="Path 39" d="M9771.529,561.7l-20,20,20,20" transform="translate(-9750.115 -560.99)" fill="none" stroke="#000" stroke-width="2"/>
+	</svg>';
+
+	echo '<div class="woo-back">
+		<a href="'. get_term_link($term) .'" class="woo-back-link">'. $svg .'</a>
+		<div class="woo-back-name">'. esc_html($term->name) .'</div>
+	</div>';
 }
 
 // insert product attributes after price for simple products
@@ -188,17 +207,15 @@ function show_attributes($price){
 
 		global $product;
 
-		if( $product->is_type( 'simple' ) ){
+		if( $product->is_type( 'simple' ) && $product->get_attributes() ){
 			$attributes = $product->get_attributes();
 			$attributes_string = '<span class="attributes-string">';
 
 			foreach ( $attributes as $attribute ):
-
 				if($attribute->get_visible()) {
-					$attribute_terms = $attribute->get_terms(); // The terms
-					$attributes_string .=  $attribute_terms[0]->name . ' ';
+					$attribute_terms = $attribute->get_options(); // The terms
+					$attributes_string .=  $attribute_terms[0] . ' ';
 				}
-
 			endforeach;
 
 			$attributes_string .='</span>';
@@ -235,7 +252,15 @@ function wrap_product_end() {
 	}
 
 	if($additional_info) {
-		echo '<div class="single-product-info">'. wp_kses_post($additional_info) .'</div>';
+		echo '<div class="single-product-info">
+			<div class="single-product-info-title">
+				'. __('Zusätzliche Informationen zum Produkt', 'nuri') .'
+				<i class="filter-icon"></i>
+			</div>
+			<div class="single-product-info-wrapper">
+				'. wp_kses_post($additional_info) .'
+			</div>
+		</div>';
 	}
 
 	echo '</div>';
@@ -480,13 +505,22 @@ function style_select() {
 }
 
 // Remove state/kanton from checkout, edit placeholders
+add_filter( 'woocommerce_default_address_fields', 'remove_state_field' );
 function remove_state_field( $fields ) {
 	unset( $fields['state'] );
     $fields['address_2']['placeholder'] = 'Zusätzliche Adressangaben (optional)';
 
 	return $fields;
 }
-add_filter( 'woocommerce_default_address_fields', 'remove_state_field' );
+
+
+//add_filter('woocommerce_review_order_before_cart_contents', 'change_quantity_order');
+function change_quantity_order( $cart_item){
+	echo '<h1>text</h1>';
+	var_dump($cart_item);
+	return $cart_item;
+}
+
 
 
 ?>

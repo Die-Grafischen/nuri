@@ -37,6 +37,20 @@ jQuery(document).ready(function ($) {
 
   if ($('select').length) {
     $('select').selectWoo();
+  } // toggle zusätzliche info
+
+
+  $('.single-product-info').on('click', '.single-product-info-title', function () {
+    $(this).next().slideToggle();
+  }); // move category back link inside gallery
+
+  if ($('.woo-back').length) {
+    var wooBack = $('.woo-back').detach();
+    $('.woocommerce-product-gallery').prepend(wooBack);
+    $('.woo-back').css('opacity', 1);
+    $('.woo-back-link').hover(function () {
+      $('.woo-back-name').fadeToggle();
+    }); // wooBack;
   }
   /******** ISOTOPE AJAX ********/
 
