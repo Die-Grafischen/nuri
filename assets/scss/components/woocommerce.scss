@@ -93,6 +93,10 @@
 
 .woocommerce {
 
+	ul#shipping_method li input {
+	    margin: 8px .4375em 0 0;
+	}
+
 	.woocommerce-customer-details address {
 		border: 0;
 		padding: 0;
@@ -316,6 +320,11 @@
 		form.cart {
 
 			.variations {
+
+				td.label {
+					display: none;
+				}
+
 				select {
 					min-width: 285px;
 					padding: 0 9px;
@@ -465,6 +474,10 @@
 
 	ul.products {
 		margin-top: $gutter;
+	}
+
+	.attributes-string {
+		display: none;
 	}
 }
 
