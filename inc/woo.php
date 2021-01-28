@@ -194,9 +194,30 @@ function wrap_product_start() {
 	  <path id="Path_39" data-name="Path 39" d="M9771.529,561.7l-20,20,20,20" transform="translate(-9750.115 -560.99)" fill="none" stroke="#000" stroke-width="2"/>
 	</svg>';
 
+	$categories = get_the_terms( get_the_ID(), 'product_cat' );
+	$category_link = '#';
+	$category_name = '';
+
+	// wrapper to hide any errors from top level categories or products without category
+	if ( $categories ) :
+
+	    // loop through each cat
+	    foreach($categories as $category) :
+	      // get the children (if any) of the current cat
+	      $children = get_categories( array ('taxonomy' => 'product_cat', 'parent' => $category->term_id ));
+
+	      if ( count($children) == 0 ) {
+	          // if no children, then echo the category name.
+	          $category_name = $category->name;
+			  $category_link = get_term_link($category);
+	      }
+	    endforeach;
+
+	endif;
+
 	echo '<div class="woo-back">
-		<a href="'. get_term_link($term) .'" class="woo-back-link">'. $svg .'</a>
-		<div class="woo-back-name">'. esc_html($term->name) .'</div>
+		<a href="'. esc_url($category_link) .'" class="woo-back-link">'. $svg .'</a>
+		<div class="woo-back-name">'. esc_html($category_name) .'</div>
 	</div>';
 }
 
