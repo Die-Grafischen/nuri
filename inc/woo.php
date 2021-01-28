@@ -140,14 +140,13 @@ function woo_categories_filter() {
 
 				$child_args = array(
 					'taxonomy' => 'product_cat',
-					'hide_empty' => false,
+					'hide_empty' => true,
 					'parent'   => $parent_product_cat->term_id
 				);
 
 				$child_product_cats = get_terms( $child_args );
 
 				foreach ($child_product_cats as $child_product_cat) {
-					if(!$child_product_cat->count) {
 						echo '<li>
 							<div class="pretty p-default p-fill p-svg p-tada">
 								<input type="checkbox" data-filter=".product_cat-'. esc_attr($child_product_cat->term_id) .'" />
@@ -160,7 +159,6 @@ function woo_categories_filter() {
 								</div>
 							</div>
 						</li>';
-					}
 				}
 
 			echo '</ul>
