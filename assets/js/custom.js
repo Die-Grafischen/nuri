@@ -252,4 +252,6 @@ jQuery(document).ready(function ($) {
     console.log(wooUrl + '?per_page=' + postsPerPage + '&category=' + catString + '&exclude=' + excString);
     getData(wooUrl + '?per_page=' + postsPerPage + '&category=' + catString + '&exclude=' + excString);
   }
+
+  console.log(queryCategories);
 }); // END jQuery

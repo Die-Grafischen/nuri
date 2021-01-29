@@ -387,6 +387,9 @@
 				display: block;
 				padding-top: $gutter/3;
 				margin-bottom: $gutter;
+				width: 50%;
+				padding-left: $gutter/3;
+				float: right;
 			}
 
 			.single-product-tags {
@@ -758,5 +761,4 @@ i.filter-icon {
 			display:block;
 		}
 	}
-
 }

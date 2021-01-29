@@ -114,7 +114,7 @@ jQuery(document).ready(function($) {
 			formReset();
 		});
 
-		var filter = '*';
+		let filter = '*';
         if(window.location.hash) {
             filter = '.' + window.location.hash.substr(1);
             $('#filters .button.is-checked').removeClass('is-checked');
@@ -290,6 +290,5 @@ jQuery(document).ready(function($) {
 
 
 
-
-
+console.log(queryCategories);
 }); // END jQuery

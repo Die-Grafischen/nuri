@@ -45,9 +45,9 @@ function remove_shop_breadcrumbs(){
 }
 
 // Remove Shop Title
-add_filter( 'woocommerce_show_page_title', 'bbloomer_hide_shop_page_title' );
-function bbloomer_hide_shop_page_title( $title ) {
-   if ( is_shop() ) $title = false;
+add_filter( 'woocommerce_show_page_title', 'hide_page_title' );
+function hide_page_title( $title ) {
+   if ( is_shop() || is_archive() ) $title = false;
    return $title;
 }
 
@@ -123,7 +123,7 @@ function woo_categories_filter() {
 
 	$args = array(
 		'taxonomy' => 'product_cat',
-		'hide_empty' => false, //temp
+		'hide_empty' => true,
 		'parent'   => 0
 	);
 
@@ -131,11 +131,9 @@ function woo_categories_filter() {
 
 	echo '<ul>';
 	foreach ($product_cat as $parent_product_cat) {
-		echo'<li class="filter-parent-cat">
+		echo'<li class="filter-parent-cat" data-term="term-'. esc_attr($parent_product_cat->slug) .'">
 
-			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->term_id) .'" class="product-parent-selector">
-				'. esc_attr($parent_product_cat->name) .'<i class="filter-icon"></i>
-			</span>
+			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->term_id) .'" class="product-parent-selector">'. esc_attr($parent_product_cat->name) .'<i class="filter-icon"></i></span>
 			<ul class="filter-child-cat">';
 
 				$child_args = array(
@@ -149,7 +147,7 @@ function woo_categories_filter() {
 				foreach ($child_product_cats as $child_product_cat) {
 						echo '<li>
 							<div class="pretty p-default p-fill p-svg p-tada">
-								<input type="checkbox" data-filter=".product_cat-'. esc_attr($child_product_cat->term_id) .'" />
+								<input type="checkbox" data-filter=".product_cat-'. esc_attr($child_product_cat->term_id) .'" data-term="term-'. esc_attr($child_product_cat->slug) .'"/>
 								<div class="state">
 									<!-- svg path -->
 									<svg class="svg svg-icon" viewBox="0 0 20 20">
@@ -317,7 +315,6 @@ function wrap_product_end() {
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
-
 // Remove Woo Tabs in single
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 
@@ -435,83 +432,21 @@ add_filter("woocommerce_rest_prepare_product_object", "prepare_product_images", 
 
 /********************* AJAX SHOP ****************/
 
-
-
 // Insert 'Mehr anzeigen' button after product loop
 add_action('woocommerce_after_shop_loop', 'more_button');
 function more_button() {
-	global $wp_query;
-	$post_count = $wp_query->post_count;
-	$total_posts = $wp_query->found_posts;
-
-	if( $post_count < $total_posts ) {
-		echo '<div class="load-more-wrapper is-style-outline">
-			<div class="lds-ellipsis">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-	    </div>';
-	}
-}
-//<div id="ajax-load-more-products" class="more-btn wp-block-button__link button no-border-radius" >Mehr anzeigen</div>
-
-// create custom rest api route
-add_action('rest_api_init', 'custom_api_get_products');
-function custom_api_get_products(){
-  register_rest_route( 'products', '/all', array(
-    'methods' => 'GET',
-    'callback' => 'custom_api_get_products_callback',
-	'permission_callback' => '__return_true'
-  ));
-}
-
-// callback function for the rest api route
-function custom_api_get_products_callback($request){
-    $posts_data = array();
-    $paged = $request->get_param('page');
-    $paged = (isset($paged) || !(empty($paged))) ? $paged : 1;
-    $args = array(
-      'status'          => 'publish',
-      'page'           => $paged
-    );
-
-	$products = wc_get_products( $args );
-	foreach ($products as $product) {
-		$product_id = $product->get_id();
-		$product_title = $product->get_title();
-		$product_price = $product->get_price();
-		$product_thumbnail = $product->get_image();
-		$terms = get_the_terms( $product_id, 'product_cat' );
-		$product_categories = '';
-		if($terms) {
-
-			foreach($terms as $term) {
-				$product_categories .= 'product_cat_'. $term->slug .' ';
-			}
-		}
-
-		$posts_data[] = (object)array(
-			'product_id' => $product_id,
-			'product_title' => $product_title,
-			'product_price' => $product_price,
-			'product_terms' => $product_categories,
-			'product_thumbnail' => $product_thumbnail
-		);
-	}
-
-
-
-	wp_reset_postdata();
-
-	return $posts_data;
-
+	echo '<div class="load-more-wrapper is-style-outline">
+		<div class="lds-ellipsis">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+    </div>';
 }
 
 // Remove reset variations button on single product
 add_filter('woocommerce_reset_variations_link', '__return_empty_string');
-
 
 // Change Sale/Angebot text to Aktion
 add_filter('woocommerce_sale_flash', 'ds_change_sale_text');

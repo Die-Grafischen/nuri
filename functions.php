@@ -122,7 +122,7 @@ function nuri_register_scripts() {
 	//Include WP jQuery
     wp_enqueue_script('jquery');
 
-	if ( is_shop() ) {
+	if ( is_shop() || ( is_archive() && is_realy_woocommerce_page () ) ) {
 		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.min.js', array('jquery'), $theme_version, false );
 	}
 
