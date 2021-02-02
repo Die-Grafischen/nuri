@@ -768,3 +768,26 @@ i.filter-icon {
 		}
 	}
 }
+
+.tax-product_tag {
+	a.product-tag {
+		background: $white;
+		padding: 10px 24px;
+		border-radius: 24px;
+		margin: 5px 10px 5px 0;
+		display: inline-block;
+
+		&:hover,
+		&.filter-current-tag {
+			background: $black;
+			color: $white;
+		}
+
+	}
+
+	.load-more-wrapper,
+	.add_to_cart_button {
+		display: none!important;
+	}
+
+}

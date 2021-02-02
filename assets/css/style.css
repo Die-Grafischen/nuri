@@ -882,6 +882,12 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 
 .woo-back .woo-back-name:after { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 22px 18px 0 0; border-color: #ffffff transparent transparent #ffffff; position: absolute; bottom: -18px; left: 0; display: block; }
 
+.tax-product_tag a.product-tag { background: #ffffff; padding: 10px 24px; border-radius: 24px; margin: 5px 10px 5px 0; display: inline-block; }
+
+.tax-product_tag a.product-tag:hover, .tax-product_tag a.product-tag.filter-current-tag { background: #000000; color: #ffffff; }
+
+.tax-product_tag .load-more-wrapper, .tax-product_tag .add_to_cart_button { display: none !important; }
+
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 

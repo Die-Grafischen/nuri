@@ -116,19 +116,46 @@ function woo_custom_filter() {
 	$query_cat_term = get_term_by( 'slug', $query_cat, 'product_cat' ) ?: '';
 	$query_cat_id = $query_cat_term ? $query_cat_term->term_id : '';
 
-
-	//do_action( 'qm/debug', $query_cat_term );
+	//do_action( 'qm/debug', $wp_query );
 	$query_cat_parent = isset($wp_query->query['product_cat']) ? $wp_query->query['product_cat'] : 0;
 
 	$query_parent_slug = $query_cat_parent ? strtok($query_cat_parent, '/') : 0;
 
 	$postCount = $wp_query->post_count;
 
-	echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'" data-query-cat="'. esc_attr($query_cat).'" data-query-cat-id="'. esc_attr($query_cat_id) .'">';
-	woo_categories_filter($query_cat, $query_parent_slug);
-		echo '<span class="clear-filter">Filter zurücksetzen</span>
-	</div>';
 
+
+		if($wp_query->query['product_tag']) {
+			woo_tags_filter($wp_query->query['product_tag']);
+		} else {
+			echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'" data-query-cat="'. esc_attr($query_cat).'" data-query-cat-id="'. esc_attr($query_cat_id) .'">';
+				woo_categories_filter($query_cat, $query_parent_slug);
+			echo '<span class="clear-filter">Filter zurücksetzen</span>
+			</div>';
+		}
+
+
+}
+
+function woo_tags_filter($query_tag_slug) {
+
+	$args = array(
+		'taxonomy' => 'product_tag',
+		'hide_empty' => true,
+		'parent'   => 0
+	);
+
+	$product_tags = get_terms( $args );
+
+	echo '<div class="product-tags">';
+
+	foreach ($product_tags as $product_tag) {
+		do_action( 'qm/debug', $product_tag );
+		$current_tag = ($query_tag_slug === $product_tag->slug) ? 'filter-current-tag' : '';
+		echo '<a href="'. get_tag_link($product_tag) .'" rel="tag" class="product-tag '. esc_attr($current_tag) .'">'. $product_tag->name .'</a>';
+	}
+
+	echo '</div>';
 }
 
 function woo_categories_filter($query_cat, $query_parent_slug) {
@@ -492,19 +519,6 @@ function remove_state_field( $fields ) {
     $fields['address_2']['placeholder'] = 'Zusätzliche Adressangaben (optional)';
 
 	return $fields;
-}
-
-
-// Define custom product image placeholder
-add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
-
-function custom_woocommerce_placeholder_img_src( $src ) {
-	$upload_dir = wp_upload_dir();
-	$uploads = untrailingslashit( $upload_dir['baseurl'] );
-	// replace with path to your image
-	$src = $uploads . 'custom-woo-placeholder.gif';
-
-	return $src;
 }
 
 
