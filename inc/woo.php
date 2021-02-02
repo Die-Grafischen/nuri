@@ -495,11 +495,16 @@ function remove_state_field( $fields ) {
 }
 
 
-//add_filter('woocommerce_review_order_before_cart_contents', 'change_quantity_order');
-function change_quantity_order( $cart_item){
-	echo '<h1>text</h1>';
-	var_dump($cart_item);
-	return $cart_item;
+// Define custom product image placeholder
+add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+
+function custom_woocommerce_placeholder_img_src( $src ) {
+	$upload_dir = wp_upload_dir();
+	$uploads = untrailingslashit( $upload_dir['baseurl'] );
+	// replace with path to your image
+	$src = $uploads . 'custom-woo-placeholder.gif';
+
+	return $src;
 }
 
 
