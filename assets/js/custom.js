@@ -55,10 +55,15 @@ jQuery(document).ready(function ($) {
   /******** ISOTOPE AJAX ********/
 
 
-  var loadedProductsIds = new Array(); //save all loaded in dom products id in array
-  // PROJECTS/HOME ISOTOPE
+  var loadedProductsIds = []; //loaded products ids
+
+  var queryCategories = []; // current query categories id
+
+  var filter = '*'; // default filter for isotope, select all categories
+  // SHOP ISOTOPE - runns only on woo shop/category/tags page
 
   if ($('.woo-custom-filter').length) {
+    // Resets isotope filter and hides subcategories
     var formReset = function formReset() {
       queryCategories = [];
       parentCategory = '';
@@ -68,7 +73,8 @@ jQuery(document).ready(function ($) {
       });
       $('.filter-current-parent .filter-child-cat').slideToggle();
       $('.filter-current-parent').removeClass('filter-current-parent');
-    };
+    }; // Triggers filter reset on reset link click
+
 
     // this function runs every time you are scrolling
     var isInViewport = function isInViewport(el) {
@@ -84,13 +90,23 @@ jQuery(document).ready(function ($) {
       }
     };
 
-    var container = $('.products'); //get classes of all loaded products
+    // Only on category page
+    if ($('.woo-custom-filter').data('query-cat-id')) {
+      var id = $('.woo-custom-filter').data('query-cat-id');
+      queryCategories.push(id); // add parent category to current query categories
+
+      filter = '.product_cat-' + id;
+      console.log('category page');
+    }
+
+    $('.filter-current-parent .filter-child-cat').slideToggle();
+    var container = $('.products'); //get classes of all loaded products and save product ids in loadedProductsIds[];
 
     container.children().each(function () {
       var clas = $(this).attr('class').split("post-")[1].match(/\d+/)[0]; // stripe only number(product id)
 
       loadedProductsIds.push(clas);
-    }); // Woo Filter
+    }); // Woo Filter - filter products with isotope.js on parent category click
 
     $('.filter-parent-cat').on('click', 'span', function (e) {
       $("html, body").animate({
@@ -115,14 +131,6 @@ jQuery(document).ready(function ($) {
 
     if ($('.filter-child-cat li input.checked').length) {
       $('.filter-child-cat li input.checked').trigger('click');
-    }
-
-    var filter = '*';
-
-    if (window.location.hash) {
-      filter = '.' + window.location.hash.substr(1);
-      $('#filters .button.is-checked').removeClass('is-checked');
-      $('#filters .button.bt-' + window.location.hash.substr(1)).addClass('is-checked');
     } // init Isotope
 
 
@@ -146,7 +154,8 @@ jQuery(document).ready(function ($) {
       if (elements < postsPerPage) {
         loadMoreProducts();
       }
-    });
+    }); // filter products on subcategories(checkbox) click
+
     var checkboxes = $('.filter-child-cat input');
     checkboxes.change(function () {
       var filters = [];
@@ -177,9 +186,12 @@ jQuery(document).ready(function ($) {
     $(window).on('resize scroll load', function () {
       isInViewport('.load-more-wrapper');
     });
+    setTimeout(function () {
+      loadMoreProducts();
+    }, 100);
   }
   /******** END ISOTOPE AJAX ********/
-  // production enviroment
+  // production enviroment - read only permissions
 
 
   var wooClientKey = 'ck_4dbc36409a2f3772d2bb18e8b066f31c20f1cdde';
@@ -188,6 +200,7 @@ jQuery(document).ready(function ($) {
   // const wooClientKey = 'ck_d3075b8231bedc08b740a91d77a6fe28b34e6df2';
   // const wooClientSecret = 'cs_b2f087b724e028bbd46fb68879555009941e247e';
   // const wooUrl = 'https://nuri.local/wp-json/wc/v3/products';
+  // authorization
 
   function basicAuth(key, secret) {
     var hash = btoa(key + ':' + secret);
@@ -197,8 +210,7 @@ jQuery(document).ready(function ($) {
   var auth = basicAuth(wooClientKey, wooClientSecret);
   var pull_page = 1;
   var jsonFlag = true;
-  var postsPerPage = $('.woo-custom-filter').data('postcount') ? $('.woo-custom-filter').data('postcount') : 12;
-  var queryCategories = new Array(); //current query categories
+  var postsPerPage = $('.woo-custom-filter').data('postcount') ? $('.woo-custom-filter').data('postcount') : 12; // ajax get request to woo rest api
 
   function getData(url) {
     jQuery.ajax({
@@ -221,7 +233,7 @@ jQuery(document).ready(function ($) {
 
         jQuery.each(data, function (index, item) {
           if (currentQuery <= queryLength) {
-            var id = data[index].id;
+            var _id = data[index].id;
             var title = data[index].name;
             var permalink = data[index].permalink;
             var price = data[index].price_html;
@@ -230,11 +242,12 @@ jQuery(document).ready(function ($) {
             terms.forEach(function (item, index, array) {
               categories = categories + 'product_cat-' + item.id + ' ';
             });
-            var imageSrc = data[index].images[0] ? data[index].images[0].shop_catalog : 'https://nurifood.ch/wprs/wp-content/uploads/woocommerce-placeholder-600x600.png';
-            var productHtml = $('<li class="product type-product post-' + id + ' status-publish ' + categories + 'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="' + permalink + '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="315" height="420" src="' + imageSrc + '" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">' + title + '</h2><span class="price">' + price + '</span></a></li>');
+            var imageSrc = data[index].images[0] ? data[index].images[0].shop_catalog : 'https://nurifood.ch/wprs/wp-content/uploads/custom-woo-placeholder.gif';
+            var productHtml = $('<li class="product type-product post-' + _id + ' status-publish ' + categories + 'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="' + permalink + '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="315" height="420" src="' + imageSrc + '" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">' + title + '</h2><span class="price">' + price + '</span></a></li>');
             container.isotope('insert', productHtml); //insert new product to isotope
 
-            loadedProductsIds.push(id);
+            loadedProductsIds.push(_id); // add loaded products id to the exeptions for future queries
+
             currentQuery++;
           }
         });

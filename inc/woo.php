@@ -98,7 +98,7 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_
 add_action( 'woocommerce_before_shop_loop_item_title', 'custom_loop_product_thumbnail', 10 );
 function custom_loop_product_thumbnail() {
     global $product;
-    $size = 'woocommerce_single';
+    $size = 'shop_catalog';
 
     $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
 
@@ -113,14 +113,18 @@ function woo_custom_filter() {
 	//var_dump($wp_query);
 	$query_cat = isset($wp_query->query_vars['product_cat']) ? $wp_query->query_vars['product_cat'] : 0; // the category slug if this is category page
 
+	$query_cat_term = get_term_by( 'slug', $query_cat, 'product_cat' ) ?: '';
+	$query_cat_id = $query_cat_term ? $query_cat_term->term_id : '';
+
+
+	//do_action( 'qm/debug', $query_cat_term );
 	$query_cat_parent = isset($wp_query->query['product_cat']) ? $wp_query->query['product_cat'] : 0;
 
 	$query_parent_slug = $query_cat_parent ? strtok($query_cat_parent, '/') : 0;
 
-
 	$postCount = $wp_query->post_count;
 
-	echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'" data-query-cat="'. esc_attr($query_cat).'">';
+	echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'" data-query-cat="'. esc_attr($query_cat).'" data-query-cat-id="'. esc_attr($query_cat_id) .'">';
 	woo_categories_filter($query_cat, $query_parent_slug);
 		echo '<span class="clear-filter">Filter zurücksetzen</span>
 	</div>';
