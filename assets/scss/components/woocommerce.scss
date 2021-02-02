@@ -68,6 +68,12 @@
 
 	}
 
+	li.filter-current-parent {
+		ul.filter-child-cat {
+			//display: block;
+		}
+	}
+
 	.clear-filter {
 		margin-left: auto;
 		cursor: pointer;

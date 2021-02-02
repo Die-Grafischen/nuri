@@ -114,6 +114,10 @@ jQuery(document).ready(function($) {
 			formReset();
 		});
 
+		if($('.filter-child-cat li input.checked').length) {
+			$('.filter-child-cat li input.checked').trigger('click');
+		}
+
 		let filter = '*';
         if(window.location.hash) {
             filter = '.' + window.location.hash.substr(1);
@@ -165,7 +169,7 @@ jQuery(document).ready(function($) {
 			}
 
 			filters = filters.join(', '); // join array into one string
-
+			console.log('filters: ' + filters);
 			container.isotope({ filter: filters });
 		 });
 
@@ -250,10 +254,10 @@ jQuery(document).ready(function($) {
 
 						  	});
 
-							let imageSrc = data[index].images[0] ? data[index].images[0].woocommerce_single : 'https://nurifood.ch/wprs/wp-content/uploads/woocommerce-placeholder-600x600.png' ;
+							let imageSrc = data[index].images[0] ? data[index].images[0].shop_catalog : 'https://nurifood.ch/wprs/wp-content/uploads/woocommerce-placeholder-600x600.png' ;
 
 
-							let productHtml = $('<li class="product type-product post-'+ id +' status-publish '+ categories +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="'+ permalink +'" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="'+ imageSrc +'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price">'+ price +'</span></a></li>');
+							let productHtml = $('<li class="product type-product post-'+ id +' status-publish '+ categories +'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="'+ permalink +'" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="315" height="420" src="'+ imageSrc +'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">'+ title +'</h2><span class="price">'+ price +'</span></a></li>');
 
 							container.isotope( 'insert', productHtml ); //insert new product to isotope
 
@@ -288,7 +292,4 @@ jQuery(document).ready(function($) {
 
 
 
-
-
-console.log(queryCategories);
 }); // END jQuery
