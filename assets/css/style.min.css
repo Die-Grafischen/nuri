@@ -343,6 +343,11 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .tax-product_tag a.product-tag{background:#fff;padding:10px 24px;border-radius:24px;margin:5px 10px 5px 0;display:inline-block}
 .tax-product_tag a.product-tag:hover,.tax-product_tag a.product-tag.filter-current-tag{background:#000;color:#fff}
 .tax-product_tag .load-more-wrapper,.tax-product_tag .add_to_cart_button{display:none !important}
+.woocommerce-checkout #payment div.payment_box p.woocommerce-SavedPaymentMethods-saveNew{margin-top:-20px}
+.woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form{margin-top:0}
+.woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form .form-row{margin:10px 0 0 0;padding:0}
+.woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form .wc-stripe-elements-field,.woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form .wc-stripe-iban-element-field{border:1px solid #000;margin:5px 0;padding:9px}
+.woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form .wc-stripe-error{margin:20px 0 0 0}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}

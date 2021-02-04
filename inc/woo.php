@@ -430,7 +430,6 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
-
 	ob_start();
 
 	?>
@@ -521,6 +520,46 @@ function remove_state_field( $fields ) {
 	return $fields;
 }
 
+// Conditional gateway/shipping
+add_filter( 'woocommerce_available_payment_gateways', 'gateway_disable_shipping' );
+function gateway_disable_shipping( $available_gateways ) {
 
+   if ( ! is_admin() ) {
+
+      $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+
+      $chosen_shipping = $chosen_methods[0];
+
+      if ( isset( $available_gateways['cod'] ) && 0 === strpos( $chosen_shipping, 'flat_rate' ) ) {
+         unset( $available_gateways['cod'] );
+      }
+
+	  if ( isset( $available_gateways['stripe'] ) && 0 === strpos( $chosen_shipping, 'local_pickup' ) ) {
+		 unset( $available_gateways['stripe'] );
+	  }
+
+   }
+
+   return $available_gateways;
+
+}
+
+// Style stripe
+function my_theme_modify_stripe_fields_styles( $styles ) {
+    return array(
+        'base' => array(
+            'iconColor'     => '#000',
+            'color'         => '#000',
+            'fontSize'      => '22px',
+			'fontFamily'    => 'Maison Neue, Helvetica, Arial, sans-serif',
+            '::placeholder' => array(
+                'color' => '#000',
+				'fontWeight'    => 300
+            ),
+        ),
+    );
+}
+
+add_filter( 'wc_stripe_elements_styling', 'my_theme_modify_stripe_fields_styles' );
 
 ?>

@@ -791,3 +791,28 @@ i.filter-icon {
 	}
 
 }
+
+.woocommerce-checkout #payment div.payment_box {
+	p.woocommerce-SavedPaymentMethods-saveNew {
+	    margin-top: -20px;
+	}
+	.wc-credit-card-form#wc-stripe-cc-form {
+		margin-top: 0;
+
+		.form-row {
+			margin: 10px 0 0 0;
+			padding: 0;
+		}
+
+		.wc-stripe-elements-field,
+		.wc-stripe-iban-element-field {
+		    border: 1px solid #000;
+		    margin: 5px 0;
+		    padding: 9px;
+		}
+
+		.wc-stripe-error {
+			margin: 20px 0 0 0;
+		}
+	}
+}
