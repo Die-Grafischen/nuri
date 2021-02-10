@@ -123,16 +123,14 @@ function woo_custom_filter() {
 
 	$postCount = $wp_query->post_count;
 
-
-
-		if($wp_query->query['product_tag']) {
-			woo_tags_filter($wp_query->query['product_tag']);
-		} else {
-			echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'" data-query-cat="'. esc_attr($query_cat).'" data-query-cat-id="'. esc_attr($query_cat_id) .'">';
-				woo_categories_filter($query_cat, $query_parent_slug);
-			echo '<span class="clear-filter">Filter zurücksetzen</span>
-			</div>';
-		}
+	if( isset( $wp_query->query['product_tag'] ) ) {
+		woo_tags_filter($wp_query->query['product_tag']);
+	} else {
+		echo '<div class="woo-custom-filter" data-postcount="'. esc_attr($postCount) .'" data-query-cat="'. esc_attr($query_cat).'" data-query-cat-id="'. esc_attr($query_cat_id) .'">';
+			woo_categories_filter($query_cat, $query_parent_slug);
+		echo '<span class="clear-filter">Filter zurücksetzen</span>
+		</div>';
+	}
 
 
 }
@@ -302,6 +300,171 @@ function show_attributes($price){
 
 }
 
+//register acf form for the special category products
+add_action('acf/init', 'my_acf_form_init');
+function my_acf_form_init() {
+
+    // Check function exists.
+    if( function_exists('acf_register_form') ) {
+
+        // Register form.
+        acf_register_form(array(
+            'id'       => 'special-product',
+            'post_id'  => 'new_post',
+            'new_post' => array(
+                'post_type'   => 'event',
+                'post_status' => 'publish'
+            ),
+            'post_title'  => true,
+            'post_content'=> true,
+        ));
+    }
+}
+
+add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart_button_func' );
+/*
+ * Content below "Add to cart" Button.
+ */
+function add_content_after_addtocart_button_func() {
+		// if(!function_exists('woocommerce_wp_text_input') && !is_admin()) {
+		// 	include_once(WC()->plugin_path() . '/includes/admin/wc-meta-box-functions.php');
+		// }
+        // // Echo content.
+		// woocommerce_wp_textarea_input(
+		// 	array(
+		// 		'id' => '_custom_product_adresse_field',
+		// 		'class' => 'custom_product_adresse',
+		// 		'label' => __('Adresse', 'nuri'),
+		// 	)
+		// );
+		//
+		// woocommerce_wp_textarea_input(
+		// 	array(
+		// 		'id' => '_custom_product_botschaft_field',
+		// 		'class' => 'custom_product_botschaft',
+		// 		'label' => __('Botschaft', 'nuri'),
+		// 	)
+		// );
+
+}
+
+/**/
+
+// Add custom input field to product page
+add_action( 'woocommerce_after_add_to_cart_button', 'extra_product_fields', 9 );
+function extra_product_fields() {
+	echo '<div class="extra-product-fields">';
+
+		$extra_adresse = isset( $_POST['extra_adresse'] ) ? sanitize_text_field( $_POST['extra_adresse'] ) : '';
+		printf( '<textarea name="extra_adresse" value="" placeholder="%s" rows="3"></textarea>', __( 'Adresse *' ), esc_attr( $extra_adresse ) );
+
+		$extra_botschaft = isset( $_POST['extra_botschaft'] ) ? sanitize_text_field( $_POST['extra_botschaft'] ) : '';
+		printf( '<textarea name="extra_botschaft" value="" placeholder="%s" rows="5"></textarea>', __( 'Botschaft' ), esc_attr( $extra_botschaft ) );
+
+	echo '</div>';
+}
+
+// validate when add to cart
+function d_extra_field_validation($passed, $product_id, $qty){
+
+  if( isset( $_POST['extra_adresse'] ) && sanitize_text_field( $_POST['extra_adresse'] ) == '' ){
+	  $product = wc_get_product( $product_id );
+	  wc_add_notice( sprintf( __( 'Bitte die Adresse angeben!' ), $product->get_title() ), 'error' );
+	  return false;
+  }
+
+  return $passed;
+
+}
+add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10, 3 );
+
+   // add custom field data in to cart
+  function d_add_cart_item_data( $cart_item, $product_id ){
+
+	  if( isset( $_POST['extra_adresse'] ) ) {
+		  $cart_item['extra_adresse'] = sanitize_text_field( $_POST['extra_adresse'] );
+	  }
+
+	  return $cart_item;
+
+  }
+  add_filter( 'woocommerce_add_cart_item_data', 'd_add_cart_item_data', 10, 2 );
+
+  // load data from session
+  function d_get_cart_data_f_session( $cart_item, $values ) {
+
+	  if ( isset( $values['extra_adresse'] ) ){
+		  $cart_item['extra_adresse'] = $values['extra_adresse'];
+	  }
+
+	  return $cart_item;
+
+  }
+  add_filter( 'woocommerce_get_cart_item_from_session', 'd_get_cart_data_f_session', 20, 2 );
+
+
+  //add meta to order
+  function d_add_order_meta( $item_id, $values ) {
+
+	  if ( ! empty( $values['extra_adresse'] ) ) {
+		  woocommerce_add_order_item_meta( $item_id, 'extra_adresse', $values['extra_adresse'] );
+	  }
+  }
+  add_action( 'woocommerce_add_order_item_meta', 'd_add_order_meta', 10, 2 );
+
+  // display data in cart
+  function d_get_itemdata( $other_data, $cart_item ) {
+
+	  if ( isset( $cart_item['extra_adresse'] ) ){
+
+		  $other_data[] = array(
+			  'name' => __( 'Your extra field text' ),
+			  'value' => sanitize_text_field( $cart_item['extra_adresse'] )
+		  );
+
+	  }
+
+	  return $other_data;
+
+  }
+  add_filter( 'woocommerce_get_item_data', 'd_get_itemdata', 10, 2 );
+
+
+  // display custom field data in order view
+  function d_dis_metadata_order( $cart_item, $order_item ){
+
+	  if( isset( $order_item['extra_adresse'] ) ){
+		  $cart_item_meta['extra_adresse'] = $order_item['extra_adresse'];
+	  }
+
+	  return $cart_item;
+
+  }
+  add_filter( 'woocommerce_order_item_product', 'd_dis_metadata_order', 10, 2 );
+
+
+  // add field data in email
+  function d_order_email_data( $fields ) {
+	  $fields['extra_adresse'] = __( 'Your extra field text' );
+	  return $fields;
+  }
+  add_filter('woocommerce_email_order_meta_fields', 'd_order_email_data');
+
+  // again order
+  function d_order_again_meta_data( $cart_item, $order_item, $order ){
+
+	  if( isset( $order_item['extra_adresse'] ) ){
+		  $cart_item_meta['extra_adresse'] = $order_item['extra_adresse'];
+	  }
+
+	  return $cart_item;
+
+  }
+  add_filter( 'woocommerce_order_again_cart_item_data', 'd_order_again_meta_data', 10, 3 );
+
+/**/
+
+// extend single product
 add_filter( 'woocommerce_after_single_product_summary', 'wrap_product_end');
 function wrap_product_end() {
 	// display default single product content
@@ -314,6 +477,44 @@ function wrap_product_end() {
 	$product_id = $product->get_id();
 	$additional_info = get_field('zusatzliche_info', $product_id);
     $product_tags = get_the_term_list($product_id, 'product_tag', '', '' );
+	$special_category = get_field('spezielle_kategorie', 'options');
+
+	do_action( 'qm/debug', $product);
+	//check if product is in the special category
+	if( has_term($special_category, 'product_cat', $product_id) ) {
+		echo '<div class="single-product-info special-info">
+			<div class="single-product-info-title">
+				'. __('Weitere Produktinformationen', 'nuri') .'
+				<i class="filter-icon"></i>
+			</div>
+			<div class="single-product-info-wrapper">';
+			extra_product_fields();
+			if(!function_exists('woocommerce_wp_text_input') && !is_admin()) {
+				include_once(WC()->plugin_path() . '/includes/admin/wc-meta-box-functions.php');
+			}
+
+			// woocommerce_wp_textarea_input(
+			// 	array(
+			// 		'id' => '_custom_product_adresse_field',
+			// 		'class' => 'custom_product_adresse',
+			// 		'label' => __('Adresse', 'nuri'),
+			// 	)
+			// );
+			//
+			// woocommerce_wp_textarea_input(
+			// 	array(
+			// 		'id' => '_custom_product_botschaft_field',
+			// 		'class' => 'custom_product_botschaft',
+			// 		'label' => __('Botschaft', 'nuri'),
+			// 	)
+			// );
+
+			// $value = isset( $_POST['extra_adresse'] ) ? sanitize_text_field( $_POST['extra_adresse'] ) : '';
+			// printf( '<label>%s</label><input name="extra_adresse" value="%s" />', __( 'Enter your custom text' ), esc_attr( $value ) );
+
+			echo '</div>
+		</div>';
+	}
 
 	if($product_tags) {
 		echo '<div class="single-product-tags">
@@ -554,12 +755,15 @@ function my_theme_modify_stripe_fields_styles( $styles ) {
 			'fontFamily'    => 'Maison Neue, Helvetica, Arial, sans-serif',
             '::placeholder' => array(
                 'color' => '#000',
-				'fontWeight'    => 300
             ),
         ),
     );
 }
 
 add_filter( 'wc_stripe_elements_styling', 'my_theme_modify_stripe_fields_styles' );
+
+// remove cross sells from cart
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
 
 ?>

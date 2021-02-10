@@ -7,7 +7,12 @@
  */
 var nuriTheme;
 jQuery(document).ready(function ($) {
-  'use strict'; // Window Scroll
+  'use strict';
+
+  $('#nav-toggle').on('click', function () {
+    $('body').toggleClass('active-nav');
+    $('#nav-toggle').toggleClass('active');
+  }); // Window Scroll
 
   var header = $('header');
   var theWindow = $(window);

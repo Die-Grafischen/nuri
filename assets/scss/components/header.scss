@@ -9,12 +9,13 @@
 	 position: fixed;
 	 top: 22px;
 	 left: $gutter;
-	 z-index: 1000;
+	 @media (max-width: 768px) { left: $gutter/2; }
+
+	 z-index: 1100;
 
 	 img,
 	 svg {
 		 width: 100px;
-		 @include r(480) { width: 120px; }
 		 height: auto;
 
 		 g path {
@@ -44,6 +45,14 @@
 	 color: $black;
 	 z-index: 900;
 
+	 @include r(768) {
+		 font-size: $font-size-s;
+	 }
+
+	 @include r(480) {
+		 //z-index: 1000;
+	 }
+
 	 &.dynamic-header {
 		 position: absolute;
 		 top: 100vh;
@@ -55,10 +64,34 @@
 
 	 .menu {
 		 text-align: center;
+		 @include r(768) {
+			 text-align: right;
+			 padding-right: 76px;
+		 }
+
+		@include r(480) {
+			position: fixed;
+			left: -200%;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: $white;
+			z-index: 1000;
+			padding: 100px $gutter/2 $gutter/2;
+			transition: all .6s ease-in-out;
+		}
 
 		 li {
 			 display: inline-block;
 			 padding: 0 10px;
+
+			 @include r(480) {
+				 width: 100%;
+				 text-align: center;
+				 padding: 5px 0;
+				 font-size: $font-size-m;
+			 }
+
 
 			 a {
 				 color: $black;
@@ -78,6 +111,15 @@
 
 	 .header-inner {
 		 padding: 32px $gutter 28px $gutter;
+
+		 @include r(768) {
+			 padding: 32px $gutter/2 28px $gutter/2;
+		 }
+
+		 @include r(480) {
+			 padding: 32px $gutter 46px $gutter;
+		  }
+
 	 }
 
  }
@@ -101,6 +143,16 @@
 			}
 
 		}
+	}
+
+}
+
+body.active-nav {
+
+	touch-action: none;
+
+	header .menu {
+		left: 0;
 	}
 
 }

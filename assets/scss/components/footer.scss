@@ -7,7 +7,7 @@ footer {
 	.section-inner {
 		padding: $gutter*3 $gutter*4;
 		@include r(1024) { padding: $gutter*2 $gutter; }
-		@include r(480) { padding: $gutter; }
+		@include r(480) { padding: $gutter/2; }
 
 		display: flex;
 		flex-wrap: wrap;
@@ -65,7 +65,7 @@ footer {
 			@include r(480) {
 				width: 100%;
 				text-align: left;
-				padding-top: 0;
+				padding-top: $gutter/2;
 			}
 
 			.footer-text a {

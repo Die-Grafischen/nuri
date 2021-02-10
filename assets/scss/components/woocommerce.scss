@@ -3,16 +3,28 @@
 .wrapper main {
 	padding: $gutter;
 	margin-top: 88px;
-	display: block;
+	display:block;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1400px;
+
+
+	@include r(1024) {
+		padding: $gutter/2;
+		display: inline-block;
+		width: 100%;
+	}
+
+}
+
+.admin-bar .woo-custom-filter {
+	top: 120px;
 }
 
 .woo-custom-filter {
-	width: calc(100% - 80px);
+	width: calc(100% - #{$gutter}*2);
 	position: fixed;
-	top: 120px;
+	top: 88px;
 	left: $gutter;
 	display: flex;
 	z-index: 900;
@@ -20,6 +32,18 @@
 	padding: $gutter/2;
 	background: $white;
 	margin-bottom: $gutter;
+
+	@include r(1024) {
+		width: calc(100% - #{$gutter});
+		left: $gutter/2;
+	}
+
+	@include r(480) {
+		top: 78px;
+		width: 100%;
+		left: 0;
+		padding: $gutter/4 $gutter/2;
+	}
 
 	ul {
 		list-style: none;
@@ -31,6 +55,16 @@
 			font-family: $font-family-2;
 			font-size: $font-size-m;
 			line-height: 1;
+
+			@include r(1024) {
+				font-size: $font-size-s;
+				margin-right: 20px;
+			}
+
+			@include r(480) {
+				margin-top: 4px;
+				margin-bottom: 4px;
+			}
 
 			span {
 				cursor: pointer;
@@ -47,11 +81,26 @@
 			top: 60px;
 			padding: 0 $gutter/2 $gutter/2;
 
+			@include r(1024) {
+				top: 50px;
+			}
+
+			@include r(480) {
+				top: 75px;
+			}
+
 			li {
 				font-family: $font-family;
 				font-size: $font-size-s;
 				margin-top: $gutter/2;
 				width: 20%;
+
+				@include r(1024) {
+					font-size: $font-size-mobile;
+					width: auto;
+					margin-top: $gutter/4;
+				}
+
 				max-width: 250px;
 				padding: 2px;
 
@@ -77,6 +126,11 @@
 	.clear-filter {
 		margin-left: auto;
 		cursor: pointer;
+
+		@include r(1024) {
+			display: none;
+		}
+
 	}
 
 }
@@ -84,23 +138,44 @@
 .woocommerce {
 
 	.woocommerce-shipping-totals {
+
 		th,td {
 			font-weight: normal!important;
 		}
+
 	}
 
 	ul#shipping_method {
+
 		li {
+
 			margin: 0;
+
 			input {
 	    		margin: 8px .4375em 0 0;
 			}
+
+			@include r(480) {
+				margin-top: $gutter/3;
+			}
+
 		}
+
 	}
 
-	.woocommerce-customer-details address {
-		border: 0;
-		padding: 0;
+	.woocommerce-customer-details  {
+
+		.woocommerce-column--shipping-address {
+			@include r(768) {
+				margin-top: $gutter;
+			}
+		}
+
+		address {
+			border: 0;
+			padding: 0;
+		}
+
 	}
 
 	.woocommerce-additional-fields {
@@ -114,6 +189,11 @@
 	#customer_details {
 		width: calc(50% - 20px);
 		float: left;
+		@include r(1024) {
+			width: 100%;
+			margin-bottom: $gutter;
+		 }
+
 
 		.col-1,
 		.col-2 {
@@ -125,6 +205,8 @@
 	#order_review_heading {
 		@extend #customer_details;
 		margin-left: $gutter;
+		@include r(1024) { margin-left: 0; }
+
 	}
 
 	span.onsale {
@@ -154,6 +236,19 @@
 		border: 0;
 	}
 
+
+	.coupon + .button {
+
+		@include r(768) {
+			margin-top: $gutter/2!important;
+		}
+
+		@include r(480) {
+			margin-top: $gutter!important;
+		}
+
+	}
+
 	form .form-row .input-text,
 	.woocommerce-page form .form-row .input-text {
 		background: $white;
@@ -170,19 +265,32 @@
 
 	}
 
-	table.cart img {
-		width: 100px!important;
-		height: auto;
+	table.cart {
+
+		@include r(480) {
+			margin-top: -70px;
+		}
+
+		img {
+			width: 100px!important;
+			height: auto;
+		}
+
 	}
 
-	.cart-collaterals .cart_totals tr td,
-	.cart-collaterals .cart_totals tr th {
-		border-top: 1px solid $black!important;
-	}
+	.cart-collaterals .cart_totals {
+		@include r(1024) { width: 100%; }
 
-	.cart-collaterals .cart_totals tr:first-child td,
-	.cart-collaterals .cart_totals tr:first-child th {
-		border-top: 0!important;
+		tr td,
+		tr th {
+			border-top: 1px solid $black!important;
+		}
+
+		tr:first-child td,
+		tr:first-child th {
+			border-top: 0!important;
+		}
+
 	}
 
 	table.shop_table {
@@ -209,6 +317,28 @@
 			padding: $gutter/2 $gutter/3;
 			border-top: 1px solid $black;
 
+			@include r(1024) {
+				padding: 20px;
+			}
+
+			@include r(480) {
+				position: relative;
+			}
+
+			small.shipped_via {
+
+				@include r(480) {
+					display: block;
+					word-break: keep-all;
+					width: 200px;
+					text-align: right;
+					right: 0;
+				    bottom: 3px;
+				    position: absolute;
+				}
+
+			}
+
 			&.actions {
 				padding: $gutter/2 0;
 
@@ -226,12 +356,23 @@
 		}
 
 		a.remove {
+
 			color: $black!important;
+
+			@include r(768) {
+				background: $white!important;
+				transform: translate(-26px, 88px);
+			}
+
+			@include r(480) {
+				transform: translate(-14px, 82px);
+			}
 
 			&:hover {
 				color: $white!important;
 				background: $black;
 			}
+
 		}
 
 	}
@@ -261,6 +402,11 @@
 		flex-wrap: wrap;
 		margin: ($gutter*3) -10px 20px;
 
+		@include r(1024) {
+			margin: 54px 0 $gutter/2 -10px;
+			width: calc(100% + 20px);
+		}
+
 		li.product {
 			flex: 1 0 25%;
 		    max-width: 25%;
@@ -268,8 +414,31 @@
 			margin: 0;
 			border: 10px solid transparent;
 
+			a img {
+				@include r(1024) {
+					margin-bottom: 0;
+				}
+			}
+
+			@include r(768) {
+				flex: 1 0 50%!important;
+				width: 50%!important;
+				max-width: 50%!important;
+				margin-bottom: 0!important;
+			}
+
+			@include r(480) {
+				flex: 1 0 100%!important;
+				width: 100%!important;
+				max-width: 100%!important;
+				margin-bottom: 0!important;
+			}
+
 			.price {
 				color: $black;
+				@include r(1024) {
+					margin-bottom: 0;
+				}
 			}
 
 			.woocommerce-loop-product__title {
@@ -298,6 +467,10 @@
 		padding: 0 22px;
 		color: $white;
 
+		@include r(480) {
+			width: 100%!important;
+		}
+
 		&:hover {
 			background-color: $white;
 			color: $black;
@@ -311,6 +484,11 @@
 
 	div.product {
 		padding: $gutter 0;
+
+		@include r(1024) {
+			display: inline-block;
+			padding: 0;
+		}
 
 		span.attributes-string {
 			display: block;
@@ -369,6 +547,27 @@
 			float: left;
 			display: inline-block;
 			position: relative;
+			@include r(1024) { padding: 0; }
+
+
+			.extra-product-fields {
+				width: 100%;
+				float: left;
+
+				label {
+					width: 100%;
+					display: block;
+				}
+
+				textarea {
+					width: 334px;
+					padding: 9px;
+					background: $white;
+					margin-top: $gutter/2;
+					display: block;
+				}
+
+			}
 
 			.onsale {
 				left: $gutter*5;
@@ -379,6 +578,18 @@
 				padding: 0 $gutter/3 0 0;
 				width: 50%;
 				margin: 0 $gutter/3 0 0;
+
+				@include r(768) {
+					float: left;
+				}
+
+				@include r(480) {
+					width: 100%;
+					padding-right: 0;
+					margin-right: 0;
+					margin-bottom: $gutter/2;
+				}
+
 			}
 
 			div.summary {
@@ -387,14 +598,23 @@
 				margin-bottom: 0;
 				display: inline-block;
 				float: none;
+
+				@include r(768) {
+					float: right;
+				}
+
+				@include r(480) {
+					width: 100%;
+				}
+
+
 			}
 
 			.single-product-content {
 				display: block;
 				padding-top: $gutter/3;
 				margin-bottom: $gutter;
-				width: 50%;
-				padding-left: $gutter/3;
+				width: calc(50% - (#{$gutter}/3));
 				float: right;
 			}
 
@@ -434,8 +654,14 @@
 				border-bottom: 1px solid $black;
 				padding-bottom: $gutter;
 				width: 100%;
-				border-bottom: 1px solid $black;
 				float: left;
+
+				&.special-info {
+					border-top: 1px solid $black;
+					padding-bottom: 0;
+					padding-top: $gutter;
+					border-bottom: 0;
+				}
 
 				.single-product-info-title {
 					cursor: pointer;
@@ -514,6 +740,14 @@
 	position: absolute;
 	right: $gutter;
 	top: 32px;
+
+	@include r(768) { right: $gutter/2; }
+
+	@include r(480) {
+		top: 25px;
+		right: 65px
+	}
+
 
 	svg {
 		width: 35px;
@@ -674,6 +908,12 @@ span.attributes-string {
 	height: 49px;
 	padding: 0 22px;
 	line-height: 49px;
+
+	@include r(480) {
+		width: 100%;
+		margin-bottom: $gutter/2;
+	}
+
 }
 
 .woocommerce .disabled,
@@ -706,6 +946,13 @@ i.filter-icon {
 	height: 20px;
 	transition: all .4s;
 	margin-left: 20px;
+
+	@include r(768) {
+		margin-left: 10px;
+		width: 15px;
+		height: 15px;
+	}
+
 }
 
 .filter-current-parent i.filter-icon {
@@ -799,6 +1046,15 @@ i.filter-icon {
 	.wc-credit-card-form#wc-stripe-cc-form {
 		margin-top: 0;
 
+		label {
+
+			@include r(480) {
+				display: none;
+				line-height: 1;
+			}
+
+		}
+
 		.form-row {
 			margin: 10px 0 0 0;
 			padding: 0;
@@ -815,4 +1071,56 @@ i.filter-icon {
 			margin: 20px 0 0 0;
 		}
 	}
+}
+
+.woocommerce table.shop_table_responsive tr.shipping {
+
+	td {
+		text-align: left!important;
+
+		&::before {
+			width: 100%;
+			padding-bottom: $gutter/3;
+		}
+
+	}
+
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+
+	&::before {
+
+		@include r(480) {
+			left: 1em;
+		}
+
+	}
+
+	@include r(480) {
+		padding: 1em 1em 1em 3em;
+		margin: 0 0 $gutter;
+	}
+
+}
+
+.woocommerce ul.order_details li {
+
+	@include r(1024) {
+		border-right: 0;
+		margin-bottom: $gutter/2;
+		margin-right: 0;
+		width: 33%;
+	}
+
+	@include r(480) {
+		border-right: 0;
+		margin-bottom: $gutter/2;
+		margin-right: 0;
+		width: 100%;
+	}
+
+
 }

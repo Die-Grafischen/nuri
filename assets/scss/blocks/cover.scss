@@ -8,6 +8,9 @@
 	max-width: 100%;
 	float: left;
 	padding: 60px $gutter!important;
+	@include r(480) {
+		padding: $gutter/2!important;
+	}
 	background-repeat: no-repeat!important;
 	background-size: cover!important;
 
