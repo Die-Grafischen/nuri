@@ -691,7 +691,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 
 @media (max-width: 480px) { .woo-custom-filter ul ul.filter-child-cat { top: 75px; } }
 
-.woo-custom-filter ul ul.filter-child-cat li { font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; margin-top: 20px; width: 20%; max-width: 250px; padding: 2px; }
+.woo-custom-filter ul ul.filter-child-cat li { font-family: "Maison Neue", Helvetica, Arial, sans-serif; font-size: 22px; margin-top: 20px; margin-right: 0; padding: 2px; padding-right: 20px; width: 25%; }
 
 @media (max-width: 1024px) { .woo-custom-filter ul ul.filter-child-cat li { font-size: 19px; width: auto; margin-top: 10px; } }
 

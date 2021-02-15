@@ -178,7 +178,15 @@ jQuery(document).ready(function($) {
                 filter: filterValue
             });
 
-			var elements = container.isotope('getFilteredItemElements');
+			// count of visible filtered elements
+			var elements = container.isotope('getFilteredItemElements').length;
+
+			if( elements % 4 === 0 ){
+				console.log('0 null');
+			} else {
+				console.log(4 - (elements % 4));
+			}
+			console.log('product parent click');
 			if(elements < postsPerPage) {
 				loadMoreProducts();
 			}

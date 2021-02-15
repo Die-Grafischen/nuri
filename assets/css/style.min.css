@@ -228,7 +228,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path,b
 .woo-custom-filter ul>li span{cursor:pointer}
 .woo-custom-filter ul>li.no-children .filter-icon-svg{display:none}
 .woo-custom-filter ul ul.filter-child-cat{display:none;position:absolute;left:0;width:100%;background:#000;color:#fff;top:72px;padding:0 20px 20px}
-.woo-custom-filter ul ul.filter-child-cat li{font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:22px;margin-top:20px;width:20%;max-width:250px;padding:2px}
+.woo-custom-filter ul ul.filter-child-cat li{font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:22px;margin-top:20px;margin-right:0;padding:2px;padding-right:20px;width:25%}
 .woo-custom-filter ul ul.filter-child-cat li .pretty.p-default input:checked ~ .state label:after{background-color:#000 !important}
 .woo-custom-filter ul ul.filter-child-cat li .pretty .state label:before{border-color:#fff}
 .woo-custom-filter li.filter-current-parent{background:#000;color:#fff}

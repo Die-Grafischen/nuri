@@ -98,16 +98,16 @@
 				font-family: $font-family;
 				font-size: $font-size-s;
 				margin-top: $gutter/2;
-				width: 20%;
+				margin-right: 0;
+				padding: 2px;
+				padding-right: $gutter/2;
+				width: 25%;
 
 				@include r(1024) {
 					font-size: $font-size-mobile;
 					width: auto;
 					margin-top: $gutter/4;
 				}
-
-				max-width: 250px;
-				padding: 2px;
 
 				.pretty.p-default input:checked ~ .state label:after {
 					background-color: #000!important;
