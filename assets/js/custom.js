@@ -70,7 +70,6 @@ jQuery(document).ready(function ($) {
   if ($('.woo-custom-filter').length) {
     // Resets isotope filter and hides subcategories
     var formReset = function formReset() {
-      console.log('formReset()');
       queryCategories = [];
       parentCategory = '';
       $('input[type=checkbox]').prop('checked', false);
@@ -79,9 +78,6 @@ jQuery(document).ready(function ($) {
       });
       $('.filter-current-parent .filter-child-cat').slideUp();
       $('.filter-current-parent').removeClass('filter-current-parent');
-      setTimeout(function () {
-        loadMoreProducts();
-      }, 100);
     }; // Triggers filter reset on reset link click
 
 
@@ -93,9 +89,9 @@ jQuery(document).ready(function ($) {
       var viewportBottom = viewportTop + $(window).height();
 
       if (elementBottom > viewportTop && elementTop < viewportBottom && jsonFlag) {
-        jsonFlag = false; //make rest requerst
-
+        //make rest requerst
         loadMoreProducts();
+        jsonFlag = false;
       }
     };
 
@@ -157,6 +153,15 @@ jQuery(document).ready(function ($) {
     });
     $('.woo-custom-filter').on('click', '.clear-filter', function (e) {
       formReset();
+      console.log('clicked on form reset link');
+      console.log('jsonFlag: ' + jsonFlag);
+      var elements = container.isotope('getFilteredItemElements').length;
+
+      if (elements % 4 === 0) {
+        loadMoreProducts();
+      } else {
+        loadMoreProducts(4 - elements % 4);
+      }
     });
 
     if ($('.filter-child-cat li input.checked').length) {
@@ -178,10 +183,15 @@ jQuery(document).ready(function ($) {
 
       container.isotope({
         filter: filterValue
-      });
-      setTimeout(function () {
+      }); // count of visible filtered elements
+
+      var elements = container.isotope('getFilteredItemElements').length;
+
+      if (elements % 4 === 0) {
         loadMoreProducts();
-      }, 100);
+      } else {
+        loadMoreProducts(4 - elements % 4);
+      }
     }); // filter products on subcategories(checkbox) click
 
     var checkboxes = $('.filter-child-cat input');
@@ -208,9 +218,6 @@ jQuery(document).ready(function ($) {
       container.isotope({
         filter: filters
       });
-      setTimeout(function () {
-        loadMoreProducts();
-      }, 100);
     });
     ; // check if the end of the product list is visible
 
@@ -292,26 +299,27 @@ jQuery(document).ready(function ($) {
       if (data.length) {
         jsonFlag = true;
       }
+
+      console.log('done request');
     });
   } //load more products and make ajax call
 
 
   function loadMoreProducts() {
-    var elements = 4;
-    var itemCount = 4;
-    var catString = queryCategories.join(',');
-    var excString = loadedProductsIds.join(',');
-    container.on('layoutComplete', function (event, filteredItems) {
-      elements = filteredItems.length;
-      console.log('filteredItems length: ' + elements);
-    });
-    setTimeout(function () {
-      itemCount = elements % 4 === 0 ? 4 : 4 - elements % 4;
-      console.log('elements to load: ' + itemCount);
-    }, 100);
-    setTimeout(function () {
-      console.log(wooUrl + '?per_page=' + itemCount + '&category=' + catString + '&exclude=' + excString);
-      getData(wooUrl + '?per_page=' + itemCount + '&category=' + catString + '&exclude=' + excString);
-    }, 150);
+    var productCount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 4;
+    var tempCount = productCount;
+    console.log('jsonFlag:' + jsonFlag);
+
+    if (jsonFlag) {
+      var catString = queryCategories.join(',');
+      var excString = loadedProductsIds.join(',');
+      console.log(wooUrl + '?per_page=' + productCount + '&category=' + catString + '&exclude=' + excString);
+      getData(wooUrl + '?per_page=' + productCount + '&category=' + catString + '&exclude=' + excString);
+    } else {
+      console.log('wait. loading from rest');
+      setTimeout(function () {
+        loadMoreProducts(tempCount);
+      }, 200);
+    }
   }
 }); // END jQuery
