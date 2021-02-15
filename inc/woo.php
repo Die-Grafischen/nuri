@@ -766,4 +766,16 @@ add_filter( 'wc_stripe_elements_styling', 'my_theme_modify_stripe_fields_styles'
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 
+// Define custom image placeholder
+add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+
+function custom_woocommerce_placeholder_img_src( $src ) {
+	$upload_dir = wp_upload_dir();
+	$uploads = untrailingslashit( $upload_dir['baseurl'] );
+	// replace with path to your image
+	$src = $uploads . '/custom-woo-placeholder.gif';
+
+	return $src;
+}
+
 ?>
