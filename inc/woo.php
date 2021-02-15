@@ -169,21 +169,28 @@ function woo_categories_filter($query_cat, $query_parent_slug) {
 	echo '<ul>';
 	foreach ($product_cat as $parent_product_cat) {
 
-
 		$parent_slug = $parent_product_cat->slug;
 		$parent_current = ($query_parent_slug === $parent_slug) ? 'filter-current-parent' : '';
-		echo'<li class="filter-parent-cat '. esc_attr($parent_current) .'" data-term="term-'. esc_attr($parent_slug) .'">
+		$hasChildren = empty(get_term_children($parent_product_cat->term_id, 'product_cat')) ? 'no-children' : 'has-children';
 
-			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->term_id) .'" class="product-parent-selector">'. esc_attr($parent_product_cat->name) .'<i class="filter-icon"></i></span>
-			<ul class="filter-child-cat">';
+		echo'<li class="filter-parent-cat '. esc_attr($parent_current) .' '. esc_attr($hasChildren) .'" data-term="term-'. esc_attr($parent_slug) .'">
 
-				$child_args = array(
-					'taxonomy' => 'product_cat',
-					'hide_empty' => true,
-					'parent'   => $parent_product_cat->term_id
-				);
+			<span data-filter=".product_cat-'. esc_attr($parent_product_cat->term_id) .'" class="product-parent-selector">'. esc_attr($parent_product_cat->name) .'
+				<svg xmlns="http://www.w3.org/2000/svg" width="29.302" height="14.076" viewBox="0 0 29.302 14.076" class="filter-icon-svg">
+			  		<path id="Path_35" data-name="Path 35" d="M5278.989-1306.478l14,12,14-12" transform="translate(-5278.338 1307.237)" fill="none" stroke="#000" stroke-width="2"/>
+				</svg>
+			</span>';
 
-				$child_product_cats = get_terms( $child_args );
+			$child_args = array(
+				'taxonomy' => 'product_cat',
+				'hide_empty' => true,
+				'parent'   => $parent_product_cat->term_id
+			);
+
+			$child_product_cats = get_terms( $child_args );
+
+			if($child_product_cats) {
+				echo '<ul class="filter-child-cat">';
 
 				foreach ($child_product_cats as $child_product_cat) {
 
@@ -201,11 +208,14 @@ function woo_categories_filter($query_cat, $query_parent_slug) {
 							</div>
 						</div>
 					</li>';
+
 				}
 
-			echo '</ul>
+				echo '</ul>';
 
-		</li>';
+			}
+
+		echo '</li>';
 	}
 
 	echo '</ul>';
@@ -479,7 +489,7 @@ function wrap_product_end() {
     $product_tags = get_the_term_list($product_id, 'product_tag', '', '' );
 	$special_category = get_field('spezielle_kategorie', 'options');
 
-	do_action( 'qm/debug', $product);
+	//do_action( 'qm/debug', $product);
 	//check if product is in the special category
 	if( has_term($special_category, 'product_cat', $product_id) ) {
 		echo '<div class="single-product-info special-info">

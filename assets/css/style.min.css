@@ -222,15 +222,17 @@ body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path
 body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path,body.farbschema- footer .section-inner .logo-wrapper .logo-footer svg path{fill:#000 !important}
 .wrapper main{padding:40px;margin-top:88px;display:block;margin-left:auto;margin-right:auto;max-width:1400px}
 .admin-bar .woo-custom-filter{top:120px}
-.woo-custom-filter{width:calc(100% - 40px*2);position:fixed;top:88px;left:40px;display:-webkit-box;display:-ms-flexbox;display:flex;z-index:900;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:20px;background:#fff;margin-bottom:40px}
+.woo-custom-filter{width:calc(100% - 40px*2);position:fixed;top:88px;left:40px;display:-webkit-box;display:-ms-flexbox;display:flex;z-index:900;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:#fff;margin-bottom:40px}
 .woo-custom-filter ul{list-style:none;float:left}
-.woo-custom-filter ul>li{float:left;margin-right:40px;font-family:"Brick Display Pro",serif;font-size:32px;line-height:1}
+.woo-custom-filter ul>li{float:left;margin-right:20px;font-family:"Brick Display Pro",serif;font-size:32px;line-height:1;padding:20px}
 .woo-custom-filter ul>li span{cursor:pointer}
-.woo-custom-filter ul ul.filter-child-cat{display:none;position:absolute;left:0;width:100%;background:#fff;top:60px;padding:0 20px 20px}
+.woo-custom-filter ul>li.no-children .filter-icon-svg{display:none}
+.woo-custom-filter ul ul.filter-child-cat{display:none;position:absolute;left:0;width:100%;background:#000;color:#fff;top:72px;padding:0 20px 20px}
 .woo-custom-filter ul ul.filter-child-cat li{font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:22px;margin-top:20px;width:20%;max-width:250px;padding:2px}
 .woo-custom-filter ul ul.filter-child-cat li .pretty.p-default input:checked ~ .state label:after{background-color:#000 !important}
-.woo-custom-filter ul ul.filter-child-cat li .pretty .state label:before{border-color:#000}
-.woo-custom-filter .clear-filter{margin-left:auto;cursor:pointer}
+.woo-custom-filter ul ul.filter-child-cat li .pretty .state label:before{border-color:#fff}
+.woo-custom-filter li.filter-current-parent{background:#000;color:#fff}
+.woo-custom-filter .clear-filter{margin-left:auto;margin-right:20px;cursor:pointer}
 .woocommerce .woocommerce-shipping-totals th,.woocommerce .woocommerce-shipping-totals td{font-weight:normal !important}
 .woocommerce ul#shipping_method li{margin:0}
 .woocommerce ul#shipping_method li input{margin:8px .4375em 0 0}
@@ -266,6 +268,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path,b
 .woocommerce .quantity .qty :active{border:0}
 .woocommerce ul.products{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:120px -10px 20px}
 .woocommerce ul.products li.product{-webkit-box-flex:1;-ms-flex:1 0 25%;flex:1 0 25%;max-width:25%;width:25%;margin:0;border:10px solid transparent}
+.woocommerce ul.products li.product .onsale{margin:-.8em -.8em 0 0}
 .woocommerce ul.products li.product .price{color:#000}
 .woocommerce ul.products li.product .woocommerce-loop-product__title{padding-bottom:0;color:#000}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{border-radius:0;background-color:#000;font-weight:normal;font-size:22px;height:49px;line-height:49px;padding:0 22px;color:#fff}
@@ -339,6 +342,9 @@ span.attributes-string{display:none}
 .woocommerce .disabled,.woocommerce .disabled:hover,.woocommerce *:disabled[disabled],.woocommerce *:disabled[disabled]:hover{background-color:#ebe9eb !important}
 #billing_postcode_field,#billing_phone_field{width:calc(50% - 10px);display:inline-block}
 #billing_city_field,#billing_email_field{width:calc(50% - 10px);margin-left:20px;display:inline-block}
+.filter-current-parent .filter-icon-svg{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
+.filter-current-parent .filter-icon-svg path{stroke:#fff}
+.filter-icon-svg{width:20px;height:20px;-webkit-transition:all .4s;transition:all .4s;margin-left:5px}
 i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K");background-repeat:no-repeat;background-position:center right;background-size:100% auto;width:20px;height:20px;-webkit-transition:all .4s;transition:all .4s;margin-left:20px}
 .filter-current-parent i.filter-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
 .woo-back{position:absolute;top:calc(50% - 65px);left:-180px;opacity:0}
@@ -572,6 +578,7 @@ header .header-inner{padding:32px 20px 28px 20px}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{float:left}
 .woocommerce div.product .product-wrap div.summary{float:right}
 .cart-contents{right:20px}
+.filter-icon-svg{margin-left:5px;width:15px;height:15px}
 i.filter-icon{margin-left:10px;width:15px;height:15px}
 }@media(max-width:480px){body{font-size:19px}
 article h1{font-size:32px}

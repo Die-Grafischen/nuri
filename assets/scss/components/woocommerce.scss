@@ -29,7 +29,6 @@
 	display: flex;
 	z-index: 900;
 	align-items: center;
-	padding: $gutter/2;
 	background: $white;
 	margin-bottom: $gutter;
 
@@ -51,10 +50,11 @@
 
 		> li {
 			float: left;
-			margin-right: $gutter;
+			margin-right: $gutter/2;
 			font-family: $font-family-2;
 			font-size: $font-size-m;
 			line-height: 1;
+			padding: $gutter/2;
 
 			@include r(1024) {
 				font-size: $font-size-s;
@@ -70,6 +70,10 @@
 				cursor: pointer;
 			}
 
+			&.no-children .filter-icon-svg {
+				display: none;
+			}
+
 		}
 
 		ul.filter-child-cat {
@@ -77,8 +81,9 @@
 			position: absolute;
 			left: 0;
 			width: 100%;
-			background: $white;
-			top: 60px;
+			background: $black;
+			color: $white;
+			top: 72px;
 			padding: 0 $gutter/2 $gutter/2;
 
 			@include r(1024) {
@@ -109,7 +114,7 @@
 				}
 
 				.pretty .state label:before {
-				    border-color: #000;
+				    border-color: #fff;
 				}
 
 			}
@@ -118,6 +123,8 @@
 	}
 
 	li.filter-current-parent {
+		background: $black;
+		color: $white;
 		ul.filter-child-cat {
 			//display: block;
 		}
@@ -125,6 +132,7 @@
 
 	.clear-filter {
 		margin-left: auto;
+		margin-right: $gutter/2;
 		cursor: pointer;
 
 		@include r(1024) {
@@ -413,6 +421,10 @@
 			width: 25%;
 			margin: 0;
 			border: 10px solid transparent;
+
+			.onsale {
+				margin: -.8em -.8em 0 0;
+			}
 
 			a img {
 				@include r(1024) {
@@ -934,6 +946,30 @@ span.attributes-string {
 	width: calc(50% - 10px);
 	margin-left: 20px;
 	display: inline-block;
+}
+
+.filter-current-parent .filter-icon-svg {
+
+	transform: rotate(-180deg);
+	path {
+		stroke: #fff;
+	}
+
+}
+
+.filter-icon-svg {
+
+	width: 20px;
+	height: 20px;
+	transition: all .4s;
+	margin-left: 5px;
+
+	@include r(768) {
+		margin-left: 5px;
+		width: 15px;
+		height: 15px;
+	}
+
 }
 
 i.filter-icon {

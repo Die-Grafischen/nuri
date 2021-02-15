@@ -76,6 +76,28 @@ jQuery(document).ready(function($) {
 	// SHOP ISOTOPE - runns only on woo shop/category/tags page
 	if ( $('.woo-custom-filter').length ) {
 
+		// hide/reveal subnav filter on scroll
+		var lastScrollTop = 0;
+		$(window).scroll(function(event){
+		   var st = $(this).scrollTop();
+		   if (st > lastScrollTop){
+		       // downscroll
+			   $('.filter-current-parent .filter-child-cat').slideUp().addClass('sub-visible').removeClass('sub-hidden');
+		   } else {
+		      // upscroll code
+			  $('.filter-current-parent .filter-child-cat').slideDown().addClass('sub-hidden').removeClass('sub-visible');
+		   }
+		   lastScrollTop = st;
+		});
+
+		// show subnav filter on mouse hover
+		$(document).on('mouseenter','.woo-custom-filter', function (event) {
+			$('.filter-current-parent .filter-child-cat').slideDown();
+		}).on('mouseleave','.woo-custom-filter',  function(){
+			$('.filter-current-parent .filter-child-cat.sub-visible').slideUp();
+
+		});
+
 		// Only on category page
 		if ( $('.woo-custom-filter').data('query-cat-id') ) {
 			let id = $('.woo-custom-filter').data('query-cat-id');
@@ -88,7 +110,7 @@ jQuery(document).ready(function($) {
 
 		var container = $('.products');
 
-		//get classes of all loaded products and save product ids in loadedProductsIds[];
+		// get classes of all loaded products and save product ids in loadedProductsIds[];
 		container.children().each(function(){
 	        let clas = ($(this).attr('class')).split("post-")[1].match(/\d+/)[0];  // stripe only number(product id)
 			loadedProductsIds.push(clas);
@@ -125,7 +147,7 @@ jQuery(document).ready(function($) {
 			container.isotope({
 				filter: filter
 			});
-			$('.filter-current-parent .filter-child-cat').slideToggle();
+			$('.filter-current-parent .filter-child-cat').slideUp();
 			$('.filter-current-parent').removeClass('filter-current-parent');
 
 		}
