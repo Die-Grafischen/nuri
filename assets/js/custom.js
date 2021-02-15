@@ -70,6 +70,7 @@ jQuery(document).ready(function ($) {
   if ($('.woo-custom-filter').length) {
     // Resets isotope filter and hides subcategories
     var formReset = function formReset() {
+      console.log('formReset()');
       queryCategories = [];
       parentCategory = '';
       $('input[type=checkbox]').prop('checked', false);
@@ -78,6 +79,9 @@ jQuery(document).ready(function ($) {
       });
       $('.filter-current-parent .filter-child-cat').slideUp();
       $('.filter-current-parent').removeClass('filter-current-parent');
+      setTimeout(function () {
+        loadMoreProducts();
+      }, 100);
     }; // Triggers filter reset on reset link click
 
 
@@ -174,21 +178,10 @@ jQuery(document).ready(function ($) {
 
       container.isotope({
         filter: filterValue
-      }); // count of visible filtered elements
-
-      var elements = container.isotope('getFilteredItemElements').length;
-
-      if (elements % 4 === 0) {
-        console.log('0 null');
-      } else {
-        console.log(4 - elements % 4);
-      }
-
-      console.log('product parent click');
-
-      if (elements < postsPerPage) {
+      });
+      setTimeout(function () {
         loadMoreProducts();
-      }
+      }, 100);
     }); // filter products on subcategories(checkbox) click
 
     var checkboxes = $('.filter-child-cat input');
@@ -215,10 +208,13 @@ jQuery(document).ready(function ($) {
       container.isotope({
         filter: filters
       });
+      setTimeout(function () {
+        loadMoreProducts();
+      }, 100);
     });
     ; // check if the end of the product list is visible
 
-    $(window).on('resize scroll load', function () {
+    $(window).on('resize scroll', function () {
       isInViewport('.load-more-wrapper');
     });
     setTimeout(function () {
@@ -301,9 +297,21 @@ jQuery(document).ready(function ($) {
 
 
   function loadMoreProducts() {
+    var elements = 4;
+    var itemCount = 4;
     var catString = queryCategories.join(',');
     var excString = loadedProductsIds.join(',');
-    console.log(wooUrl + '?per_page=' + postsPerPage + '&category=' + catString + '&exclude=' + excString);
-    getData(wooUrl + '?per_page=' + postsPerPage + '&category=' + catString + '&exclude=' + excString);
+    container.on('layoutComplete', function (event, filteredItems) {
+      elements = filteredItems.length;
+      console.log('filteredItems length: ' + elements);
+    });
+    setTimeout(function () {
+      itemCount = elements % 4 === 0 ? 4 : 4 - elements % 4;
+      console.log('elements to load: ' + itemCount);
+    }, 100);
+    setTimeout(function () {
+      console.log(wooUrl + '?per_page=' + itemCount + '&category=' + catString + '&exclude=' + excString);
+      getData(wooUrl + '?per_page=' + itemCount + '&category=' + catString + '&exclude=' + excString);
+    }, 150);
   }
 }); // END jQuery
