@@ -235,7 +235,7 @@ jQuery(document).ready(function($) {
  		   if( (elementBottom > viewportTop && elementTop < viewportBottom) && jsonFlag ) {
  			  //make rest requerst
  			  loadMoreProducts();
-			  jsonFlag = false;
+			  //jsonFlag = false;
  		   }
  		};
 
@@ -290,6 +290,7 @@ jQuery(document).ready(function($) {
 				console.log('data length: ' + data.length);
 				if ( data.length <= queryLength ) {
 					$('.lds-ellipsis').fadeOut();
+					jsonFlag = true;
 				} else {
 					$('.lds-ellipsis').fadeIn();
 				}

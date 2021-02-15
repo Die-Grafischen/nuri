@@ -90,8 +90,7 @@ jQuery(document).ready(function ($) {
 
       if (elementBottom > viewportTop && elementTop < viewportBottom && jsonFlag) {
         //make rest requerst
-        loadMoreProducts();
-        jsonFlag = false;
+        loadMoreProducts(); //jsonFlag = false;
       }
     };
 
@@ -265,6 +264,7 @@ jQuery(document).ready(function ($) {
 
         if (data.length <= queryLength) {
           $('.lds-ellipsis').fadeOut();
+          jsonFlag = true;
         } else {
           $('.lds-ellipsis').fadeIn();
         }
