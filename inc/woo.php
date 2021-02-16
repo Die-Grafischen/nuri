@@ -371,15 +371,23 @@ function add_content_after_addtocart_button_func() {
 // Add custom input field to product page
 add_action( 'woocommerce_after_add_to_cart_button', 'extra_product_fields', 9 );
 function extra_product_fields() {
-	echo '<div class="extra-product-fields">';
 
-		$extra_adresse = isset( $_POST['extra_adresse'] ) ? sanitize_text_field( $_POST['extra_adresse'] ) : '';
-		printf( '<textarea name="extra_adresse" value="" placeholder="%s" rows="3"></textarea>', __( 'Adresse *' ), esc_attr( $extra_adresse ) );
+	global $product;
 
-		$extra_botschaft = isset( $_POST['extra_botschaft'] ) ? sanitize_text_field( $_POST['extra_botschaft'] ) : '';
-		printf( '<textarea name="extra_botschaft" value="" placeholder="%s" rows="5"></textarea>', __( 'Botschaft' ), esc_attr( $extra_botschaft ) );
+	$product_category_ids = $product->get_category_ids();
+	$special_category_id = get_field('spezielle_kategorie', 'options');
 
-	echo '</div>';
+	if( in_array($special_category_id, $product_category_ids) ) {
+		echo '<div class="extra-product-fields">';
+
+			$extra_adresse = isset( $_POST['extra_adresse'] ) ? sanitize_text_field( $_POST['extra_adresse'] ) : '';
+			printf( '<textarea name="extra_adresse" value="" placeholder="%s" rows="3"></textarea>', __( 'Adresse *' ), esc_attr( $extra_adresse ) );
+
+			$extra_botschaft = isset( $_POST['extra_botschaft'] ) ? sanitize_text_field( $_POST['extra_botschaft'] ) : '';
+			printf( '<textarea name="extra_botschaft" value="" placeholder="%s" rows="5"></textarea>', __( 'Botschaft' ), esc_attr( $extra_botschaft ) );
+
+		echo '</div>';
+	}
 }
 
 // validate when add to cart
@@ -436,7 +444,7 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 	  if ( isset( $cart_item['extra_adresse'] ) ){
 
 		  $other_data[] = array(
-			  'name' => __( 'Your extra field text' ),
+			  'name' => __( 'Adresse' ),
 			  'value' => sanitize_text_field( $cart_item['extra_adresse'] )
 		  );
 
@@ -463,7 +471,7 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 
   // add field data in email
   function d_order_email_data( $fields ) {
-	  $fields['extra_adresse'] = __( 'Your extra field text' );
+	  $fields['extra_adresse'] = __( 'Adresse' );
 	  return $fields;
   }
   add_filter('woocommerce_email_order_meta_fields', 'd_order_email_data');
@@ -495,21 +503,20 @@ function wrap_product_end() {
 	$product_id = $product->get_id();
 	$additional_info = get_field('zusatzliche_info', $product_id);
     $product_tags = get_the_term_list($product_id, 'product_tag', '', '' );
-	$special_category = get_field('spezielle_kategorie', 'options');
 
 	//do_action( 'qm/debug', $product);
 	//check if product is in the special category
-	if( has_term($special_category, 'product_cat', $product_id) ) {
-		echo '<div class="single-product-info special-info">
-			<div class="single-product-info-title">
-				'. __('Weitere Produktinformationen', 'nuri') .'
-				<i class="filter-icon"></i>
-			</div>
-			<div class="single-product-info-wrapper">';
-			extra_product_fields();
-			if(!function_exists('woocommerce_wp_text_input') && !is_admin()) {
-				include_once(WC()->plugin_path() . '/includes/admin/wc-meta-box-functions.php');
-			}
+	// if( has_term($special_category, 'product_cat', $product_id) ) {
+	// 	echo '<div class="single-product-info special-info">
+	// 		<div class="single-product-info-title">
+	// 			'. __('Weitere Produktinformationen', 'nuri') .'
+	// 			<i class="filter-icon"></i>
+	// 		</div>
+	// 		<div class="single-product-info-wrapper">';
+			//extra_product_fields();
+			// if(!function_exists('woocommerce_wp_text_input') && !is_admin()) {
+			// 	include_once(WC()->plugin_path() . '/includes/admin/wc-meta-box-functions.php');
+			// }
 
 			// woocommerce_wp_textarea_input(
 			// 	array(
@@ -530,9 +537,9 @@ function wrap_product_end() {
 			// $value = isset( $_POST['extra_adresse'] ) ? sanitize_text_field( $_POST['extra_adresse'] ) : '';
 			// printf( '<label>%s</label><input name="extra_adresse" value="%s" />', __( 'Enter your custom text' ), esc_attr( $value ) );
 
-			echo '</div>
-		</div>';
-	}
+	// 		echo '</div>
+	// 	</div>';
+	// }
 
 	if($product_tags) {
 		echo '<div class="single-product-tags">

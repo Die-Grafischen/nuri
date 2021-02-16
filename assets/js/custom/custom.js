@@ -365,7 +365,7 @@ jQuery(document).ready(function($) {
 	$('.search-results .woo-custom-filter, .search-results .load-more-wrapper').remove();
 
 	// style select fields
-	if ( $('.woocommerce select').length ){
+	if ( $('.woocommerce .wrapper select').length ){
 		$('select').selectWoo();
 	}
 

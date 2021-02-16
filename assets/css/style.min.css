@@ -332,6 +332,7 @@ body .select2-container--default .select2-selection--single .select2-selection__
 body .select2-container--default .select2-selection--single .select2-selection__arrow{height:49px;right:10px}
 body .select2-container--default .select2-selection--single .select2-selection__arrow b{border-color:#000 transparent transparent transparent}
 .woocommerce-thankyou-order-received{margin-bottom:40px}
+.woocommerce-order-details{margin-top:20px}
 .flex-control-paging{list-style:none;text-align:center;margin-top:10px}
 .flex-control-paging li{display:inline-block;margin:5px}
 .flex-control-paging li a{text-indent:-9999px;width:10px;height:10px;border-radius:50%;background:#fff;display:inline-block}
