@@ -45,11 +45,6 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	// style select fields
-	if ( $('select').length ){
-		$('select').selectWoo();
-	}
-
 	// toggle zusätzliche info
 	$('.single-product-info').on('click', '.single-product-info-title', function(){
 		$(this).next().slideToggle();
@@ -369,7 +364,10 @@ jQuery(document).ready(function($) {
 
 	$('.search-results .woo-custom-filter, .search-results .load-more-wrapper').remove();
 
-
+	// style select fields
+	if ( $('.woocommerce select').length ){
+		$('select').selectWoo();
+	}
 
 
 }); // END jQuery

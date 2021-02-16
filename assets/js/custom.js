@@ -37,11 +37,6 @@ jQuery(document).ready(function ($) {
         header.removeClass('fixed-header');
       }
     });
-  } // style select fields
-
-
-  if ($('select').length) {
-    $('select').selectWoo();
   } // toggle zusätzliche info
 
 
@@ -334,5 +329,9 @@ jQuery(document).ready(function ($) {
   $(document).keyup(function (e) {
     if (e.keyCode === 27) $('#search-overlay').fadeOut();
   });
-  $('.search-results .woo-custom-filter, .search-results .load-more-wrapper').remove();
+  $('.search-results .woo-custom-filter, .search-results .load-more-wrapper').remove(); // style select fields
+
+  if ($('.woocommerce select').length) {
+    $('select').selectWoo();
+  }
 }); // END jQuery

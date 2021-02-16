@@ -19,6 +19,12 @@
 
 			height: 80px;
 
+			.aws-form-btn {
+				height: 80px;
+				background: $white;
+				border-right: 0;
+			}
+
 			.aws-search-field {
 				background: $white;
 				box-shadow: 0px 0px 26px 7px rgba(0,0,0,0.2);
@@ -31,6 +37,10 @@
 			.aws-search-clear {
 				height: 80px;
 				right: 10px;
+			}
+
+			.aws-loader {
+				right: 20px;
 			}
 
 		}
@@ -67,10 +77,21 @@
 		width: 100px;
 	}
 
+	.aws_search_more a {
+		color: $black;
+		font-size: $font-size-mobile;
+	}
+
 }
 
 .search-results {
+
 	.woo-custom-filter {
 		display: none;
 	}
+
+	ul.products {
+		margin-top:0;
+	}
+
 }
