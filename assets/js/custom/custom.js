@@ -327,6 +327,7 @@ jQuery(document).ready(function($) {
 	        .done(function (data) {
 				if(data.length){ jsonFlag = true; }
 				console.log('done request');
+				//container.layout(); //relayout isotope
 	        });
 	}
 
@@ -351,6 +352,7 @@ jQuery(document).ready(function($) {
 	// search overlay
 	$('#search-icon').on('click', function(){
 		$('#search-overlay').fadeToggle();
+		$('.aws-search-field').focus();
 	});
 
 	$('#search-overlay').on('click', function(e){

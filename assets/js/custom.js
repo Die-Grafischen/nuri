@@ -295,7 +295,7 @@ jQuery(document).ready(function ($) {
         jsonFlag = true;
       }
 
-      console.log('done request');
+      console.log('done request'); //container.layout(); //relayout isotope
     });
   } //load more products and make ajax call
 
@@ -321,6 +321,7 @@ jQuery(document).ready(function ($) {
 
   $('#search-icon').on('click', function () {
     $('#search-overlay').fadeToggle();
+    $('.aws-search-field').focus();
   });
   $('#search-overlay').on('click', function (e) {
     if (e.target != this) return;
