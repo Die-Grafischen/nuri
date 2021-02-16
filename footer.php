@@ -86,6 +86,8 @@
 
 		</footer><!-- #site-footer -->
 
+		<div id="search-overlay"><?php if ( function_exists( 'aws_get_search_form' ) ) { aws_get_search_form(); } ?></div>
+
 		<?php wp_footer(); ?>
 
 	</body>

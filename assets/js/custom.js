@@ -67,7 +67,7 @@ jQuery(document).ready(function ($) {
   var filter = '*'; // default filter for isotope, select all categories
   // SHOP ISOTOPE - runns only on woo shop/category/tags page
 
-  if ($('.woo-custom-filter').length) {
+  if ($('body:not(.search) .woo-custom-filter').length) {
     // Resets isotope filter and hides subcategories
     var formReset = function formReset() {
       queryCategories = [];
@@ -321,5 +321,18 @@ jQuery(document).ready(function ($) {
         loadMoreProducts(tempCount);
       }, 200);
     }
-  }
+  } // search overlay
+
+
+  $('#search-icon').on('click', function () {
+    $('#search-overlay').fadeToggle();
+  });
+  $('#search-overlay').on('click', function (e) {
+    if (e.target != this) return;
+    $('#search-overlay').fadeToggle();
+  });
+  $(document).keyup(function (e) {
+    if (e.keyCode === 27) $('#search-overlay').fadeOut();
+  });
+  $('.search-results .woo-custom-filter, .search-results .load-more-wrapper').remove();
 }); // END jQuery

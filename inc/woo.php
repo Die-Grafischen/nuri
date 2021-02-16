@@ -110,7 +110,15 @@ add_action('woocommerce_before_shop_loop', 'woo_custom_filter');
 function woo_custom_filter() {
 
 	global $wp_query;
-	//var_dump($wp_query);
+
+	//search query
+
+	$search = ($wp_query->query['s']) ? ($wp_query->query['s']) : false;
+
+	if($search) {
+		echo '<h1>Suche: '. esc_html($search) .'</h1>';
+	}
+
 	$query_cat = isset($wp_query->query_vars['product_cat']) ? $wp_query->query_vars['product_cat'] : 0; // the category slug if this is category page
 
 	$query_cat_term = get_term_by( 'slug', $query_cat, 'product_cat' ) ?: '';

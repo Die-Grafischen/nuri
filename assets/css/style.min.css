@@ -177,6 +177,7 @@ p+p{padding-top:20px}
 header{width:100%;position:fixed;top:0;left:0;background:#fdf0e6;color:#000;z-index:900}
 header.dynamic-header{position:absolute;top:100vh}
 header.dynamic-header.fixed-header{top:0}
+header #search-icon{display:inline-block;position:absolute;right:110px;top:33px;cursor:pointer}
 header .menu{text-align:center}
 header .menu li{display:inline-block;padding:0 10px}
 header .menu li a{color:#000;line-height:1}
@@ -479,6 +480,18 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .pretty.p-switch.p-slim input:checked ~ .state.p-danger:before{border-color:#a02622;background-color:#a02622 !important}
 .pretty.p-bigger .icon,.pretty.p-bigger .img,.pretty.p-bigger .svg,.pretty.p-bigger label:after,.pretty.p-bigger label:before{font-size:1.2em !important;top:calc((0% - (100% - 1em)) - 35%) !important}
 .pretty.p-bigger label{text-indent:1.7em}
+#search-overlay{position:fixed;top:0;left:0;background-color:rgba(255,255,255,0.8);width:100%;height:100vh;z-index:2000;display:-webkit-box;display:-ms-flexbox;display:flex;padding:20%;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:none}
+#search-overlay .aws-container{width:100%}
+#search-overlay .aws-container .aws-wrapper{height:80px}
+#search-overlay .aws-container .aws-wrapper .aws-search-field{background:#fff;-webkit-box-shadow:0 0 26px 7px rgba(0,0,0,0.2);box-shadow:0 0 26px 7px rgba(0,0,0,0.2);font-size:32px;padding:20px 40px;height:80px !important;line-height:80px !important}
+#search-overlay .aws-container .aws-wrapper .aws-search-clear{height:80px;right:10px}
+.aws-search-result{margin-top:35px !important}
+.aws-search-result .aws_result_title{margin-bottom:10px;margin-top:5px;font-size:22px;font-weight:bold;color:#000}
+.aws-search-result .aws_result_excerpt{font-size:19px;line-height:1.2}
+.aws-search-result .aws_result_sale{display:none}
+.aws-search-result .aws_result_price{margin-top:10px}
+.aws-search-result .aws_result_image img{width:100px}
+.search-results .woo-custom-filter{display:none}
 .wp-block-cover{min-height:100vh;min-height:-webkit-fill-available;height:100vh;width:100%;max-width:100%;float:left;padding:60px 40px !important;background-repeat:no-repeat !important;background-size:cover !important}
 .wp-block-cover.cover-on-top{margin-bottom:88px;margin-top:0 !important}
 .wp-block-cover.cover-on-top .wp-block-cover__inner-container{padding-right:43px}

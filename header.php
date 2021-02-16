@@ -54,7 +54,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php if ( has_nav_menu( 'primary' ) ) { ?>
 				<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'nuri' ); ?>" role="navigation">
 					<?php wp_nav_menu( array( 'container' => false, 'theme_location' => 'primary',  ) ); ?>
-
+					<svg version="1.1" id="search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve" width="29">
+						<style type="text/css">
+							.st0{fill:none;stroke:#000000;}
+						</style>
+						<g id="Gruppe_54" transform="translate(-1752.55 -90)">
+							<g id="Ellipse_8" transform="translate(1760 90)">
+								<circle class="st0" cx="16.3483" cy="15.9518" r="12.5"/>
+							</g>
+							<line id="Linie_4" class="st0" x1="1765.4442" y1="117.3558" x2="1756.2518" y2="126.5482"/>
+						</g>
+					</svg>
 					<?php if (class_exists('woocommerce')) { header_cart(); } ?>
 				</nav>
 			<?php } ?>
