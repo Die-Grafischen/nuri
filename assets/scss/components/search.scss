@@ -12,6 +12,14 @@
 	align-items: center;
 	display: none;
 
+	@include r(768) {
+		padding: 10%;
+	}
+
+	@include r(480) {
+		padding: 150px $gutter/2 $gutter;
+	}
+
 	.aws-container {
 		width: 100%;
 

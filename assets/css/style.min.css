@@ -190,12 +190,11 @@ header .header-inner{padding:32px 40px 28px 40px}
 .farbschema-dunkel header .menu li a:hover{color:#fdf0e6}
 body.active-nav{-ms-touch-action:none;touch-action:none}
 body.active-nav header .menu{left:0}
-#mobile-filter-icon{width:28px;height:17px;display:block;cursor:pointer}
+#mobile-filter-icon{width:28px;height:17px;display:block;cursor:pointer;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 #mobile-filter-icon span{background-color:transparent !important}
 #mobile-filter-icon span:before{-webkit-transform:rotate(45deg);transform:rotate(45deg);width:17px;top:4px;left:0}
 #mobile-filter-icon span:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);width:17px;top:4px;right:0}
-#mobile-filter-icon.active-mobile-filter span:before{-webkit-transform:rotate(45deg);transform:rotate(45deg);width:24px;top:4px;left:2px}
-#mobile-filter-icon.active-mobile-filter span:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);width:24px;top:4px;right:2px}
+#mobile-filter-icon.active-mobile-filter{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 #nav-toggle{position:fixed;right:20px;top:34px;width:28px;height:17px;display:block;z-index:99999999;cursor:pointer;display:none}
 .nav-toggle span{margin-top:7px}
 .nav-toggle span,.nav-toggle span:before,.nav-toggle span:after{cursor:pointer;height:1px;width:28px;background:#000;position:absolute;display:block;content:''}
@@ -610,6 +609,7 @@ header .header-inner{padding:32px 20px 28px 20px}
 .cart-contents{top:25px;right:66px}
 .filter-icon-svg{margin-left:5px;width:15px;height:15px}
 i.filter-icon{margin-left:10px;width:15px;height:15px}
+#search-overlay{padding:10%}
 }@media(max-width:480px){body{font-size:19px}
 article h1{font-size:32px}
 .wp-caption .wp-caption-text,.gallery-caption{font:300 1.8rem/1.8 sans-serif}
@@ -660,6 +660,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce-error::before,.woocommerce-info::before,.woocommerce-message::before{left:1em}
 .woocommerce-error,.woocommerce-info,.woocommerce-message{padding:1em 1em 1em 3em;margin:0 0 40px}
 .woocommerce ul.order_details li{border-right:0;margin-bottom:20px;margin-right:0;width:100%}
+#search-overlay{padding:150px 20px 40px}
 .wp-block-cover{padding:20px !important}
 .wp-block-cover.cover-on-top{margin-bottom:0}
 .wp-block-cover .wp-block-cover__inner-container p{line-height:1.1}

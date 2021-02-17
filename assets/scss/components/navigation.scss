@@ -3,6 +3,7 @@
     height: 17px;
     display: block;
     cursor: pointer;
+	transition: all .3s ease-in-out;
 
 	span {
 		background-color: transparent!important;
@@ -26,25 +27,26 @@
 }
 
 #mobile-filter-icon.active-mobile-filter {
+	transform: rotate(180deg);
 
-	span {
-
-
-		&:before {
-			transform: rotate(45deg);
-			width: 24px;
-			top: 4px;
-			left: 2px;
-		}
-
-		&:after {
-			transform: rotate(-45deg);
-			width: 24px;
-			top: 4px;
-			right: 2px;
-		}
-
-	}
+	// span {
+	//
+	//
+	// 	&:before {
+	// 		transform: rotate(45deg);
+	// 		width: 24px;
+	// 		top: 4px;
+	// 		left: 2px;
+	// 	}
+	//
+	// 	&:after {
+	// 		transform: rotate(-45deg);
+	// 		width: 24px;
+	// 		top: 4px;
+	// 		right: 2px;
+	// 	}
+	//
+	// }
 
 }
 

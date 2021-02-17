@@ -573,7 +573,7 @@ body.active-nav { -ms-touch-action: none; touch-action: none; }
 
 body.active-nav header .menu { left: 0; }
 
-#mobile-filter-icon { width: 28px; height: 17px; display: block; cursor: pointer; }
+#mobile-filter-icon { width: 28px; height: 17px; display: block; cursor: pointer; -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
 
 #mobile-filter-icon span { background-color: transparent !important; }
 
@@ -581,9 +581,7 @@ body.active-nav header .menu { left: 0; }
 
 #mobile-filter-icon span:after { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); width: 17px; top: 4px; right: 0; }
 
-#mobile-filter-icon.active-mobile-filter span:before { -webkit-transform: rotate(45deg); transform: rotate(45deg); width: 24px; top: 4px; left: 2px; }
-
-#mobile-filter-icon.active-mobile-filter span:after { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); width: 24px; top: 4px; right: 2px; }
+#mobile-filter-icon.active-mobile-filter { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 
 #nav-toggle { position: fixed; right: 20px; top: 34px; width: 28px; height: 17px; display: block; z-index: 99999999; cursor: pointer; display: none; }
 
@@ -1433,6 +1431,10 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 
 /* scroll to bottom indicator */
 #search-overlay { position: fixed; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.8); width: 100%; height: 100vh; z-index: 2000; display: -webkit-box; display: -ms-flexbox; display: flex; padding: 20%; -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: none; }
+
+@media (max-width: 768px) { #search-overlay { padding: 10%; } }
+
+@media (max-width: 480px) { #search-overlay { padding: 150px 20px 40px; } }
 
 #search-overlay .aws-container { width: 100%; }
 
