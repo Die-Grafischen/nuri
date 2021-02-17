@@ -96,15 +96,19 @@ jQuery(document).ready(function ($) {
 
     // hide/reveal subnav filter on scroll
     var lastScrollTop = 0;
-    $(window).scroll(function (event) {
+    theWindow.scroll(function (event) {
       var st = $(this).scrollTop();
 
       if (st > lastScrollTop) {
         // downscroll
-        $('.filter-current-parent .filter-child-cat').slideUp().addClass('sub-visible').removeClass('sub-hidden');
+        if (theWindow.width > 480) {
+          $('.filter-current-parent .filter-child-cat').slideUp().addClass('sub-visible').removeClass('sub-hidden');
+        }
       } else {
         // upscroll code
-        $('.filter-current-parent .filter-child-cat').slideDown().addClass('sub-hidden').removeClass('sub-visible');
+        if (theWindow.width > 480) {
+          $('.filter-current-parent .filter-child-cat').slideDown().addClass('sub-hidden').removeClass('sub-visible');
+        }
       }
 
       lastScrollTop = st;

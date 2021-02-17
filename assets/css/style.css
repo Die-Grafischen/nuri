@@ -1016,7 +1016,7 @@ span.attributes-string { display: none; }
 
 @media (max-width: 768px) { .filter-icon-svg { margin-left: 5px; width: 15px; height: 15px; } }
 
-@media (max-width: 480px) { .filter-icon-svg { float: right; } }
+@media (max-width: 480px) { .filter-icon-svg { float: right; margin-right: 6px; } }
 
 i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4zMDIiIGhlaWdodD0iMTQuMDc2IiB2aWV3Qm94PSIwIDAgMjkuMzAyIDE0LjA3NiI+DQogIDxwYXRoIGlkPSJQYXRoXzM1IiBkYXRhLW5hbWU9IlBhdGggMzUiIGQ9Ik01Mjc4Ljk4OS0xMzA2LjQ3OGwxNCwxMiwxNC0xMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUyNzguMzM4IDEzMDcuMjM3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiLz4NCjwvc3ZnPg0K"); background-repeat: no-repeat; background-position: center right; background-size: 100% auto; width: 20px; height: 20px; -webkit-transition: all .4s; transition: all .4s; margin-left: 20px; }
 

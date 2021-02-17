@@ -654,7 +654,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{width:100%;padding-right:0;margin-right:0;margin-bottom:20px}
 .woocommerce div.product .product-wrap div.summary{width:100%}
 .woocommerce table.shop_table td.actions #coupon_code{width:100%;margin-bottom:20px}
-.filter-icon-svg{float:right}
+.filter-icon-svg{float:right;margin-right:6px}
 .woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form label{display:none;line-height:1}
 .woocommerce-error .wc-forward,.woocommerce-info .wc-forward,.woocommerce-message .wc-forward{margin-bottom:.7em !important}
 .woocommerce-error::before,.woocommerce-info::before,.woocommerce-message::before{left:1em}
