@@ -300,7 +300,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path,b
 .woocommerce div.product .product-wrap .onsale{left:200px;top:-40px}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{padding:0 13.3333333333px 0 0;width:50%;margin:0 13.3333333333px 0 0}
 .woocommerce div.product .product-wrap div.summary{width:calc(50% - (40px/3));padding-bottom:13.3333333333px;margin-bottom:0;display:inline-block;float:none}
-.woocommerce div.product .product-wrap .single-product-content{display:block;padding-top:13.3333333333px;margin-bottom:40px;width:calc(50% - (40px/3));float:right}
+.woocommerce div.product .product-wrap .single-product-content{display:block;padding-top:13.3333333333px;width:calc(50% - (40px/3));float:right}
 .woocommerce div.product .product-wrap .single-product-tags{padding:calc(40px - 10px) 0;margin:40px 0;border-top:1px solid #000;border-bottom:1px solid #000;float:left;width:100%}
 .woocommerce div.product .product-wrap .single-product-tags strong{display:inline-block;margin-right:10px}
 .woocommerce div.product .product-wrap .single-product-tags span{display:inline-block}

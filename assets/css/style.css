@@ -899,7 +899,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 
 @media (max-width: 480px) { .woocommerce div.product .product-wrap div.summary { width: 100%; } }
 
-.woocommerce div.product .product-wrap .single-product-content { display: block; padding-top: 13.3333333333px; margin-bottom: 40px; width: calc(50% - (40px/3)); float: right; }
+.woocommerce div.product .product-wrap .single-product-content { display: block; padding-top: 13.3333333333px; width: calc(50% - (40px/3)); float: right; }
 
 @media (max-width: 768px) { .woocommerce div.product .product-wrap .single-product-content { width: 100%; } }
 
