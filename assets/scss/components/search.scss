@@ -43,8 +43,16 @@
 			}
 
 			.aws-search-clear {
+
 				height: 80px;
 				right: 10px;
+
+				span {
+					font-size: 40px;
+				    line-height: 40px;
+				    margin-top: -20px;
+				}
+
 			}
 
 			.aws-loader {

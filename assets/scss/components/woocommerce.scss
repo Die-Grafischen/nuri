@@ -674,6 +674,11 @@
 				margin-bottom: $gutter;
 				width: calc(50% - (#{$gutter}/3));
 				float: right;
+
+				@include r(768) {
+					width: 100%;
+				}
+
 			}
 
 			.single-product-tags {
@@ -687,6 +692,12 @@
 				strong {
 					display: inline-block;
 					margin-right: 10px;
+
+					@include r(480) {
+		 				width: 100%;
+						margin-bottom: 5px;
+		 			}
+
 				}
 
 				span {
@@ -747,6 +758,7 @@
 			font-size: $font-size-l;
 			font-weight: normal;
 			line-height: 1.05;
+
 			@include r(480) {
 				font-size: $font-size-m;
 			}
@@ -762,7 +774,20 @@
 			 margin: $gutter/2 0 0;
 
 			 div.quantity {
+
 				 margin: 0;
+
+				 .input-text {
+					 @include r(480) {
+	 	 				width: 100%;
+						margin-bottom: $gutter/3;
+	 	 			}
+				 }
+
+				@include r(480) {
+	 				width: 100%;
+	 			}
+
 			 }
 
 		 }
@@ -782,6 +807,11 @@
 		font-size: $font-size-l;
 		font-family: $font-family-2;
 		font-weight: normal;
+
+		@include r(480) {
+			font-size: $font-size-m;
+		}
+
 	}
 
 	a.button {
@@ -1023,7 +1053,7 @@ span.attributes-string {
 
 	@include r(480) {
 		float: right;
-		margin-right: 6px;
+		margin-right: 7px;
 	}
 
 }

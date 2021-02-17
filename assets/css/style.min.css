@@ -495,6 +495,7 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 #search-overlay .aws-container .aws-wrapper .aws-form-btn{height:80px;background:#fff;border-right:0}
 #search-overlay .aws-container .aws-wrapper .aws-search-field{background:#fff;-webkit-box-shadow:0 0 26px 7px rgba(0,0,0,0.2);box-shadow:0 0 26px 7px rgba(0,0,0,0.2);font-size:32px;padding:20px 40px;height:80px !important;line-height:80px !important}
 #search-overlay .aws-container .aws-wrapper .aws-search-clear{height:80px;right:10px}
+#search-overlay .aws-container .aws-wrapper .aws-search-clear span{font-size:40px;line-height:40px;margin-top:-20px}
 #search-overlay .aws-container .aws-wrapper .aws-loader{right:20px}
 .aws-search-result{margin-top:35px !important}
 .aws-search-result .aws_result_title{margin-bottom:10px;margin-top:5px;font-size:22px;font-weight:bold;color:#000}
@@ -607,6 +608,7 @@ header .header-inner{padding:32px 20px 28px 20px}
 .woocommerce ul.products li.product{-webkit-box-flex:1 !important;-ms-flex:1 0 50% !important;flex:1 0 50% !important;width:50% !important;max-width:50% !important;margin-bottom:0 !important}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{float:left}
 .woocommerce div.product .product-wrap div.summary{float:right}
+.woocommerce div.product .product-wrap .single-product-content{width:100%}
 .cart-contents{top:25px;right:66px}
 .filter-icon-svg{margin-left:5px;width:15px;height:15px}
 i.filter-icon{margin-left:10px;width:15px;height:15px}
@@ -654,9 +656,13 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{width:100% !important}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{width:100%;padding-right:0;margin-right:0;margin-bottom:20px}
 .woocommerce div.product .product-wrap div.summary{width:100%}
+.woocommerce div.product .product-wrap .single-product-tags strong{width:100%;margin-bottom:5px}
 .woocommerce div.product .product_title{font-size:32px}
+.woocommerce div.product form.cart div.quantity .input-text{width:100%;margin-bottom:13.3333333333px}
+.woocommerce div.product form.cart div.quantity{width:100%}
+.related.products>h2{font-size:32px}
 .woocommerce table.shop_table td.actions #coupon_code{width:100%;margin-bottom:20px}
-.filter-icon-svg{float:right;margin-right:6px}
+.filter-icon-svg{float:right;margin-right:7px}
 .woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form label{display:none;line-height:1}
 .woocommerce-error .wc-forward,.woocommerce-info .wc-forward,.woocommerce-message .wc-forward{margin-bottom:.7em !important}
 .woocommerce-error::before,.woocommerce-info::before,.woocommerce-message::before{left:1em}
