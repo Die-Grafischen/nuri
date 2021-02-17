@@ -285,7 +285,7 @@ jQuery(document).ready(function ($) {
               categories = categories + 'product_cat-' + item.id + ' ';
             });
             var imageSrc = data[index].images[0] ? data[index].images[0].shop_catalog : 'https://nurifood.ch/wprs/wp-content/uploads/custom-woo-placeholder.gif';
-            var productHtml = $('<li class="product type-product post-' + _id + ' status-publish ' + categories + 'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="' + permalink + '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="315" height="420" src="' + imageSrc + '" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">' + title + '</h2><span class="price">' + price + '</span></a></li>');
+            var productHtml = $('<li class="product type-product post-' + _id + ' status-publish ' + categories + 'has-post-thumbnail shipping-taxable purchasable product-type-simple"><a href="' + permalink + '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="315" height="315" src="' + imageSrc + '" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt loading="lazy" /><h2 class="woocommerce-loop-product__title">' + title + '</h2><span class="price">' + price + '</span></a></li>');
             container.isotope('insert', productHtml); //insert new product to isotope
 
             loadedProductsIds.push(_id); // add loaded products id to the exeptions for future queries
