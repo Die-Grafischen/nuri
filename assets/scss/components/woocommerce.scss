@@ -32,6 +32,25 @@
 	background: $white;
 	margin-bottom: $gutter;
 
+	#mobile-filter {
+		display: none;
+
+		@include r(480) {
+			display: block;
+			width: 100%;
+			float: left;
+			padding: $gutter/4 $gutter/3;
+		}
+
+		#mobile-filter-icon {
+			float: right;
+			height: 24px;
+			width: 26px;
+			display: inline-block;
+		}
+
+	}
+
 	@include r(1024) {
 		width: calc(100% - #{$gutter});
 		left: $gutter/2;
@@ -39,9 +58,16 @@
 
 	@include r(480) {
 		top: 78px;
-		width: 100%;
-		left: 0;
-		padding: $gutter/4 $gutter/2;
+		z-index: 100;
+		padding: 0;
+		display: block;
+	}
+
+	> ul {
+		@include r(480) {
+			display: none;
+			width: 100%;
+		}
 	}
 
 	ul {
@@ -62,12 +88,20 @@
 			}
 
 			@include r(480) {
-				margin-top: 4px;
-				margin-bottom: 4px;
+				width: 100%;
+				padding: $gutter/3;
+				font-family: $font-family;
+				font-size: $font-size-mobile;
 			}
 
 			span {
 				cursor: pointer;
+
+				@include r(480) {
+					width: 100%;
+					display: block;
+				}
+
 			}
 
 			&.no-children .filter-icon-svg {
@@ -87,11 +121,13 @@
 			padding: 0 $gutter/2 $gutter/2;
 
 			@include r(1024) {
-				top: 50px;
+				top: 61px;
 			}
 
 			@include r(480) {
-				top: 75px;
+				position: relative;
+				top: 0;
+				padding: 0 0 $gutter/3;
 			}
 
 			li {
@@ -106,7 +142,6 @@
 				@include r(1024) {
 					font-size: $font-size-mobile;
 					width: auto;
-					margin-top: $gutter/4;
 				}
 
 				.pretty.p-default input:checked ~ .state label:after {
@@ -415,12 +450,20 @@
 			width: calc(100% + 20px);
 		}
 
+		@include r(480) {
+			margin: 30px 0 $gutter/2 -10px;
+		}
+
 		li.product {
 			flex: 1 0 25%;
 		    max-width: 25%;
 			width: 25%;
 			margin: 0;
 			border: 10px solid transparent;
+
+			.button {
+				display: none;
+			}
 
 			.onsale {
 				margin: -.8em -.8em 0 0;
@@ -753,13 +796,10 @@
 	right: $gutter;
 	top: 32px;
 
-	@include r(768) { right: $gutter/2; }
-
-	@include r(480) {
+	@include r(768) {
 		top: 25px;
-		right: 65px
+		right: 66px
 	}
-
 
 	svg {
 		width: 35px;
@@ -974,6 +1014,10 @@ span.attributes-string {
 		height: 15px;
 	}
 
+	@include r(480) {
+		float: right;
+	}
+
 }
 
 i.filter-icon {
@@ -1130,6 +1174,12 @@ i.filter-icon {
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
+
+	.wc-forward {
+		@include r(480) {
+			margin-bottom: 0.7em!important;
+		}
+	}
 
 	&::before {
 

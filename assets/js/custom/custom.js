@@ -15,6 +15,12 @@ jQuery(document).ready(function($) {
 		$('#nav-toggle').toggleClass('active');
 	});
 
+	$('#mobile-filter').on('click', function(){
+		$('body').toggleClass('active-filter');
+		$('#mobile-filter-icon').toggleClass('active-mobile-filter');
+		$('#mobile-filter + ul').slideToggle();
+	});
+
 	// Window Scroll
 	var header = $('header');
 	var theWindow = $(window);

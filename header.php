@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			echo '<a href="'. home_url() .'" class="custom-logo logo">'. get_bloginfo('name') .'</a>';
 		} ?>
 
-		<div id="nav-toggle" aria-expanded="false">
+		<div class="nav-toggle" id="nav-toggle" aria-expanded="false">
 			 <span></span>
 		</div>
 
