@@ -66,6 +66,11 @@
 		font-size: $font-size-s;
 		font-weight: bold;
 	    color: $black;
+
+		@include r(480) {
+			line-height: 1.4;
+		}
+
 	}
 
 	.aws_result_excerpt {

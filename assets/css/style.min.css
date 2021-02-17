@@ -600,6 +600,7 @@ header .menu{position:fixed;left:-200%;top:0;width:100%;height:100%;background:#
 header .menu li{width:100%;text-align:center;padding:5px 0;font-size:32px;display:block}
 header .header-inner{padding:32px 20px 28px 20px}
 #nav-toggle{display:inline-block}
+.woo-custom-filter{z-index:100}
 .woocommerce .woocommerce-customer-details .woocommerce-column--shipping-address{margin-top:40px}
 .woocommerce .coupon+.button{margin-top:20px !important}
 .woocommerce table.shop_table a.remove{background:#fff !important;-webkit-transform:translate(-26px,88px);transform:translate(-26px,88px)}
@@ -637,7 +638,7 @@ footer .section-inner .text-social{width:100%;text-align:left;padding-top:20px}
 footer .section-inner .footer-social a{float:left;margin-right:8px;margin-left:0}
 footer .section-inner .footer-credits{margin-top:40px}
 .woo-custom-filter #mobile-filter{display:block;width:100%;float:left;padding:10px 13.3333333333px}
-.woo-custom-filter{top:78px;z-index:100;padding:0;display:block}
+.woo-custom-filter{top:78px;padding:0;display:block}
 .woo-custom-filter>ul{display:none;width:100%}
 .woo-custom-filter ul>li{width:100%;padding:13.3333333333px;font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:19px}
 .woo-custom-filter ul>li span{width:100%;display:block}
@@ -653,6 +654,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{width:100% !important}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{width:100%;padding-right:0;margin-right:0;margin-bottom:20px}
 .woocommerce div.product .product-wrap div.summary{width:100%}
+.woocommerce div.product .product_title{font-size:32px}
 .woocommerce table.shop_table td.actions #coupon_code{width:100%;margin-bottom:20px}
 .filter-icon-svg{float:right;margin-right:6px}
 .woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form label{display:none;line-height:1}
@@ -661,6 +663,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce-error,.woocommerce-info,.woocommerce-message{padding:1em 1em 1em 3em;margin:0 0 40px}
 .woocommerce ul.order_details li{border-right:0;margin-bottom:20px;margin-right:0;width:100%}
 #search-overlay{padding:150px 20px 40px}
+.aws-search-result .aws_result_title{line-height:1.4}
 .wp-block-cover{padding:20px !important}
 .wp-block-cover.cover-on-top{margin-bottom:0}
 .wp-block-cover .wp-block-cover__inner-container p{line-height:1.1}

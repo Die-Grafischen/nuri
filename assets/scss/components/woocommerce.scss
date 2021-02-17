@@ -56,9 +56,12 @@
 		left: $gutter/2;
 	}
 
+	@include r(768) {
+		z-index: 100;
+	}
+
 	@include r(480) {
 		top: 78px;
-		z-index: 100;
 		padding: 0;
 		display: block;
 	}
@@ -744,6 +747,10 @@
 			font-size: $font-size-l;
 			font-weight: normal;
 			line-height: 1.05;
+			@include r(480) {
+				font-size: $font-size-m;
+			}
+
 		}
 
 		 .price {
