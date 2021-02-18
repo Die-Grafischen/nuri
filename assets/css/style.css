@@ -370,7 +370,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 @media (min-width: 1280px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
 
 /** Base SCSS */
-body { opacity: 1; }
+body { opacity: 1; overflow-x: hidden; }
 
 @font-face { font-family: 'Maison Neue'; src: url("../fonts/maison-neue/maison.woff2") format("woff2"), url("../fonts/maison-neue/maison.woff") format("woff"); font-weight: normal; font-style: normal; font-display: swap; }
 
@@ -734,6 +734,10 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 .woocommerce ul#shipping_method li { margin: 0; }
 
 .woocommerce ul#shipping_method li input { margin: 8px .4375em 0 0; }
+
+@media (max-width: 480px) { .woocommerce ul#shipping_method li label { word-break: break-all; } }
+
+@media (max-width: 480px) { .woocommerce ul#shipping_method li label .woocommerce-Price-amount { display: block; } }
 
 @media (max-width: 480px) { .woocommerce ul#shipping_method li { margin-top: 13.3333333333px; } }
 

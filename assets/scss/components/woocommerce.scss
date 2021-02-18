@@ -201,6 +201,22 @@
 	    		margin: 8px .4375em 0 0;
 			}
 
+			label {
+
+				@include r(480){
+					word-break: break-all;
+				}
+
+				.woocommerce-Price-amount {
+
+					@include r(480){
+						display: block;
+					}
+
+				}
+
+			}
+
 			@include r(480) {
 				margin-top: $gutter/3;
 			}

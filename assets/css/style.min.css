@@ -129,7 +129,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 #wp-calendar tfoot #next{font-size:10px;text-transform:uppercase;text-align:right}
 #wp-calendar tfoot #prev{font-size:10px;text-transform:uppercase;padding-top:10px}
 .size-auto,.size-full,.size-large,.size-medium,.size-thumbnail{max-width:100%;height:auto}
-body{opacity:1}
+body{opacity:1;overflow-x:hidden}
 @font-face{font-family:'Maison Neue';src:url("../fonts/maison-neue/maison.woff2") format("woff2"),url("../fonts/maison-neue/maison.woff") format("woff");font-weight:normal;font-style:normal;font-display:swap}
 @font-face{font-family:'Maison Neue';src:url("../fonts/maison-neue/maison-bold.woff2") format("woff2"),url("../fonts/maison-neue/maison-bold.woff") format("woff");font-weight:bold;font-style:normal;font-display:swap}
 @font-face{font-family:'Brick Display Pro';src:url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff2") format("woff2"),url("../fonts/brick-display-pro/BrickDisplayPro-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
@@ -645,6 +645,8 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woo-custom-filter ul>li{width:100%;padding:13.3333333333px;font-family:"Maison Neue",Helvetica,Arial,sans-serif;font-size:19px}
 .woo-custom-filter ul>li span{width:100%;display:block}
 .woo-custom-filter ul ul.filter-child-cat{position:relative;top:0;padding:0 0 13.3333333333px}
+.woocommerce ul#shipping_method li label{word-break:break-all}
+.woocommerce ul#shipping_method li label .woocommerce-Price-amount{display:block}
 .woocommerce ul#shipping_method li{margin-top:13.3333333333px}
 .woocommerce .coupon+.button{margin-top:40px !important}
 .woocommerce table.cart{margin-top:-70px}

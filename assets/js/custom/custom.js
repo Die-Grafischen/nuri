@@ -94,19 +94,18 @@ jQuery(document).ready(function($) {
 
 	// SHOP ISOTOPE - runns only on woo shop/category/tags page
 	if ( $('body:not(.search) .woo-custom-filter').length ) {
-
 		// hide/reveal subnav filter on scroll
 		var lastScrollTop = 0;
 		theWindow.scroll(function(event){
 		   var st = $(this).scrollTop();
 		   if (st > lastScrollTop){
 		       // downscroll
-			   if ( theWindow.width > 480 ) {
+			   if ( $(window).width() > 480 ) {
 				   $('.filter-current-parent .filter-child-cat').slideUp().addClass('sub-visible').removeClass('sub-hidden');
 	   		   }
 		   } else {
 		      // upscroll code
-			  if ( theWindow.width > 480 ) {
+			  if ( $(window).width() > 480 ) {
 			  	$('.filter-current-parent .filter-child-cat').slideDown().addClass('sub-hidden').removeClass('sub-visible');
 			  }
 		   }

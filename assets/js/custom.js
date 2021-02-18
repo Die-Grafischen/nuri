@@ -110,12 +110,12 @@ jQuery(document).ready(function ($) {
 
       if (st > lastScrollTop) {
         // downscroll
-        if (theWindow.width > 480) {
+        if ($(window).width() > 480) {
           $('.filter-current-parent .filter-child-cat').slideUp().addClass('sub-visible').removeClass('sub-hidden');
         }
       } else {
         // upscroll code
-        if (theWindow.width > 480) {
+        if ($(window).width() > 480) {
           $('.filter-current-parent .filter-child-cat').slideDown().addClass('sub-hidden').removeClass('sub-visible');
         }
       }
