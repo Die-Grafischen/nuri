@@ -423,11 +423,11 @@
 
 			@include r(768) {
 				background: $white!important;
-				transform: translate(-26px, 88px);
+				transform: translate(-26px, 74px);
 			}
 
 			@include r(480) {
-				transform: translate(-14px, 82px);
+				transform: translate(-14px, 69px);
 			}
 
 			&:hover {
@@ -1266,4 +1266,17 @@ i.filter-icon {
 	}
 
 
+}
+
+
+#order_comments {
+	@include r(480) {
+		min-height: 102px;
+	}
+}
+
+small.includes_tax {
+	@include r(480) {
+		width: 100%;
+	}
 }

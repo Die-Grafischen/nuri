@@ -811,9 +811,9 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 
 .woocommerce table.shop_table a.remove { color: #000000 !important; }
 
-@media (max-width: 768px) { .woocommerce table.shop_table a.remove { background: #ffffff !important; -webkit-transform: translate(-26px, 88px); transform: translate(-26px, 88px); } }
+@media (max-width: 768px) { .woocommerce table.shop_table a.remove { background: #ffffff !important; -webkit-transform: translate(-26px, 74px); transform: translate(-26px, 74px); } }
 
-@media (max-width: 480px) { .woocommerce table.shop_table a.remove { -webkit-transform: translate(-14px, 82px); transform: translate(-14px, 82px); } }
+@media (max-width: 480px) { .woocommerce table.shop_table a.remove { -webkit-transform: translate(-14px, 69px); transform: translate(-14px, 69px); } }
 
 .woocommerce table.shop_table a.remove:hover { color: #ffffff !important; background: #000000; }
 
@@ -1085,6 +1085,10 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 @media (max-width: 1024px) { .woocommerce ul.order_details li { border-right: 0; margin-bottom: 20px; margin-right: 0; width: 33%; } }
 
 @media (max-width: 480px) { .woocommerce ul.order_details li { border-right: 0; margin-bottom: 20px; margin-right: 0; width: 100%; } }
+
+@media (max-width: 480px) { #order_comments { min-height: 102px; } }
+
+@media (max-width: 480px) { small.includes_tax { width: 100%; } }
 
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }

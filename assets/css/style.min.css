@@ -604,7 +604,7 @@ header .header-inner{padding:32px 20px 28px 20px}
 .woo-custom-filter{z-index:100}
 .woocommerce .woocommerce-customer-details .woocommerce-column--shipping-address{margin-top:40px}
 .woocommerce .coupon+.button{margin-top:20px !important}
-.woocommerce table.shop_table a.remove{background:#fff !important;-webkit-transform:translate(-26px,88px);transform:translate(-26px,88px)}
+.woocommerce table.shop_table a.remove{background:#fff !important;-webkit-transform:translate(-26px,74px);transform:translate(-26px,74px)}
 .woocommerce ul.products li.product{-webkit-box-flex:1 !important;-ms-flex:1 0 50% !important;flex:1 0 50% !important;width:50% !important;max-width:50% !important;margin-bottom:0 !important}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{float:left}
 .woocommerce div.product .product-wrap div.summary{float:right}
@@ -652,7 +652,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce table.cart{margin-top:-70px}
 .woocommerce table.shop_table td{position:relative}
 .woocommerce table.shop_table td small.shipped_via{display:block;word-break:keep-all;width:200px;text-align:right;right:0;bottom:3px;position:absolute}
-.woocommerce table.shop_table a.remove{-webkit-transform:translate(-14px,82px);transform:translate(-14px,82px)}
+.woocommerce table.shop_table a.remove{-webkit-transform:translate(-14px,69px);transform:translate(-14px,69px)}
 .woocommerce ul.products{margin:30px 0 20px -10px}
 .woocommerce ul.products li.product{-webkit-box-flex:1 !important;-ms-flex:1 0 100% !important;flex:1 0 100% !important;width:100% !important;max-width:100% !important;margin-bottom:0 !important}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{width:100% !important}
@@ -670,6 +670,8 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce-error::before,.woocommerce-info::before,.woocommerce-message::before{left:1em}
 .woocommerce-error,.woocommerce-info,.woocommerce-message{padding:1em 1em 1em 3em;margin:0 0 40px}
 .woocommerce ul.order_details li{border-right:0;margin-bottom:20px;margin-right:0;width:100%}
+#order_comments{min-height:102px}
+small.includes_tax{width:100%}
 #search-overlay{padding:150px 20px 40px}
 .aws-search-result .aws_result_title{line-height:1.4}
 .wp-block-cover{padding:20px !important}
