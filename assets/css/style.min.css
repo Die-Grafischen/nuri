@@ -375,6 +375,7 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .woocommerce table.shop_table_responsive tr.shipping td{text-align:left !important}
 .woocommerce table.shop_table_responsive tr.shipping td::before{width:100%;padding-bottom:13.3333333333px}
 small.includes_tax{text-transform:uppercase}
+small.includes_tax .woocommerce-Price-currencySymbol{font-size:75% !important}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}
@@ -653,7 +654,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce table.cart{margin-top:-70px}
 .woocommerce table.shop_table td{position:relative}
 .woocommerce table.shop_table td small.shipped_via{display:block;word-break:keep-all;width:200px;text-align:right;right:0;bottom:3px;position:absolute}
-.woocommerce table.shop_table a.remove{-webkit-transform:translate(-14px,69px);transform:translate(-14px,69px)}
+.woocommerce table.shop_table a.remove{-webkit-transform:translate(0,40px);transform:translate(0,40px);float:right}
 .woocommerce ul.products{margin:30px 0 20px -10px}
 .woocommerce ul.products li.product{-webkit-box-flex:1 !important;-ms-flex:1 0 100% !important;flex:1 0 100% !important;width:100% !important;max-width:100% !important;margin-bottom:0 !important}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{width:100% !important}
@@ -673,6 +674,8 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce ul.order_details li{border-right:0;margin-bottom:20px;margin-right:0;width:100%}
 #order_comments{min-height:102px}
 small.includes_tax{width:100%}
+.woocommerce table.shop_table_responsive tr td,.woocommerce-page table.shop_table_responsive tr td,.woocommerce table.shop_table_responsive tr td::before,.woocommerce-page table.shop_table_responsive tr td::before{width:100%;text-align:left !important}
+.woocommerce table.shop_table_responsive tr td.product-remove{text-align:right !important}
 #search-overlay{padding:150px 20px 40px}
 .aws-search-result .aws_result_title{line-height:1.4}
 .wp-block-cover{padding:20px !important}

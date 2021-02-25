@@ -427,7 +427,8 @@
 			}
 
 			@include r(480) {
-				transform: translate(-14px, 69px);
+				transform: translate(0, 40px);
+				float: right;
 			}
 
 			&:hover {
@@ -1276,8 +1277,31 @@ i.filter-icon {
 }
 
 small.includes_tax {
+
 	text-transform: uppercase;
+
 	@include r(480) {
 		width: 100%;
+	}
+
+	.woocommerce-Price-currencySymbol {
+		font-size: 75%!important;
+	}
+
+}
+
+.woocommerce table.shop_table_responsive tr td,
+.woocommerce-page table.shop_table_responsive tr td,
+.woocommerce table.shop_table_responsive tr td::before,
+.woocommerce-page table.shop_table_responsive tr td::before {
+	@include r(480) {
+		width: 100%;
+		text-align: left!important;
+	}
+}
+
+.woocommerce table.shop_table_responsive tr td.product-remove {
+	@include r(480) {
+		text-align: right!important;
 	}
 }
