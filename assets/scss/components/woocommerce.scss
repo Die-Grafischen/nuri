@@ -1136,7 +1136,7 @@ i.filter-icon {
 		top: -100px;
 		width: auto;
 		white-space: nowrap;
-		z-index: 2;
+		z-index: 1000;
 
 		&:after {
 			content:"";
@@ -1276,6 +1276,7 @@ i.filter-icon {
 }
 
 small.includes_tax {
+	text-transform: uppercase;
 	@include r(480) {
 		width: 100%;
 	}

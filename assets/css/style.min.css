@@ -7,7 +7,7 @@ Author: Ahmad Awais
 Author URI: https://twitter.com/MrAhmadAwais/
 License: MIT
 Text Domain: WPGT
-*/html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+*/html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;overflow-y:auto !important}
 body{margin:0}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
@@ -362,7 +362,7 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .woo-back .woo-back-link:hover{background:#000}
 .woo-back .woo-back-link:hover svg path{stroke:#fff}
 .woo-back .woo-back-link svg{margin-right:3px}
-.woo-back .woo-back-name{display:none;background:#fff;color:#000;padding:10px 15px;font-size:30px;position:absolute;left:40px;top:-100px;width:auto;white-space:nowrap;z-index:2}
+.woo-back .woo-back-name{display:none;background:#fff;color:#000;padding:10px 15px;font-size:30px;position:absolute;left:40px;top:-100px;width:auto;white-space:nowrap;z-index:1000}
 .woo-back .woo-back-name:after{content:"";width:0;height:0;border-style:solid;border-width:22px 18px 0 0;border-color:#fff transparent transparent #fff;position:absolute;bottom:-18px;left:0;display:block}
 .tax-product_tag a.product-tag{background:#fff;padding:10px 24px;border-radius:24px;margin:5px 10px 5px 0;display:inline-block}
 .tax-product_tag a.product-tag:hover,.tax-product_tag a.product-tag.filter-current-tag{background:#000;color:#fff}
@@ -374,6 +374,7 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form .wc-stripe-error{margin:20px 0 0 0}
 .woocommerce table.shop_table_responsive tr.shipping td{text-align:left !important}
 .woocommerce table.shop_table_responsive tr.shipping td::before{width:100%;padding-bottom:13.3333333333px}
+small.includes_tax{text-transform:uppercase}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}

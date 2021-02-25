@@ -100,8 +100,7 @@ function woo_custom_filter() {
 	global $wp_query;
 
 	//search query
-
-	$search = ($wp_query->query['s']) ? ($wp_query->query['s']) : false;
+	$search = isset($wp_query->query['s']) ? ($wp_query->query['s']) : false;
 
 	if($search) {
 		echo '<h1>Suche: '. esc_html($search) .'</h1>';

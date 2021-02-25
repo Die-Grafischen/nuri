@@ -46,7 +46,7 @@ Text Domain: WPGT
 /*$color--primary: #607D8B;*/
 /* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS and IE text size adjust after device orientation change, without disabling user zoom. */
-html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ overflow-y: auto !important; }
 
 /** Remove default margin. */
 body { margin: 0; }
@@ -1050,7 +1050,7 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 
 .woo-back .woo-back-link svg { margin-right: 3px; }
 
-.woo-back .woo-back-name { display: none; background: #ffffff; color: #000000; padding: 10px 15px; font-size: 30px; position: absolute; left: 40px; top: -100px; width: auto; white-space: nowrap; z-index: 2; }
+.woo-back .woo-back-name { display: none; background: #ffffff; color: #000000; padding: 10px 15px; font-size: 30px; position: absolute; left: 40px; top: -100px; width: auto; white-space: nowrap; z-index: 1000; }
 
 .woo-back .woo-back-name:after { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 22px 18px 0 0; border-color: #ffffff transparent transparent #ffffff; position: absolute; bottom: -18px; left: 0; display: block; }
 
@@ -1087,6 +1087,8 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 @media (max-width: 480px) { .woocommerce ul.order_details li { border-right: 0; margin-bottom: 20px; margin-right: 0; width: 100%; } }
 
 @media (max-width: 480px) { #order_comments { min-height: 102px; } }
+
+small.includes_tax { text-transform: uppercase; }
 
 @media (max-width: 480px) { small.includes_tax { width: 100%; } }
 
