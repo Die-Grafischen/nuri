@@ -733,7 +733,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 
 .woocommerce ul#shipping_method li { margin: 0; }
 
-.woocommerce ul#shipping_method li input { margin: 8px .4375em 0 0; }
+.woocommerce ul#shipping_method li input { margin: 8px .4375em 0 0; width: 15px; height: 15px; }
 
 @media (max-width: 480px) { .woocommerce ul#shipping_method li label { word-break: break-all; } }
 
@@ -1090,7 +1090,7 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 
 small.includes_tax { text-transform: uppercase; }
 
-@media (max-width: 480px) { small.includes_tax { width: 100%; } }
+@media (max-width: 480px) { small.includes_tax { width: 100%; display: block; } }
 
 small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important; }
 

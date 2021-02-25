@@ -199,6 +199,8 @@
 
 			input {
 	    		margin: 8px .4375em 0 0;
+				width: 15px;
+				height: 15px;
 			}
 
 			label {
@@ -1283,6 +1285,7 @@ small.includes_tax {
 
 	@include r(480) {
 		width: 100%;
+		display: block;
 	}
 
 	.woocommerce-Price-currencySymbol {

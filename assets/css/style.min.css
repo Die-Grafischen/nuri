@@ -243,7 +243,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path,b
 .woo-custom-filter .clear-filter{margin-left:auto;margin-right:20px;cursor:pointer}
 .woocommerce .woocommerce-shipping-totals th,.woocommerce .woocommerce-shipping-totals td{font-weight:normal !important}
 .woocommerce ul#shipping_method li{margin:0}
-.woocommerce ul#shipping_method li input{margin:8px .4375em 0 0}
+.woocommerce ul#shipping_method li input{margin:8px .4375em 0 0;width:15px;height:15px}
 .woocommerce .woocommerce-customer-details address{border:0;padding:0}
 .woocommerce .woocommerce-additional-fields{margin-top:40px}
 .woocommerce .woocommerce-terms-and-conditions-wrapper{margin-bottom:20px}
@@ -674,7 +674,7 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce-error,.woocommerce-info,.woocommerce-message{padding:1em 1em 1em 3em;margin:0 0 40px}
 .woocommerce ul.order_details li{border-right:0;margin-bottom:20px;margin-right:0;width:100%}
 #order_comments{min-height:102px}
-small.includes_tax{width:100%}
+small.includes_tax{width:100%;display:block}
 .woocommerce table.shop_table_responsive tr td,.woocommerce-page table.shop_table_responsive tr td,.woocommerce table.shop_table_responsive tr td::before,.woocommerce-page table.shop_table_responsive tr td::before{width:100%;text-align:left !important;padding-left:0}
 .woocommerce table.shop_table_responsive tr td.product-remove{text-align:right !important;padding-right:0}
 .woocommerce-checkout-review-order-table thead,.woocommerce-cart-form__contents thead{display:none !important}
