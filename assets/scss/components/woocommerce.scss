@@ -385,6 +385,7 @@
 
 			@include r(480) {
 				position: relative;
+
 			}
 
 			small.shipped_via {
@@ -1297,11 +1298,67 @@ small.includes_tax {
 	@include r(480) {
 		width: 100%;
 		text-align: left!important;
+		padding-left: 0;
 	}
 }
 
 .woocommerce table.shop_table_responsive tr td.product-remove {
 	@include r(480) {
 		text-align: right!important;
+		padding-right: 0;
+	}
+}
+
+.woocommerce table.shop_table_responsive tr:nth-child(2n) td,
+.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td {
+    background-color: rgba(0,0,0,0)!important;
+}
+
+
+@media screen and (max-width: 480px) {
+
+	/* Force table to not be like tables anymore */
+	.woocommerce-page table.shop_table,
+	.woocommerce-page table.shop_table thead,
+	.woocommerce-page table.shop_table tbody,
+	.woocommerce-page table.shop_table tfoot,
+	.woocommerce-page table.shop_table th,
+	.woocommerce-page table.shop_table td,
+	.woocommerce-page table.shop_table tr {
+		display: block;
+		padding-left: 0!important;
+	}
+
+}
+
+.woocommerce-checkout-review-order-table thead,
+.woocommerce-cart-form__contents thead {
+	@include r(480) {
+		display: none!important;
+	}
+}
+
+.cart-subtotal,
+.woocommerce-shipping-totals,
+.order-total {
+
+	th {
+		@include r(480) {
+			padding-top: 20px!important;
+		}
+	}
+
+	td {
+		@include r(480) {
+			border-top: 0!important;
+			padding-top: 0!important;
+		}
+	}
+}
+
+.woocommerce table.shop_table_responsive tr.shipping td::before,
+.woocommerce table.shop_table_responsive tr.order-total td::before {
+	@include r(480) {
+		padding-top: 20px;
 	}
 }

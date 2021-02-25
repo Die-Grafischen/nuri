@@ -1094,9 +1094,22 @@ small.includes_tax { text-transform: uppercase; }
 
 small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important; }
 
-@media (max-width: 480px) { .woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td, .woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before { width: 100%; text-align: left !important; } }
+@media (max-width: 480px) { .woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td, .woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before { width: 100%; text-align: left !important; padding-left: 0; } }
 
-@media (max-width: 480px) { .woocommerce table.shop_table_responsive tr td.product-remove { text-align: right !important; } }
+@media (max-width: 480px) { .woocommerce table.shop_table_responsive tr td.product-remove { text-align: right !important; padding-right: 0; } }
+
+.woocommerce table.shop_table_responsive tr:nth-child(2n) td, .woocommerce-page table.shop_table_responsive tr:nth-child(2n) td { background-color: rgba(0, 0, 0, 0) !important; }
+
+@media screen and (max-width: 480px) { /* Force table to not be like tables anymore */
+  .woocommerce-page table.shop_table, .woocommerce-page table.shop_table thead, .woocommerce-page table.shop_table tbody, .woocommerce-page table.shop_table tfoot, .woocommerce-page table.shop_table th, .woocommerce-page table.shop_table td, .woocommerce-page table.shop_table tr { display: block; padding-left: 0 !important; } }
+
+@media (max-width: 480px) { .woocommerce-checkout-review-order-table thead, .woocommerce-cart-form__contents thead { display: none !important; } }
+
+@media (max-width: 480px) { .cart-subtotal th, .woocommerce-shipping-totals th, .order-total th { padding-top: 20px !important; } }
+
+@media (max-width: 480px) { .cart-subtotal td, .woocommerce-shipping-totals td, .order-total td { border-top: 0 !important; padding-top: 0 !important; } }
+
+@media (max-width: 480px) { .woocommerce table.shop_table_responsive tr.shipping td::before, .woocommerce table.shop_table_responsive tr.order-total td::before { padding-top: 20px; } }
 
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }

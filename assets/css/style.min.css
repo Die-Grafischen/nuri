@@ -376,6 +376,7 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .woocommerce table.shop_table_responsive tr.shipping td::before{width:100%;padding-bottom:13.3333333333px}
 small.includes_tax{text-transform:uppercase}
 small.includes_tax .woocommerce-Price-currencySymbol{font-size:75% !important}
+.woocommerce table.shop_table_responsive tr:nth-child(2n) td,.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td{background-color:rgba(0,0,0,0) !important}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}
@@ -674,8 +675,12 @@ footer .section-inner .footer-credits{margin-top:40px}
 .woocommerce ul.order_details li{border-right:0;margin-bottom:20px;margin-right:0;width:100%}
 #order_comments{min-height:102px}
 small.includes_tax{width:100%}
-.woocommerce table.shop_table_responsive tr td,.woocommerce-page table.shop_table_responsive tr td,.woocommerce table.shop_table_responsive tr td::before,.woocommerce-page table.shop_table_responsive tr td::before{width:100%;text-align:left !important}
-.woocommerce table.shop_table_responsive tr td.product-remove{text-align:right !important}
+.woocommerce table.shop_table_responsive tr td,.woocommerce-page table.shop_table_responsive tr td,.woocommerce table.shop_table_responsive tr td::before,.woocommerce-page table.shop_table_responsive tr td::before{width:100%;text-align:left !important;padding-left:0}
+.woocommerce table.shop_table_responsive tr td.product-remove{text-align:right !important;padding-right:0}
+.woocommerce-checkout-review-order-table thead,.woocommerce-cart-form__contents thead{display:none !important}
+.cart-subtotal th,.woocommerce-shipping-totals th,.order-total th{padding-top:20px !important}
+.cart-subtotal td,.woocommerce-shipping-totals td,.order-total td{border-top:0 !important;padding-top:0 !important}
+.woocommerce table.shop_table_responsive tr.shipping td::before,.woocommerce table.shop_table_responsive tr.order-total td::before{padding-top:20px}
 #search-overlay{padding:150px 20px 40px}
 .aws-search-result .aws_result_title{line-height:1.4}
 .wp-block-cover{padding:20px !important}
@@ -687,6 +692,7 @@ small.includes_tax{width:100%}
 .block-newsletter{padding:40px !important}
 .block-newsletter .newsletter-wrapper{width:100%;max-width:100%}
 .block-newsletter .newsletter-wrapper input{width:100%}
+}@media screen and (max-width:480px){.woocommerce-page table.shop_table,.woocommerce-page table.shop_table thead,.woocommerce-page table.shop_table tbody,.woocommerce-page table.shop_table tfoot,.woocommerce-page table.shop_table th,.woocommerce-page table.shop_table td,.woocommerce-page table.shop_table tr{display:block;padding-left:0 !important}
 }@media print{.pretty .state .icon,.pretty .state label:after,.pretty .state label:before,.pretty .state:before{color-adjust:exact;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }@-webkit-keyframes zoom{0%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}
 }@keyframes zoom{0%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}
