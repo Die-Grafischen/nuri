@@ -253,10 +253,11 @@ jQuery(document).ready(function($) {
 
  		    var viewportTop = $(window).scrollTop();
  		    var viewportBottom = viewportTop + $(window).height();
-
+			console.log('view');
  		   if( (elementBottom > viewportTop && elementTop < viewportBottom) && jsonFlag ) {
  			  //make rest requerst
  			  loadMoreProducts();
+			  console.log('is in view');
 			  //jsonFlag = false;
  		   }
  		};

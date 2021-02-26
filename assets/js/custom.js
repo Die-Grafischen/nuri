@@ -96,10 +96,12 @@ jQuery(document).ready(function ($) {
       var elementBottom = elementTop + $(el).outerHeight();
       var viewportTop = $(window).scrollTop();
       var viewportBottom = viewportTop + $(window).height();
+      console.log('view');
 
       if (elementBottom > viewportTop && elementTop < viewportBottom && jsonFlag) {
         //make rest requerst
-        loadMoreProducts(); //jsonFlag = false;
+        loadMoreProducts();
+        console.log('is in view'); //jsonFlag = false;
       }
     };
 

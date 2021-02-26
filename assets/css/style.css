@@ -370,7 +370,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 @media (min-width: 1280px) { .wp-caption .wp-caption-text, .gallery-caption { font: 300 2rem/3.1rem sans-serif; } }
 
 /** Base SCSS */
-body { opacity: 1; overflow-x: hidden; }
+body { opacity: 1; }
 
 @font-face { font-family: 'Maison Neue'; src: url("../fonts/maison-neue/maison.woff2") format("woff2"), url("../fonts/maison-neue/maison.woff") format("woff"); font-weight: normal; font-style: normal; font-display: swap; }
 
