@@ -1370,3 +1370,9 @@ small.includes_tax {
 .woocommerce-customer-details--email {
 	display: none;
 }
+
+.woocommerce td.product-name dl.variation dt.variation-Lieferadresse,
+.woocommerce td.product-name dl.variation dd.variation-Lieferadresse {
+	margin-top: 20px;
+	width: 100%;
+}
