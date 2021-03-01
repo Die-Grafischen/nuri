@@ -230,4 +230,13 @@ img {
 .woocommerce-Price-currencySymbol {
 	padding-right: 5px;
 }
+
+#e-logo {
+	margin-bottom: 10px;
+}
+
+#e-logo img {
+	width: 100px;
+	height: auto;
+}
 <?php
