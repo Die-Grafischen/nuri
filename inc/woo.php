@@ -592,6 +592,14 @@ function change_related_title() {
    return __( 'Passend dazu:', 'woocommerce' );
 }
 
+// Custom 'no shipping available message'
+add_filter( 'woocommerce_cart_needs_shipping', '__return_true' );
+add_filter( 'woocommerce_cart_no_shipping_available_html', 'change_noship_message' );
+add_filter( 'woocommerce_no_shipping_available_html', 'change_noship_message' );
+function change_noship_message() {
+    print "Wir liefern unsere Produkte aktuell selber aus. Daher können wir zurzeit nur im Raum Bern einen Versand anbieten. Sie können ihre Bestellung jedezeit gerne bei uns vor Ort abholen. Für weitere Fragen, kontaktieren Sie uns!";
+}
+
 // cart icon
 function cart_svg() { ?>
 	<svg xmlns="http://www.w3.org/2000/svg" width="52.246" height="33.949" viewBox="0 0 52.246 33.949">
