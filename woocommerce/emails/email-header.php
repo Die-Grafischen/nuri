@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<tr>
 											<td id="header_wrapper">
 												<a href="<?php echo home_url(); ?>" id="e-logo">
-													<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/email-logo.gif" alt="Nuri" />
+													<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/email-logo.gif" alt="Nuri" width="100" height="35"/>
 												</a>
 												<h1><?php echo $email_heading; ?></h1>
 											</td>
