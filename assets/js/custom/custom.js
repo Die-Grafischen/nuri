@@ -366,9 +366,9 @@ jQuery(document).ready(function($) {
 		if(jsonFlag){
 			let catString = queryCategories.join(',');
 			let excString = loadedProductsIds.join(',');
-			console.log(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString);
+			console.log(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString+'&status=draft');
 
-			getData(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString);
+			getData(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString+'&status=publish');
 		} else {
 			console.log('wait. loading from rest');
 			setTimeout(function(){

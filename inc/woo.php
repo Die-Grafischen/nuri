@@ -426,7 +426,7 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
   function d_add_order_meta( $item_id, $values ) {
 
 	  if ( ! empty( $values['extra_adresse'] ) ) {
-		  woocommerce_add_order_item_meta( $item_id, 'extra_adresse', $values['extra_adresse'] );
+		  woocommerce_add_order_item_meta( $item_id, 'Lieferadresse', $values['extra_adresse'] );
 	  }
   }
   add_action( 'woocommerce_add_order_item_meta', 'd_add_order_meta', 10, 2 );
@@ -437,7 +437,7 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 	  if ( isset( $cart_item['extra_adresse'] ) ){
 
 		  $other_data[] = array(
-			  'name' => __( 'Adresse' ),
+			  'name' => __( 'Lieferadresse' ),
 			  'value' => sanitize_text_field( $cart_item['extra_adresse'] )
 		  );
 
@@ -464,7 +464,7 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 
   // add field data in email
   function d_order_email_data( $fields ) {
-	  $fields['extra_adresse'] = __( 'Adresse' );
+	  $fields['extra_adresse'] = __( 'Lieferadresse' );
 	  return $fields;
   }
   add_filter('woocommerce_email_order_meta_fields', 'd_order_email_data');

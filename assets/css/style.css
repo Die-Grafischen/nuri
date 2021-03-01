@@ -1088,9 +1088,9 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 
 @media (max-width: 480px) { #order_comments { min-height: 102px; } }
 
-small.includes_tax { text-transform: uppercase; }
+small.includes_tax { text-transform: uppercase; display: block; }
 
-@media (max-width: 480px) { small.includes_tax { width: 100%; display: block; } }
+@media (max-width: 480px) { small.includes_tax { width: 100%; } }
 
 small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important; }
 
@@ -1110,6 +1110,8 @@ small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important
 @media (max-width: 480px) { .cart-subtotal td, .woocommerce-shipping-totals td, .order-total td { border-top: 0 !important; padding-top: 0 !important; } }
 
 @media (max-width: 480px) { .woocommerce table.shop_table_responsive tr.shipping td::before, .woocommerce table.shop_table_responsive tr.order-total td::before { padding-top: 20px; } }
+
+.woocommerce-customer-details--phone, .woocommerce-customer-details--email { display: none; }
 
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }

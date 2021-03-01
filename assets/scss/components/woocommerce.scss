@@ -1282,10 +1282,10 @@ i.filter-icon {
 small.includes_tax {
 
 	text-transform: uppercase;
+	display: block;
 
 	@include r(480) {
 		width: 100%;
-		display: block;
 	}
 
 	.woocommerce-Price-currencySymbol {
@@ -1364,4 +1364,9 @@ small.includes_tax {
 	@include r(480) {
 		padding-top: 20px;
 	}
+}
+
+.woocommerce-customer-details--phone,
+.woocommerce-customer-details--email {
+	display: none;
 }
