@@ -231,9 +231,7 @@ img {
 	padding-right: 5px;
 }
 
-
 #e-logo {
-	margin-bottom: 10px;
 	display: inline-block;
 	clear: both;
 }

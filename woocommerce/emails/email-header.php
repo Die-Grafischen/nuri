@@ -48,7 +48,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 												<a href="<?php echo home_url(); ?>" id="e-logo">
 													<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/email-logo.gif" alt="Nuri" width="100" height="35"/>
 												</a>
-												<h1><?php echo $email_heading; ?></h1>
 											</td>
 										</tr>
 									</table>
@@ -66,3 +65,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 													<tr>
 														<td valign="top">
 															<div id="body_content_inner">
+																<h1 style="margin-bottom: 30px;"><?php echo $email_heading; ?></h1>
