@@ -227,10 +227,6 @@ img {
 	height: auto;
 }
 
-.woocommerce-Price-currencySymbol {
-	padding-right: 5px;
-}
-
 #e-logo {
 	display: inline-block;
 	clear: both;

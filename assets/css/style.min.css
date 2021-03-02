@@ -185,6 +185,8 @@ header .menu li a{color:#000;line-height:1}
 header.fixed-header{position:fixed;top:0;left:0;z-index:900}
 header .header-inner{padding:32px 40px 28px 40px}
 .farbschema-dunkel .logo svg g path{fill:#fff !important}
+.farbschema-dunkel #search-icon .st0,.farbschema-dunkel .cart-contents svg g path,.farbschema-dunkel .cart-contents svg g circle{stroke:#fff !important}
+.farbschema-dunkel .cart-contents .count{color:#fff}
 .farbschema-dunkel header{background:#000;color:#fff}
 .farbschema-dunkel header .menu li a{color:#fff}
 .farbschema-dunkel header .menu li a:hover{color:#fdf0e6}

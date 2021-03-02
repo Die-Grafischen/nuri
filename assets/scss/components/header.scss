@@ -149,6 +149,16 @@
 		fill:#fff!important;
 	}
 
+	#search-icon .st0,
+	.cart-contents svg g path,
+	.cart-contents svg g circle {
+		stroke: #fff!important;
+	}
+
+	.cart-contents .count {
+		color: #fff;
+	}
+
 	header {
 		background: $black;
 		color: $white;
