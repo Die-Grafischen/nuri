@@ -369,6 +369,28 @@ function custom_terms_and_conditions_checkbox_text( $text ){
     return $text;
 }
 
+// custom terms and conditions checkbox for the shipping
+add_action('woocommerce_checkout_before_terms_and_conditions', 'checkout_additional_checkboxes');
+function checkout_additional_checkboxes( ){
+    $checkbox1_text = __( "Lieferbedingungen: Der Kurier darf die Lieferung vor der Haustür oder beim Briefkasten deponieren. Nuri Gastro AG lehnt in diesem Fall jede Haftung für gestohlene, beschädigte oder unsachgemäss gelagerte Lieferungen/Produkte ab.", "woocommerce" );
+    ?>
+    <p class="form-row custom-checkboxes">
+        <label class="woocommerce-form__label checkbox custom-one">
+            <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="custom_one" > <span><?php echo  $checkbox1_text; ?></span> <span class="required">*</span>
+        </label>
+    </p>
+    <?php
+}
+
+add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
+
+function my_custom_checkout_field_process() {
+    // Check if set, if its not set add an error.
+    if ( ! $_POST['custom_one'] ) {
+        wc_add_notice( __( 'Bitte akzeptieren Sie die Lieferbedingungen.' ), 'error' );
+	}
+}
+
 // Add custom input field to product page
 add_action( 'woocommerce_after_add_to_cart_button', 'extra_product_fields', 9 );
 function extra_product_fields() {
