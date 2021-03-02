@@ -372,14 +372,16 @@ function custom_terms_and_conditions_checkbox_text( $text ){
 // custom terms and conditions checkbox for the shipping
 add_action('woocommerce_checkout_before_terms_and_conditions', 'checkout_additional_checkboxes');
 function checkout_additional_checkboxes( ){
-    $checkbox1_text = __( "Lieferbedingungen: Der Kurier darf die Lieferung vor der Haustür oder beim Briefkasten deponieren. Nuri Gastro AG lehnt in diesem Fall jede Haftung für gestohlene, beschädigte oder unsachgemäss gelagerte Lieferungen/Produkte ab.", "woocommerce" );
-    ?>
-    <p class="form-row custom-checkboxes">
-        <label class="woocommerce-form__label checkbox custom-one">
-            <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="custom_one" > <span><?php echo  $checkbox1_text; ?></span> <span class="required">*</span>
-        </label>
-    </p>
-    <?php
+	$chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+	$chosen_shipping = $chosen_methods[0];
+	if($chosen_shipping === 'flat_rate:1') {
+
+	    echo '<p class="form-row custom-checkboxes">
+	        <label class="woocommerce-form__label checkbox custom-one">
+	            <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="custom_one" > <span>'. __( "Lieferbedingungen: Der Kurier darf die Lieferung vor der Haustür oder beim Briefkasten deponieren. Nuri Gastro AG lehnt in diesem Fall jede Haftung für gestohlene, beschädigte oder unsachgemäss gelagerte Lieferungen/Produkte ab.", "woocommerce" ) .'</span> <span class="required">*</span>
+	        </label>
+	    </p>';
+	}
 }
 
 add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
@@ -387,7 +389,7 @@ add_action('woocommerce_checkout_process', 'my_custom_checkout_field_process');
 function my_custom_checkout_field_process() {
     // Check if set, if its not set add an error.
     if ( ! $_POST['custom_one'] ) {
-        wc_add_notice( __( 'Bitte akzeptieren Sie die Lieferbedingungen.' ), 'error' );
+        wc_add_notice( __( 'Bitte akzeptieren Sie die Lieferbedingungen' ), 'error' );
 	}
 }
 
