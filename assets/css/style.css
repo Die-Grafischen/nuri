@@ -1121,6 +1121,8 @@ small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important
 
 .woocommerce td.product-name dl.variation dt.variation-Lieferadresse, .woocommerce td.product-name dl.variation dd.variation-Lieferadresse { margin-top: 20px; width: 100%; }
 
+a.woocommerce-terms-and-conditions-link { text-decoration: underline; }
+
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 

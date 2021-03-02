@@ -382,6 +382,7 @@ small.includes_tax .woocommerce-Price-currencySymbol{font-size:75% !important}
 .woocommerce table.shop_table_responsive tr:nth-child(2n) td,.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td{background-color:rgba(0,0,0,0) !important}
 .woocommerce-customer-details--phone,.woocommerce-customer-details--email{display:none}
 .woocommerce td.product-name dl.variation dt.variation-Lieferadresse,.woocommerce td.product-name dl.variation dd.variation-Lieferadresse{margin-top:20px;width:100%}
+a.woocommerce-terms-and-conditions-link{text-decoration:underline}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}
