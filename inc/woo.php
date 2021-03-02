@@ -361,6 +361,14 @@ function add_content_after_addtocart_button_func() {
 
 /**/
 
+// custom terms and conditions checkbox text on checkout
+add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', 'custom_terms_and_conditions_checkbox_text' );
+function custom_terms_and_conditions_checkbox_text( $text ){
+    $text = get_option( 'woocommerce_checkout_terms_and_conditions_checkbox_text', sprintf( __( 'Ich habe die %s gelesen und stimme diesen zu.', 'woocommerce' ), '[terms]' ) );
+
+    return $text;
+}
+
 // Add custom input field to product page
 add_action( 'woocommerce_after_add_to_cart_button', 'extra_product_fields', 9 );
 function extra_product_fields() {
@@ -597,7 +605,7 @@ add_filter( 'woocommerce_cart_needs_shipping', '__return_true' );
 add_filter( 'woocommerce_cart_no_shipping_available_html', 'change_noship_message' );
 add_filter( 'woocommerce_no_shipping_available_html', 'change_noship_message' );
 function change_noship_message() {
-    print "Wir liefern unsere Produkte aktuell selber aus. Daher können wir zurzeit nur im Raum Bern einen Versand anbieten. Sie können ihre Bestellung jedezeit gerne bei uns vor Ort abholen. Für weitere Fragen, kontaktieren Sie uns!";
+    print "Wir liefern unsere Produkte aktuell selber aus. Daher können wir zurzeit nur im Raum Bern einen Versand anbieten. Sie können Ihre Bestellung jedezeit gerne bei uns vor Ort abholen. Für weitere Fragen, kontaktieren Sie uns!";
 }
 
 // cart icon
