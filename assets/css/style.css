@@ -841,6 +841,8 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 
 .woocommerce ul.products li.product .onsale { margin: -.8em -.8em 0 0; }
 
+@media (max-width: 480px) { .woocommerce ul.products li.product .onsale { margin: 0; } }
+
 @media (max-width: 1024px) { .woocommerce ul.products li.product a img { margin-bottom: 0; } }
 
 @media (max-width: 768px) { .woocommerce ul.products li.product { -webkit-box-flex: 1 !important; -ms-flex: 1 0 50% !important; flex: 1 0 50% !important; width: 50% !important; max-width: 50% !important; margin-bottom: 0 !important; } }

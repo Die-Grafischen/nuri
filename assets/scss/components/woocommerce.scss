@@ -491,6 +491,7 @@
 
 			.onsale {
 				margin: -.8em -.8em 0 0;
+				@include r(480) { margin: 0 }
 			}
 
 			a img {
