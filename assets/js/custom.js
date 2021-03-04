@@ -220,10 +220,15 @@ jQuery(document).ready(function ($) {
         var filterValue = $(this).attr('data-filter');
         filters.push(filterValue);
         queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
+
+        console.log;
       });
 
       if (queryCategories.length == 0) {
+        var parentFilterValue = '.product_cat-' + parentCategory;
+        filters.push(parentFilterValue);
         queryCategories.push(parentCategory);
+        console.log('on queryCategories length 0 push parent Category: ' + parentCategory);
       }
 
       filters = filters.join(', '); // join array into one string
@@ -328,7 +333,7 @@ jQuery(document).ready(function ($) {
     if (jsonFlag) {
       var catString = queryCategories.join(',');
       var excString = loadedProductsIds.join(',');
-      console.log(wooUrl + '?per_page=' + productCount + '&category=' + catString + '&exclude=' + excString + '&status=draft');
+      console.log(wooUrl + '?per_page=' + productCount + '&category=' + catString + '&exclude=' + excString + '&status=publish');
       getData(wooUrl + '?per_page=' + productCount + '&category=' + catString + '&exclude=' + excString + '&status=publish');
     } else {
       console.log('wait. loading from rest');

@@ -94,6 +94,7 @@ jQuery(document).ready(function($) {
 
 	// SHOP ISOTOPE - runns only on woo shop/category/tags page
 	if ( $('body:not(.search) .woo-custom-filter').length ) {
+
 		// hide/reveal subnav filter on scroll
 		var lastScrollTop = 0;
 		theWindow.scroll(function(event){
@@ -117,7 +118,6 @@ jQuery(document).ready(function($) {
 			$('.filter-current-parent .filter-child-cat').slideDown();
 		}).on('mouseleave','.woo-custom-filter',  function(){
 			$('.filter-current-parent .filter-child-cat.sub-visible').slideUp();
-
 		});
 
 		// Only on category page
@@ -235,10 +235,14 @@ jQuery(document).ready(function($) {
 				let filterValue = $(this).attr('data-filter');
 			 	filters.push(filterValue);
 			 	queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
+				console.log
 			});
 
 			if (queryCategories.length == 0) {
+				let parentFilterValue = '.product_cat-' + parentCategory;
+				filters.push(parentFilterValue);
 				queryCategories.push(parentCategory);
+				console.log('on queryCategories length 0 push parent Category: ' + parentCategory)
 			}
 
 			filters = filters.join(', '); // join array into one string
@@ -366,7 +370,7 @@ jQuery(document).ready(function($) {
 		if(jsonFlag){
 			let catString = queryCategories.join(',');
 			let excString = loadedProductsIds.join(',');
-			console.log(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString+'&status=draft');
+			console.log(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString+'&status=publish');
 
 			getData(wooUrl+'?per_page='+productCount+'&category='+catString+'&exclude='+excString+'&status=publish');
 		} else {
