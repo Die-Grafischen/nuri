@@ -235,14 +235,26 @@ jQuery(document).ready(function($) {
 				let filterValue = $(this).attr('data-filter');
 			 	filters.push(filterValue);
 			 	queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
-				console.log
+				var elements = container.isotope('getFilteredItemElements').length;
+
+				if( elements % 4 === 0 ){
+					loadMoreProducts();
+				} else {
+					loadMoreProducts(4 - (elements % 4));
+				}
 			});
 
 			if (queryCategories.length == 0) {
 				let parentFilterValue = '.product_cat-' + parentCategory;
 				filters.push(parentFilterValue);
 				queryCategories.push(parentCategory);
-				console.log('on queryCategories length 0 push parent Category: ' + parentCategory)
+				var elements = container.isotope('getFilteredItemElements').length;
+
+				if( elements % 4 === 0 ){
+					loadMoreProducts();
+				} else {
+					loadMoreProducts(4 - (elements % 4));
+				}
 			}
 
 			filters = filters.join(', '); // join array into one string
