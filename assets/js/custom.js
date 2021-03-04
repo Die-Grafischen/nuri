@@ -96,12 +96,10 @@ jQuery(document).ready(function ($) {
       var elementBottom = elementTop + $(el).outerHeight();
       var viewportTop = $(window).scrollTop();
       var viewportBottom = viewportTop + $(window).height();
-      console.log('view');
 
       if (elementBottom > viewportTop && elementTop < viewportBottom && jsonFlag) {
         //make rest requerst
         loadMoreProducts();
-        console.log('is in view'); //jsonFlag = false;
       }
     };
 
@@ -220,8 +218,9 @@ jQuery(document).ready(function ($) {
         var filterValue = $(this).attr('data-filter');
         filters.push(filterValue);
         queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
+        //test feature
 
-        var elements = container.isotope('getFilteredItemElements').length;
+        var elements = container.isotope('getFilteredItemElements').length; //test feature
 
         if (elements % 4 === 0) {
           loadMoreProducts();
@@ -233,7 +232,8 @@ jQuery(document).ready(function ($) {
       if (queryCategories.length == 0) {
         var parentFilterValue = '.product_cat-' + parentCategory;
         filters.push(parentFilterValue);
-        queryCategories.push(parentCategory);
+        queryCategories.push(parentCategory); //test feature
+
         var elements = container.isotope('getFilteredItemElements').length;
 
         if (elements % 4 === 0) {

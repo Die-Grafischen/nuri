@@ -829,7 +829,7 @@ body.farbschema-hell footer .section-inner .logo-wrapper .logo-footer svg path, 
 
 .woocommerce .quantity .qty :active { border: 0; }
 
-.woocommerce ul.products { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 120px -10px 20px; }
+.woocommerce ul.products { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 120px -10px 20px; overflow: hidden; }
 
 @media (max-width: 1024px) { .woocommerce ul.products { margin: 54px 0 20px -10px; width: calc(100% + 20px); } }
 

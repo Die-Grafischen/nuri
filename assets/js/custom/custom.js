@@ -235,8 +235,10 @@ jQuery(document).ready(function($) {
 				let filterValue = $(this).attr('data-filter');
 			 	filters.push(filterValue);
 			 	queryCategories.push(filterValue.substring(13)); // add parent category to current query categories
-				var elements = container.isotope('getFilteredItemElements').length;
 
+				//test feature
+				var elements = container.isotope('getFilteredItemElements').length;
+				//test feature
 				if( elements % 4 === 0 ){
 					loadMoreProducts();
 				} else {
@@ -248,8 +250,9 @@ jQuery(document).ready(function($) {
 				let parentFilterValue = '.product_cat-' + parentCategory;
 				filters.push(parentFilterValue);
 				queryCategories.push(parentCategory);
-				var elements = container.isotope('getFilteredItemElements').length;
 
+				//test feature
+				var elements = container.isotope('getFilteredItemElements').length;
 				if( elements % 4 === 0 ){
 					loadMoreProducts();
 				} else {
@@ -269,12 +272,9 @@ jQuery(document).ready(function($) {
 
  		    var viewportTop = $(window).scrollTop();
  		    var viewportBottom = viewportTop + $(window).height();
-			console.log('view');
  		   if( (elementBottom > viewportTop && elementTop < viewportBottom) && jsonFlag ) {
  			  //make rest requerst
  			  loadMoreProducts();
-			  console.log('is in view');
-			  //jsonFlag = false;
  		   }
  		};
 
