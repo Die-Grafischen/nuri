@@ -18,6 +18,10 @@
 
 .wp-block-buttons {
 
+	@include r(480) {
+		margin-bottom: 20px!important;
+	}
+
 	.wp-block-button {
 		margin-bottom: 0;
 	}

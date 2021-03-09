@@ -1646,6 +1646,8 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 .has-white-black:hover { background: #000000; color: #ffffff; border-color: #000000; }
 
+@media (max-width: 480px) { .wp-block-buttons { margin-bottom: 20px !important; } }
+
 .wp-block-buttons .wp-block-button { margin-bottom: 0; }
 
 @media (max-width: 480px) { .wp-block-buttons { margin-bottom: 0px !important; } }
