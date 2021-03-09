@@ -485,7 +485,6 @@
 			width: 25%;
 			margin: 0;
 			border: 10px solid transparent;
-			word-break: keep-all;
 
 			.button {
 				display: none;
@@ -526,6 +525,7 @@
 			.woocommerce-loop-product__title {
 				padding-bottom: 0;
 				color: $black;
+				word-break: keep-all;
 			}
 
 		}
