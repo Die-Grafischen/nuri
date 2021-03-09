@@ -289,7 +289,7 @@ a:focus { outline: 0; }
 
 .farbschema-dunkel a { color: #fff; }
 
-.farbschema-hell a { color: #000; }
+.farbschema-hell a, .farbschema- a { color: #000; }
 
 .wrapper article a:hover { text-decoration: none; }
 
@@ -577,7 +577,7 @@ header.fixed-header { position: fixed; top: 0; left: 0; z-index: 900; }
 
 header .header-inner { padding: 32px 40px 28px 40px; }
 
-@media (max-width: 768px) { header .header-inner { padding: 32px 20px 28px 20px; } }
+@media (max-width: 768px) { header .header-inner { padding: 32px 20px 46px 20px; } }
 
 @media (max-width: 480px) { header .header-inner { padding: 32px 40px 46px 40px; } }
 

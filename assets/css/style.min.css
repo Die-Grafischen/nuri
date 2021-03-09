@@ -98,7 +98,7 @@ a:focus{outline:0}
 .wrapper article.page>p+ul{margin-top:-80px}
 .wrapper article.page>ul{padding:40px 240px 40px 262px}
 .farbschema-dunkel a{color:#fff}
-.farbschema-hell a{color:#000}
+.farbschema-hell a,.farbschema- a{color:#000}
 .wrapper article a:hover{text-decoration:none}
 a:hover,a:active{outline:0}
 input:focus{outline:0;border:1px solid #000}
@@ -626,7 +626,7 @@ header{font-size:22px}
 header #search-icon{right:134px;top:27px}
 header .menu{position:fixed;left:-200%;top:0;width:100%;height:100%;background:#fff;z-index:1000;padding:0 20px 0;-webkit-transition:all .6s ease-in-out;transition:all .6s ease-in-out;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 header .menu li{width:100%;text-align:center;padding:5px 0;font-size:32px;display:block}
-header .header-inner{padding:32px 20px 28px 20px}
+header .header-inner{padding:32px 20px 46px 20px}
 .farbschema-dunkel header .menu li a{color:#000 !important}
 #nav-toggle{display:inline-block}
 .woo-custom-filter{z-index:100}
