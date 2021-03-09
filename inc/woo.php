@@ -133,7 +133,6 @@ function woo_custom_filter() {
 		</div>';
 	}
 
-
 }
 
 function woo_tags_filter($query_tag_slug) {
