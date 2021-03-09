@@ -78,8 +78,16 @@ a:focus {
 	text-decoration: underline;
 }
 
+.wrapper article.page > p + .wrapper article.page > ul {
+	margin-top: -80px;
+}
+
 .wrapper article.page > ul {
-	padding: 40px 240px 40px 260px;
+	padding: 40px 240px 40px 262px;
+
+	@include r(1024) {
+			padding: 40px 40px 40px 62px;
+	}
 }
 
 .farbschema-dunkel a {

@@ -145,6 +145,10 @@ footer {
 
 				@include r(480) { width: 100%; }
 
+				a:hover {
+					text-decoration: underline;
+				}
+
 			}
 
 		}

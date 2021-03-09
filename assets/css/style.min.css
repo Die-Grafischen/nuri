@@ -95,7 +95,8 @@ img{max-width:100%;vertical-align:bottom;height:auto}
 a{text-decoration:none}
 a:focus{outline:0}
 .wrapper article a{text-decoration:underline}
-.wrapper article.page>ul{padding:40px 240px 40px 260px}
+.wrapper article.page>p+.wrapper article.page>ul{margin-top:-80px}
+.wrapper article.page>ul{padding:40px 240px 40px 262px}
 .farbschema-dunkel a{color:#fff}
 .farbschema-hell a{color:#000}
 .wrapper article a:hover{text-decoration:none}
@@ -234,6 +235,7 @@ footer .section-inner .footer-social a{width:25px;height:25px;float:right;margin
 footer .section-inner .footer-social a img,footer .section-inner .footer-social a svg{width:25px;height:25px;-o-object-fit:contain;object-fit:contain}
 footer .section-inner .footer-credits{width:100%;display:block;margin-top:80px;line-height:1}
 footer .section-inner .footer-credits .footer-copyright{width:50%;float:left}
+footer .section-inner .footer-credits .footer-copyright a:hover{text-decoration:underline}
 body.farbschema-dunkel footer{background:#000;color:#fff}
 body.farbschema-dunkel footer a{color:#fff}
 body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path{fill:#fff !important}
@@ -580,7 +582,8 @@ body>*{display:none !important}
 }@media(min-width:1280px){.wp-caption .wp-caption-text,.gallery-caption{font:300 2rem/3.1rem sans-serif}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
-}@media(max-width:1024px){article h1{font-size:50px}
+}@media(max-width:1024px){.wrapper article.page>ul{padding:40px 40px 40px 62px}
+article h1{font-size:50px}
 article h2{font-size:32px}
 .wp-caption .wp-caption-text,.gallery-caption{font:300 2rem/3.1rem sans-serif}
 .has-huge-font-size{font-size:50px}
