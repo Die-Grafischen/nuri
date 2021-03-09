@@ -80,18 +80,18 @@ input {
 p + .wp-block-separator,
 .wp-block-separator + p {
 	margin-top: -$gutter!important;
-	@include r(480) { margin-top: -$gutter/2!important; }
+	@include r(480) {
+		margin-top: -$gutter/2!important; }
 }
 
 .wp-block-separator + p {
-	@include r(480) { margin-top: -60px!important; }
+	@include r(480) { margin-top: -40px!important; }
 
 }
 
-
 .wp-block-image + p {
 	margin-top: -($gutter*2)!important;
-	@include r(480) { margin-top: -($gutter)!important; }
+	@include r(480) { margin-top: -($gutter/2)!important; }
 }
 
 figure img {
