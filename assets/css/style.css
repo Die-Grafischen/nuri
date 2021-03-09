@@ -273,11 +273,13 @@ body.farbschema-dunkel .wrapper { background-color: #000000; color: #ffffff; }
 
 img { max-width: 100%; vertical-align: bottom; height: auto; }
 
-a { color: #444; text-decoration: none; }
-
-a:hover { color: #444; }
+a { text-decoration: none; }
 
 a:focus { outline: 0; }
+
+.wrapper article a { text-decoration: underline; }
+
+.wrapper article a:hover { text-decoration: none; }
 
 a:hover, a:active { outline: 0; }
 
@@ -637,6 +639,8 @@ footer .section-inner nav { font-size: 32px; width: 20%; }
 footer .section-inner nav li { margin-top: 20px; line-height: 1; }
 
 footer .section-inner nav li:first-child { margin-top: 0; }
+
+footer .section-inner nav.secondary-navi { float: right; }
 
 footer .section-inner .logo-wrapper { width: 60%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
 
@@ -1607,6 +1611,8 @@ a.woocommerce-terms-and-conditions-link { text-decoration: underline; }
 .has-white-black:hover { background: #000000; color: #ffffff; border-color: #000000; }
 
 .wc-block-grid + .wp-block-buttons { margin-top: -40px; }
+
+.wp-block-buttons + p { margin-top: 0; }
 
 .wp-block-button__link { padding: 10px 42px; font-size: 22px; }
 

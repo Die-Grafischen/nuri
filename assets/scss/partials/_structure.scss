@@ -67,16 +67,19 @@ img {
 }
 
 a {
-    color: #444;
     text-decoration: none;
-}
-
-a:hover {
-    color: #444;
 }
 
 a:focus {
     outline: 0;
+}
+
+.wrapper article a {
+	text-decoration: underline;
+}
+
+.wrapper article a:hover {
+	text-decoration: none;
 }
 
 a:hover,

@@ -92,9 +92,10 @@ body.farbschema-dunkel .wrapper{background-color:#000;color:#fff}
 .clear:after{clear:both}
 .clear{*zoom:1}
 img{max-width:100%;vertical-align:bottom;height:auto}
-a{color:#444;text-decoration:none}
-a:hover{color:#444}
+a{text-decoration:none}
 a:focus{outline:0}
+.wrapper article a{text-decoration:underline}
+.wrapper article a:hover{text-decoration:none}
 a:hover,a:active{outline:0}
 input:focus{outline:0;border:1px solid #000}
 select{width:100%}
@@ -216,6 +217,7 @@ footer .section-inner{padding:120px 160px;display:-webkit-box;display:-ms-flexbo
 footer .section-inner nav{font-size:32px;width:20%}
 footer .section-inner nav li{margin-top:20px;line-height:1}
 footer .section-inner nav li:first-child{margin-top:0}
+footer .section-inner nav.secondary-navi{float:right}
 footer .section-inner .logo-wrapper{width:60%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
 footer .section-inner .logo-wrapper .logo-footer{margin:0 auto;display:inline-block}
 footer .section-inner .logo-wrapper .logo-footer svg{width:180px}
@@ -539,6 +541,7 @@ a.woocommerce-terms-and-conditions-link{text-decoration:underline}
 .has-white-color:hover{background:#fff;color:#000;border-color:#fff}
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
 .wc-block-grid+.wp-block-buttons{margin-top:-40px}
+.wp-block-buttons+p{margin-top:0}
 .wp-block-button__link{padding:10px 42px;font-size:22px}
 .load-more-wrapper{text-align:center}
 .lds-ellipsis{display:inline-block;position:relative;width:80px;height:80px}

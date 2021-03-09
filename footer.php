@@ -80,6 +80,10 @@
 						}?></a>
 					</p><!-- .footer-copyright -->
 
+					<nav class="secondary-navi" aria-label="<?php esc_attr_e( 'Horizontal', 'nuri' ); ?>" role="navigation">
+						<?php wp_nav_menu( array( 'container' => false, 'theme_location' => 'secondary',  ) ); ?>
+					</nav>
+
 				</div><!-- .footer-credits -->
 
 			</div><!-- .section-inner -->
