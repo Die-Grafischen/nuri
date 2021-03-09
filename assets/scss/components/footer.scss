@@ -30,7 +30,16 @@ footer {
 			}
 
 			&.secondary-navi {
+
 				float: right;
+				width: 50%;
+				font-size: $font-size-s;
+
+				li {
+					float: right;
+					margin: 0 0 0 10px;
+				}
+
 			}
 
 		}
@@ -113,6 +122,11 @@ footer {
 			margin-top: $gutter*2;
 			line-height: 1;
 			@include r(480) { margin-top: $gutter; }
+
+			.footer-copyright {
+				width: 50%;
+				float: left;
+			}
 
 		}
 

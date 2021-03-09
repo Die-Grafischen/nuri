@@ -78,6 +78,14 @@ a:focus {
 	text-decoration: underline;
 }
 
+.farbschema-dunkel a {
+	color: #fff;
+}
+
+.farbschema-hell a {
+	color: #000;
+}
+
 .wrapper article a:hover {
 	text-decoration: none;
 }

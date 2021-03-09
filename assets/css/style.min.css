@@ -95,6 +95,8 @@ img{max-width:100%;vertical-align:bottom;height:auto}
 a{text-decoration:none}
 a:focus{outline:0}
 .wrapper article a{text-decoration:underline}
+.farbschema-dunkel a{color:#fff}
+.farbschema-hell a{color:#000}
 .wrapper article a:hover{text-decoration:none}
 a:hover,a:active{outline:0}
 input:focus{outline:0;border:1px solid #000}
@@ -217,7 +219,8 @@ footer .section-inner{padding:120px 160px;display:-webkit-box;display:-ms-flexbo
 footer .section-inner nav{font-size:32px;width:20%}
 footer .section-inner nav li{margin-top:20px;line-height:1}
 footer .section-inner nav li:first-child{margin-top:0}
-footer .section-inner nav.secondary-navi{float:right}
+footer .section-inner nav.secondary-navi{float:right;width:50%;font-size:22px}
+footer .section-inner nav.secondary-navi li{float:right;margin:0 0 0 10px}
 footer .section-inner .logo-wrapper{width:60%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
 footer .section-inner .logo-wrapper .logo-footer{margin:0 auto;display:inline-block}
 footer .section-inner .logo-wrapper .logo-footer svg{width:180px}
@@ -228,6 +231,7 @@ footer .section-inner .footer-social{padding-top:40px}
 footer .section-inner .footer-social a{width:25px;height:25px;float:left;margin-right:8px}
 footer .section-inner .footer-social a img,footer .section-inner .footer-social a svg{width:25px;height:25px;-o-object-fit:contain;object-fit:contain}
 footer .section-inner .footer-credits{width:100%;display:block;margin-top:80px;line-height:1}
+footer .section-inner .footer-credits .footer-copyright{width:50%;float:left}
 body.farbschema-dunkel footer{background:#000;color:#fff}
 body.farbschema-dunkel footer a{color:#fff}
 body.farbschema-dunkel footer .section-inner .logo-wrapper .logo-footer svg path{fill:#fff !important}
