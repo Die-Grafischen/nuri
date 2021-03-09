@@ -249,21 +249,21 @@ p + p {
 }
 
 /* temp */
-
-.home header,
-.home footer nav {
-	display: none!important;
-}
-
-.home footer .section-inner .logo-wrapper {
-	width: 80%;
-	text-align: left;
-	@include r(992) { width:65%; }
-
-
-	.logo-footer {
-		margin: 0;
-	}
-
-}
+//
+// .home header,
+// .home footer nav {
+// 	display: none!important;
+// }
+//
+// .home footer .section-inner .logo-wrapper {
+// 	width: 80%;
+// 	text-align: left;
+// 	@include r(992) { width:65%; }
+//
+//
+// 	.logo-footer {
+// 		margin: 0;
+// 	}
+//
+// }
 /* end temp */

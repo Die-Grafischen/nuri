@@ -375,7 +375,7 @@ function checkout_additional_checkboxes( ){
 	$chosen_shipping = $chosen_methods[0];
 	if($chosen_shipping === 'flat_rate:1') {
 
-		$agb = home_url() . 'lieferbedingungen/';
+		$agb = home_url() . '/lieferbedingungen/';
 
 	    echo '<p class="form-row custom-checkboxes">
 	        <label class="woocommerce-form__label checkbox custom-one">

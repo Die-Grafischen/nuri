@@ -220,7 +220,7 @@ function is_shop_manager() {
     }
 }
 
-add_action( 'template_redirect', 'hide_woocommerce' );
+//add_action( 'template_redirect', 'hide_woocommerce' );
 
 function hide_woocommerce() {
 	$is_admin = current_user_can('manage_options');

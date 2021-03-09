@@ -519,14 +519,6 @@ p + p { padding-top: 20px; }
   body > * { display: none !important; } }
 
 /* temp */
-.home header, .home footer nav { display: none !important; }
-
-.home footer .section-inner .logo-wrapper { width: 80%; text-align: left; }
-
-@media (max-width: 992px) { .home footer .section-inner .logo-wrapper { width: 65%; } }
-
-.home footer .section-inner .logo-wrapper .logo-footer { margin: 0; }
-
 /* end temp */
 /** Header SCSS */
 .logo { width: 100px; display: inline-block; position: fixed; top: 22px; left: 40px; z-index: 1100; }
