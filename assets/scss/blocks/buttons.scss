@@ -16,12 +16,31 @@
 	}
 }
 
+.wp-block-buttons {
+
+	.wp-block-button {
+		margin-bottom: 0;
+	}
+
+	@include r(480) {
+		margin-bottom: 20px;
+	}
+}
+
 .wc-block-grid + .wp-block-buttons {
 	margin-top: -$gutter;
+
+	@include r(480) {
+		margin-top: -20px;
+	}
 }
 
 .wp-block-buttons + p {
 	margin-top: 0;
+
+	@include r(480) {
+		margin-top: -20px;
+	}
 }
 
 .wp-block-button__link {

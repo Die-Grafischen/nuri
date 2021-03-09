@@ -543,9 +543,9 @@ p + p { padding-top: 20px; }
 
 .admin-bar header, .admin-bar header.dynamic-header.fixed-header { top: 32px; }
 
-@media (max-width: 480px) { .dynamic-header { opacity: 0; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; } }
+@media (max-width: 480px) { .dynamic-header { opacity: 0; display: none; } }
 
-@media (max-width: 480px) { .dynamic-header.fixed-header { opacity: 1; } }
+@media (max-width: 480px) { .dynamic-header.fixed-header { display: block; } }
 
 header { width: 100%; position: fixed; top: 0; left: 0; background: #fdf0e6; color: #000000; z-index: 900; }
 
@@ -1169,6 +1169,8 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 .wrapper article a.wc-block-grid__product-link, .wrapper article .product-name a, .wrapper article a.shipping-calculator-button { text-decoration: none; }
 
+@media (max-width: 480px) { .wc-block-grid__product-image { margin-bottom: 18px; } }
+
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -1615,6 +1617,8 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 .bounce { -webkit-animation: bounce 2s infinite; animation: bounce 2s infinite; }
 
+@media (max-width: 480px) { .wp-block-cover + .wp-block-spacer { height: 80px !important; } }
+
 /* WOO Commerce default grid produkt block */
 .wc-block-grid__product { text-align: left; border-left: 10px solid transparent; border-right: 10px solid transparent; }
 
@@ -1644,9 +1648,17 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 .has-white-black:hover { background: #000000; color: #ffffff; border-color: #000000; }
 
+.wp-block-buttons .wp-block-button { margin-bottom: 0; }
+
+@media (max-width: 480px) { .wp-block-buttons { margin-bottom: 20px; } }
+
 .wc-block-grid + .wp-block-buttons { margin-top: -40px; }
 
+@media (max-width: 480px) { .wc-block-grid + .wp-block-buttons { margin-top: -20px; } }
+
 .wp-block-buttons + p { margin-top: 0; }
+
+@media (max-width: 480px) { .wp-block-buttons + p { margin-top: -20px; } }
 
 .wp-block-button__link { padding: 10px 42px; font-size: 22px; text-decoration: none !important; }
 

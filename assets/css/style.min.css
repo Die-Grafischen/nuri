@@ -550,6 +550,7 @@ a.woocommerce-terms-and-conditions-link,.wrapper article .product-name a,.wrappe
 .blocks-gallery-grid .blocks-gallery-item:nth-child(2){margin-top:15%}
 .has-white-color:hover{background:#fff;color:#000;border-color:#fff}
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
+.wp-block-buttons .wp-block-button{margin-bottom:0}
 .wc-block-grid+.wp-block-buttons{margin-top:-40px}
 .wp-block-buttons+p{margin-top:0}
 .wp-block-button__link{padding:10px 42px;font-size:22px;text-decoration:none !important}
@@ -658,8 +659,8 @@ p+.wp-block-separator,.wp-block-separator+p{margin-top:-20px !important}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
 .logo{width:120px}
-.dynamic-header{opacity:0;-webkit-transition:all .2s linear;transition:all .2s linear}
-.dynamic-header.fixed-header{opacity:1}
+.dynamic-header{opacity:0;display:none}
+.dynamic-header.fixed-header{display:block}
 header .header-inner{padding:32px 40px 46px 40px}
 .logged-in .nav-toggle{display:inline-block}
 footer .section-inner{padding:20px}
@@ -711,14 +712,19 @@ small.includes_tax{width:100%}
 .cart-subtotal th,.woocommerce-shipping-totals th,.order-total th{padding-top:20px !important}
 .cart-subtotal td,.woocommerce-shipping-totals td,.order-total td{border-top:0 !important;padding-top:0 !important}
 .woocommerce table.shop_table_responsive tr.shipping td::before,.woocommerce table.shop_table_responsive tr.order-total td::before{padding-top:20px}
+.wc-block-grid__product-image{margin-bottom:18px}
 #search-overlay{padding:150px 20px 40px}
 .aws-search-result .aws_result_title{line-height:1.4}
 .wp-block-cover{padding:20px !important}
 .wp-block-cover.cover-on-top{margin-bottom:0}
 .wp-block-cover .wp-block-cover__inner-container p{line-height:1.1}
+.wp-block-cover+.wp-block-spacer{height:80px !important}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(1){margin-bottom:10px}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(2){margin-top:10px}
 .blocks-gallery-grid .blocks-gallery-item{width:100%;margin:0}
+.wp-block-buttons{margin-bottom:20px}
+.wc-block-grid+.wp-block-buttons{margin-top:-20px}
+.wp-block-buttons+p{margin-top:-20px}
 .block-newsletter{padding:40px !important}
 .block-newsletter .newsletter-wrapper{width:100%;max-width:100%}
 .block-newsletter .newsletter-wrapper input{width:100%}
