@@ -27,6 +27,10 @@ footer {
 					margin-top: 0;
 				}
 
+				a:hover {
+					text-decoration: underline;
+				}
+
 			}
 
 			&.secondary-navi {
@@ -38,6 +42,17 @@ footer {
 				li {
 					float: right;
 					margin: 0 0 0 10px;
+
+					@include r(480) {
+						float: left;
+						margin: 20px 10px 0 0;
+						font-size: $font-size-mobile;
+					}
+				}
+
+				@include r(480) {
+					width: 100%;
+					float: left;
 				}
 
 			}
@@ -71,9 +86,10 @@ footer {
 
 		.text-social {
 			width: 20%;
+			text-align: right;
+
 			@include r(992) {
 				width: 35%;
-				text-align: right;
 			}
 			@include r(480) {
 				width: 100%;
@@ -92,8 +108,8 @@ footer {
 			a {
 				width: 25px;
 				height: 25px;
-				float: left;
-				margin-right: 8px;
+				float: right;
+				margin-left: 8px;
 
 				img,
 				svg {
@@ -126,6 +142,9 @@ footer {
 			.footer-copyright {
 				width: 50%;
 				float: left;
+
+				@include r(480) { width: 100%; }
+
 			}
 
 		}

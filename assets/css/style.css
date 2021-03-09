@@ -644,9 +644,15 @@ footer .section-inner nav li { margin-top: 20px; line-height: 1; }
 
 footer .section-inner nav li:first-child { margin-top: 0; }
 
+footer .section-inner nav li a:hover { text-decoration: underline; }
+
 footer .section-inner nav.secondary-navi { float: right; width: 50%; font-size: 22px; }
 
 footer .section-inner nav.secondary-navi li { float: right; margin: 0 0 0 10px; }
+
+@media (max-width: 480px) { footer .section-inner nav.secondary-navi li { float: left; margin: 20px 10px 0 0; font-size: 19px; } }
+
+@media (max-width: 480px) { footer .section-inner nav.secondary-navi { width: 100%; float: left; } }
 
 footer .section-inner .logo-wrapper { width: 60%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
 
@@ -660,9 +666,9 @@ footer .section-inner .logo-wrapper .logo-footer svg { width: 180px; }
 
 footer .section-inner .logo-wrapper .logo-footer svg path { fill: #000 !important; }
 
-footer .section-inner .text-social { width: 20%; }
+footer .section-inner .text-social { width: 20%; text-align: right; }
 
-@media (max-width: 992px) { footer .section-inner .text-social { width: 35%; text-align: right; } }
+@media (max-width: 992px) { footer .section-inner .text-social { width: 35%; } }
 
 @media (max-width: 480px) { footer .section-inner .text-social { width: 100%; text-align: left; padding-top: 20px; } }
 
@@ -670,7 +676,7 @@ footer .section-inner .text-social .footer-text a { text-decoration: underline; 
 
 footer .section-inner .footer-social { padding-top: 40px; }
 
-footer .section-inner .footer-social a { width: 25px; height: 25px; float: left; margin-right: 8px; }
+footer .section-inner .footer-social a { width: 25px; height: 25px; float: right; margin-left: 8px; }
 
 footer .section-inner .footer-social a img, footer .section-inner .footer-social a svg { width: 25px; height: 25px; -o-object-fit: contain; object-fit: contain; }
 
@@ -683,6 +689,8 @@ footer .section-inner .footer-credits { width: 100%; display: block; margin-top:
 @media (max-width: 480px) { footer .section-inner .footer-credits { margin-top: 40px; } }
 
 footer .section-inner .footer-credits .footer-copyright { width: 50%; float: left; }
+
+@media (max-width: 480px) { footer .section-inner .footer-credits .footer-copyright { width: 100%; } }
 
 body.farbschema-dunkel footer { background: #000000; color: #ffffff; }
 
@@ -1142,6 +1150,8 @@ small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important
 .woocommerce td.product-name dl.variation dt.variation-Lieferadresse, .woocommerce td.product-name dl.variation dd.variation-Lieferadresse { margin-top: 20px; width: 100%; }
 
 a.woocommerce-terms-and-conditions-link { text-decoration: underline; }
+
+.wrapper article a.wc-block-grid__product-link { text-decoration: none; }
 
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
