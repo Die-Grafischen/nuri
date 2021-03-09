@@ -273,13 +273,15 @@ body.farbschema-dunkel .wrapper { background-color: #000000; color: #ffffff; }
 
 img { max-width: 100%; vertical-align: bottom; height: auto; }
 
-a { text-decoration: none; }
+a { text-decoration: none; word-break: break-all; }
 
 a:focus { outline: 0; }
 
 .wrapper article a { text-decoration: underline; }
 
 .wrapper article.page > p + ul { margin-top: -80px; }
+
+@media (max-width: 480px) { .wrapper article.page > p + ul { margin-top: -60px; } }
 
 .wrapper article.page > ul { padding: 40px 240px 40px 262px; }
 
@@ -1706,7 +1708,11 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 /* Default Gutenberg block quote */
 .wp-block-quote { font-family: "Brick Display Pro", serif; padding-left: 160px; padding-right: 160px; }
 
+@media (max-width: 480px) { .wp-block-quote { padding-left: 40px; padding-right: 40px; font-size: 22px; } }
+
 .wp-block-quote.is-large, .wp-block-quote.is-style-large { padding: 40px 160px; }
+
+@media (max-width: 480px) { .wp-block-quote.is-large, .wp-block-quote.is-style-large { padding-left: 40px; padding-right: 40px; font-size: 22px; } }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p { font-size: 50px; line-height: 1.2; font-style: normal; }
 

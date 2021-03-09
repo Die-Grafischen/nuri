@@ -68,6 +68,7 @@ img {
 
 a {
     text-decoration: none;
+	word-break: break-all;
 }
 
 a:focus {
@@ -79,15 +80,23 @@ a:focus {
 }
 
 .wrapper article.page > p + ul {
+
 	margin-top: -80px;
+
+	@include r(480) {
+		margin-top: -60px;
+	}
+
 }
 
 .wrapper article.page > ul {
+
 	padding: 40px 240px 40px 262px;
 
 	@include r(1024) {
 			padding: 40px 40px 40px 62px;
 	}
+
 }
 
 .farbschema-dunkel a {

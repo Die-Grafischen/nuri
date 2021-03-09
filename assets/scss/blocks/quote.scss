@@ -6,9 +6,21 @@
 	padding-left: $gutter*4;
 	padding-right: $gutter*4;
 
+	@include r(480) {
+		padding-left: $gutter;
+		padding-right: $gutter;
+		font-size: $font-size-s;
+	}
+
 	&.is-large,
 	&.is-style-large {
 		padding: $gutter $gutter*4;
+
+		@include r(480) {
+			padding-left: $gutter;
+			padding-right: $gutter;
+			font-size: $font-size-s;
+		}
 
 		p {
 			font-size: $font-size-l;
