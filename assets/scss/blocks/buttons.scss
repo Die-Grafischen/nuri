@@ -31,6 +31,12 @@
 	}
 }
 
+body .wp-block-buttons {
+	@include r(480) {
+		margin-bottom: 0px!important;
+	}
+}
+
 .wc-block-grid + .wp-block-buttons {
 	margin-top: -$gutter;
 
