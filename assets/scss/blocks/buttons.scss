@@ -28,7 +28,7 @@
 }
 
 .wc-block-grid + .wp-block-buttons {
-	margin-top: -$gutter;
+	margin-top: -$gutter*2;
 
 	@include r(480) {
 		margin-top: -20px;

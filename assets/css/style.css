@@ -1167,6 +1167,8 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 @media (max-width: 480px) { .wc-block-grid__product .wc-block-grid__product-image { margin-bottom: 18px !important; } }
 
+@media (max-width: 480px) { .wc-block-grid__product .wc-block-grid__product-price { margin-bottom: 0; } }
+
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -1648,7 +1650,7 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 @media (max-width: 480px) { .wp-block-buttons { margin-bottom: 40px !important; } }
 
-.wc-block-grid + .wp-block-buttons { margin-top: -40px; }
+.wc-block-grid + .wp-block-buttons { margin-top: -80px; }
 
 @media (max-width: 480px) { .wc-block-grid + .wp-block-buttons { margin-top: -20px; } }
 

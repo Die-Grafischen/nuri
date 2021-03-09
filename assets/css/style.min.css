@@ -548,7 +548,7 @@ a.woocommerce-terms-and-conditions-link,.wrapper article .product-name a,.wrappe
 .has-white-color:hover{background:#fff;color:#000;border-color:#fff}
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
 .wp-block-buttons .wp-block-button{margin-bottom:0}
-.wc-block-grid+.wp-block-buttons{margin-top:-40px}
+.wc-block-grid+.wp-block-buttons{margin-top:-80px}
 .wp-block-buttons+p{margin-top:0}
 .wp-block-button__link{padding:10px 42px;font-size:22px;text-decoration:none !important}
 .load-more-wrapper{text-align:center}
@@ -711,6 +711,7 @@ small.includes_tax{width:100%}
 .cart-subtotal td,.woocommerce-shipping-totals td,.order-total td{border-top:0 !important;padding-top:0 !important}
 .woocommerce table.shop_table_responsive tr.shipping td::before,.woocommerce table.shop_table_responsive tr.order-total td::before{padding-top:20px}
 .wc-block-grid__product .wc-block-grid__product-image{margin-bottom:18px !important}
+.wc-block-grid__product .wc-block-grid__product-price{margin-bottom:0}
 #search-overlay{padding:150px 20px 40px}
 .aws-search-result .aws_result_title{line-height:1.4}
 .wp-block-cover{padding:20px !important}
