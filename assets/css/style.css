@@ -855,7 +855,7 @@ body.farbschema-hell footer .footer-social svg path, body.farbschema- footer .fo
 
 .woocommerce .quantity .qty :active { border: 0; }
 
-.woocommerce ul.products { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 120px -10px 20px; overflow: hidden; }
+.woocommerce ul.products { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 120px -10px 20px; overflow-x: hidden; }
 
 @media (max-width: 1024px) { .woocommerce ul.products { margin: 54px 0 20px -10px; width: calc(100% + 20px); } }
 
@@ -1149,9 +1149,9 @@ small.includes_tax .woocommerce-Price-currencySymbol { font-size: 75% !important
 
 .woocommerce td.product-name dl.variation dt.variation-Lieferadresse, .woocommerce td.product-name dl.variation dd.variation-Lieferadresse { margin-top: 20px; width: 100%; }
 
-a.woocommerce-terms-and-conditions-link { text-decoration: underline; }
+a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrapper article a.shipping-calculator-button:hover { text-decoration: underline; }
 
-.wrapper article a.wc-block-grid__product-link { text-decoration: none; }
+.wrapper article a.wc-block-grid__product-link, .wrapper article .product-name a, .wrapper article a.shipping-calculator-button { text-decoration: none; }
 
 /** pretty-checkbox.css A pure CSS library to beautify checkbox and radio buttons Source: https://github.com/lokesh-coder/pretty-checkbox Demo: https://lokesh-coder.github.io/pretty-checkbox Copyright (c) 2017 Lokesh rajendran */
 .pretty * { -webkit-box-sizing: border-box; box-sizing: border-box; }

@@ -467,7 +467,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: ($gutter*3) -10px 20px;
-		overflow: hidden;
+		overflow-x: hidden;
 
 		@include r(1024) {
 			margin: 54px 0 $gutter/2 -10px;
@@ -1382,10 +1382,14 @@ small.includes_tax {
 	width: 100%;
 }
 
-a.woocommerce-terms-and-conditions-link {
+a.woocommerce-terms-and-conditions-link,
+.wrapper article .product-name a,
+.wrapper article a.shipping-calculator-button:hover  {
 	text-decoration: underline;
 }
 
-.wrapper article a.wc-block-grid__product-link {
+.wrapper article a.wc-block-grid__product-link,
+.wrapper article .product-name a,
+.wrapper article a.shipping-calculator-button {
 	text-decoration: none;
 }

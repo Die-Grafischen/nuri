@@ -286,7 +286,7 @@ body.farbschema-hell footer .footer-social svg path,body.farbschema- footer .foo
 .woocommerce .woocommerce-message::before{color:#000}
 .woocommerce .quantity .qty{background:#fff;font-size:22px;line-height:49px;height:49px;padding:0 9px 0;border:0}
 .woocommerce .quantity .qty :active{border:0}
-.woocommerce ul.products{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:120px -10px 20px;overflow:hidden}
+.woocommerce ul.products{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:120px -10px 20px;overflow-x:hidden}
 .woocommerce ul.products li.product{-webkit-box-flex:1;-ms-flex:1 0 25%;flex:1 0 25%;max-width:25%;width:25%;margin:0;border:10px solid transparent}
 .woocommerce ul.products li.product .button{display:none}
 .woocommerce ul.products li.product .onsale{margin:-.8em -.8em 0 0}
@@ -392,8 +392,8 @@ small.includes_tax .woocommerce-Price-currencySymbol{font-size:75% !important}
 .woocommerce table.shop_table_responsive tr:nth-child(2n) td,.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td{background-color:rgba(0,0,0,0) !important}
 .woocommerce-customer-details--phone,.woocommerce-customer-details--email{display:none}
 .woocommerce td.product-name dl.variation dt.variation-Lieferadresse,.woocommerce td.product-name dl.variation dd.variation-Lieferadresse{margin-top:20px;width:100%}
-a.woocommerce-terms-and-conditions-link{text-decoration:underline}
-.wrapper article a.wc-block-grid__product-link{text-decoration:none}
+a.woocommerce-terms-and-conditions-link,.wrapper article .product-name a,.wrapper article a.shipping-calculator-button:hover{text-decoration:underline}
+.wrapper article a.wc-block-grid__product-link,.wrapper article .product-name a,.wrapper article a.shipping-calculator-button{text-decoration:none}
 .pretty *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .pretty input:not([type=checkbox]):not([type=radio]){display:none}
 .pretty{position:relative;display:inline-block;margin-right:1em;white-space:nowrap;line-height:1}
