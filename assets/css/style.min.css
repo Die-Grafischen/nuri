@@ -216,6 +216,7 @@ body.woocommerce header li.shop-link{font-weight:bold}
 .nav-toggle.active span:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 .nav-toggle.active span:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .farbschema-dunkel .nav-toggle span,.farbschema-dunkel .nav-toggle span:before,.farbschema-dunkel .nav-toggle span:after{background:#fff}
+.farbschema-dunkel .nav-toggle.active span,.farbschema-dunkel .nav-toggle.active span:before,.farbschema-dunkel .nav-toggle.active span:after{background:#000}
 footer{display:block;background-color:#fdf0e6}
 footer .section-inner{padding:120px 160px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 footer .section-inner nav{font-size:32px;width:20%}

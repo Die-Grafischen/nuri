@@ -635,6 +635,8 @@ body.woocommerce header li.shop-link { font-weight: bold; }
 
 .farbschema-dunkel .nav-toggle span, .farbschema-dunkel .nav-toggle span:before, .farbschema-dunkel .nav-toggle span:after { background: #ffffff; }
 
+.farbschema-dunkel .nav-toggle.active span, .farbschema-dunkel .nav-toggle.active span:before, .farbschema-dunkel .nav-toggle.active span:after { background: #000000; }
+
 @media (max-width: 480px) { .logged-in .nav-toggle { display: inline-block; } }
 
 /* Footer */

@@ -106,6 +106,12 @@
 	    background: $white;
 	}
 
+	.nav-toggle.active span,
+	.nav-toggle.active span:before,
+	.nav-toggle.active span:after {
+	    background: $black;
+	}
+
 }
 
 .logged-in .nav-toggle {
