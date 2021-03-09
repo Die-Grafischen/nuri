@@ -643,7 +643,7 @@ article h1{font-size:32px}
 .wp-caption .wp-caption-text,.gallery-caption{font:300 1.8rem/1.8 sans-serif}
 .has-medium-font-size{font-size:19px}
 .has-huge-font-size{font-size:32px;line-height:1.4}
-.wp-block-separator{width:calc(100% - ($gutter*2)) !important;margin:40px !important}
+.wp-block-separator{width:calc(100% - ($gutter*2)) !important;margin:40px 20px !important}
 p+.wp-block-separator,.wp-block-separator+p{margin-top:-20px !important}
 p+.wp-block-separator{margin-top:0 !important}
 .wp-block-separator+p{margin-top:-40px !important}

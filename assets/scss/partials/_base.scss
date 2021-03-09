@@ -73,7 +73,7 @@ input {
 	background: $white;
 	@include r(480) {
 		width: calc(100% - ($gutter*2))!important;
-		margin: $gutter!important;
+		margin: $gutter $gutter/2!important;
 	}
 }
 

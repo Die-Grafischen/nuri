@@ -420,7 +420,7 @@ input { font-family: "Maison Neue", Helvetica, Arial, sans-serif; }
 
 .wp-block-separator { padding: 0 !important; width: 50% !important; margin: 40px 25% !important; height: 1px; background: #ffffff; }
 
-@media (max-width: 480px) { .wp-block-separator { width: calc(100% - ($gutter*2)) !important; margin: 40px !important; } }
+@media (max-width: 480px) { .wp-block-separator { width: calc(100% - ($gutter*2)) !important; margin: 40px 20px !important; } }
 
 p + .wp-block-separator, .wp-block-separator + p { margin-top: -40px !important; }
 
