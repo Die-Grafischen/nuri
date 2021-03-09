@@ -467,7 +467,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: ($gutter*3) -10px 20px;
-		overflow-x: hidden;
+		// overflow: hidden;
+		/*temp big white space isotope bug*/
 
 		@include r(1024) {
 			margin: 54px 0 $gutter/2 -10px;

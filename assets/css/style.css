@@ -279,6 +279,8 @@ a:focus { outline: 0; }
 
 .wrapper article a { text-decoration: underline; }
 
+.wrapper article.page > ul { padding: 40px 240px 40px 260px; }
+
 .farbschema-dunkel a { color: #fff; }
 
 .farbschema-hell a { color: #000; }
@@ -855,7 +857,7 @@ body.farbschema-hell footer .footer-social svg path, body.farbschema- footer .fo
 
 .woocommerce .quantity .qty :active { border: 0; }
 
-.woocommerce ul.products { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 120px -10px 20px; overflow-x: hidden; }
+.woocommerce ul.products { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 120px -10px 20px; /*temp big white space isotope bug*/ }
 
 @media (max-width: 1024px) { .woocommerce ul.products { margin: 54px 0 20px -10px; width: calc(100% + 20px); } }
 
