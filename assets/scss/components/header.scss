@@ -38,15 +38,15 @@
  .dynamic-header {
 
 	@include r(480){
-		opacity: 0;
 		display: none;
 	}
 
 	&.fixed-header {
 		@include r(480){
 			display: block;
-		};
+		}
 	}
+
  }
 
  header {

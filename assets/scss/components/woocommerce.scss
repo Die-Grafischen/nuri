@@ -1397,6 +1397,6 @@ a.woocommerce-terms-and-conditions-link,
 
 .wc-block-grid__product .wc-block-grid__product-image {
 	@include r(480) {
-		margin-bottom: 18px;
+		margin-bottom: 18px!important;
 	}
 }
