@@ -1656,11 +1656,11 @@ a.woocommerce-terms-and-conditions-link, .wrapper article .product-name a, .wrap
 
 .wc-block-grid + .wp-block-buttons { margin-top: -40px; }
 
-@media (max-width: 480px) { .wc-block-grid + .wp-block-buttons { margin-top: -40px; } }
+@media (max-width: 480px) { .wc-block-grid + .wp-block-buttons { margin-top: -20px; } }
 
 .wp-block-buttons + p { margin-top: 0; }
 
-@media (max-width: 480px) { .wp-block-buttons + p { margin-top: -20px; } }
+@media (max-width: 480px) { .wp-block-buttons + p { margin-top: 0; } }
 
 .wp-block-button__link { padding: 10px 42px; font-size: 22px; text-decoration: none !important; }
 
