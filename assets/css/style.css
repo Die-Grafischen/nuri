@@ -454,7 +454,7 @@ body .aligncenter, body div.aligncenter { margin: 0; }
 
 @media (max-width: 1024px) { .wrapper article > p { padding: 40px; } }
 
-@media (max-width: 480px) { .wrapper article > p { text-align: left; padding: 40px 20px; } }
+@media (max-width: 480px) { .wrapper article > p { text-align: left; padding: 20px; } }
 
 .wrapper article > p + p { margin-top: -40px; padding-top: 0; }
 

@@ -147,7 +147,7 @@ body div.aligncenter {
 			@include r(1024) { 	padding: $gutter; }
 			@include r(480) {
 				text-align: left;
-				padding: $gutter $gutter/2;
+				padding: $gutter/2;
 			 }
 
 			+ p {
