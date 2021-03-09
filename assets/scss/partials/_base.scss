@@ -145,7 +145,10 @@ body div.aligncenter {
 		> p {
 			padding: $gutter $gutter*6;
 			@include r(1024) { 	padding: $gutter; }
-			@include r(480) { text-align: left; }
+			@include r(480) {
+				text-align: left;
+				padding: $gutter $gutter/2;
+			 }
 
 			+ p {
 				margin-top: -$gutter;
@@ -161,7 +164,7 @@ body div.aligncenter {
 		> h4,
 		> h5 {
 			padding: 0 $gutter*6 0;
-			@include r(1024) { 	padding: 0 $gutter 0; }
+			@include r(1024) { 	padding: 0 $gutter/2 0; }
 			@include r(992) { text-align: left; }
 			@include r(480) { margin-bottom: $gutter; }
 		}
@@ -248,6 +251,11 @@ p + p {
     }
 }
 
+h2 br {
+	@include r(480) {
+		display: none;
+	}
+}
 /* temp */
 //
 // .home header,
