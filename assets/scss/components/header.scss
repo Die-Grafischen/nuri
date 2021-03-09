@@ -35,7 +35,6 @@
 	 top: 32px;
  }
 
-
  header {
 	 width: 100%;
 	 position: fixed;
@@ -116,6 +115,10 @@
 				 line-height: 1;
 			 }
 
+			 &.current-menu-item {
+				 font-weight: bold;
+			 }
+
 		 }
 
 	 }
@@ -183,4 +186,8 @@ body.active-nav {
 		left: 0;
 	}
 
+}
+
+body.woocommerce header li.shop-link {
+	font-weight: bold;
 }

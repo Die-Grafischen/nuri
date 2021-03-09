@@ -134,6 +134,7 @@ body.farbschema-dunkel footer {
 
 	}
 
+
 }
 
 
@@ -146,6 +147,10 @@ body.farbschema- footer {
 			fill: #000!important;
 		}
 
+	}
+
+	.footer-social svg path {
+		fill: $black;
 	}
 
 }
