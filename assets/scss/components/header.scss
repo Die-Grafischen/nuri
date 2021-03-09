@@ -36,14 +36,20 @@
  }
 
  .dynamic-header {
+	 #search-icon,
+	 .cart-contents {
+		 @include r(480){
+			 display: none;
+		 }
+	 }
 
-	@include r(480){
-		display: none;
-	}
 
 	&.fixed-header {
-		@include r(480){
-			display: block;
+		#search-icon,
+		.cart-contents {
+			@include r(480){
+				display: block;
+			}
 		}
 	}
 
@@ -183,7 +189,7 @@
 		.menu li a {
 			color: $white;
 
-			@include r(748) {
+			@include r(768) {
 				color: $black!important;
 			}
 
