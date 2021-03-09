@@ -542,7 +542,7 @@ a.woocommerce-terms-and-conditions-link{text-decoration:underline}
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
 .wc-block-grid+.wp-block-buttons{margin-top:-40px}
 .wp-block-buttons+p{margin-top:0}
-.wp-block-button__link{padding:10px 42px;font-size:22px}
+.wp-block-button__link{padding:10px 42px;font-size:22px;text-decoration:none !important}
 .load-more-wrapper{text-align:center}
 .lds-ellipsis{display:inline-block;position:relative;width:80px;height:80px}
 .lds-ellipsis div{position:absolute;top:33px;width:13px;height:13px;border-radius:50%;background:#000;-webkit-animation-timing-function:cubic-bezier(0,1,1,0);animation-timing-function:cubic-bezier(0,1,1,0)}

@@ -1614,7 +1614,7 @@ a.woocommerce-terms-and-conditions-link { text-decoration: underline; }
 
 .wp-block-buttons + p { margin-top: 0; }
 
-.wp-block-button__link { padding: 10px 42px; font-size: 22px; }
+.wp-block-button__link { padding: 10px 42px; font-size: 22px; text-decoration: none !important; }
 
 .load-more-wrapper { text-align: center; }
 
