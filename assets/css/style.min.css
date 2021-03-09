@@ -645,11 +645,12 @@ article h1{font-size:32px}
 .has-huge-font-size{font-size:32px;line-height:1.4}
 .wp-block-separator{width:calc(100% - ($gutter*2)) !important;margin:40px !important}
 p+.wp-block-separator,.wp-block-separator+p{margin-top:-20px !important}
+p+.wp-block-separator{margin-top:0 !important}
 .wp-block-separator+p{margin-top:-40px !important}
 .wp-block-image+p{margin-top:-20px !important}
 .wrapper article>*{margin:0;padding:0 20px}
 .wrapper article>p{text-align:left;padding:20px}
-.wrapper article>p+p{margin-top:-20px}
+.wrapper article>p+p{margin-top:0}
 .wrapper article>h1,.wrapper article>h2,.wrapper article>h3,.wrapper article>h4,.wrapper article>h5{margin-bottom:40px}
 .wrapper article>h1+p,.wrapper article>h2+p,.wrapper article>h3+p,.wrapper article>h4+p,.wrapper article>h5+p{margin-top:-20px}
 .wrapper article>.wp-block-gallery{padding-bottom:0}
