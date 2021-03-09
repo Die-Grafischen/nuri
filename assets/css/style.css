@@ -279,7 +279,7 @@ a:focus { outline: 0; }
 
 .wrapper article a { text-decoration: underline; }
 
-.wrapper article.page > p + .wrapper article.page > ul { margin-top: -80px; }
+.wrapper article.page > p + ul { margin-top: -80px; }
 
 .wrapper article.page > ul { padding: 40px 240px 40px 262px; }
 
@@ -540,6 +540,10 @@ p + p { padding-top: 20px; }
 .admin-bar .logo { top: 54px; }
 
 .admin-bar header, .admin-bar header.dynamic-header.fixed-header { top: 32px; }
+
+@media (max-width: 480px) { .dynamic-header { opacity: 0; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; } }
+
+@media (max-width: 480px) { .dynamic-header.fixed-header { opacity: 1; } }
 
 header { width: 100%; position: fixed; top: 0; left: 0; background: #fdf0e6; color: #000000; z-index: 900; }
 

@@ -95,7 +95,7 @@ img{max-width:100%;vertical-align:bottom;height:auto}
 a{text-decoration:none}
 a:focus{outline:0}
 .wrapper article a{text-decoration:underline}
-.wrapper article.page>p+.wrapper article.page>ul{margin-top:-80px}
+.wrapper article.page>p+ul{margin-top:-80px}
 .wrapper article.page>ul{padding:40px 240px 40px 262px}
 .farbschema-dunkel a{color:#fff}
 .farbschema-hell a{color:#000}
@@ -656,6 +656,8 @@ p+.wp-block-separator,.wp-block-separator+p{margin-top:-20px !important}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
 .logo{width:120px}
+.dynamic-header{opacity:0;-webkit-transition:all .2s linear;transition:all .2s linear}
+.dynamic-header.fixed-header{opacity:1}
 header .header-inner{padding:32px 40px 46px 40px}
 .logged-in .nav-toggle{display:inline-block}
 footer .section-inner{padding:20px}

@@ -35,6 +35,20 @@
 	 top: 32px;
  }
 
+ .dynamic-header {
+
+	@include r(480){
+		opacity: 0;
+		transition: all 0.2s linear;
+	}
+
+	&.fixed-header {
+		@include r(480){
+			opacity: 1;
+		};
+	}
+ }
+
  header {
 	 width: 100%;
 	 position: fixed;

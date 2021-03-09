@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
 
 		$('.wp-block-cover').on('click','.scrollToBottom', function(){
 
-			var header = $('.header-inner').outerHeight();
+			var header = (window.width() > 481 ) ? $('.header-inner').outerHeight() : 0;
 			var dest = cover.next().offset().top - header;
 
 			$('html,body').animate({
