@@ -288,7 +288,7 @@ body.farbschema-hell footer .footer-social svg path,body.farbschema- footer .foo
 .woocommerce .quantity .qty{background:#fff;font-size:22px;line-height:49px;height:49px;padding:0 9px 0;border:0}
 .woocommerce .quantity .qty :active{border:0}
 .woocommerce ul.products{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:120px -10px 20px}
-.woocommerce ul.products li.product{-webkit-box-flex:1;-ms-flex:1 0 25%;flex:1 0 25%;max-width:25%;width:25%;margin:0;border:10px solid transparent}
+.woocommerce ul.products li.product{-webkit-box-flex:1;-ms-flex:1 0 25%;flex:1 0 25%;max-width:25%;width:25%;margin:0;border:10px solid transparent;word-break:keep-all}
 .woocommerce ul.products li.product .button{display:none}
 .woocommerce ul.products li.product .onsale{margin:-.8em -.8em 0 0}
 .woocommerce ul.products li.product .price{color:#000}
