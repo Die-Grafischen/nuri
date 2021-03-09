@@ -26,15 +26,6 @@
 		margin-bottom: 0;
 	}
 
-	@include r(480) {
-		margin-bottom: 0px!important;
-	}
-}
-
-body .wp-block-buttons {
-	@include r(480) {
-		margin-bottom: 20px!important;
-	}
 }
 
 .wc-block-grid + .wp-block-buttons {

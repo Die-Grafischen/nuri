@@ -723,7 +723,6 @@ small.includes_tax{width:100%}
 .blocks-gallery-grid .blocks-gallery-item:nth-child(2){margin-top:10px}
 .blocks-gallery-grid .blocks-gallery-item{width:100%;margin:0}
 .wp-block-buttons{margin-bottom:20px !important}
-.wp-block-buttons{margin-bottom:0 !important}
 .wc-block-grid+.wp-block-buttons{margin-top:-20px}
 .wp-block-buttons+p{margin-top:0}
 .block-newsletter{padding:40px !important}
