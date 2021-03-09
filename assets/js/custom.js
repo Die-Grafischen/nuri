@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
     });
     cover.find('.wp-block-cover__inner-container').append('<div class="scrollToBottom bounce"><a href="#"><i class="scroll-icon"></i></a></div>');
     $('.wp-block-cover').on('click', '.scrollToBottom', function () {
-      var header = $('.header-inner').length ? $('.header-inner').outerHeight : 0;
+      var header = $('.header-inner').outerHeight();
       var dest = cover.next().offset().top - header;
       $('html,body').animate({
         scrollTop: dest
