@@ -270,6 +270,7 @@ function wrap_product_start() {
 	echo '<div class="woo-back">
 		<a href="'. esc_url($category_link) .'" class="woo-back-link">'. $svg .'</a>
 		<div class="woo-back-name">'. esc_html($category_name) .'</div>
+		<a href="'. esc_url($category_link) .'" class="woo-back-link-mobile">'. esc_html($category_name) .'</a>
 	</div>';
 }
 

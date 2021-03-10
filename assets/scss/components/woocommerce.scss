@@ -1113,6 +1113,27 @@ i.filter-icon {
 	left: -180px;
 	opacity: 0;
 
+	@include r(1024) {
+		position: relative;
+		width: 100%;
+		top: 0;
+		left: 0;
+		opacity: 1!important;
+		padding-bottom: 10px;
+		display: flex;
+		align-items: center;
+	}
+
+	.woo-back-link-mobile {
+		display: none;
+		@include r(1024) {
+			display: inline-block;
+			margin-left: 10px;
+			width: calc(100% - 35px);
+			line-height: 1.05;
+		}
+	}
+
 	.woo-back-link {
 		width: 80px;
 		height: 80px;
@@ -1124,6 +1145,11 @@ i.filter-icon {
 		justify-content: center;
 		flex-wrap: wrap;
 
+		@include r(1024) {
+			width: 20px;
+			height: 20px;
+		}
+
 		&:hover {
 			background: $black;
 			svg path {
@@ -1133,6 +1159,11 @@ i.filter-icon {
 
 		svg {
 			margin-right: 3px;
+			@include r(1024) {
+				width: 5px;
+				height: auto;
+			}
+
 		}
 	}
 
@@ -1149,6 +1180,10 @@ i.filter-icon {
 		white-space: nowrap;
 		z-index: 1000;
 
+		@include r(768) {
+			display: none;
+		}
+
 		&:after {
 			content:"";
 			width:0px;
@@ -1160,6 +1195,10 @@ i.filter-icon {
 			bottom: -18px;
 			left: 0;
 			display:block;
+
+			@include r(768) {
+				display: none;
+			}
 		}
 	}
 }
