@@ -661,6 +661,8 @@ h2 br{display:none}
 .dynamic-header #search-icon,.dynamic-header .cart-contents{display:none}
 .dynamic-header.fixed-header #search-icon,.dynamic-header.fixed-header .cart-contents{display:block}
 header .header-inner{padding:32px 40px 46px 40px}
+.home.farbschema-dunkel header.dynamic-header{background:0;background-color:transparent}
+.home.farbschema-dunkel header.dynamic-header.fixed-header{background-color:#000}
 .logged-in .nav-toggle{display:inline-block}
 footer .section-inner{padding:20px}
 footer .section-inner nav{width:100%;margin:10px 0}

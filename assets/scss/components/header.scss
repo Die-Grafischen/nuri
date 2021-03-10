@@ -215,3 +215,24 @@ body.active-nav {
 body.woocommerce header li.shop-link {
 	font-weight: bold;
 }
+
+.home.farbschema-dunkel  {
+
+	header.dynamic-header {
+
+		@include r(480) {
+			background: none;
+			background-color: transparent;
+		}
+
+		&.fixed-header {
+
+			@include r(480) {
+				background-color: #000;
+			}
+
+		}
+
+	}
+
+}
