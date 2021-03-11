@@ -654,6 +654,11 @@
 			.onsale {
 				left: $gutter*5;
 				top: -#{$gutter};
+				@include r(480) {
+					top: 5px;
+					left: auto;
+					right: 5px;
+				}
 			}
 
 			.woocommerce-product-gallery {

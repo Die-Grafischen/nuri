@@ -699,6 +699,7 @@ footer .section-inner .footer-credits .footer-copyright{width:100%}
 .woocommerce ul.products li.product .onsale{margin:0}
 .woocommerce ul.products li.product{-webkit-box-flex:1 !important;-ms-flex:1 0 100% !important;flex:1 0 100% !important;width:100% !important;max-width:100% !important;margin-bottom:0 !important}
 .woocommerce #respond input#submit,.woocommerce input#submit.alt,.woocommerce a.button,.woocommerce a.button.alt,.woocommerce button.button,.woocommerce button.button.alt,.woocommerce input.button,.woocommerce input.button.alt{width:100% !important}
+.woocommerce div.product .product-wrap .onsale{top:5px;left:auto;right:5px}
 .woocommerce div.product .product-wrap .woocommerce-product-gallery{width:100%;padding-right:0;margin-right:0;margin-bottom:20px}
 .woocommerce div.product .product-wrap div.summary{width:100%}
 .woocommerce div.product .product-wrap .single-product-tags strong{width:100%;margin-bottom:5px}
