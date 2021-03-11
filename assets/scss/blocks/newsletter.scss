@@ -3,7 +3,9 @@
 .block-newsletter {
 	padding: $gutter*4!important;
 	@include r(1024) { padding: $gutter*4 $gutter!important; }
-	@include r(480) { padding: $gutter!important; }
+	@include r(480) {
+		padding: $gutter!important;
+	}
 
 	background-repeat: no-repeat;
 	background-size: cover;

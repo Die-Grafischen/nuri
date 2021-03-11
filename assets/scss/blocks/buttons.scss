@@ -37,10 +37,19 @@
 }
 
 .wp-block-buttons + p {
-	margin-top: 0;
+	margin-top: -$gutter;
 
 	@include r(480) {
 		margin-top: 0;
+	}
+}
+
+
+p + .wp-block-buttons {
+	margin-top: -32px;
+
+	@include r(480) {
+		margin-top: -12px;
 	}
 }
 

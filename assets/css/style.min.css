@@ -550,7 +550,8 @@ a.woocommerce-terms-and-conditions-link,.wrapper article .product-name a,.wrappe
 .has-white-black:hover{background:#000;color:#fff;border-color:#000}
 .wp-block-buttons .wp-block-button{margin-bottom:0}
 .wc-block-grid+.wp-block-buttons{margin-top:-40px}
-.wp-block-buttons+p{margin-top:0}
+.wp-block-buttons+p{margin-top:-40px}
+p+.wp-block-buttons{margin-top:-32px}
 .wp-block-button__link{padding:10px 42px;font-size:22px;text-decoration:none !important}
 .load-more-wrapper{text-align:center}
 .lds-ellipsis{display:inline-block;position:relative;width:80px;height:80px}
@@ -655,7 +656,7 @@ p+.wp-block-separator,.wp-block-separator+p{margin-top:-20px !important}
 p+.wp-block-separator{margin-top:0 !important}
 .wp-block-separator+p{margin-top:-40px !important}
 .wp-block-image+p{margin-top:-20px !important}
-.wrapper article>*{margin:0;padding:0 20px}
+.wrapper article>*{margin:0;padding:20px}
 .wrapper article>p{text-align:left;padding:20px}
 .wrapper article>p+p{margin-top:0}
 .wrapper article>h1,.wrapper article>h2,.wrapper article>h3,.wrapper article>h4,.wrapper article>h5{margin-bottom:40px}
@@ -734,6 +735,7 @@ small.includes_tax{width:100%}
 .wp-block-buttons{margin-bottom:20px !important}
 .wc-block-grid+.wp-block-buttons{margin-top:-20px}
 .wp-block-buttons+p{margin-top:0}
+p+.wp-block-buttons{margin-top:-12px}
 .block-newsletter{padding:40px !important}
 .block-newsletter .newsletter-wrapper{width:100%;max-width:100%}
 .block-newsletter .newsletter-wrapper input{width:100%}
