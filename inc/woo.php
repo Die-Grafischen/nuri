@@ -863,7 +863,10 @@ function woo_rename_tax_inc_cart( $value ) {
 
     $newtaxes = $shippingVat + $taxes;
 
-   do_action( 'qm/debug', $newtaxes);
+	do_action( 'qm/debug', $shippingVat);
+	do_action( 'qm/debug', $shippingTotal);
+	do_action( 'qm/debug', $taxes);
+	do_action( 'qm/debug', $newtaxes);
 
 
     /* Check if Shipment total is active */
@@ -878,7 +881,7 @@ function woo_rename_tax_inc_cart( $value ) {
     // Attach Tax Info to Price (single line)
     $value = str_ireplace( 'Tax', 'GST', $value );
 
-    return $value;
+    //return $value;
 }
 
 ?>
