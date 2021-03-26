@@ -1451,3 +1451,13 @@ a.woocommerce-terms-and-conditions-link,
 		margin-bottom: 0;
 	}
 }
+
+.wc-block-handpicked-products .wc-block-grid__product-onsale {
+	display: none;
+}
+
+#add_payment_method .cart-collaterals .cart_totals .woocommerce-shipping-destination,
+.woocommerce-cart .cart-collaterals .cart_totals .woocommerce-shipping-destination,
+.woocommerce-checkout .cart-collaterals .cart_totals .woocommerce-shipping-destination {
+	display: none;
+}
