@@ -851,27 +851,4 @@ function custom_woocommerce_placeholder_img_src( $src ) {
  * Referencing to wc-cart-functions.php starting from Line 296
  *
 */
-add_filter( 'woocommerce_cart_totals_order_total_html', 'woo_rename_tax_inc_cart', 10, 1 );
-function woo_rename_tax_inc_cart( $value ) {
-    /* Get all infos needed */
-    $shipping_total = WC()->cart->shipping_total;
-    $taxes = WC()->cart->get_taxes_total( true, true );
-    $taxrate = 7.7;
-    $newtaxes = ($shipping_total/(100+$taxrate)*$taxrate) + $taxes; // Shipping is 100% + taxrate %, so we deduct both percentages.
-
-    /* Check if Shipment total is active */
-    if ( ! empty($shipping_total) && $shipping_total != 0 ) {
-        if ( ! empty( $value ) ) {
-            // Show Price /wc-cart-functions.php Line 297
-            $value = '<strong>' . WC()->cart->get_total() . '</strong> ';
-            $value .= '<small class="includes_tax">' . '(inkl. ' . wc_price( $newtaxes ) . ' MWST)' . '</small>';
-        }
-    }
-
-    // Attach Tax Info to Price (single line)
-    $value = str_ireplace( 'Tax', 'GST', $value );
-
-    return $value;
-}
-
 ?>
