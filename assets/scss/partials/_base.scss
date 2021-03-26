@@ -257,9 +257,9 @@ p + p {
     }
 }
 
-h2 br {
+.home h2 br {
 	@include r(480) {
-		//display: none;
+		display: none;
 	}
 }
 /* temp */
@@ -282,21 +282,23 @@ h2 br {
 // }
 /* end temp */
 
-a, p, h1, h2, h3, h4, span {
-	@include r(480) {
-		overflow-wrap: break-word;
-		word-wrap: break-word;
+.woocommerce-checkout {
+	a, p, h1, h2, h3, h4, span {
+		@include r(480) {
+			overflow-wrap: break-word;
+			word-wrap: break-word;
 
-		-ms-word-break: break-all;
-		/* This is the dangerous one in WebKit, as it breaks things wherever */
-		word-break: break-all;
-		/* Instead use this non-standard one: */
-		word-break: break-word;
+			-ms-word-break: break-all;
+			/* This is the dangerous one in WebKit, as it breaks things wherever */
+			word-break: break-all;
+			/* Instead use this non-standard one: */
+			word-break: break-word;
 
-		/* Adds a hyphen where the word breaks, if supported (No Blink) */
-		-ms-hyphens: auto;
-		-moz-hyphens: auto;
-		-webkit-hyphens: auto;
-		hyphens: auto;
+			/* Adds a hyphen where the word breaks, if supported (No Blink) */
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			-webkit-hyphens: auto;
+			hyphens: auto;
+		}
 	}
 }

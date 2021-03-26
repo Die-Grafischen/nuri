@@ -664,7 +664,8 @@ p+.wp-block-separator{margin-top:0 !important}
 .wrapper article>.wp-block-gallery{padding-bottom:0}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
-a,p,h1,h2,h3,h4,span{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
+.home h2 br{display:none}
+.woocommerce-checkout a,.woocommerce-checkout p,.woocommerce-checkout h1,.woocommerce-checkout h2,.woocommerce-checkout h3,.woocommerce-checkout h4,.woocommerce-checkout span{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
 .logo{width:120px}
 .dynamic-header #search-icon,.dynamic-header .cart-contents{display:none}
 .dynamic-header.fixed-header #search-icon,.dynamic-header.fixed-header .cart-contents{display:block}
