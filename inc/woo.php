@@ -855,19 +855,10 @@ add_filter( 'woocommerce_cart_totals_order_total_html', 'woo_rename_tax_inc_cart
 function woo_rename_tax_inc_cart( $value ) {
     /* Get all infos needed */
     $shipping_total = WC()->cart->shipping_total;
-    $taxes = WC()->cart->get_taxes_total( true, true );
-
+    $taxes = WC()->cart->get_taxes();
     $taxrate = 7.7; //EDIT SHIPPING VAT HERE!
-
 	$shippingVat = ($taxrate / 100) * $shipping_total;
-
-    $newtaxes = $shippingVat + $taxes;
-
-	do_action( 'qm/debug', $shippingVat);
-	do_action( 'qm/debug', $shippingTotal);
-	do_action( 'qm/debug', $taxes);
-	do_action( 'qm/debug', $newtaxes);
-
+    $newtaxes = $shippingVat + $taxes[2];
 
     /* Check if Shipment total is active */
     if ( ! empty($shipping_total) && $shipping_total != 0 ) {
@@ -881,7 +872,7 @@ function woo_rename_tax_inc_cart( $value ) {
     // Attach Tax Info to Price (single line)
     $value = str_ireplace( 'Tax', 'GST', $value );
 
-    //return $value;
+    return $value;
 }
 
 ?>

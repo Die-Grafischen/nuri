@@ -542,7 +542,6 @@ a.woocommerce-terms-and-conditions-link,.wrapper article .product-name a,.wrappe
 .admin-bar .wp-block-cover.cover-on-top{min-height:calc(100vh - 32px)}
 .bounce{-webkit-animation:bounce 2s infinite;animation:bounce 2s infinite}
 .wc-block-grid__product{text-align:left;border-left:10px solid transparent;border-right:10px solid transparent}
-.woocommerce-Price-currencySymbol{padding-right:5px}
 .woocommerce-Price-amount{font-size:22px}
 .wc-block-grid__product .wc-block-grid__product-title{color:#fff;font-weight:700;margin-bottom:0}
 .wc-block-grid__product .wc-block-grid__product-image{margin-bottom:40px}
