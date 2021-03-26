@@ -851,7 +851,7 @@ function custom_woocommerce_placeholder_img_src( $src ) {
  * Referencing to wc-cart-functions.php starting from Line 296
  *
 */
-add_filter( 'woocommerce_cart_totals_order_total_html', 'woo_rename_tax_inc_cart', 10, 1 );
+//add_filter( 'woocommerce_cart_totals_order_total_html', 'woo_rename_tax_inc_cart', 10, 1 );
 function woo_rename_tax_inc_cart( $value ) {
     /* Get all infos needed */
     $shipping_total = WC()->cart->shipping_total;

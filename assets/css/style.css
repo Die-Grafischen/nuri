@@ -1158,13 +1158,13 @@ i.filter-icon { display: inline-block; background-image: url("data:image/svg+xml
 
 @media (max-width: 480px) { #order_comments { min-height: 102px; } }
 
-small.includes_tax { text-transform: uppercase; display: block; font-size: 15px !important; }
+small.includes_tax { text-transform: uppercase; display: block; font-size: 14px !important; }
 
 @media (max-width: 480px) { small.includes_tax { width: 100%; } }
 
-small.includes_tax .woocommerce-Price-currencySymbol { font-size: 15px !important; }
+small.includes_tax .woocommerce-Price-currencySymbol { font-size: 14px !important; }
 
-small.includes_tax .woocommerce-Price-amount { font-size: 15px !important; }
+small.includes_tax .woocommerce-Price-amount { font-size: 14px !important; }
 
 @media (max-width: 480px) { .woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td, .woocommerce table.shop_table_responsive tr td::before, .woocommerce-page table.shop_table_responsive tr td::before { width: 100%; text-align: left !important; padding-left: 0; } }
 

@@ -389,9 +389,9 @@ i.filter-icon{display:inline-block;background-image:url("data:image/svg+xml;base
 .woocommerce-checkout #payment div.payment_box .wc-credit-card-form#wc-stripe-cc-form .wc-stripe-error{margin:20px 0 0 0}
 .woocommerce table.shop_table_responsive tr.shipping td{text-align:left !important}
 .woocommerce table.shop_table_responsive tr.shipping td::before{width:100%;padding-bottom:13.3333333333px}
-small.includes_tax{text-transform:uppercase;display:block;font-size:15px !important}
-small.includes_tax .woocommerce-Price-currencySymbol{font-size:15px !important}
-small.includes_tax .woocommerce-Price-amount{font-size:15px !important}
+small.includes_tax{text-transform:uppercase;display:block;font-size:14px !important}
+small.includes_tax .woocommerce-Price-currencySymbol{font-size:14px !important}
+small.includes_tax .woocommerce-Price-amount{font-size:14px !important}
 .woocommerce table.shop_table_responsive tr:nth-child(2n) td,.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td{background-color:rgba(0,0,0,0) !important}
 .woocommerce-customer-details--phone,.woocommerce-customer-details--email{display:none}
 .woocommerce td.product-name dl.variation dt.variation-Lieferadresse,.woocommerce td.product-name dl.variation dd.variation-Lieferadresse{margin-top:20px;width:100%}
