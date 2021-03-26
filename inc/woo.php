@@ -860,13 +860,10 @@ function woo_rename_tax_inc_cart( $value ) {
 	$shippingVat = ($taxrate / 100) * $shipping_total;
     $newtaxes = $shippingVat + $taxes[2];
 
-    /* Check if Shipment total is active */
-    if ( ! empty($shipping_total) && $shipping_total != 0 ) {
-        if ( ! empty( $value ) ) {
-            // Show Price /wc-cart-functions.php Line 297
-            $value = '<strong>' . WC()->cart->get_total() . '</strong> ';
-            $value .= '<small class="includes_tax">' . '(inkl. ' . wc_price( $newtaxes ) . ' MWST.)' . '</small>';
-        }
+    if ( ! empty( $value ) ) {
+        // Show Price /wc-cart-functions.php Line 297
+        $value = '<strong>' . WC()->cart->get_total() . '</strong> ';
+        $value .= '<small class="includes_tax">' . '(inkl. ' . wc_price( $newtaxes ) . ' MWST.)' . '</small>';
     }
 
     // Attach Tax Info to Price (single line)
