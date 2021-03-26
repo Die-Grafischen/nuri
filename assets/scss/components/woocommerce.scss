@@ -1334,13 +1334,18 @@ small.includes_tax {
 
 	text-transform: uppercase;
 	display: block;
+	font-size: 15px!important;
 
 	@include r(480) {
 		width: 100%;
 	}
 
 	.woocommerce-Price-currencySymbol {
-		font-size: 75%!important;
+		font-size: 15px!important;
+	}
+
+	.woocommerce-Price-amount {
+		font-size: 15px!important;
 	}
 
 }
