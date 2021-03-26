@@ -664,6 +664,7 @@ p+.wp-block-separator{margin-top:0 !important}
 .wrapper article>.wp-block-gallery{padding-bottom:0}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
+a,p,h1,h2,h3,h4,span{white-space:nowrap}
 .logo{width:120px}
 .dynamic-header #search-icon,.dynamic-header .cart-contents{display:none}
 .dynamic-header.fixed-header #search-icon,.dynamic-header.fixed-header .cart-contents{display:block}
