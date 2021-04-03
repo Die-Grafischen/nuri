@@ -294,23 +294,19 @@ jQuery(document).ready(function($) {
 
 	/******** END ISOTOPE AJAX ********/
 
-	// production enviroment - read only permissions
-	const wooClientKey = 'ck_4dbc36409a2f3772d2bb18e8b066f31c20f1cdde';
-	const wooClientSecret = 'cs_b9046328ab21f1aa53715a6c37cf455f35ffdaab';
 	const wooUrl = 'https://nurifood.ch/wp-json/wc/v3/products';
 
-	// dev enviroment
+	// local dev enviroment keys
 	// const wooClientKey = 'ck_d3075b8231bedc08b740a91d77a6fe28b34e6df2';
 	// const wooClientSecret = 'cs_b2f087b724e028bbd46fb68879555009941e247e';
 	// const wooUrl = 'https://nuri.local/wp-json/wc/v3/products';
 
 	// authorization
-	function basicAuth(key, secret) {
-	    let hash = btoa(key + ':' + secret);
+	function basicAuth(hash) {
 	    return "Basic " + hash;
 	}
 
-	let auth = basicAuth(wooClientKey, wooClientSecret);
+	let auth = basicAuth(restkeys.auth);
 
 	var pull_page = 1;
 	var jsonFlag = true;
@@ -423,6 +419,5 @@ jQuery(document).ready(function($) {
 	if ( $('.woocommerce .wrapper select').length ){
 		$('select').selectWoo();
 	}
-
 
 }); // END jQuery

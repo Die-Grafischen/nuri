@@ -220,6 +220,18 @@ function is_shop_manager() {
     }
 }
 
+// Woo Rest API
+wp_register_script( 'ajax', get_template_directory_uri() . '/assets/js/ajax.js' );
+ 
+// Localize the script with new data
+$keys = array(
+	'auth' => base64_encode('ck_4dbc36409a2f3772d2bb18e8b066f31c20f1cdde:cs_b9046328ab21f1aa53715a6c37cf455f35ffdaab')
+	//keys are with read only permissions
+);
+wp_localize_script( 'ajax', 'restkeys', $keys );
+
+wp_enqueue_script( 'ajax' );
+
 //add_action( 'template_redirect', 'hide_woocommerce' );
 
 function hide_woocommerce() {
