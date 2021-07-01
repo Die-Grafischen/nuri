@@ -642,31 +642,35 @@ function change_noship_message() {
 
 // cart icon
 function cart_svg() { ?>
-	<svg xmlns="http://www.w3.org/2000/svg" width="52.246" height="33.949" viewBox="0 0 52.246 33.949">
-		<g id="Group_8" data-name="Group 8" transform="translate(-634.19 -228.381)">
-		<path id="Path_7" data-name="Path 7" d="M634.19,228.881h10.468l8.463,22.786h24.727l7.812-17.178H653.121" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-		<circle id="Ellipse_2" data-name="Ellipse 2" cx="3.496" cy="3.496" r="3.496" transform="translate(670.879 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-		<circle id="Ellipse_3" data-name="Ellipse 3" cx="3.496" cy="3.496" r="3.496" transform="translate(649.621 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-		</g>
-	</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="52.246" height="33.949" viewBox="0 0 52.246 33.949">
+    <g id="Group_8" data-name="Group 8" transform="translate(-634.19 -228.381)">
+        <path id="Path_7" data-name="Path 7" d="M634.19,228.881h10.468l8.463,22.786h24.727l7.812-17.178H653.121"
+            fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" />
+        <circle id="Ellipse_2" data-name="Ellipse 2" cx="3.496" cy="3.496" r="3.496"
+            transform="translate(670.879 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" />
+        <circle id="Ellipse_3" data-name="Ellipse 3" cx="3.496" cy="3.496" r="3.496"
+            transform="translate(649.621 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" />
+    </g>
+</svg>
 <?php }
 
 // Add cart contents in header
 function add_cart_link() { ?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
+<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+    title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 
-		<?php cart_svg(); ?>
+    <?php cart_svg(); ?>
 
-		<span class="count">
-			<?php $count = $woocommerce->cart->cart_contents_count;
+    <span class="count">
+        <?php $count = $woocommerce->cart->cart_contents_count;
 			if($count) {
 				echo intval($count);
 			} else {
 				 echo ' ';
 			}?>
-		</span>
+    </span>
 
-<?php }
+    <?php }
 
 // Add slider navigation
 add_filter( 'woocommerce_single_product_carousel_options', 'cuswoo_update_woo_flexslider_options' );
@@ -678,19 +682,20 @@ function cuswoo_update_woo_flexslider_options( $options ) {
 
 // Add cart to header
 function header_cart() {  global $woocommerce;?>
-	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
-		<?php cart_svg(); ?>
+    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+        title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
+        <?php cart_svg(); ?>
 
-		<span class="count">
-			<?php $count = $woocommerce->cart->cart_contents_count;
+        <span class="count">
+            <?php $count = $woocommerce->cart->cart_contents_count;
 			if($count) {
 				echo intval($count);
 			} else {
 				 echo ' ';
 			}?>
-		</span>
-	</a>
-<?php }
+        </span>
+    </a>
+    <?php }
 
 // Update cart contents in header with Ajax
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
@@ -700,20 +705,21 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 
 	?>
-	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
-		<?php cart_svg(); ?>
+    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+        title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
+        <?php cart_svg(); ?>
 
-		<span class="count">
-			<?php $count = $woocommerce->cart->cart_contents_count;
+        <span class="count">
+            <?php $count = $woocommerce->cart->cart_contents_count;
 			if($count) {
 				echo intval($count);
 			} else {
 				 echo ' ';
 			}?>
-		</span>
+        </span>
 
-	</a>
-	<?php
+    </a>
+    <?php
 	$fragments['a.cart-contents'] = ob_get_clean();
 	return $fragments;
 }
@@ -870,6 +876,33 @@ function woo_rename_tax_inc_cart( $value ) {
     $value = str_ireplace( 'Tax', 'GST', $value );
 
     return $value;
+}
+
+/**
+* @snippet Disable Shipping Method if Cart has Shipping Class (WooCommerce 2.6+)
+* @how-to Get CustomizeWoo.com FREE
+* @author Rodolfo Melogli
+* @testedwith WooCommerce 4.0
+* @donate $9 https://businessbloomer.com/bloomer-armada/
+*/
+
+add_filter( 'woocommerce_package_rates', 'businessbloomer_hide_free_shipping_for_shipping_class', 10, 2 );
+
+function businessbloomer_hide_free_shipping_for_shipping_class( $rates, $package ) {
+	$shipping_class_target = get_shipping_class_id_by_slug('nur-abholen');
+	//$shipping_class_target = 66; // id on prod = 197
+	$in_cart = false;
+	foreach ( WC()->cart->get_cart_contents() as $key => $values ) {
+		if ( $values[ 'data' ]->get_shipping_class_id() == $shipping_class_target ) {
+			$in_cart = true;
+			break;
+		}
+	}
+	if ( $in_cart ) {
+		unset( $rates['flat_rate:1'] ); // shipping method with ID (to find it, see screenshot below)
+	}
+	
+	return $rates;
 }
 
 ?>
