@@ -889,8 +889,8 @@ function woo_rename_tax_inc_cart( $value ) {
 add_filter( 'woocommerce_package_rates', 'businessbloomer_hide_free_shipping_for_shipping_class', 10, 2 );
 
 function businessbloomer_hide_free_shipping_for_shipping_class( $rates, $package ) {
-	$shipping_class_target = get_shipping_class_id_by_slug('nur-abholen');
-	//$shipping_class_target = 66; // id on prod = 197
+	//$shipping_class_target = get_shipping_class_id_by_slug('nur-abholen');
+	$shipping_class_target = 197; // id on prod = 197 | id on local = 66
 	$in_cart = false;
 	foreach ( WC()->cart->get_cart_contents() as $key => $values ) {
 		if ( $values[ 'data' ]->get_shipping_class_id() == $shipping_class_target ) {
