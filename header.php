@@ -41,6 +41,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
+		<style>
+			.includes_GST span bdi {
+				display:none;
+			}
+		</style>
 
 	</head>
 
