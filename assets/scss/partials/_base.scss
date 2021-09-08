@@ -353,3 +353,25 @@ p + p {
 		}
 	}
 }
+.wpcf7 {
+	width: 80% !important;
+	max-width: 580px !important;
+	margin: 0 auto;
+
+	input {
+		background-color: $white;
+		border: 1px solid transparent;
+		padding: 9px;
+		width: 100%;
+		font-size: 22px;
+	}
+
+	textarea {
+		width: 100%;
+		background-color: $white;
+	}
+
+	label {
+		line-height: 2;
+	}
+}
