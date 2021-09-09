@@ -176,6 +176,8 @@ div#ui-datepicker-div{z-index:1000 !important}
 .wpcf7 input{background-color:#fff;border:1px solid transparent;padding:9px;width:100%;font-size:22px}
 .wpcf7 textarea{width:100%;background-color:#fff}
 .wpcf7 label{line-height:2}
+.wpcf7 input.wpcf7-submit{color:#fff;background:#000}
+.wpcf7 input.wpcf7-submit:hover{color:#000;background:#fff}
 .logo{width:100px;display:inline-block;position:fixed;top:22px;left:40px;z-index:1100}
 .logo img,.logo svg{width:100px;height:auto}
 .logo img g path,.logo svg g path{fill:#000 !important}

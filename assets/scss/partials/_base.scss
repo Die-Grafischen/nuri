@@ -384,4 +384,14 @@ div#ui-datepicker-div {
 	label {
 		line-height: 2;
 	}
+
+	input.wpcf7-submit {
+		color: $white;
+		background: $black;
+
+		&:hover {
+			color: $black;
+			background: $white;
+		}
+	}
 }
