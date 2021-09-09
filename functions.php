@@ -127,7 +127,15 @@ function nuri_register_scripts() {
 	}
 
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), $theme_version, false );
-	wp_script_add_data( 'custom', 'async', true ); }
+	wp_script_add_data( 'custom', 'async', true );
+
+	wp_enqueue_script( 'select', get_template_directory_uri() . '/assets/js/select.woo.min.js', array('jquery'), $theme_version,
+	false );
+
+}
+
+add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
+
 
 
 

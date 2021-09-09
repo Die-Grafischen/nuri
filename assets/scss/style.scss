@@ -10,35 +10,36 @@ Text Domain: WPGT
 */
 
 // Mixins & Variables.
-@import 'partials/mixins';
-@import 'partials/variables';
+@import "partials/mixins";
+@import "partials/variables";
 
 // Normalize & Santize.
-@import 'vendor/normalize';
-@import 'vendor/sanitize';
+@import "vendor/normalize";
+@import "vendor/sanitize";
 
 // Structure.
-@import 'partials/structure';
+@import "partials/structure";
 
 // WPCore.
-@import 'partials/wpcore';
+@import "partials/wpcore";
 
 // Base.
-@import 'partials/base';
+@import "partials/base";
 
 // Components.
-@import 'components/header';
-@import 'components/navigation';
-@import 'components/footer';
-@import 'components/woocommerce';
-@import 'components/pretty-checkbox.min';
-@import 'components/scroll-indicator';
-@import 'components/search';
+@import "components/header";
+@import "components/navigation";
+@import "components/footer";
+@import "components/woocommerce";
+@import "components/pretty-checkbox.min";
+@import "components/scroll-indicator";
+@import "components/search";
+@import "components/select";
 
 // Gutenberg Blocks.
-@import 'blocks/cover';
-@import 'blocks/grid-produkt';
-@import 'blocks/gallery-grid';
-@import 'blocks/buttons';
-@import 'blocks/newsletter';
-@import 'blocks/quote';
+@import "blocks/cover";
+@import "blocks/grid-produkt";
+@import "blocks/gallery-grid";
+@import "blocks/buttons";
+@import "blocks/newsletter";
+@import "blocks/quote";

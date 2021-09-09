@@ -353,6 +353,11 @@ p + p {
 		}
 	}
 }
+
+div#ui-datepicker-div {
+	z-index: 1000 !important;
+}
+
 .wpcf7 {
 	width: 80% !important;
 	max-width: 580px !important;
