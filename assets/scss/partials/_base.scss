@@ -363,6 +363,11 @@ div#ui-datepicker-div {
 	max-width: 580px !important;
 	margin: 0 auto;
 
+	@include r(768) {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
 	input {
 		background-color: $white;
 		border: 1px solid transparent;
