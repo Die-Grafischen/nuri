@@ -734,6 +734,7 @@ body>*{display:none !important}
 }@media(max-width:768px){.wp-caption .wp-caption-text,.gallery-caption{font:300 1.9rem/1.7 sans-serif}
 .content h1,.content p{font-weight:100}
 .content h1{text-transform:uppercase}
+.wpcf7{width:100% !important;max-width:100% !important}
 .logo{left:20px}
 header{font-size:22px}
 header #search-icon{right:134px;top:27px}
