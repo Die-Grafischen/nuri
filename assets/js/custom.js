@@ -448,7 +448,9 @@ jQuery(document).ready(function ($) {
 		".search-results .woo-custom-filter, .search-results .load-more-wrapper"
 	).remove(); // style select fields
 
-	if ($(".woocommerce .wrapper select").length || $(".wpml select").length) {
+	if ($(".woocommerce .wrapper select").length) {
 		$("select").selectWoo();
 	}
+
+	$(".wpcf7 select").selectWoo();
 }); // END jQuery
