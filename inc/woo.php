@@ -444,6 +444,10 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 		  $cart_item['extra_adresse'] = sanitize_text_field( $_POST['extra_adresse'] );
 	  }
 
+	  if( isset( $_POST['extra_botschaft'] ) ) {
+	  $cart_item['extra_botschaft'] = sanitize_text_field( $_POST['extra_botschaft'] );
+	  }
+
 	  return $cart_item;
 
   }
@@ -461,6 +465,18 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
   }
   add_filter( 'woocommerce_get_cart_item_from_session', 'd_get_cart_data_f_session', 20, 2 );
 
+  // load data from session
+  function b_get_cart_data_f_session( $cart_item, $values ) {
+
+  if ( isset( $values['extra_botschaft'] ) ){
+  $cart_item['extra_botschaft'] = $values['extra_botschaft'];
+  }
+
+  return $cart_item;
+
+  }
+  add_filter( 'woocommerce_get_cart_item_from_session', 'b_get_cart_data_f_session', 20, 2 );
+
 
   //add meta to order
   function d_add_order_meta( $item_id, $values ) {
@@ -468,11 +484,16 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 	  if ( ! empty( $values['extra_adresse'] ) ) {
 		  woocommerce_add_order_item_meta( $item_id, 'Lieferadresse', $values['extra_adresse'] );
 	  }
+
+	  if ( ! empty( $values['extra_botschaft'] ) ) {
+	  woocommerce_add_order_item_meta( $item_id, 'Botschaft', $values['extra_botschaft'] );
+	  }
   }
   add_action( 'woocommerce_add_order_item_meta', 'd_add_order_meta', 10, 2 );
 
   // display data in cart
   function d_get_itemdata( $other_data, $cart_item ) {
+	 //sd($other_data, $cart_item);
 
 	  if ( isset( $cart_item['extra_adresse'] ) ){
 
@@ -876,33 +897,6 @@ function woo_rename_tax_inc_cart( $value ) {
     $value = str_ireplace( 'Tax', 'GST', $value );
 
     return $value;
-}
-
-/**
-* @snippet Disable Shipping Method if Cart has Shipping Class (WooCommerce 2.6+)
-* @how-to Get CustomizeWoo.com FREE
-* @author Rodolfo Melogli
-* @testedwith WooCommerce 4.0
-* @donate $9 https://businessbloomer.com/bloomer-armada/
-*/
-
-add_filter( 'woocommerce_package_rates', 'businessbloomer_hide_free_shipping_for_shipping_class', 10, 2 );
-
-function businessbloomer_hide_free_shipping_for_shipping_class( $rates, $package ) {
-	//$shipping_class_target = get_shipping_class_id_by_slug('nur-abholen');
-	$shipping_class_target = 197; // id on prod = 197 | id on local = 66
-	$in_cart = false;
-	foreach ( WC()->cart->get_cart_contents() as $key => $values ) {
-		if ( $values[ 'data' ]->get_shipping_class_id() == $shipping_class_target ) {
-			$in_cart = true;
-			break;
-		}
-	}
-	if ( $in_cart ) {
-		unset( $rates['flat_rate:1'] ); // shipping method with ID (to find it, see screenshot below)
-	}
-	
-	return $rates;
 }
 
 ?>
