@@ -444,6 +444,10 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 		  $cart_item['extra_adresse'] = sanitize_text_field( $_POST['extra_adresse'] );
 	  }
 
+	  if( isset( $_POST['extra_botschaft'] ) ) {
+	  $cart_item['extra_botschaft'] = sanitize_text_field( $_POST['extra_botschaft'] );
+	  }
+
 	  return $cart_item;
 
   }
@@ -461,6 +465,18 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
   }
   add_filter( 'woocommerce_get_cart_item_from_session', 'd_get_cart_data_f_session', 20, 2 );
 
+  // load data from session
+  function b_get_cart_data_f_session( $cart_item, $values ) {
+
+  if ( isset( $values['extra_botschaft'] ) ){
+  $cart_item['extra_botschaft'] = $values['extra_botschaft'];
+  }
+
+  return $cart_item;
+
+  }
+  add_filter( 'woocommerce_get_cart_item_from_session', 'b_get_cart_data_f_session', 20, 2 );
+
 
   //add meta to order
   function d_add_order_meta( $item_id, $values ) {
@@ -468,11 +484,16 @@ add_filter( 'woocommerce_add_to_cart_validation', 'd_extra_field_validation', 10
 	  if ( ! empty( $values['extra_adresse'] ) ) {
 		  woocommerce_add_order_item_meta( $item_id, 'Lieferadresse', $values['extra_adresse'] );
 	  }
+
+	  if ( ! empty( $values['extra_botschaft'] ) ) {
+	  woocommerce_add_order_item_meta( $item_id, 'Botschaft', $values['extra_botschaft'] );
+	  }
   }
   add_action( 'woocommerce_add_order_item_meta', 'd_add_order_meta', 10, 2 );
 
   // display data in cart
   function d_get_itemdata( $other_data, $cart_item ) {
+	 //sd($other_data, $cart_item);
 
 	  if ( isset( $cart_item['extra_adresse'] ) ){
 
@@ -642,31 +663,35 @@ function change_noship_message() {
 
 // cart icon
 function cart_svg() { ?>
-	<svg xmlns="http://www.w3.org/2000/svg" width="52.246" height="33.949" viewBox="0 0 52.246 33.949">
-		<g id="Group_8" data-name="Group 8" transform="translate(-634.19 -228.381)">
-		<path id="Path_7" data-name="Path 7" d="M634.19,228.881h10.468l8.463,22.786h24.727l7.812-17.178H653.121" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-		<circle id="Ellipse_2" data-name="Ellipse 2" cx="3.496" cy="3.496" r="3.496" transform="translate(670.879 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-		<circle id="Ellipse_3" data-name="Ellipse 3" cx="3.496" cy="3.496" r="3.496" transform="translate(649.621 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-		</g>
-	</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="52.246" height="33.949" viewBox="0 0 52.246 33.949">
+    <g id="Group_8" data-name="Group 8" transform="translate(-634.19 -228.381)">
+        <path id="Path_7" data-name="Path 7" d="M634.19,228.881h10.468l8.463,22.786h24.727l7.812-17.178H653.121"
+            fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" />
+        <circle id="Ellipse_2" data-name="Ellipse 2" cx="3.496" cy="3.496" r="3.496"
+            transform="translate(670.879 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" />
+        <circle id="Ellipse_3" data-name="Ellipse 3" cx="3.496" cy="3.496" r="3.496"
+            transform="translate(649.621 254.839)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1" />
+    </g>
+</svg>
 <?php }
 
 // Add cart contents in header
 function add_cart_link() { ?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
+<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+    title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
 
-		<?php cart_svg(); ?>
+    <?php cart_svg(); ?>
 
-		<span class="count">
-			<?php $count = $woocommerce->cart->cart_contents_count;
+    <span class="count">
+        <?php $count = $woocommerce->cart->cart_contents_count;
 			if($count) {
 				echo intval($count);
 			} else {
 				 echo ' ';
 			}?>
-		</span>
+    </span>
 
-<?php }
+    <?php }
 
 // Add slider navigation
 add_filter( 'woocommerce_single_product_carousel_options', 'cuswoo_update_woo_flexslider_options' );
@@ -678,19 +703,20 @@ function cuswoo_update_woo_flexslider_options( $options ) {
 
 // Add cart to header
 function header_cart() {  global $woocommerce;?>
-	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
-		<?php cart_svg(); ?>
+    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+        title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
+        <?php cart_svg(); ?>
 
-		<span class="count">
-			<?php $count = $woocommerce->cart->cart_contents_count;
+        <span class="count">
+            <?php $count = $woocommerce->cart->cart_contents_count;
 			if($count) {
 				echo intval($count);
 			} else {
 				 echo ' ';
 			}?>
-		</span>
-	</a>
-<?php }
+        </span>
+    </a>
+    <?php }
 
 // Update cart contents in header with Ajax
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
@@ -700,20 +726,21 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 
 	?>
-	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
-		<?php cart_svg(); ?>
+    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+        title="<?php esc_attr_e( 'Einkaufswagen ansehen', 'nuri' ); ?>">
+        <?php cart_svg(); ?>
 
-		<span class="count">
-			<?php $count = $woocommerce->cart->cart_contents_count;
+        <span class="count">
+            <?php $count = $woocommerce->cart->cart_contents_count;
 			if($count) {
 				echo intval($count);
 			} else {
 				 echo ' ';
 			}?>
-		</span>
+        </span>
 
-	</a>
-	<?php
+    </a>
+    <?php
 	$fragments['a.cart-contents'] = ob_get_clean();
 	return $fragments;
 }
